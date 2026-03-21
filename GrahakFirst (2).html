@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="GrahakFirst Retailers – Your trusted Amazon reseller for Fashion & Imitation Jewellery. Buy. Sell. Save."/>
+<title>GrahakFirst Retailers | Fashion & Jewellery on Amazon India</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════
+   VARIABLES & RESET
+══════════════════════════════════════════ */
+:root {
+  --black:    #0a0a0a;
+  --black2:   #111111;
+  --black3:   #181818;
+  --black4:   #202020;
+  --orange:   #f97316;
+  --orange2:  #fb923c;
+  --orange3:  #7c3c0e;
+  --orange-pale: rgba(249,115,22,0.12);
+  --blue:     #2a7de1;
+  --blue2:    #1a6abf;
+  --blue3:    #1a4fa0;
+  --blue-pale: rgba(42,125,225,0.12);
+  --white:    #ffffff;
+  --offwhite: #f0f0f0;
+  --text:     #e8e8e8;
+  --text2:    #a0a0a0;
+  --muted:    #606060;
+  --border:   rgba(255,255,255,0.08);
+  --border2:  rgba(255,255,255,0.04);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--black);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black2); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+/* ══════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════ */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4%;
+  background: rgba(10,10,10,0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+#navbar.scrolled {
+  background: rgba(10,10,10,0.97);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+}
+.nav-logo img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 0.2rem;
+  list-style: none;
+}
+.nav-links a {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--text2);
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+.nav-actions { display: flex; align-items: center; gap: 0.7rem; }
+
+.btn-outline {
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  color: var(--text2); background: transparent;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem; font-weight: 600;
+  border-radius: 7px; cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+.btn-orange {
+  padding: 0.52rem 1.3rem;
+  background: var(--orange); color: var(--black);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem; font-weight: 800;
+  border-radius: 7px; border: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-orange:hover { background: var(--orange2); transform: translateY(-1px); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px; background: none; border: none;
+}
+.hamburger span { width: 22px; height: 2px; background: var(--text2); border-radius: 2px; display: block; transition: all 0.3s; }
+
+/* ══════════════════════════════════════════
+   MOBILE MENU
+══════════════════════════════════════════ */
+#mobileMenu {
+  display: none; position: fixed; inset: 0; z-index: 1100;
+  background: var(--black2);
+  flex-direction: column;
+  padding: 0;
+}
+#mobileMenu.open { display: flex; }
+.mob-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.mob-header img { height: 40px; }
+.mob-close {
+  background: none; border: none; color: var(--text2);
+  font-size: 1.6rem; cursor: pointer; line-height: 1;
+}
+.mob-links {
+  flex: 1; display: flex; flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.3rem;
+}
+.mob-links a {
+  font-size: 1.1rem; font-weight: 600; color: var(--text);
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.mob-links a:hover { background: var(--black3); color: var(--orange); }
+.mob-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.mob-footer a {
+  display: block; text-align: center;
+  background: var(--orange); color: var(--black);
+  padding: 1rem; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 800;
+}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 88px 4% 4rem;
+  position: relative; overflow: hidden;
+  background: var(--black);
+}
+
+/* Animated gradient orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+.hero-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(42,125,225,0.15) 0%, transparent 70%);
+  bottom: -80px; left: -80px;
+  animation-delay: -4s;
+}
+.hero-orb-3 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+  top: 50%; left: 40%;
+  animation-delay: -2s;
+}
+
+/* Dot grid */
+.hero-dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: 3rem; align-items: center;
+  position: relative; z-index: 2;
+}
+
+/* Left */
+.hero-left { opacity: 0; animation: fadeSlideUp 0.8s 0.2s ease forwards; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(249,115,22,0.1);
+  border: 1px solid rgba(249,115,22,0.25);
+  padding: 0.38rem 1rem; border-radius: 100px;
+  font-size: 0.72rem; font-weight: 600;
+  color: var(--orange); letter-spacing: 0.04em;
+  margin-bottom: 1.4rem;
+}
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e;
+  animation: livePulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 900; line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.hero-title .orange { color: var(--orange); }
+.hero-title .blue   { color: var(--blue); }
+
+.hero-desc {
+  font-size: 1rem; font-weight: 400;
+  color: var(--text2); line-height: 1.75;
+  max-width: 500px; margin-bottom: 2.2rem;
+}
+
+.hero-ctas { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+
+.btn-hero-primary {
+  background: var(--orange); color: var(--black);
+  padding: 0.9rem 2.2rem; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 800;
+  display: inline-flex; align-items: center; gap: 8px;
+  border: none; cursor: pointer;
+  box-shadow: 0 0 30px rgba(249,115,22,0.35);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-hero-primary:hover {
+  background: var(--orange2); transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(249,115,22,0.5);
+}
+.btn-hero-secondary {
+  background: rgba(42,125,225,0.12);
+  border: 1.5px solid rgba(42,125,225,0.35);
+  color: var(--blue);
+  padding: 0.9rem 2.2rem; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btn-hero-secondary:hover {
+  background: rgba(42,125,225,0.2);
+  border-color: var(--blue); transform: translateY(-2px);
+}
+
+.hero-trust {
+  display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+}
+.ht-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.75rem; font-weight: 500; color: var(--text2);
+}
+.ht-item::before { content: '✓'; color: #22c55e; font-weight: 800; }
+.ht-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); }
+
+/* Right – Cards */
+.hero-right {
+  opacity: 0; animation: fadeSlideUp 0.9s 0.45s ease forwards;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+
+.hero-logo-card {
+  background: var(--black2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero-logo-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(249,115,22,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-logo-card img {
+  height: 100px; width: auto;
+  object-fit: contain; margin: 0 auto 0.8rem;
+  position: relative; z-index: 1;
+}
+.hlc-tag {
+  font-size: 0.65rem; font-weight: 700;
+  color: var(--muted); letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative; z-index: 1;
+}
+
+.hero-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.hstat {
+  background: var(--black2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: border-color 0.3s, transform 0.2s;
+}
+.hstat:hover { border-color: var(--orange); transform: translateY(-3px); }
+.hstat-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+.hstat-num  { font-size: 1.4rem; font-weight: 900; color: var(--white); line-height: 1; }
+.hstat-lbl  { font-size: 0.6rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 3px; }
+
+.hero-amz-badge {
+  background: var(--black2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  transition: border-color 0.3s;
+}
+.hero-amz-badge:hover { border-color: rgba(255,153,0,0.4); }
+.amz-logo-text { font-size: 1.1rem; font-weight: 900; }
+.amz-logo-text .a  { color: #ff9900; }
+.amz-logo-text .m  { color: var(--text2); }
+.hab-right { font-size: 0.65rem; font-weight: 700; color: var(--muted); text-align: right; letter-spacing: 0.04em; }
+.hab-right span { display: block; color: #22c55e; font-size: 0.7rem; }
+
+/* ══════════════════════════════════════════
+   TICKER / MARQUEE
+══════════════════════════════════════════ */
+.ticker {
+  background: linear-gradient(90deg, var(--orange) 0%, #fb923c 100%);
+  padding: 0.75rem 0; overflow: hidden; white-space: nowrap;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.ticker-inner { display: inline-block; animation: ticker 22s linear infinite; }
+.ticker-inner span {
+  font-size: 0.72rem; font-weight: 800;
+  color: var(--black);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0 2.5rem;
+}
+.ticker-inner span::before { content: '◆'; margin-right: 2.5rem; opacity: 0.4; font-size: 0.5rem; }
+
+/* ══════════════════════════════════════════
+   SECTION DEFAULTS
+══════════════════════════════════════════ */
+section { padding: 6rem 4%; }
+.sw { max-width: 1200px; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.eyebrow::before {
+  content: ''; width: 18px; height: 2px;
+  background: var(--orange); display: block; border-radius: 1px;
+}
+.eyebrow.blue { color: var(--blue); }
+.eyebrow.blue::before { background: var(--blue); }
+
+.sec-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800; color: var(--white);
+  line-height: 1.14; letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+.sec-title .orange { color: var(--orange); }
+.sec-title .blue   { color: var(--blue); }
+.sec-title em      { font-family: 'Playfair Display', serif; font-style: italic; }
+
+.sec-sub {
+  font-size: 0.9rem; color: var(--text2);
+  line-height: 1.75; max-width: 520px;
+}
+.sh-center { text-align: center; }
+.sh-center .sec-sub { margin: 0 auto; }
+.sh-center .eyebrow { display: flex; justify-content: center; }
+.sh-center .eyebrow::before { display: none; }
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
+#about { background: var(--black2); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+.about-visual { position: relative; }
+.about-main-card {
+  background: var(--black3);
+  border: 1px solid var(--border);
+  border-radius: 20px; padding: 2.5rem;
+  position: relative; overflow: hidden;
+}
+.amc-glow {
+  position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.amc-top {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.amc-top img { height: 52px; width: auto; object-fit: contain; }
+.amc-top-text {}
+.amc-top-text strong { display: block; font-size: 0.9rem; font-weight: 800; color: var(--white); }
+.amc-top-text span { font-size: 0.65rem; color: var(--muted); font-weight: 500; letter-spacing: 0.08em; }
+
+.amc-desc { font-size: 0.82rem; color: var(--text2); line-height: 1.8; margin-bottom: 1.8rem; }
+
+.amc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.amc-stat {
+  background: var(--black4);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.1rem;
+}
+.amc-stat strong { display: block; font-size: 1.5rem; font-weight: 900; color: var(--orange); line-height: 1; }
+.amc-stat span { font-size: 0.6rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 3px; display: block; }
+
+.amz-verified-pill {
+  position: absolute; bottom: -1.2rem; right: 1.5rem;
+  background: var(--black);
+  border: 1px solid rgba(249,115,22,0.3);
+  border-radius: 100px; padding: 0.6rem 1.2rem;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.avp-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: livePulse 2s infinite; flex-shrink: 0; }
+.avp-text { font-size: 0.72rem; font-weight: 700; color: var(--white); }
+
+.about-content { padding-top: 1rem; }
+.about-lead { font-size: 0.92rem; color: var(--text2); line-height: 1.8; margin-bottom: 2rem; }
+.about-lead strong { color: var(--white); font-weight: 700; }
+
+.features-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+.feat-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--black3); border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  transition: border-color 0.25s;
+}
+.feat-item:hover { border-color: rgba(249,115,22,0.3); }
+.feat-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.feat-text strong { display: block; font-size: 0.83rem; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+.feat-text span { font-size: 0.73rem; color: var(--muted); }
+
+.about-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ══════════════════════════════════════════
+   CATEGORIES
+══════════════════════════════════════════ */
+#categories { background: var(--black); }
+.cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.cat-card {
+  border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--black2);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.cat-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--orange);
+  box-shadow: 0 20px 50px rgba(249,115,22,0.1);
+}
+.cat-card-banner {
+  padding: 2.5rem;
+  position: relative; overflow: hidden;
+  min-height: 160px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.cat-card:nth-child(1) .cat-card-banner {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d1f3c 100%);
+}
+.cat-card:nth-child(2) .cat-card-banner {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a1a00 100%);
+}
+.cat-banner-glow {
+  position: absolute; top: -30px; right: -30px;
+  width: 180px; height: 180px; border-radius: 50%;
+  filter: blur(40px); pointer-events: none;
+}
+.cat-card:nth-child(1) .cat-banner-glow { background: rgba(42,125,225,0.3); }
+.cat-card:nth-child(2) .cat-banner-glow { background: rgba(249,115,22,0.3); }
+.cat-number {
+  position: absolute; top: 1rem; right: 1.5rem;
+  font-size: 5rem; font-weight: 900;
+  color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none;
+}
+.cat-icon-big { font-size: 2.8rem; margin-bottom: 0.6rem; position: relative; z-index: 1; }
+.cat-name {
+  font-size: 1.5rem; font-weight: 800;
+  color: var(--white); position: relative; z-index: 1;
+}
+.cat-card-body { padding: 1.8rem 2.5rem 2rem; }
+.cat-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.78; margin-bottom: 1.3rem; }
+.cat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+.cat-tag {
+  font-size: 0.62rem; font-weight: 700;
+  padding: 0.28rem 0.75rem; border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  transition: border-color 0.2s, color 0.2s;
+}
+.cat-card:hover .cat-tag { border-color: rgba(249,115,22,0.3); color: var(--orange); }
+.cat-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 700; color: var(--orange);
+  transition: gap 0.2s;
+}
+.cat-card:hover .cat-cta { gap: 10px; }
+
+/* ══════════════════════════════════════════
+   WHY US
+══════════════════════════════════════════ */
+#why { background: var(--black2); }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.why-card {
+  background: var(--black3);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem 1.7rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  position: relative; overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--blue));
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+.why-card:hover { border-color: rgba(249,115,22,0.25); transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,0,0,0.4); }
+.why-card:hover::before { transform: scaleX(1); }
+.why-icon {
+  width: 50px; height: 50px;
+  background: var(--orange-pale);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 1.2rem;
+}
+.why-title { font-size: 0.93rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+.why-desc { font-size: 0.77rem; color: var(--text2); line-height: 1.75; }
+
+/* ══════════════════════════════════════════
+   AMAZON CTA BAND
+══════════════════════════════════════════ */
+#amazon {
+  background: var(--black);
+  padding: 5rem 4%;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.amz-band {
+  max-width: 1100px; margin: 0 auto;
+  background: var(--black2);
+  border: 1px solid rgba(255,153,0,0.2);
+  border-radius: 24px; overflow: hidden;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: stretch;
+}
+.amz-band-left {
+  padding: 3rem 3rem;
+  position: relative; overflow: hidden;
+}
+.amz-band-left::before {
+  content: '';
+  position: absolute; top: -80px; left: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,153,0,0.08) 0%, transparent 70%);
+}
+.amz-band-left .eyebrow { color: #ff9900; }
+.amz-band-left .eyebrow::before { background: #ff9900; }
+.amz-band-left h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800; color: var(--white);
+  line-height: 1.2; margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.amz-band-left p { font-size: 0.85rem; color: var(--text2); line-height: 1.75; max-width: 440px; margin-bottom: 1.5rem; }
+.amz-perks { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.amz-perk { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; color: var(--text2); }
+.amz-perk::before { content: '✓'; color: #22c55e; font-weight: 800; font-size: 0.8rem; }
+.amz-shop-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #ff9900; color: #000;
+  padding: 1rem 2.2rem; border-radius: 10px;
+  font-size: 0.88rem; font-weight: 900;
+  border: none; cursor: pointer;
+  box-shadow: 0 0 30px rgba(255,153,0,0.3);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.amz-shop-btn:hover { background: #ffb733; transform: translateY(-2px); box-shadow: 0 0 40px rgba(255,153,0,0.45); }
+
+.amz-band-right {
+  background: var(--black3);
+  border-left: 1px solid var(--border);
+  padding: 2.5rem 2.5rem;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-width: 220px; text-align: center;
+  gap: 1.5rem;
+}
+.amz-rating-big { font-size: 3.5rem; font-weight: 900; color: var(--white); line-height: 1; }
+.amz-stars { font-size: 1.2rem; color: #fbbf24; letter-spacing: 2px; }
+.amz-rating-label { font-size: 0.62rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; }
+.amz-divider { width: 40px; height: 1px; background: var(--border); }
+.amz-customers-num { font-size: 1.5rem; font-weight: 900; color: var(--orange); }
+.amz-customers-lbl { font-size: 0.62rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS
+══════════════════════════════════════════ */
+#testimonials { background: var(--black); }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.test-card {
+  background: var(--black2); border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.8rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.test-card:hover { border-color: rgba(249,115,22,0.25); transform: translateY(-4px); }
+.test-quote-mark {
+  position: absolute; top: 1rem; right: 1.5rem;
+  font-size: 4rem; line-height: 1;
+  color: var(--orange); opacity: 0.08;
+  font-family: 'Playfair Display', serif;
+  pointer-events: none;
+}
+.test-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
+.test-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 800; color: white; flex-shrink: 0;
+}
+.test-stars { color: #fbbf24; font-size: 0.85rem; letter-spacing: 1px; }
+.test-body { font-size: 0.8rem; color: var(--text2); line-height: 1.8; margin-bottom: 1.3rem; font-style: italic; }
+.test-footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.test-name { font-size: 0.78rem; font-weight: 700; color: var(--white); }
+.test-loc { font-size: 0.62rem; color: var(--muted); }
+.test-badge { font-size: 0.58rem; font-weight: 700; color: #ff9900; background: rgba(255,153,0,0.1); padding: 3px 8px; border-radius: 100px; }
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+#contact { background: var(--black2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+.contact-left {}
+.contact-left .sec-sub { margin-bottom: 2.5rem; }
+
+.contact-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  margin-bottom: 1.4rem;
+}
+.ci-icon {
+  width: 46px; height: 46px; border-radius: 10px;
+  background: var(--black3);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.ci-text label { display: block; font-size: 0.6rem; font-weight: 700; color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 3px; }
+.ci-text p { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+
+.contact-amz-cta {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--black3);
+  border: 1px solid rgba(255,153,0,0.2);
+  border-radius: 12px; padding: 1.3rem 1.5rem;
+  margin-top: 2rem;
+  transition: border-color 0.25s;
+}
+.contact-amz-cta:hover { border-color: rgba(255,153,0,0.4); }
+.cac-icon { font-size: 1.8rem; flex-shrink: 0; }
+.cac-text strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.cac-text span { font-size: 0.72rem; color: var(--muted); }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.68rem; font-weight: 700; color: var(--text2); letter-spacing: 0.06em; text-transform: uppercase; }
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--black3);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.82rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem; color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--muted); }
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--orange); background: var(--black4); }
+.form-group textarea { height: 130px; resize: none; }
+.form-group select { cursor: pointer; }
+.form-group select option { background: var(--black2); }
+.form-note { font-size: 0.68rem; color: var(--muted); }
+.btn-submit {
+  background: var(--orange); color: var(--black);
+  padding: 1rem; border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem; font-weight: 800;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 0 25px rgba(249,115,22,0.25);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-submit:hover { background: var(--orange2); transform: translateY(-1px); box-shadow: 0 0 35px rgba(249,115,22,0.4); }
+.form-success {
+  display: none;
+  background: var(--black3);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: 12px; padding: 2rem;
+  text-align: center; color: #22c55e;
+  font-size: 0.88rem; font-weight: 600;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding: 4rem 4% 1.5rem;
+}
+.footer-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+.footer-brand img { height: 56px; object-fit: contain; margin-bottom: 0.8rem; }
+.footer-brand .fd { font-size: 0.62rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.75rem; color: var(--text2); line-height: 1.78; max-width: 270px; margin-bottom: 1.5rem; }
+.social-row { display: flex; gap: 0.6rem; }
+.soc-btn {
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 0.75rem; font-weight: 700;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.soc-btn:hover { background: var(--orange-pale); color: var(--orange); border-color: rgba(249,115,22,0.3); }
+.footer-col h4 { font-size: 0.62rem; font-weight: 700; color: var(--orange); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.footer-col ul a { font-size: 0.77rem; color: var(--text2); transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1200px; margin: 1.5rem auto 0;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.66rem; color: var(--muted); }
+.footer-bottom span { color: var(--text2); }
+
+/* ══════════════════════════════════════════
+   FLOATING BUTTONS
+══════════════════════════════════════════ */
+.wa-btn {
+  position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 998;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25d366; color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 25px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: waFloat 3s ease-in-out infinite;
+}
+.wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.55); }
+
+#btt {
+  position: fixed; bottom: 1.8rem; left: 1.8rem; z-index: 998;
+  width: 42px; height: 42px; border-radius: 8px;
+  background: var(--orange); color: var(--black);
+  border: none; cursor: pointer; font-size: 1rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+  box-shadow: 0 0 20px rgba(249,115,22,0.3);
+}
+#btt.vis { opacity: 1; transform: translateY(0); }
+#btt:hover { background: var(--orange2); }
+
+/* ══════════════════════════════════════════
+   REVEAL
+══════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════════════════════════════════
+   KEYFRAMES
+══════════════════════════════════════════ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(15px, -20px); }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes waFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-stats-row { grid-template-columns: repeat(3, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .amz-band { grid-template-columns: 1fr; }
+  .amz-band-right { border-left: none; border-top: 1px solid var(--border); flex-direction: row; justify-content: space-around; padding: 2rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  #navbar { padding: 0 1.2rem; }
+  .nav-links, .nav-actions { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 4rem 1.2rem; }
+  .hero-inner { gap: 2.5rem; }
+  .hero-stats-row { grid-template-columns: 1fr 1fr 1fr; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .test-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .amz-band-right { flex-direction: column; gap: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAVBAR ════ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="grahakfirst-logo.png" alt="GrahakFirst Retailers"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#categories">Collections</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#contact" class="btn-outline">Get in Touch</a>
+    <a href="https://www.amazon.in/s?me=GrahakFirst" class="btn-orange" target="_blank">🛒 Shop Now</a>
+  </div>
+  <button class="hamburger" id="hbg" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ════ MOBILE MENU ════ -->
+<div id="mobileMenu">
+  <div class="mob-header">
+    <img src="grahakfirst-logo.png" alt="GrahakFirst"/>
+    <button class="mob-close" id="mCls">✕</button>
+  </div>
+  <div class="mob-links">
+    <a href="#about"        onclick="closeMob()">About Us</a>
+    <a href="#categories"   onclick="closeMob()">Collections</a>
+    <a href="#why"          onclick="closeMob()">Why Choose Us</a>
+    <a href="#testimonials" onclick="closeMob()">Customer Reviews</a>
+    <a href="#contact"      onclick="closeMob()">Contact Us</a>
+  </div>
+  <div class="mob-footer">
+    <a href="https://www.amazon.in/s?me=GrahakFirst" target="_blank">🛒 Shop on Amazon India</a>
+  </div>
+</div>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-dots"></div>
+
+  <div class="hero-inner">
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="live-dot"></span>
+        Verified Amazon Seller · GrahakFirst.com
+      </div>
+      <h1 class="hero-title">
+        India's Trusted<br/>
+        <span class="orange">Fashion</span> &amp;
+        <span class="blue">Jewellery</span><br/>
+        Retailer
+      </h1>
+      <p class="hero-desc">
+        Premium fashion wear and imitation jewellery — curated for quality, priced for value.
+        Shop our full collection on Amazon India with fast, nationwide delivery.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://www.amazon.in/s?me=GrahakFirst" class="btn-hero-primary" target="_blank">
+          🛒 Shop on Amazon
+        </a>
+        <a href="#about" class="btn-hero-secondary">
+          About Us →
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item">Quality Assured</div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">PAN India Delivery</div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">Easy Returns</div>
+        <div class="ht-sep"></div>
+        <div class="ht-item">Amazon Verified</div>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="hero-right">
+      <div class="hero-logo-card">
+        <img src="grahakfirst-logo.png" alt="GrahakFirst Retailers — Buy Sell Save"/>
+        <div class="hlc-tag">Buy · Sell · Save</div>
+      </div>
+      <div class="hero-stats-row">
+        <div class="hstat">
+          <div class="hstat-icon">📦</div>
+          <div class="hstat-num">500+</div>
+          <div class="hstat-lbl">Products</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-icon">⭐</div>
+          <div class="hstat-num">4.8</div>
+          <div class="hstat-lbl">Rating</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-icon">🚚</div>
+          <div class="hstat-num">PAN</div>
+          <div class="hstat-lbl">India</div>
+        </div>
+      </div>
+      <div class="hero-amz-badge">
+        <div class="amz-logo-text"><span class="a">amazon</span><span class="m">.in</span></div>
+        <div class="hab-right">
+          Authorised Reseller<br/>
+          <span>✓ Verified Seller</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TICKER ════ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Fashion &amp; Clothing</span>
+    <span>Imitation Jewellery</span>
+    <span>Buy · Sell · Save</span>
+    <span>Amazon Verified Seller</span>
+    <span>Fast Delivery</span>
+    <span>Easy Returns</span>
+    <span>GrahakFirst.com</span>
+    <span>Fashion &amp; Clothing</span>
+    <span>Imitation Jewellery</span>
+    <span>Buy · Sell · Save</span>
+    <span>Amazon Verified Seller</span>
+    <span>Fast Delivery</span>
+    <span>Easy Returns</span>
+    <span>GrahakFirst.com</span>
+  </div>
+</div>
+
+<!-- ════ ABOUT ════ -->
+<section id="about">
+  <div class="sw">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-main-card">
+          <div class="amc-glow"></div>
+          <div class="amc-top">
+            <img src="grahakfirst-logo.png" alt="GrahakFirst"/>
+            <div class="amc-top-text">
+              <strong>GrahakFirst Retailers</strong>
+              <span>www.GrahakFirst.com</span>
+            </div>
+          </div>
+          <p class="amc-desc">
+            Started with one mission — make quality fashion and jewellery accessible
+            to every Indian household, through the trust of Amazon India.
+          </p>
+          <div class="amc-stats">
+            <div class="amc-stat"><strong>500+</strong><span>Products Listed</span></div>
+            <div class="amc-stat"><strong>4.8★</strong><span>Avg Rating</span></div>
+            <div class="amc-stat"><strong>98%</strong><span>Satisfaction</span></div>
+            <div class="amc-stat"><strong>2024</strong><span>Founded</span></div>
+          </div>
+        </div>
+        <div class="amz-verified-pill">
+          <span class="avp-dot"></span>
+          <span class="avp-text">Verified Amazon Seller · India</span>
+        </div>
+      </div>
+
+      <div class="about-content reveal" style="transition-delay:0.15s">
+        <div class="eyebrow">About GrahakFirst</div>
+        <h2 class="sec-title">We Put the <em><span class="orange">Customer</span></em><br/>First — Always</h2>
+        <p class="about-lead">
+          At <strong>GrahakFirst Retailers</strong>, we believe every customer deserves
+          <strong>premium quality</strong> without premium prices. We handpick fashion and
+          jewellery sold exclusively through Amazon, reaching shoppers across all of India.
+        </p>
+        <div class="features-list">
+          <div class="feat-item">
+            <div class="feat-icon">🎯</div>
+            <div class="feat-text">
+              <strong>Hand-Picked Products</strong>
+              <span>Every item personally reviewed for quality before listing on Amazon</span>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">💰</div>
+            <div class="feat-text">
+              <strong>Best Value Pricing</strong>
+              <span>Premium look and feel — without the premium price tag</span>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-icon">🌍</div>
+            <div class="feat-text">
+              <strong>PAN India Delivery</strong>
+              <span>Fast, tracked delivery to every pin code via Amazon logistics</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-btns">
+          <a href="https://www.amazon.in/s?me=GrahakFirst" class="btn-hero-primary" target="_blank" style="font-size:0.82rem;padding:0.82rem 1.8rem">View Our Store</a>
+          <a href="#contact" class="btn-hero-secondary" style="font-size:0.82rem;padding:0.82rem 1.8rem">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CATEGORIES ════ -->
+<section id="categories">
+  <div class="sw">
+    <div class="sh-center reveal" style="margin-bottom:3rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:0.8rem">What We Sell</div>
+      <h2 class="sec-title">Our Product <span class="orange">Collections</span></h2>
+      <p class="sec-sub">Two carefully curated categories — available exclusively on our Amazon storefront with fast PAN India delivery.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card reveal">
+        <div class="cat-card-banner">
+          <div class="cat-banner-glow"></div>
+          <span class="cat-number">01</span>
+          <div class="cat-icon-big">👗</div>
+          <div class="cat-name">Fashion &amp; Clothing</div>
+        </div>
+        <div class="cat-card-body">
+          <p class="cat-desc">Trendy, comfortable and affordable clothing for every modern Indian woman and man — from ethnic wear to everyday casuals, crafted for every taste and budget.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">Kurtis</span>
+            <span class="cat-tag">Sarees</span>
+            <span class="cat-tag">Tops</span>
+            <span class="cat-tag">Ethnic Wear</span>
+            <span class="cat-tag">Casual Wear</span>
+            <span class="cat-tag">Lehengas</span>
+          </div>
+          <a href="https://www.amazon.in/s?me=GrahakFirst" class="cat-cta" target="_blank">Shop Collection →</a>
+        </div>
+      </div>
+      <div class="cat-card reveal" style="transition-delay:0.15s">
+        <div class="cat-card-banner">
+          <div class="cat-banner-glow"></div>
+          <span class="cat-number">02</span>
+          <div class="cat-icon-big">💎</div>
+          <div class="cat-name">Imitation Jewellery</div>
+        </div>
+        <div class="cat-card-body">
+          <p class="cat-desc">Elegant, bold jewellery that gives you the look and feel of precious metals and gems at a fraction of the cost — perfect for weddings, festivals, and daily wear.</p>
+          <div class="cat-tags">
+            <span class="cat-tag">Necklace Sets</span>
+            <span class="cat-tag">Earrings</span>
+            <span class="cat-tag">Bangles</span>
+            <span class="cat-tag">Rings</span>
+            <span class="cat-tag">Anklets</span>
+            <span class="cat-tag">Maang Tikka</span>
+          </div>
+          <a href="https://www.amazon.in/s?me=GrahakFirst" class="cat-cta" target="_blank">Shop Collection →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WHY US ════ -->
+<section id="why">
+  <div class="sw">
+    <div class="sh-center reveal" style="margin-bottom:3rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:0.8rem">Why Choose Us</div>
+      <h2 class="sec-title">The <em><span class="blue">GrahakFirst</span></em> Commitment</h2>
+      <p class="sec-sub">Six reasons why Indian shoppers trust GrahakFirst for their fashion and jewellery needs.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <div class="why-title">Quality Guaranteed</div>
+        <p class="why-desc">Every product is personally inspected before going live. We only sell items we are proud to put our name on.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.08s">
+        <div class="why-icon">💰</div>
+        <div class="why-title">Unbeatable Value</div>
+        <p class="why-desc">We source smart and price fairly — premium-looking products at prices that won't break the bank.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.16s">
+        <div class="why-icon">🚚</div>
+        <div class="why-title">Fast PAN India Delivery</div>
+        <p class="why-desc">Powered by Amazon's logistics. Your order arrives quickly and safely, anywhere in India.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.06s">
+        <div class="why-icon">🔄</div>
+        <div class="why-title">Zero-Hassle Returns</div>
+        <p class="why-desc">We honor Amazon's full return policy. Not satisfied? Return it — no questions, no drama, no delay.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.14s">
+        <div class="why-icon">⭐</div>
+        <div class="why-title">Trusted by Buyers</div>
+        <p class="why-desc">Our Amazon rating reflects genuine reviews from real customers who keep coming back to us.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.22s">
+        <div class="why-icon">🔔</div>
+        <div class="why-title">New Arrivals Weekly</div>
+        <p class="why-desc">Fresh styles added every single week. Follow our Amazon store to never miss the latest drops.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ AMAZON CTA ════ -->
+<section id="amazon">
+  <div class="sw">
+    <div class="amz-band reveal">
+      <div class="amz-band-left">
+        <div class="eyebrow">Available on Amazon India</div>
+        <h2>Browse &amp; Buy Our Full<br/>Collection Right Now</h2>
+        <p>Every product we sell is on Amazon India — enjoy the security of India's most trusted marketplace with fast delivery, buyer protection, and easy hassle-free returns.</p>
+        <div class="amz-perks">
+          <div class="amz-perk">Amazon Buyer Protection</div>
+          <div class="amz-perk">Fast Fulfillment</div>
+          <div class="amz-perk">Secure Payments</div>
+          <div class="amz-perk">Easy Returns</div>
+          <div class="amz-perk">Nationwide Delivery</div>
+        </div>
+        <a href="https://www.amazon.in/s?me=GrahakFirst" class="amz-shop-btn" target="_blank">
+          🛒 &nbsp; Shop GrahakFirst on Amazon
+        </a>
+      </div>
+      <div class="amz-band-right">
+        <div>
+          <div class="amz-rating-big">4.8</div>
+          <div class="amz-stars">★★★★★</div>
+          <div class="amz-rating-label">Amazon Rating</div>
+        </div>
+        <div class="amz-divider"></div>
+        <div>
+          <div class="amz-customers-num">500+</div>
+          <div class="amz-customers-lbl">Happy Customers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TESTIMONIALS ════ -->
+<section id="testimonials">
+  <div class="sw">
+    <div class="sh-center reveal" style="margin-bottom:3rem">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:0.8rem">Customer Reviews</div>
+      <h2 class="sec-title">What Our <span class="orange">Customers</span> Say</h2>
+      <p class="sec-sub">Real reviews from verified Amazon buyers who shop with GrahakFirst.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-quote-mark">"</div>
+        <div class="test-top">
+          <div class="test-avatar">PS</div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+        <p class="test-body">"Ordered a kurti set and it arrived in just 2 days! The fabric quality was exactly as shown. Very happy with my purchase — will definitely order again from GrahakFirst!"</p>
+        <div class="test-footer">
+          <div><div class="test-name">Priya Sharma</div><div class="test-loc">New Delhi</div></div>
+          <span class="test-badge">Amazon Review</span>
+        </div>
+      </div>
+      <div class="test-card reveal" style="transition-delay:0.1s">
+        <div class="test-quote-mark">"</div>
+        <div class="test-top">
+          <div class="test-avatar">AP</div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+        <p class="test-body">"The imitation jewellery set looked absolutely stunning! Wore it to a wedding and received so many compliments. Looked 100% real at a fraction of the cost!"</p>
+        <div class="test-footer">
+          <div><div class="test-name">Anjali Patel</div><div class="test-loc">Ahmedabad</div></div>
+          <span class="test-badge">Amazon Review</span>
+        </div>
+      </div>
+      <div class="test-card reveal" style="transition-delay:0.2s">
+        <div class="test-quote-mark">"</div>
+        <div class="test-top">
+          <div class="test-avatar">RV</div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+        <p class="test-body">"Great pricing and fast delivery. Returned one item and the refund came through in 3 days — zero hassle. GrahakFirst is a seller you can genuinely trust!"</p>
+        <div class="test-footer">
+          <div><div class="test-name">Rahul Verma</div><div class="test-loc">Bhopal, MP</div></div>
+          <span class="test-badge">Amazon Review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact">
+  <div class="sw">
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="reveal">
+        <div class="eyebrow">Contact Us</div>
+        <h2 class="sec-title">Let's <span class="orange">Talk</span></h2>
+        <p class="sec-sub contact-left" style="margin-bottom:2.5rem">Have a query about an order, a product question, or a bulk purchase enquiry? We're here to help — reach out and we'll respond promptly.</p>
+        <div class="contact-item">
+          <div class="ci-icon">🌐</div>
+          <div class="ci-text"><label>Website</label><p>www.GrahakFirst.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📧</div>
+          <div class="ci-text"><label>Email</label><p>support@grahakfirst.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">💬</div>
+          <div class="ci-text"><label>WhatsApp</label><p>+91 XXXXX XXXXX</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div class="ci-text"><label>Location</label><p>India (Nationwide)</p></div>
+        </div>
+        <a href="https://www.amazon.in/s?me=GrahakFirst" class="contact-amz-cta" target="_blank">
+          <div class="cac-icon">🛒</div>
+          <div class="cac-text">
+            <strong>Shop on Amazon India</strong>
+            <span>Search "GrahakFirst" on amazon.in</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal" style="transition-delay:0.15s">
+        <div class="contact-form" id="cForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" placeholder="e.g. Priya Sharma" id="fn"/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 98765 43210"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" placeholder="you@email.com" id="fe"/>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option value="">Select a topic...</option>
+              <option>Order Enquiry</option>
+              <option>Product Question</option>
+              <option>Return / Refund Help</option>
+              <option>Bulk / Wholesale Order</option>
+              <option>Supplier / Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message *</label>
+            <textarea placeholder="Tell us how we can help you..." id="fm"></textarea>
+          </div>
+          <p class="form-note">* Required fields. We typically respond within 24 hours.</p>
+          <button class="btn-submit" onclick="sendForm()">Send Message →</button>
+        </div>
+        <div class="form-success" id="fSucc">
+          ✅ &nbsp; Message received! We'll get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="grahakfirst-logo.png" alt="GrahakFirst"/>
+      <div class="fd">www.GrahakFirst.com · Buy · Sell · Save</div>
+      <p>Your trusted Amazon reseller for fashion wear and imitation jewellery. Quality products delivered to every corner of India — with a customer-first promise.</p>
+      <div class="social-row">
+        <a href="#" class="soc-btn">f</a>
+        <a href="#" class="soc-btn">in</a>
+        <a href="#" class="soc-btn">ig</a>
+        <a href="#" class="soc-btn">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#categories">Collections</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="#">Fashion &amp; Clothing</a></li>
+        <li><a href="#">Imitation Jewellery</a></li>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="#">Sale Items</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Order Tracking</a></li>
+        <li><a href="#">Returns &amp; Refunds</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 <span>GrahakFirst Retailers</span>. All Rights Reserved.</p>
+    <p>Made with ❤️ for India's Shoppers · <span>www.GrahakFirst.com</span></p>
+  </div>
+</footer>
+
+<!-- ════ FLOATING BUTTONS ════ -->
+<a href="https://wa.me/91XXXXXXXXXX" class="wa-btn" target="_blank" title="Chat on WhatsApp">💬</a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<script>
+// Navbar scroll effect
+const nav = document.getElementById('navbar');
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  btt.classList.toggle('vis', window.scrollY > 400);
+});
+
+// Mobile menu
+document.getElementById('hbg').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+document.getElementById('mCls').addEventListener('click', closeMob);
+function closeMob() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// Close mobile menu on outside click
+document.getElementById('mobileMenu').addEventListener('click', function(e) {
+  if (e.target === this) closeMob();
+});
+
+// Scroll reveal with stagger
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), 60);
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 90) current = s.id;
+  });
+  navLinks.forEach(a => {
+    const active = a.getAttribute('href') === '#' + current;
+    a.style.color = active ? 'var(--white)' : '';
+    a.style.background = active ? 'rgba(255,255,255,0.06)' : '';
+  });
+}, { passive: true });
+
+// Contact form
+function sendForm() {
+  const name  = document.getElementById('fn').value.trim();
+  const email = document.getElementById('fe').value.trim();
+  const msg   = document.getElementById('fm').value.trim();
+  if (!name)  { alert('Please enter your name.'); return; }
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  if (!msg)   { alert('Please enter your message.'); return; }
+  document.getElementById('cForm').style.display = 'none';
+  document.getElementById('fSucc').style.display = 'block';
+}
+</script>
+</body>
+</html>
