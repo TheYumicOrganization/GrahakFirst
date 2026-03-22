@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#0a0a0a"/>
+<meta name="description" content="GrahakFirst Retailers – Fashion & Imitation Jewellery on Amazon India. Owner: Brijesh Kumar Ahirwar. Nowgong, MP. Call: 9752403398"/>
+<title>GrahakFirst Retailers | Fashion & Jewellery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════
+   ROOT
+═══════════════════════════════════ */
+:root{
+  --bg:#0a0a0a; --bg2:#111; --bg3:#181818; --bg4:#1f1f1f;
+  --or:#f97316; --or2:#fb923c; --or-gl:rgba(249,115,22,0.13);
+  --bl:#3b82f6; --bl2:#60a5fa; --bl-gl:rgba(59,130,246,0.11);
+  --gn:#22c55e;
+  --w:#fff; --t1:#f0f0f0; --t2:#9a9a9a; --t3:#555;
+  --brd:rgba(255,255,255,0.08); --brd2:rgba(255,255,255,0.14);
+  --radius:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);color:var(--t1);
+  overflow-x:hidden;line-height:1.6;
+  /* Bottom padding for mobile nav */
+  padding-bottom:0;
+}
+body.mob-nav-active{padding-bottom:72px}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
+
+/* ═══════════════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════════════ */
+.ann{
+  background:linear-gradient(90deg,#ea6a05,var(--or),var(--or2),#ea6a05);
+  background-size:300% 100%;animation:gradShift 5s linear infinite;
+  padding:0.52rem 1rem;text-align:center;
+  font-size:0.7rem;font-weight:700;color:#000;letter-spacing:0.04em;
+}
+
+/* ═══════════════════════════════════
+   DESKTOP NAVBAR
+═══════════════════════════════════ */
+#deskNav{
+  position:sticky;top:0;z-index:900;
+  background:rgba(10,10,10,0.94);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--brd);
+  transition:box-shadow 0.3s;
+}
+#deskNav.scrolled{box-shadow:0 2px 30px rgba(0,0,0,0.7)}
+.dnav-inner{
+  max-width:1280px;margin:0 auto;padding:0 2rem;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+}
+.dnav-logo img{height:42px;width:auto;object-fit:contain}
+.dnav-links{display:flex;list-style:none;gap:0.15rem}
+.dnav-links a{
+  padding:0.42rem 0.82rem;font-size:0.8rem;font-weight:500;
+  color:var(--t2);border-radius:6px;
+  transition:color 0.2s,background 0.2s;
+}
+.dnav-links a:hover,.dnav-links a.act{color:var(--t1);background:rgba(255,255,255,0.06)}
+.dnav-right{display:flex;align-items:center;gap:0.55rem}
+.dn-call{
+  display:inline-flex;align-items:center;gap:5px;
+  border:1.5px solid rgba(255,255,255,0.1);color:var(--t2);background:transparent;
+  padding:0.42rem 0.9rem;border-radius:7px;
+  font-size:0.73rem;font-weight:600;cursor:pointer;white-space:nowrap;
+  transition:border-color 0.2s,color 0.2s;
+}
+.dn-call:hover{border-color:var(--bl);color:var(--bl2)}
+.dn-wa{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(37,211,102,0.09);border:1.5px solid rgba(37,211,102,0.18);
+  color:#25d366;padding:0.42rem 0.9rem;border-radius:7px;
+  font-size:0.73rem;font-weight:600;cursor:pointer;white-space:nowrap;
+  transition:background 0.2s,border-color 0.2s;
+}
+.dn-wa:hover{background:rgba(37,211,102,0.16);border-color:rgba(37,211,102,0.35)}
+.dn-shop{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--or);color:#000;
+  padding:0.46rem 1.05rem;border-radius:7px;
+  font-size:0.76rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;
+  transition:background 0.2s,transform 0.15s;
+}
+.dn-shop:hover{background:var(--or2);transform:translateY(-1px)}
+.hbg{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.hbg span{width:22px;height:2px;background:var(--t2);border-radius:2px;display:block;transition:all 0.3s}
+
+/* ═══════════════════════════════════
+   SLIDE-OUT MOBILE MENU (tablet/small desktop)
+═══════════════════════════════════ */
+#slideMenu{
+  display:none;position:fixed;inset:0;z-index:1100;
+  background:var(--bg2);flex-direction:column;overflow-y:auto;
+}
+#slideMenu.open{display:flex}
+.sm-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.5rem;border-bottom:1px solid var(--brd);
+}
+.sm-head img{height:38px;object-fit:contain}
+.sm-x{background:none;border:none;color:var(--t2);font-size:1.7rem;cursor:pointer;line-height:1}
+.sm-links{display:flex;flex-direction:column;padding:1rem 1.5rem;gap:0.15rem;flex:1}
+.sm-links a{
+  font-size:0.95rem;font-weight:600;color:var(--t1);
+  padding:0.88rem 1rem;border-radius:8px;
+  display:flex;align-items:center;gap:10px;
+  transition:background 0.2s,color 0.2s;
+}
+.sm-links a:hover{background:var(--bg3);color:var(--or)}
+.sm-links .smi{font-size:1.1rem;flex-shrink:0}
+.sm-actions{display:flex;flex-direction:column;gap:0.7rem;padding:1.5rem;border-top:1px solid var(--brd)}
+.sma{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:0.9rem;border-radius:10px;
+  font-size:0.88rem;font-weight:700;text-align:center;
+  border:none;cursor:pointer;transition:opacity 0.2s;
+}
+.sma:hover{opacity:0.85}
+.sma-call{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.22)!important}
+.sma-wa{background:rgba(37,211,102,0.1);color:#25d366;border:1.5px solid rgba(37,211,102,0.2)!important}
+.sma-amz{background:var(--or);color:#000}
+.sm-owner{padding:0.5rem 1.5rem 1.5rem;text-align:center;font-size:0.64rem;color:var(--t3)}
+.sm-owner span{color:var(--or);font-weight:600}
+
+/* ═══════════════════════════════════
+   MOBILE BOTTOM NAV (≤768px)
+═══════════════════════════════════ */
+#mobileBottomNav{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:990;
+  background:rgba(17,17,17,0.97);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid var(--brd);
+  padding:0 0 env(safe-area-inset-bottom,0);
+}
+.mbn-inner{
+  display:flex;align-items:stretch;height:60px;
+}
+.mbn-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:3px;
+  font-size:0.58rem;font-weight:600;color:var(--t3);
+  cursor:pointer;border:none;background:none;
+  transition:color 0.2s;padding:0 4px;
+  -webkit-tap-highlight-color:transparent;
+}
+.mbn-item:hover,.mbn-item.act{color:var(--or)}
+.mbn-item svg,.mbn-icon{font-size:1.22rem;line-height:1}
+.mbn-item.act .mbn-icon-wrap{
+  background:var(--or-gl);
+  border-radius:8px;padding:2px 10px;
+}
+/* Center call-to-action button */
+.mbn-cta{
+  flex:1.2;display:flex;align-items:center;justify-content:center;
+  padding:8px 6px;
+}
+.mbn-cta-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--or);color:#000;
+  font-size:1.35rem;border:none;cursor:pointer;
+  box-shadow:0 0 18px rgba(249,115,22,0.45);
+  transition:transform 0.15s,box-shadow 0.2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mbn-cta-btn:active{transform:scale(0.93)}
+
+/* Mobile FAB WhatsApp */
+.fab-wa{
+  position:fixed;right:1.2rem;bottom:80px;z-index:989;
+  width:50px;height:50px;border-radius:50%;
+  background:#25d366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.35rem;
+  box-shadow:0 4px 22px rgba(37,211,102,0.4);
+  transition:transform 0.2s,box-shadow 0.2s;
+  animation:waf 3s ease-in-out infinite;
+}
+.fab-wa.desktop-fab{bottom:1.7rem;right:1.7rem;width:54px;height:54px;font-size:1.45rem}
+.fab-wa:hover{transform:scale(1.1)}
+
+#btt{
+  position:fixed;bottom:1.7rem;left:1.7rem;z-index:997;
+  width:38px;height:38px;border-radius:8px;
+  background:var(--bg3);border:1px solid var(--brd);
+  color:var(--t2);font-size:0.9rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;transform:translateY(8px);
+  transition:opacity 0.3s,transform 0.3s,background 0.2s,color 0.2s;
+}
+#btt.vis{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--or);color:#000;border-color:var(--or)}
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+#hero{
+  min-height:calc(100vh - 102px);
+  background:var(--bg);
+  display:flex;align-items:center;
+  padding:4rem 2rem 3rem;
+  position:relative;overflow:hidden;
+}
+.hglow1{position:absolute;top:-150px;right:-100px;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.1) 0%,transparent 65%);pointer-events:none;animation:drift 11s ease-in-out infinite}
+.hglow2{position:absolute;bottom:-120px;left:-120px;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.08) 0%,transparent 65%);pointer-events:none;animation:drift 13s ease-in-out infinite reverse}
+.hdots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.hero-in{
+  max-width:1280px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1.15fr 0.85fr;
+  gap:3rem;align-items:center;position:relative;z-index:2;
+}
+.hl{opacity:0;animation:up 0.8s 0.1s ease forwards}
+.live-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--or-gl);border:1px solid rgba(249,115,22,0.22);
+  padding:0.36rem 1rem;border-radius:100px;
+  font-size:0.68rem;font-weight:700;color:var(--or);
+  letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.4rem;
+}
+.ldot{width:7px;height:7px;background:var(--gn);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+h1.htitle{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(2.2rem,4.5vw,3.8rem);
+  font-weight:900;color:var(--w);
+  line-height:1.07;letter-spacing:-0.03em;margin-bottom:1.2rem;
+}
+h1.htitle .o{color:var(--or)}
+h1.htitle .b{color:var(--bl2)}
+.hdesc{font-size:0.96rem;color:var(--t2);line-height:1.78;max-width:480px;margin-bottom:2rem}
+.hctas{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-amz{display:inline-flex;align-items:center;gap:7px;background:#ff9900;color:#000;padding:0.82rem 1.9rem;border-radius:9px;font-size:0.86rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 0 26px rgba(255,153,0,0.28);transition:background 0.2s,transform 0.15s}
+.btn-amz:hover{background:#ffb733;transform:translateY(-2px)}
+.btn-call-h{display:inline-flex;align-items:center;gap:7px;background:var(--bl-gl);border:1.5px solid rgba(59,130,246,0.28);color:var(--bl2);padding:0.82rem 1.7rem;border-radius:9px;font-size:0.86rem;font-weight:700;cursor:pointer;transition:background 0.2s,border-color 0.2s,transform 0.15s}
+.btn-call-h:hover{background:rgba(59,130,246,0.18);border-color:var(--bl);transform:translateY(-2px)}
+.btn-wa-h{display:inline-flex;align-items:center;gap:7px;background:rgba(37,211,102,0.09);border:1.5px solid rgba(37,211,102,0.22);color:#25d366;padding:0.82rem 1.7rem;border-radius:9px;font-size:0.86rem;font-weight:700;cursor:pointer;transition:background 0.2s,border-color 0.2s,transform 0.15s}
+.btn-wa-h:hover{background:rgba(37,211,102,0.16);border-color:rgba(37,211,102,0.45);transform:translateY(-2px)}
+.hchips{display:flex;align-items:center;flex-wrap:wrap;gap:0.6rem}
+.chip{display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--brd);padding:0.32rem 0.75rem;border-radius:100px;font-size:0.68rem;font-weight:600;color:var(--t2)}
+.chip .ck{color:var(--gn);font-weight:900}
+/* Hero right */
+.hr{opacity:0;animation:up 0.9s 0.3s ease forwards;display:flex;flex-direction:column;gap:0.9rem}
+.logo-card{background:var(--bg2);border:1px solid var(--brd);border-radius:18px;padding:1.8rem;text-align:center;position:relative;overflow:hidden}
+.logo-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(249,115,22,0.07) 0%,transparent 60%)}
+.logo-card img{height:84px;width:auto;object-fit:contain;margin:0 auto 0.6rem;position:relative;z-index:1}
+.logo-tag{font-size:0.6rem;font-weight:700;color:var(--t3);letter-spacing:0.18em;text-transform:uppercase}
+.stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem}
+.st{background:var(--bg2);border:1px solid var(--brd);border-radius:12px;padding:1rem 0.7rem;text-align:center;transition:border-color 0.25s,transform 0.2s;cursor:default}
+.st:hover{border-color:rgba(249,115,22,0.28);transform:translateY(-3px)}
+.st-ic{font-size:1.2rem;margin-bottom:0.3rem}
+.st-n{font-size:1.3rem;font-weight:900;color:var(--w);line-height:1}
+.st-l{font-size:0.56rem;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
+.qc-row{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.1rem 1.3rem;display:grid;grid-template-columns:1fr 1fr;gap:0.7rem}
+.qcb{display:flex;align-items:center;justify-content:center;gap:6px;padding:0.7rem 0.5rem;border-radius:9px;font-size:0.74rem;font-weight:700;cursor:pointer;border:none;transition:opacity 0.2s,transform 0.15s}
+.qcb:hover{opacity:0.85;transform:translateY(-1px)}
+.qcb-c{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.18)!important}
+.qcb-w{background:rgba(37,211,102,0.09);color:#25d366;border:1.5px solid rgba(37,211,102,0.16)!important}
+.amz-row{background:var(--bg2);border:1px solid rgba(255,153,0,0.14);border-radius:12px;padding:0.95rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:border-color 0.2s}
+.amz-row:hover{border-color:rgba(255,153,0,0.28)}
+.amz-lt{font-size:1rem;font-weight:900}
+.amz-lt .ay{color:#ff9900}.amz-lt .am{color:var(--t2)}
+.amz-rt{font-size:0.62rem;color:var(--t3);text-align:right;font-weight:600}
+.amz-rt span{display:block;color:var(--gn);font-weight:700;font-size:0.68rem}
+
+/* ═══════════════════════════════════
+   TICKER
+═══════════════════════════════════ */
+.ticker{background:var(--or);padding:0.65rem 0;overflow:hidden;white-space:nowrap}
+.ti{display:inline-block;animation:tick 24s linear infinite}
+.ti span{font-size:0.68rem;font-weight:800;color:#000;letter-spacing:0.08em;text-transform:uppercase;padding:0 2rem}
+.ti span::before{content:'◆';margin-right:2rem;opacity:0.3;font-size:0.42rem}
+
+/* TRUST BAR */
+.tbar{background:var(--bg2);border-bottom:1px solid var(--brd)}
+.tbar-in{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:stretch;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tbar-in::-webkit-scrollbar{display:none}
+.tbi{display:flex;align-items:center;gap:10px;padding:1rem 1.8rem;flex-shrink:0;border-right:1px solid var(--brd)}
+.tbi:last-child{border-right:none}
+.tbi-ic{width:36px;height:36px;border-radius:9px;background:var(--or-gl);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.tbi-t strong{display:block;font-size:0.78rem;font-weight:700;color:var(--t1)}
+.tbi-t span{font-size:0.62rem;color:var(--t3)}
+
+/* SECTIONS */
+section{padding:5.5rem 2rem}
+.mw{max-width:1280px;margin:0 auto}
+.ey{display:inline-flex;align-items:center;gap:7px;font-size:0.67rem;font-weight:800;color:var(--or);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem}
+.ey::before{content:'';width:16px;height:2px;background:var(--or);border-radius:1px;display:block}
+.sh2{font-family:'Sora',sans-serif;font-size:clamp(1.8rem,3vw,2.55rem);font-weight:900;color:var(--w);line-height:1.13;letter-spacing:-0.025em;margin-bottom:0.9rem}
+.sh2 .o{color:var(--or)}.sh2 .b{color:var(--bl2)}
+.sub{font-size:0.87rem;color:var(--t2);line-height:1.75;max-width:500px}
+.ctr{text-align:center}.ctr .sub{margin:0 auto}.ctr .ey{display:flex;justify-content:center}.ctr .ey::before{display:none}
+.shdr{margin-bottom:3rem}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.acard{background:var(--bg3);border:1px solid var(--brd);border-radius:20px;padding:2.5rem;position:relative;overflow:hidden}
+.acgl{position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.12) 0%,transparent 70%);pointer-events:none}
+.ac-top{display:flex;align-items:center;gap:12px;padding-bottom:1.4rem;margin-bottom:1.4rem;border-bottom:1px solid var(--brd)}
+.ac-top img{height:46px;object-fit:contain}
+.ac-top strong{display:block;font-size:0.88rem;font-weight:800;color:var(--t1)}
+.ac-top span{font-size:0.6rem;color:var(--t3);letter-spacing:0.07em}
+.acdesc{font-size:0.8rem;color:var(--t2);line-height:1.8;margin-bottom:1.7rem}
+.acstats{display:grid;grid-template-columns:1fr 1fr;gap:0.72rem;margin-bottom:1.5rem}
+.acs{background:var(--bg4);border:1px solid var(--brd);border-radius:10px;padding:1rem}
+.acs strong{display:block;font-size:1.4rem;font-weight:900;color:var(--or);line-height:1}
+.acs span{font-size:0.58rem;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
+.vpill{display:flex;align-items:center;gap:8px;background:var(--bg4);border:1px solid rgba(249,115,22,0.2);border-radius:10px;padding:0.85rem 1.1rem}
+.vpdot{width:8px;height:8px;border-radius:50%;background:var(--gn);animation:blink 2s infinite;flex-shrink:0}
+.vpt strong{display:block;font-size:0.73rem;font-weight:700;color:var(--t1)}
+.vpt span{font-size:0.6rem;color:var(--t3);margin-top:1px;display:block}
+.alead{font-size:0.9rem;color:var(--t2);line-height:1.8;margin-bottom:1.8rem}
+.alead strong{color:var(--t1);font-weight:700}
+.flist{display:flex;flex-direction:column;gap:0.85rem;margin-bottom:2.2rem}
+.fi{display:flex;align-items:flex-start;gap:12px;background:var(--bg3);border:1px solid var(--brd);border-radius:10px;padding:1rem 1.2rem;transition:border-color 0.25s}
+.fi:hover{border-color:rgba(249,115,22,0.25)}
+.fi-ic{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.fi-t strong{display:block;font-size:0.82rem;font-weight:700;color:var(--t1);margin-bottom:2px}
+.fi-t span{font-size:0.72rem;color:var(--t2)}
+.abtns{display:flex;gap:0.85rem;flex-wrap:wrap}
+.btn-main{display:inline-flex;align-items:center;gap:7px;background:var(--or);color:#000;padding:0.82rem 1.8rem;border-radius:9px;font-size:0.84rem;font-weight:800;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s}
+.btn-main:hover{background:var(--or2);transform:translateY(-1px)}
+.btn-sec{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1.5px solid var(--brd2);color:var(--t2);padding:0.82rem 1.8rem;border-radius:9px;font-size:0.84rem;font-weight:600;cursor:pointer;transition:border-color 0.2s,color 0.2s}
+.btn-sec:hover{border-color:var(--or);color:var(--or)}
+
+/* CATEGORIES */
+#categories{background:var(--bg)}
+.catg{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.ccard{background:var(--bg2);border:1px solid var(--brd);border-radius:18px;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;cursor:pointer}
+.ccard:hover{transform:translateY(-6px);border-color:var(--or);box-shadow:0 20px 50px rgba(249,115,22,0.08)}
+.cbanner{padding:2.5rem;position:relative;overflow:hidden;min-height:155px;display:flex;flex-direction:column;justify-content:flex-end}
+.ccard:nth-child(1) .cbanner{background:linear-gradient(135deg,#050510 0%,#0d1830 100%)}
+.ccard:nth-child(2) .cbanner{background:linear-gradient(135deg,#0a0500 0%,#1a0d00 100%)}
+.cbg{position:absolute;top:-30px;right:-30px;width:170px;height:170px;border-radius:50%;filter:blur(38px);pointer-events:none}
+.ccard:nth-child(1) .cbg{background:rgba(59,130,246,0.35)}
+.ccard:nth-child(2) .cbg{background:rgba(249,115,22,0.35)}
+.cnum{position:absolute;top:1rem;right:1.5rem;font-size:4.5rem;font-weight:900;color:rgba(255,255,255,0.04);line-height:1;font-family:'Sora',sans-serif;pointer-events:none}
+.cem{font-size:2.7rem;display:block;margin-bottom:0.5rem;position:relative;z-index:1}
+.cnm{font-family:'Sora',sans-serif;font-size:1.45rem;font-weight:800;color:var(--w);position:relative;z-index:1}
+.cbody{padding:1.8rem 2.2rem 2rem}
+.cdesc{font-size:0.79rem;color:var(--t2);line-height:1.78;margin-bottom:1.2rem}
+.ctags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.4rem}
+.ctag{font-size:0.61rem;font-weight:700;padding:0.26rem 0.7rem;border-radius:100px;border:1px solid var(--brd);color:var(--t2);transition:border-color 0.2s,color 0.2s}
+.ccard:hover .ctag{border-color:rgba(249,115,22,0.3);color:var(--or)}
+.ccta{display:inline-flex;align-items:center;gap:5px;font-size:0.78rem;font-weight:700;color:var(--or);transition:gap 0.2s}
+.ccard:hover .ccta{gap:9px}
+
+/* WHY */
+#why{background:var(--bg2)}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.wcard{background:var(--bg3);border:1px solid var(--brd);border-radius:14px;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s}
+.wcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--or),var(--bl));transform:scaleX(0);transition:transform 0.35s;transform-origin:left}
+.wcard:hover{border-color:rgba(249,115,22,0.22);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.35)}
+.wcard:hover::after{transform:scaleX(1)}
+.wic{width:48px;height:48px;background:var(--or-gl);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.1rem}
+.wt{font-size:0.9rem;font-weight:700;color:var(--t1);margin-bottom:0.45rem}
+.wd{font-size:0.76rem;color:var(--t2);line-height:1.75}
+
+/* FAQ */
+#faq{background:var(--bg)}
+.faq-wrap{max-width:760px;margin:0 auto}
+.faq-item{background:var(--bg2);border:1px solid var(--brd);border-radius:12px;margin-bottom:0.75rem;overflow:hidden;transition:border-color 0.25s}
+.faq-item.open{border-color:rgba(249,115,22,0.25)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;cursor:pointer;font-size:0.88rem;font-weight:600;color:var(--t1);user-select:none}
+.faq-q:hover{color:var(--w)}
+.faq-plus{width:28px;height:28px;border-radius:50%;background:var(--or-gl);border:1px solid rgba(249,115,22,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--or);flex-shrink:0;transition:transform 0.3s,background 0.2s}
+.faq-item.open .faq-plus{transform:rotate(45deg);background:var(--or);color:#000;border-color:var(--or)}
+.faq-a{display:none;padding:0 1.5rem 1.3rem;font-size:0.81rem;color:var(--t2);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+/* CONTACT */
+#contact{background:var(--bg2)}
+.contact-g{display:grid;grid-template-columns:1fr 1.3fr;gap:4.5rem;align-items:start}
+.cdet{display:flex;align-items:flex-start;gap:13px;margin-bottom:1.3rem}
+.cdet-ic{width:44px;height:44px;border-radius:10px;background:var(--bg3);border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cdet-t label{display:block;font-size:0.58rem;font-weight:800;color:var(--or);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2px}
+.cdet-t p,.cdet-t a{font-size:0.8rem;font-weight:500;color:var(--t1);transition:color 0.2s}
+.cdet-t a:hover{color:var(--or)}
+/* Call+WA action row */
+.c-actions{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem;margin-bottom:1.5rem}
+.ca{display:flex;align-items:center;justify-content:center;gap:8px;padding:0.9rem;border-radius:11px;font-size:0.82rem;font-weight:700;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s}
+.ca:hover{opacity:0.85;transform:translateY(-1px)}
+.ca-call{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.22)!important}
+.ca-wa{background:rgba(37,211,102,0.1);color:#25d366;border:1.5px solid rgba(37,211,102,0.18)!important}
+.owner-card{background:var(--bg3);border:1px solid var(--brd);border-radius:14px;padding:1.3rem;display:flex;align-items:center;gap:14px;transition:border-color 0.25s}
+.owner-card:hover{border-color:rgba(249,115,22,0.2)}
+.oc-av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--or),var(--bl));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#000;flex-shrink:0}
+.oc-t strong{display:block;font-size:0.83rem;font-weight:700;color:var(--t1)}
+.oc-t span{font-size:0.65rem;color:var(--t3)}
+.oc-t a{font-size:0.65rem;color:var(--or)}
+/* Form */
+.cform{display:flex;flex-direction:column;gap:1.1rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:0.65rem;font-weight:700;color:var(--t2);letter-spacing:0.07em;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{background:var(--bg3);border:1.5px solid var(--brd);border-radius:8px;padding:0.8rem 1rem;font-family:'Inter',sans-serif;font-size:0.81rem;color:var(--t1);outline:none;transition:border-color 0.2s,background 0.2s}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--t3)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--or);background:var(--bg4)}
+.fg textarea{height:120px;resize:none}
+.fg select{cursor:pointer}
+.fg select option{background:var(--bg2)}
+.fnote{font-size:0.66rem;color:var(--t3)}
+.bsub{background:var(--or);color:#000;padding:1rem;border-radius:9px;font-family:'Inter',sans-serif;font-size:0.84rem;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 0 24px rgba(249,115,22,0.22);transition:background 0.2s,transform 0.15s}
+.bsub:hover{background:var(--or2);transform:translateY(-1px)}
+.fsuccess{display:none;background:var(--bg3);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:2rem;text-align:center;color:var(--gn);font-size:0.86rem;font-weight:600}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--bg)}
+.test-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.tcard{background:var(--bg2);border:1px solid var(--brd);border-radius:16px;padding:1.7rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s}
+.tcard:hover{border-color:rgba(249,115,22,0.22);transform:translateY(-4px)}
+.tqm{position:absolute;top:0.8rem;right:1.4rem;font-size:3.8rem;line-height:1;color:var(--or);opacity:0.07;font-family:'Sora',sans-serif;pointer-events:none}
+.ttop{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
+.tav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--or),var(--bl));display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:800;color:#fff;flex-shrink:0}
+.tstars{color:#fbbf24;font-size:0.82rem;letter-spacing:1px}
+.tbody{font-size:0.79rem;color:var(--t2);line-height:1.78;margin-bottom:1.1rem;font-style:italic}
+.tfoot{border-top:1px solid var(--brd);padding-top:0.9rem;display:flex;justify-content:space-between;align-items:center}
+.tname{font-size:0.77rem;font-weight:700;color:var(--t1)}
+.tloc{font-size:0.6rem;color:var(--t3)}
+.tbadge{font-size:0.57rem;font-weight:700;color:#ff9900;background:rgba(255,153,0,0.1);padding:3px 7px;border-radius:100px}
+
+/* FOOTER */
+footer{background:#050505;border-top:1px solid var(--brd);padding:4rem 2rem 1.5rem}
+.fg-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid var(--brd)}
+.fbrand img{height:52px;object-fit:contain;margin-bottom:0.75rem}
+.fdom{font-size:0.6rem;color:var(--t3);letter-spacing:0.1em;margin-bottom:0.9rem}
+.fbrand-p{font-size:0.73rem;color:var(--t2);line-height:1.78;max-width:265px;margin-bottom:1.3rem}
+.socrow{display:flex;gap:0.55rem}
+.socbtn{width:33px;height:33px;border-radius:8px;border:1px solid var(--brd);display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:0.72rem;font-weight:700;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.socbtn:hover{background:var(--or-gl);color:var(--or);border-color:rgba(249,115,22,0.25)}
+.fcol h4{font-size:0.6rem;font-weight:800;color:var(--or);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1.1rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.fcol ul a{font-size:0.75rem;color:var(--t2);transition:color 0.2s}
+.fcol ul a:hover{color:var(--t1)}
+.fowner-row{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.2rem 0 0.8rem;border-bottom:1px solid var(--brd);margin-bottom:1rem}
+.fol{font-size:0.68rem;color:var(--t3)}
+.fol strong{color:var(--or);font-weight:700}
+.for-links{display:flex;gap:0.6rem}
+.forl{display:inline-flex;align-items:center;gap:5px;font-size:0.68rem;font-weight:600;padding:0.3rem 0.7rem;border-radius:6px;transition:opacity 0.2s}
+.forl:hover{opacity:0.78}
+.forl-c{color:var(--bl2);background:var(--bl-gl)}
+.forl-w{color:#25d366;background:rgba(37,211,102,0.08)}
+.fbot{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:0.64rem;color:var(--t3)}
+.fbot span{color:var(--t2)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.rv.visible{opacity:1;transform:translateY(0)}
+
+/* KEYFRAMES */
+@keyframes gradShift{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.7)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(18px,-22px)}}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — TABLET
+═══════════════════════════════════ */
+@media(max-width:1100px){
+  .hero-in{grid-template-columns:1fr;gap:2.5rem}
+  .about-g{grid-template-columns:1fr;gap:3rem}
+  .why-g{grid-template-columns:1fr 1fr}
+  .test-g{grid-template-columns:1fr 1fr}
+  .fg-grid{grid-template-columns:1fr 1fr}
+  .contact-g{grid-template-columns:1fr;gap:3rem}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — MOBILE (≤768px)
+   Full mobile GUI
+═══════════════════════════════════ */
+@media(max-width:768px){
+  /* Show mobile bottom nav, hide desktop nav links */
+  #mobileBottomNav{display:block}
+  body{padding-bottom:72px}
+  .fab-wa.desktop-fab{bottom:84px;right:1.2rem;width:50px;height:50px}
+  #btt{display:none}
+  .dnav-links,.dnav-right{display:none}
+  .hbg{display:flex}
+  .dnav-inner{padding:0 1rem;height:58px}
+  .dnav-logo img{height:36px}
+
+  /* Announcement bar */
+  .ann{font-size:0.62rem;padding:0.45rem 0.8rem}
+
+  /* Hero mobile */
+  #hero{min-height:auto;padding:2.5rem 1.2rem 2rem}
+  h1.htitle{font-size:2rem;margin-bottom:1rem}
+  .hdesc{font-size:0.88rem;margin-bottom:1.5rem}
+  .live-pill{font-size:0.62rem;padding:0.3rem 0.8rem;margin-bottom:1.1rem}
+  .hctas{flex-direction:column;gap:0.7rem}
+  .hctas a{justify-content:center;text-align:center;padding:0.9rem;font-size:0.9rem;border-radius:12px}
+  .hchips{gap:0.5rem}
+  .chip{font-size:0.64rem}
+  /* Hero right on mobile — simplified */
+  .hr{gap:0.75rem}
+  .logo-card img{height:70px}
+  .stat3{gap:0.6rem}
+  .st{padding:0.85rem 0.5rem}
+  .st-n{font-size:1.1rem}
+  .qc-row{grid-template-columns:1fr 1fr}
+  .qcb{font-size:0.7rem;padding:0.65rem 0.4rem}
+
+  /* Trust bar mobile scroll */
+  .tbar-in{padding:0 0.5rem}
+  .tbi{padding:0.9rem 1rem}
+  .tbi-t strong{font-size:0.72rem}
+  .tbi-t span{font-size:0.58rem}
+
+  /* Sections */
+  section{padding:3.5rem 1.2rem}
+  .shdr{margin-bottom:2.2rem}
+  .sh2{font-size:1.75rem}
+  .sub{font-size:0.84rem}
+
+  /* About */
+  .acard{padding:1.8rem}
+  .acstats{gap:0.6rem}
+  .acs strong{font-size:1.2rem}
+
+  /* Categories - single col */
+  .catg{grid-template-columns:1fr;gap:1.1rem}
+  .cbanner{padding:2rem;min-height:130px}
+  .cem{font-size:2.3rem}
+  .cnm{font-size:1.25rem}
+  .cbody{padding:1.4rem 1.6rem 1.6rem}
+
+  /* Why - 2 col on mobile */
+  .why-g{grid-template-columns:1fr 1fr;gap:0.85rem}
+  .wcard{padding:1.4rem 1.2rem}
+  .wic{width:40px;height:40px;font-size:1.1rem;margin-bottom:0.85rem}
+  .wt{font-size:0.82rem}
+  .wd{font-size:0.72rem}
+
+  /* FAQ */
+  .faq-q{font-size:0.82rem;padding:1rem 1.2rem}
+  .faq-a{padding:0 1.2rem 1.1rem;font-size:0.78rem}
+
+  /* Contact */
+  .frow{grid-template-columns:1fr}
+  .c-actions{grid-template-columns:1fr 1fr}
+
+  /* Testimonials - 1 col */
+  .test-g{grid-template-columns:1fr}
+
+  /* Footer */
+  .fg-grid{grid-template-columns:1fr;gap:2rem}
+  .fbot{flex-direction:column;text-align:center}
+  .fowner-row{flex-direction:column;align-items:flex-start;gap:0.75rem}
+  footer{padding:3rem 1.2rem 1.5rem}
+  .fbot p{font-size:0.62rem}
+
+  /* Ticker */
+  .ti span{font-size:0.62rem;padding:0 1.4rem}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (≤480px)
+═══════════════════════════════════ */
+@media(max-width:480px){
+  h1.htitle{font-size:1.8rem}
+  .why-g{grid-template-columns:1fr}
+  .c-actions{grid-template-columns:1fr}
+  .faq-q{font-size:0.8rem}
+  .abtns{flex-direction:column}
+  .abtns a{text-align:center;justify-content:center}
+  .qc-row{grid-template-columns:1fr}
+  .stat3{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann">
+  🛍️ Now Selling on Amazon India &nbsp;·&nbsp; 📞 <strong>+91 97524 03398</strong> &nbsp;·&nbsp; Fashion &amp; Jewellery · Buy · Sell · Save
+</div>
+
+<!-- DESKTOP NAVBAR -->
+<nav id="deskNav">
+  <div class="dnav-inner">
+    <a href="#" class="dnav-logo"><img src="grahakfirst-logo.png" alt="GrahakFirst Retailers"/></a>
+    <ul class="dnav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Collections</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="dnav-right">
+      <a href="tel:+919752403398" class="dn-call">📞 +91 97524 03398</a>
+      <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="dn-wa" target="_blank">💬 WhatsApp</a>
+      <a href="https://www.amazon.in" class="dn-shop" target="_blank">🛒 Shop Now</a>
+    </div>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- SLIDE MENU (tablet/hamburger) -->
+<div id="slideMenu">
+  <div class="sm-head">
+    <img src="grahakfirst-logo.png" alt="GrahakFirst"/>
+    <button class="sm-x" id="smX">✕</button>
+  </div>
+  <nav class="sm-links">
+    <a href="#about"        onclick="closeMenu()"><span class="smi">🏢</span>About Us</a>
+    <a href="#categories"   onclick="closeMenu()"><span class="smi">🛍️</span>Collections</a>
+    <a href="#why"          onclick="closeMenu()"><span class="smi">⭐</span>Why Choose Us</a>
+    <a href="#faq"          onclick="closeMenu()"><span class="smi">❓</span>FAQ</a>
+    <a href="#contact"      onclick="closeMenu()"><span class="smi">📩</span>Contact</a>
+  </nav>
+  <div class="sm-actions">
+    <a href="tel:+919752403398"   class="sma sma-call" onclick="closeMenu()">📞 &nbsp;Call +91 97524 03398</a>
+    <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="sma sma-wa" target="_blank" onclick="closeMenu()">💬 &nbsp;WhatsApp Us Now</a>
+    <a href="https://www.amazon.in" class="sma sma-amz" target="_blank" onclick="closeMenu()">🛒 &nbsp;Shop on Amazon India</a>
+  </div>
+  <div class="sm-owner"><p>Owner: <span>Brijesh Kumar Ahirwar</span> · Nowgong, Chhatarpur, MP</p></div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hglow1"></div><div class="hglow2"></div><div class="hdots"></div>
+  <div class="hero-in">
+    <div class="hl">
+      <div class="live-pill"><span class="ldot"></span>Amazon Verified Seller · GrahakFirst.com</div>
+      <h1 class="htitle">India's Trusted<br/><span class="o">Fashion</span> &amp; <span class="b">Jewellery</span><br/>Retailer</h1>
+      <p class="hdesc">Premium fashion wear and imitation jewellery — quality-checked, fairly priced, delivered pan-India. Based in Nowgong, Madhya Pradesh.</p>
+      <div class="hctas">
+        <a href="https://www.amazon.in" class="btn-amz" target="_blank">🛒 Shop on Amazon</a>
+        <a href="tel:+919752403398" class="btn-call-h">📞 Call Us</a>
+        <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="btn-wa-h" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="hchips">
+        <div class="chip"><span class="ck">✓</span>Quality Assured</div>
+        <div class="chip"><span class="ck">✓</span>PAN India Delivery</div>
+        <div class="chip"><span class="ck">✓</span>Easy Returns</div>
+        <div class="chip"><span class="ck">✓</span>Amazon Verified</div>
+      </div>
+    </div>
+    <div class="hr">
+      <div class="logo-card">
+        <img src="grahakfirst-logo.png" alt="GrahakFirst — Buy Sell Save"/>
+        <div class="logo-tag">Buy · Sell · Save · GrahakFirst.com</div>
+      </div>
+      <div class="stat3">
+        <div class="st"><div class="st-ic">👗</div><div class="st-n">2</div><div class="st-l">Categories</div></div>
+        <div class="st"><div class="st-ic">🚚</div><div class="st-n">PAN</div><div class="st-l">India</div></div>
+        <div class="st"><div class="st-ic">🔄</div><div class="st-n">Easy</div><div class="st-l">Returns</div></div>
+      </div>
+      <div class="qc-row">
+        <a href="tel:+919752403398" class="qcb qcb-c">📞 +91 97524 03398</a>
+        <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="qcb qcb-w" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="amz-row">
+        <div class="amz-lt"><span class="ay">amazon</span><span class="am">.in</span></div>
+        <div class="amz-rt">Authorised Reseller<span>✓ Verified Seller</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ti">
+  <span>Fashion &amp; Clothing</span><span>Imitation Jewellery</span><span>Buy · Sell · Save</span>
+  <span>Nowgong, MP</span><span>Amazon Verified</span><span>Fast Delivery</span><span>Easy Returns</span>
+  <span>+91 97524 03398</span><span>GrahakFirst.com</span>
+  <span>Fashion &amp; Clothing</span><span>Imitation Jewellery</span><span>Buy · Sell · Save</span>
+  <span>Nowgong, MP</span><span>Amazon Verified</span><span>Fast Delivery</span><span>Easy Returns</span>
+  <span>+91 97524 03398</span><span>GrahakFirst.com</span>
+</div></div>
+
+<!-- TRUST BAR -->
+<div class="tbar"><div class="tbar-in">
+  <div class="tbi"><div class="tbi-ic">🏆</div><div class="tbi-t"><strong>Quality Products</strong><span>Hand-inspected always</span></div></div>
+  <div class="tbi"><div class="tbi-ic">🚚</div><div class="tbi-t"><strong>Fast Delivery</strong><span>Pan India via Amazon</span></div></div>
+  <div class="tbi"><div class="tbi-ic">🔄</div><div class="tbi-t"><strong>Easy Returns</strong><span>Hassle-free refunds</span></div></div>
+  <div class="tbi"><div class="tbi-ic">📞</div><div class="tbi-t"><strong>+91 97524 03398</strong><span>Call or WhatsApp</span></div></div>
+  <div class="tbi"><div class="tbi-ic">📍</div><div class="tbi-t"><strong>Nowgong, MP</strong><span>Chhatarpur District</span></div></div>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about"><div class="mw">
+  <div class="about-g">
+    <div class="rv">
+      <div class="acard">
+        <div class="acgl"></div>
+        <div class="ac-top">
+          <img src="grahakfirst-logo.png" alt="GrahakFirst"/>
+          <div><strong>GrahakFirst Retailers</strong><span>www.GrahakFirst.com</span></div>
+        </div>
+        <p class="acdesc">Founded with one mission — make quality fashion &amp; jewellery accessible to every Indian household through Amazon. Based in Nowgong, Madhya Pradesh.</p>
+        <div class="acstats">
+          <div class="acs"><strong>2</strong><span>Categories</span></div>
+          <div class="acs"><strong>PAN</strong><span>India Delivery</span></div>
+          <div class="acs"><strong>100%</strong><span>Quality Checked</span></div>
+          <div class="acs"><strong>2024</strong><span>Founded</span></div>
+        </div>
+        <div class="vpill">
+          <span class="vpdot"></span>
+          <div class="vpt"><strong>Amazon Verified Seller — GrahakFirst</strong><span>Nowgong, Chhatarpur, Madhya Pradesh · India</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="rv" style="transition-delay:0.12s">
+      <div class="ey">About Us</div>
+      <h2 class="sh2">We Put the <span class="o">Customer</span><br/>First — Always</h2>
+      <p class="alead">At <strong>GrahakFirst Retailers</strong>, every customer deserves <strong>premium quality</strong> without premium prices. Owned by <strong>Brijesh Kumar Ahirwar</strong> from Nowgong, MP — we handpick fashion &amp; jewellery sold through Amazon India.</p>
+      <div class="flist">
+        <div class="fi"><div class="fi-ic">🎯</div><div class="fi-t"><strong>Hand-Picked Products</strong><span>Every item personally reviewed before listing on Amazon</span></div></div>
+        <div class="fi"><div class="fi-ic">💰</div><div class="fi-t"><strong>Best Value Pricing</strong><span>Premium look at prices every Indian family can afford</span></div></div>
+        <div class="fi"><div class="fi-ic">🌍</div><div class="fi-t"><strong>PAN India Delivery</strong><span>Fast tracked delivery to every pin code via Amazon logistics</span></div></div>
+      </div>
+      <div class="abtns">
+        <a href="https://www.amazon.in" class="btn-main" target="_blank">🛒 View Our Store</a>
+        <a href="#contact" class="btn-sec">📩 Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CATEGORIES -->
+<section id="categories"><div class="mw">
+  <div class="shdr ctr rv">
+    <div class="ey">What We Sell</div>
+    <h2 class="sh2">Our Product <span class="o">Collections</span></h2>
+    <p class="sub">Two carefully curated categories — sold on Amazon India with fast PAN India delivery.</p>
+  </div>
+  <div class="catg">
+    <div class="ccard rv">
+      <div class="cbanner"><div class="cbg"></div><span class="cnum">01</span><span class="cem">👗</span><div class="cnm">Fashion &amp; Clothing</div></div>
+      <div class="cbody">
+        <p class="cdesc">Trendy, comfortable and affordable clothing for every modern Indian — from ethnic wear to everyday casuals, crafted for Indian tastes and every budget.</p>
+        <div class="ctags"><span class="ctag">Kurtis</span><span class="ctag">Sarees</span><span class="ctag">Tops</span><span class="ctag">Ethnic Wear</span><span class="ctag">Casual Wear</span><span class="ctag">Lehengas</span></div>
+        <a href="https://www.amazon.in" class="ccta" target="_blank">Shop Collection →</a>
+      </div>
+    </div>
+    <div class="ccard rv" style="transition-delay:0.12s">
+      <div class="cbanner"><div class="cbg"></div><span class="cnum">02</span><span class="cem">💎</span><div class="cnm">Imitation Jewellery</div></div>
+      <div class="cbody">
+        <p class="cdesc">Elegant, bold jewellery — the look and feel of precious metals at a fraction of the cost. Perfect for weddings, festivals, and daily wear.</p>
+        <div class="ctags"><span class="ctag">Necklace Sets</span><span class="ctag">Earrings</span><span class="ctag">Bangles</span><span class="ctag">Rings</span><span class="ctag">Anklets</span><span class="ctag">Maang Tikka</span></div>
+        <a href="https://www.amazon.in" class="ccta" target="_blank">Shop Collection →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- WHY US -->
+<section id="why"><div class="mw">
+  <div class="shdr ctr rv">
+    <div class="ey">Why Choose Us</div>
+    <h2 class="sh2">The <span class="b">GrahakFirst</span> Commitment</h2>
+    <p class="sub">Six reasons Indian shoppers trust GrahakFirst for fashion &amp; jewellery.</p>
+  </div>
+  <div class="why-g">
+    <div class="wcard rv"><div class="wic">🏆</div><div class="wt">Quality Guaranteed</div><p class="wd">Every product personally inspected. We only sell items we are proud to put our name on.</p></div>
+    <div class="wcard rv" style="transition-delay:0.08s"><div class="wic">💰</div><div class="wt">Unbeatable Value</div><p class="wd">We source smart and price fairly — premium look at prices that won't break the bank.</p></div>
+    <div class="wcard rv" style="transition-delay:0.16s"><div class="wic">🚚</div><div class="wt">Fast PAN India Delivery</div><p class="wd">Powered by Amazon's logistics. Your order arrives quickly and safely, anywhere in India.</p></div>
+    <div class="wcard rv" style="transition-delay:0.06s"><div class="wic">🔄</div><div class="wt">Zero-Hassle Returns</div><p class="wd">Full Amazon return policy honored. Not satisfied? Return it — no questions asked.</p></div>
+    <div class="wcard rv" style="transition-delay:0.14s"><div class="wic">📞</div><div class="wt">Direct Support</div><p class="wd">Call or WhatsApp us at <strong style="color:var(--t1)">+91 97524 03398</strong> — real people, quick responses.</p></div>
+    <div class="wcard rv" style="transition-delay:0.22s"><div class="wic">🔔</div><div class="wt">New Arrivals Weekly</div><p class="wd">Fresh styles added every week. Follow our Amazon store to never miss the latest drops.</p></div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq"><div class="mw">
+  <div class="shdr ctr rv">
+    <div class="ey">FAQ</div>
+    <h2 class="sh2">Frequently Asked <span class="o">Questions</span></h2>
+    <p class="sub">Everything you need to know about GrahakFirst Retailers.</p>
+  </div>
+  <div class="faq-wrap rv">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Where are you located?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">We are based in <strong>Nowgong, Chhatarpur District, Madhya Pradesh, India</strong>. Our products are sold and shipped pan-India through Amazon India.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>How can I buy your products?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">All our products are sold exclusively on <strong>Amazon India</strong>. Visit amazon.in and search for "GrahakFirst" to browse our full catalogue. You can also click the "Shop on Amazon" button on this website.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>What products do you sell?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">We currently sell two categories — <strong>Fashion &amp; Clothing</strong> (kurtis, sarees, tops, ethnic wear, casual wear) and <strong>Imitation Jewellery</strong> (necklace sets, earrings, bangles, rings, anklets, maang tikka). New products are added every week.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>How do I contact you?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">You can reach us via: <br/>📞 <strong>Call:</strong> +91 97524 03398<br/>💬 <strong>WhatsApp:</strong> +91 97524 03398<br/>📧 <strong>Email:</strong> grahakfirst@gmail.com<br/><br/>We typically respond within a few hours on business days.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>What is your return &amp; refund policy?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">We follow <strong>Amazon India's standard return policy</strong>. If you're not satisfied with your purchase, you can easily initiate a return through your Amazon account. Refunds are processed quickly and without hassle.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Do you deliver outside India?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">Currently, we deliver <strong>across all of India</strong> through Amazon's fulfillment network. We do not offer international shipping at this time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Can I place a bulk or wholesale order?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">Yes! For bulk or wholesale orders, please contact us directly on <strong>WhatsApp (+91 97524 03398)</strong> or email <strong>grahakfirst@gmail.com</strong> and we will work out a special arrangement for you.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>How long does delivery take?</span><span class="faq-plus">+</span></div>
+      <div class="faq-a">Delivery times depend on your location and Amazon's logistics. Typically, <strong>2–5 business days</strong> for most pin codes across India. You can track your order directly on Amazon.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials"><div class="mw">
+  <div class="shdr ctr rv">
+    <div class="ey">Reviews</div>
+    <h2 class="sh2">What <span class="o">Customers</span> Say</h2>
+    <p class="sub">Real reviews from verified Amazon buyers.</p>
+  </div>
+  <div class="test-g">
+    <div class="tcard rv">
+      <div class="tqm">"</div>
+      <div class="ttop"><div class="tav">PS</div><div class="tstars">★★★★★</div></div>
+      <p class="tbody">"Ordered a kurti set and it arrived in 2 days! The quality was exactly as shown. Will definitely order again from GrahakFirst!"</p>
+      <div class="tfoot"><div><div class="tname">Priya Sharma</div><div class="tloc">New Delhi</div></div><span class="tbadge">Amazon Review</span></div>
+    </div>
+    <div class="tcard rv" style="transition-delay:0.1s">
+      <div class="tqm">"</div>
+      <div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#1a4fa0,#3b82f6)">AP</div><div class="tstars">★★★★★</div></div>
+      <p class="tbody">"The jewellery set looked absolutely stunning at the wedding! So many compliments — looked 100% real at a fraction of the cost!"</p>
+      <div class="tfoot"><div><div class="tname">Anjali Patel</div><div class="tloc">Ahmedabad</div></div><span class="tbadge">Amazon Review</span></div>
+    </div>
+    <div class="tcard rv" style="transition-delay:0.2s">
+      <div class="tqm">"</div>
+      <div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#153872,#2a7de1)">RV</div><div class="tstars">★★★★★</div></div>
+      <p class="tbody">"Great pricing, fast delivery. The return was smooth — refund in 3 days, zero hassle. A seller you can genuinely trust!"</p>
+      <div class="tfoot"><div><div class="tname">Rahul Verma</div><div class="tloc">Bhopal, MP</div></div><span class="tbadge">Amazon Review</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact"><div class="mw">
+  <div class="contact-g">
+    <div class="rv">
+      <div class="ey">Contact Us</div>
+      <h2 class="sh2">Let's <span class="o">Talk</span></h2>
+      <p class="sub" style="margin-bottom:2rem">Have a query, bulk order request, or just want to say hello? We're here and respond quickly.</p>
+      <div class="cdet"><div class="cdet-ic">📞</div><div class="cdet-t"><label>Phone</label><a href="tel:+919752403398">+91 97524 03398</a></div></div>
+      <div class="cdet"><div class="cdet-ic">💬</div><div class="cdet-t"><label>WhatsApp</label><a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." target="_blank">+91 97524 03398</a></div></div>
+      <div class="cdet"><div class="cdet-ic">📧</div><div class="cdet-t"><label>Email</label><a href="mailto:grahakfirst@gmail.com">grahakfirst@gmail.com</a></div></div>
+      <div class="cdet"><div class="cdet-ic">📍</div><div class="cdet-t"><label>Location</label><p>Nowgong, Chhatarpur District, MP</p></div></div>
+      <div class="cdet"><div class="cdet-ic">🌐</div><div class="cdet-t"><label>Website</label><p>www.GrahakFirst.com</p></div></div>
+      <div class="c-actions">
+        <a href="tel:+919752403398" class="ca ca-call">📞 Call Now</a>
+        <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="ca ca-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="owner-card">
+        <div class="oc-av">BA</div>
+        <div class="oc-t">
+          <strong>Brijesh Kumar Ahirwar</strong>
+          <span>Owner, GrahakFirst Retailers · Nowgong, MP</span>
+          <a href="mailto:ahirwarbrijesh@gmail.com">ahirwarbrijesh@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="rv" style="transition-delay:0.12s">
+      <div class="cform" id="cForm">
+        <div class="frow">
+          <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name" id="fn"/></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+        </div>
+        <div class="fg"><label>Email *</label><input type="email" placeholder="you@email.com" id="fe"/></div>
+        <div class="fg"><label>Subject</label>
+          <select>
+            <option value="">Select a topic...</option>
+            <option>Order Enquiry</option>
+            <option>Product Question</option>
+            <option>Return / Refund</option>
+            <option>Bulk / Wholesale Order</option>
+            <option>Partnership / Supplier</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message *</label><textarea placeholder="How can we help you?" id="fm"></textarea></div>
+        <p class="fnote">* Required. We respond within 24 hours. You can also WhatsApp us for faster response.</p>
+        <button class="bsub" onclick="sendForm()">Send Message →</button>
+      </div>
+      <div class="fsuccess" id="fSucc">✅ &nbsp;Message received! We'll get back to you within 24 hours.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg-grid">
+    <div class="fbrand">
+      <img src="grahakfirst-logo.png" alt="GrahakFirst"/>
+      <div class="fdom">www.GrahakFirst.com · Buy · Sell · Save</div>
+      <p class="fbrand-p">Your trusted Amazon reseller for fashion wear and imitation jewellery. Quality products delivered to every corner of India — customer first, always.</p>
+      <div class="socrow">
+        <a href="#" class="socbtn">f</a>
+        <a href="#" class="socbtn">in</a>
+        <a href="#" class="socbtn">ig</a>
+        <a href="#" class="socbtn">yt</a>
+      </div>
+    </div>
+    <div class="fcol"><h4>Company</h4><ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#categories">Collections</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></div>
+    <div class="fcol"><h4>Collections</h4><ul>
+      <li><a href="#">Fashion &amp; Clothing</a></li>
+      <li><a href="#">Imitation Jewellery</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Best Sellers</a></li>
+    </ul></div>
+    <div class="fcol"><h4>Contact</h4><ul>
+      <li><a href="tel:+919752403398">📞 +91 97524 03398</a></li>
+      <li><a href="https://wa.me/919752403398" target="_blank">💬 WhatsApp Us</a></li>
+      <li><a href="mailto:grahakfirst@gmail.com">📧 grahakfirst@gmail.com</a></li>
+      <li><a href="#">📍 Nowgong, MP</a></li>
+      <li><a href="#">Returns &amp; Refunds</a></li>
+    </ul></div>
+  </div>
+  <div class="fowner-row">
+    <div class="fol">Owner: <strong>Brijesh Kumar Ahirwar</strong> · Nowgong, Chhatarpur, Madhya Pradesh · <a href="mailto:ahirwarbrijesh@gmail.com" style="color:var(--or)">ahirwarbrijesh@gmail.com</a></div>
+    <div class="for-links">
+      <a href="tel:+919752403398" class="forl forl-c">📞 Call</a>
+      <a href="https://wa.me/919752403398" class="forl forl-w" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2024 <span>GrahakFirst Retailers</span>. All Rights Reserved.</p>
+    <p>Made with ❤️ for India · <span>www.GrahakFirst.com</span></p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP (always visible) -->
+<a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="fab-wa desktop-fab" target="_blank" title="WhatsApp GrahakFirst">💬</a>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- MOBILE BOTTOM NAV -->
+<div id="mobileBottomNav">
+  <div class="mbn-inner">
+    <a href="#" class="mbn-item act" onclick="scrollTo({top:0,behavior:'smooth'});return false">
+      <div class="mbn-icon-wrap"><span class="mbn-icon">🏠</span></div>
+      <span>Home</span>
+    </a>
+    <a href="#categories" class="mbn-item">
+      <span class="mbn-icon">🛍️</span>
+      <span>Shop</span>
+    </a>
+    <!-- Centre CTA - WhatsApp -->
+    <div class="mbn-cta">
+      <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." target="_blank" class="mbn-cta-btn" title="WhatsApp">💬</a>
+    </div>
+    <a href="tel:+919752403398" class="mbn-item">
+      <span class="mbn-icon">📞</span>
+      <span>Call</span>
+    </a>
+    <button class="mbn-item" onclick="document.getElementById('slideMenu').classList.add('open')">
+      <span class="mbn-icon">☰</span>
+      <span>Menu</span>
+    </button>
+  </div>
+</div>
+
+<script>
+// Navbar scroll
+const nav = document.getElementById('deskNav');
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 60);
+  btt.classList.toggle('vis', scrollY > 400);
+}, {passive:true});
+
+// Hamburger / slide menu
+document.getElementById('hbg').addEventListener('click', () => document.getElementById('slideMenu').classList.add('open'));
+document.getElementById('smX').addEventListener('click', closeMenu);
+document.getElementById('slideMenu').addEventListener('click', function(e){ if(e.target===this) closeMenu(); });
+function closeMenu(){ document.getElementById('slideMenu').classList.remove('open'); }
+
+// Mobile bottom nav active state
+const mbnItems = document.querySelectorAll('.mbn-item[href]');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if(scrollY >= s.offsetTop - 100) cur = s.id; });
+  mbnItems.forEach(a => {
+    a.classList.toggle('act', a.getAttribute('href') === '#' + cur || (cur === '' && a.getAttribute('href') === '#'));
+  });
+}, {passive:true});
+
+// Desktop nav active
+const dLinks = document.querySelectorAll('.dnav-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if(scrollY >= s.offsetTop - 90) cur = s.id; });
+  dLinks.forEach(a => {
+    const on = a.getAttribute('href') === '#' + cur;
+    a.style.color = on ? 'var(--t1)' : '';
+    a.style.background = on ? 'rgba(255,255,255,0.06)' : '';
+  });
+}, {passive:true});
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); ro.unobserve(e.target); }
+  });
+}, {threshold:0.1});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+// FAQ
+function toggleFaq(el){
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+// Contact form
+function sendForm(){
+  const n = document.getElementById('fn').value.trim();
+  const e = document.getElementById('fe').value.trim();
+  const m = document.getElementById('fm').value.trim();
+  if(!n){ alert('Please enter your name.'); return; }
+  if(!e || !e.includes('@')){ alert('Please enter a valid email address.'); return; }
+  if(!m){ alert('Please enter your message.'); return; }
+  document.getElementById('cForm').style.display = 'none';
+  document.getElementById('fSucc').style.display = 'block';
+}
+
+// Add padding to body on mobile
+function checkMobile(){
+  document.body.classList.toggle('mob-nav-active', window.innerWidth <= 768);
+}
+checkMobile();
+window.addEventListener('resize', checkMobile);
+</script>
+</body>
+</html>
