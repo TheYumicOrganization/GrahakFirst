@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0369a1"/>
+<meta name="description" content="Dr. Shashi Kumar BDS MDS Orthodontist Etawah — Expert Braces, Aligners, Root Canal. 14+ Years, 1000+ Patients. 2 Clinics. Call 6397692840."/>
+<title>Orthodontic Clinic Etawah | Dr. Shashi Kumar | Braces Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════════ */
+:root{
+  --teal:#0284c7; --teal2:#0ea5e9; --teal3:#38bdf8;
+  --teal-d:#0c4a6e; --teal-dd:#082f49;
+  --teal-gl:rgba(2,132,199,0.09);
+  --teal-pale:#e0f2fe; --teal-pale2:#f0f9ff;
+  --white:#fff; --off:#f8fbfd;
+  --text:#0c2d3d; --text2:#2d5f75; --muted:#7a9aaa;
+  --border:#c7e2f0; --border2:#a5d4ec;
+  --gold:#f59e0b; --green:#10b981; --red:#ef4444;
+  --shadow:0 4px 24px rgba(2,132,199,0.1);
+  --shadow2:0 8px 40px rgba(2,132,199,0.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.65}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--teal-pale)}
+::-webkit-scrollbar-thumb{background:var(--teal2);border-radius:2px}
+
+/* ═══════════════════════════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════════════════════════ */
+.ann{
+  background:linear-gradient(90deg,var(--teal-dd),var(--teal-d),var(--teal),var(--teal-d));
+  background-size:300% 100%;animation:gradShift 6s linear infinite;
+  padding:0.52rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:0.5rem;
+}
+.ann-msg{font-size:0.72rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.ann-badge{background:var(--gold);color:#000;padding:0.18rem 0.65rem;border-radius:100px;font-size:0.65rem;font-weight:900}
+.ann-calls{display:flex;gap:0.5rem}
+.ann-call{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);color:#fff;padding:0.22rem 0.75rem;border-radius:100px;font-size:0.68rem;font-weight:700;transition:background 0.2s}
+.ann-call:hover{background:rgba(255,255,255,0.24)}
+
+/* ═══════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════ */
+#nav{
+  position:sticky;top:0;z-index:800;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.3s;
+}
+#nav.scrolled{box-shadow:0 2px 28px rgba(2,132,199,0.1)}
+.nav-in{
+  max-width:1200px;margin:0 auto;
+  padding:0 2rem;height:66px;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand-icon{
+  width:42px;height:42px;border-radius:10px;
+  background:linear-gradient(135deg,var(--teal-d),var(--teal));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+  box-shadow:0 2px 10px rgba(2,132,199,0.25);
+}
+.nav-brand-text strong{display:block;font-size:0.88rem;font-weight:800;color:var(--teal-d);line-height:1.1}
+.nav-brand-text span{font-size:0.58rem;font-weight:500;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:0.1rem}
+.nav-links a{padding:0.4rem 0.8rem;font-size:0.78rem;font-weight:500;color:var(--text2);border-radius:7px;transition:color 0.2s,background 0.2s}
+.nav-links a:hover,.nav-links a.act{color:var(--teal);background:var(--teal-gl)}
+.nav-right{display:flex;align-items:center;gap:0.55rem}
+.n-wa{display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.2);color:#059669;padding:0.44rem 0.95rem;border-radius:8px;font-size:0.74rem;font-weight:700;transition:background 0.2s}
+.n-wa:hover{background:rgba(16,185,129,0.14)}
+.n-appt{display:inline-flex;align-items:center;gap:5px;background:var(--teal);color:#fff;padding:0.48rem 1.1rem;border-radius:8px;font-size:0.76rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 2px 12px rgba(2,132,199,0.3);transition:background 0.2s,transform 0.15s}
+.n-appt:hover{background:var(--teal2);transform:translateY(-1px)}
+.hbg{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.hbg span{width:22px;height:2px;background:var(--teal);border-radius:2px;display:block;transition:all 0.3s}
+
+/* ═══════════════════════════════════════════════
+   MOBILE MENU
+═══════════════════════════════════════════════ */
+#mob{display:none;position:fixed;inset:0;z-index:1100;background:#fff;flex-direction:column;overflow-y:auto}
+#mob.open{display:flex}
+.mob-head{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;border-bottom:1px solid var(--border)}
+.mob-x{background:none;border:none;color:var(--muted);font-size:1.7rem;cursor:pointer}
+.mob-nav{display:flex;flex-direction:column;padding:1rem 1.5rem;gap:0.2rem;flex:1}
+.mob-nav a{font-size:0.95rem;font-weight:600;color:var(--text);padding:0.88rem 1rem;border-radius:9px;display:flex;align-items:center;gap:10px;transition:background 0.2s,color 0.2s}
+.mob-nav a:hover{background:var(--teal-pale);color:var(--teal)}
+.mob-act{display:flex;flex-direction:column;gap:0.7rem;padding:1.5rem;border-top:1px solid var(--border)}
+.ma{display:flex;align-items:center;justify-content:center;gap:8px;padding:0.9rem;border-radius:10px;font-size:0.88rem;font-weight:700;border:none;cursor:pointer}
+.ma-c{background:var(--teal-gl);color:var(--teal);border:1.5px solid var(--border2)!important}
+.ma-w{background:rgba(16,185,129,0.08);color:#059669;border:1.5px solid rgba(16,185,129,0.2)!important}
+.ma-a{background:var(--teal);color:#fff}
+
+/* MOBILE BOTTOM NAV */
+#mbn{display:none;position:fixed;bottom:0;left:0;right:0;z-index:790;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom,0)}
+.mbn-in{display:flex;align-items:stretch;height:58px}
+.mbn-i{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:0.55rem;font-weight:700;color:var(--muted);cursor:pointer;border:none;background:none;-webkit-tap-highlight-color:transparent;transition:color 0.2s}
+.mbn-i.act,.mbn-i:hover{color:var(--teal)}
+.mbn-ic{font-size:1.2rem;line-height:1}
+.mbn-cta{flex:1.3;display:flex;align-items:center;justify-content:center;padding:6px}
+.mbn-cta-btn{width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.2rem;border:none;cursor:pointer;box-shadow:0 2px 14px rgba(2,132,199,0.4);display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+.mbn-cta-btn:active{transform:scale(0.92)}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+#hero{
+  background:linear-gradient(160deg,#e0f2fe 0%,#f0f9ff 35%,#fff 70%);
+  padding:4.5rem 2rem 0;
+  position:relative;overflow:hidden;
+  min-height:calc(100vh - 105px);
+  display:flex;align-items:center;
+}
+.hero-glow1{position:absolute;top:-120px;right:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(2,132,199,0.09),transparent 65%);pointer-events:none;animation:drift 11s ease-in-out infinite}
+.hero-glow2{position:absolute;bottom:-80px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,0.07),transparent 65%);pointer-events:none;animation:drift 13s ease-in-out infinite reverse}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(2,132,199,0.05) 1px,transparent 1px);background-size:34px 34px;pointer-events:none}
+
+.hero-in{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1.1fr 0.9fr;
+  gap:3.5rem;align-items:center;position:relative;z-index:2;
+}
+
+/* Hero Left */
+.hero-left{opacity:0;animation:slideUp 0.8s 0.1s ease forwards}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--teal-gl);border:1px solid rgba(2,132,199,0.22);
+  padding:0.36rem 1rem;border-radius:100px;
+  font-size:0.68rem;font-weight:700;color:var(--teal);
+  letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.3rem;
+}
+.hp-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+.hero-h{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.2vw,3.3rem);
+  font-weight:800;color:var(--teal-d);
+  line-height:1.08;letter-spacing:-0.02em;
+  margin-bottom:0.7rem;
+}
+.hero-h em{font-style:italic;color:var(--teal)}
+.hero-dr{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:1.1rem;
+}
+.hero-dr-av{
+  width:44px;height:44px;border-radius:50%;
+  border:3px solid var(--teal-pale);
+  overflow:hidden;flex-shrink:0;
+}
+.hero-dr-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hero-dr-info strong{display:block;font-size:0.9rem;font-weight:800;color:var(--teal)}
+.hero-dr-info span{font-size:0.7rem;color:var(--text2);font-weight:500}
+.hero-p{font-size:0.94rem;color:var(--text2);line-height:1.8;max-width:490px;margin-bottom:2rem}
+
+/* CTA buttons */
+.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-pri{display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:#fff;padding:0.86rem 2rem;border-radius:10px;font-size:0.86rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(2,132,199,0.32);transition:background 0.2s,transform 0.15s}
+.btn-pri:hover{background:var(--teal2);transform:translateY(-2px)}
+.btn-sec{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1.5px solid var(--border2);color:var(--teal);padding:0.86rem 1.8rem;border-radius:10px;font-size:0.86rem;font-weight:700;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.btn-sec:hover{border-color:var(--teal);background:var(--teal-gl)}
+.btn-wa{display:inline-flex;align-items:center;gap:7px;background:rgba(16,185,129,0.09);border:1.5px solid rgba(16,185,129,0.22);color:#059669;padding:0.86rem 1.8rem;border-radius:10px;font-size:0.86rem;font-weight:700;cursor:pointer;transition:background 0.2s}
+.btn-wa:hover{background:rgba(16,185,129,0.16)}
+
+/* Trust chips */
+.hero-chips{display:flex;flex-wrap:wrap;gap:0.55rem}
+.chip{display:flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--border);padding:0.3rem 0.75rem;border-radius:100px;font-size:0.68rem;font-weight:600;color:var(--text2);box-shadow:0 1px 4px rgba(2,132,199,0.05)}
+.chip .ck{color:var(--green);font-weight:900}
+
+/* Hero Right */
+.hero-right{
+  opacity:0;animation:slideUp 0.9s 0.3s ease forwards;
+  display:flex;flex-direction:column;gap:1rem;
+  padding-bottom:3rem;
+}
+
+/* DR CARD */
+.dr-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow2);
+  position:relative;
+}
+.dr-card-banner{
+  height:160px;overflow:hidden;position:relative;
+}
+.dr-card-banner img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.dr-card-banner-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 30%,rgba(8,47,73,0.85));
+}
+.dr-card-info{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:1rem 1.2rem;
+  display:flex;align-items:flex-end;gap:10px;
+}
+.dr-card-av{
+  width:56px;height:56px;border-radius:50%;
+  border:3px solid #fff;overflow:hidden;flex-shrink:0;
+  box-shadow:0 2px 12px rgba(0,0,0,0.2);
+}
+.dr-card-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.dr-card-name strong{display:block;font-size:0.92rem;font-weight:800;color:#fff}
+.dr-card-name span{font-size:0.65rem;color:rgba(255,255,255,0.78)}
+.dr-card-body{padding:1.2rem}
+/* Animated counters */
+.counter-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1.1rem}
+.ctr-item{background:var(--teal-pale2);border:1px solid var(--border);border-radius:10px;padding:0.9rem 0.6rem;text-align:center}
+.ctr-num{font-size:1.4rem;font-weight:900;color:var(--teal);line-height:1;display:block}
+.ctr-lbl{font-size:0.56rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
+.offer-strip{
+  background:linear-gradient(90deg,var(--teal-d),var(--teal));
+  border-radius:10px;padding:0.9rem 1.1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:0.8rem;
+}
+.os-text strong{display:block;font-size:0.88rem;font-weight:900;color:#fff}
+.os-text span{font-size:0.65rem;color:rgba(255,255,255,0.75)}
+.os-badge{background:var(--gold);color:#000;font-size:1rem;font-weight:900;padding:0.35rem 0.75rem;border-radius:8px;white-space:nowrap}
+
+/* CLINIC QUICK */
+.clinic-q{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:1fr 1fr;gap:0.7rem}
+.cq-item{background:var(--teal-pale2);border-radius:9px;padding:0.82rem}
+.cq-lbl{font-size:0.57rem;font-weight:800;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px}
+.cq-val{font-size:0.76rem;font-weight:700;color:var(--teal-d);line-height:1.3}
+.cq-time{font-size:0.62rem;color:var(--muted);margin-top:2px}
+
+/* ═══════════════════════════════════════════════
+   CLINIC BANNER PHOTO
+═══════════════════════════════════════════════ */
+.clinic-banner{position:relative;overflow:hidden}
+.clinic-banner img{width:100%;height:380px;object-fit:cover;object-position:center;display:block}
+.cb-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(8,47,73,0.78) 0%,rgba(8,47,73,0.35) 55%,transparent 100%);
+  display:flex;align-items:center;
+}
+.cb-content{padding:2.5rem 3rem;max-width:520px}
+.cb-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.28rem 0.8rem;border-radius:100px;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem}
+.cb-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:0.6rem}
+.cb-sub{font-size:0.82rem;color:rgba(255,255,255,0.82);margin-bottom:1.3rem;line-height:1.6}
+.cb-btns{display:flex;gap:0.7rem;flex-wrap:wrap}
+.cb-btn{display:inline-flex;align-items:center;gap:6px;padding:0.62rem 1.4rem;border-radius:9px;font-size:0.78rem;font-weight:800;border:none;cursor:pointer;transition:transform 0.15s,opacity 0.2s}
+.cb-btn:hover{transform:translateY(-1px);opacity:0.9}
+.cb-b1{background:var(--teal);color:#fff;box-shadow:0 2px 14px rgba(2,132,199,0.4)}
+.cb-b2{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.3)!important;color:#fff}
+@media(max-width:768px){.clinic-banner img{height:200px}.cb-content{padding:1.3rem 1.5rem}.cb-title{font-size:1.1rem}.cb-sub{display:none}}
+
+/* ═══════════════════════════════════════════════
+   TICKER
+═══════════════════════════════════════════════ */
+.ticker{background:var(--teal);padding:0.62rem 0;overflow:hidden;white-space:nowrap}
+.ti{display:inline-block;animation:tick 28s linear infinite}
+.ti span{font-size:0.68rem;font-weight:700;color:#fff;letter-spacing:0.08em;text-transform:uppercase;padding:0 2rem}
+.ti span::before{content:'✦';margin-right:2rem;opacity:0.4;font-size:0.42rem}
+
+/* ═══════════════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════════════ */
+section{padding:5.5rem 2rem}
+.mw{max-width:1200px;margin:0 auto}
+.ey{display:inline-flex;align-items:center;gap:7px;font-size:0.67rem;font-weight:800;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem}
+.ey::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:1px;display:block}
+.sh2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--teal-d);line-height:1.13;letter-spacing:-0.02em;margin-bottom:0.9rem}
+.sh2 em{font-style:italic;color:var(--teal)}
+.sub{font-size:0.88rem;color:var(--text2);line-height:1.75;max-width:520px}
+.ctr-sec{text-align:center}.ctr-sec .sub{margin:0 auto}.ctr-sec .ey{display:flex;justify-content:center}.ctr-sec .ey::before{display:none}
+.shdr{margin-bottom:3rem}
+
+/* ═══════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════ */
+#about{background:var(--off)}
+.about-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:start}
+.about-visual{}
+.about-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.ac-banner{height:120px;background:linear-gradient(135deg,var(--teal-d),var(--teal));position:relative;overflow:hidden}
+.ac-banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:18px 18px}
+.ac-banner-text{position:absolute;bottom:1rem;left:1.5rem;color:#fff}
+.ac-banner-text strong{display:block;font-size:1rem;font-weight:800}
+.ac-banner-text span{font-size:0.65rem;color:rgba(255,255,255,0.75)}
+.ac-body{padding:1.5rem}
+.ac-dr{display:flex;align-items:center;gap:12px;margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px solid var(--border)}
+.ac-dr-av{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid var(--teal-pale)}
+.ac-dr-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ac-dr-info strong{display:block;font-size:0.9rem;font-weight:800;color:var(--teal-d)}
+.ac-dr-info .qual{font-size:0.68rem;color:var(--teal);font-weight:700}
+.ac-dr-info .loc{font-size:0.62rem;color:var(--muted)}
+.ac-desc{font-size:0.8rem;color:var(--text2);line-height:1.82;margin-bottom:1.4rem}
+.ac-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:1.3rem}
+.acs{background:var(--teal-pale2);border:1px solid var(--border);border-radius:10px;padding:0.95rem;text-align:center}
+.acs strong{display:block;font-size:1.35rem;font-weight:900;color:var(--teal);line-height:1}
+.acs span{font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
+.edu-list{display:flex;flex-direction:column;gap:0.55rem}
+.edu-i{display:flex;align-items:flex-start;gap:9px;background:var(--teal-pale2);border-radius:9px;padding:0.75rem 0.9rem;font-size:0.75rem;color:var(--text2)}
+.edu-i::before{content:'🎓';flex-shrink:0;margin-top:0}
+/* Right */
+.about-right{}
+.alead{font-size:0.9rem;color:var(--text2);line-height:1.82;margin-bottom:1.8rem}
+.alead strong{color:var(--teal-d);font-weight:700}
+.feat-list{display:flex;flex-direction:column;gap:0.82rem;margin-bottom:2rem}
+.fi{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--border);border-radius:11px;padding:1rem 1.2rem;transition:border-color 0.25s,box-shadow 0.25s}
+.fi:hover{border-color:var(--border2);box-shadow:0 2px 12px rgba(2,132,199,0.06)}
+.fi-ic{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.fi-t strong{display:block;font-size:0.82rem;font-weight:700;color:var(--teal-d);margin-bottom:2px}
+.fi-t span{font-size:0.72rem;color:var(--muted)}
+.abtns{display:flex;gap:0.8rem;flex-wrap:wrap}
+/* Verified pill */
+.verified-pill{display:flex;align-items:center;gap:8px;background:var(--teal-pale2);border:1px solid rgba(2,132,199,0.2);border-radius:10px;padding:0.85rem 1.1rem;margin-top:1.2rem}
+.vp-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0}
+.vp-t strong{display:block;font-size:0.73rem;font-weight:700;color:var(--teal-d)}
+.vp-t span{font-size:0.6rem;color:var(--muted);margin-top:1px;display:block}
+
+/* ═══════════════════════════════════════════════
+   WHY US
+═══════════════════════════════════════════════ */
+#why{background:#fff}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.wcard{
+  background:var(--off);border:1px solid var(--border);
+  border-radius:15px;padding:1.8rem 1.6rem;
+  position:relative;overflow:hidden;
+  transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s;
+}
+.wcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-d),var(--teal));transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.wcard:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 10px 28px rgba(2,132,199,0.08)}
+.wcard:hover::after{transform:scaleX(1)}
+.w-ic{width:50px;height:50px;background:var(--teal-gl);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem}
+.w-t{font-size:0.9rem;font-weight:700;color:var(--teal-d);margin-bottom:0.45rem}
+.w-d{font-size:0.76rem;color:var(--text2);line-height:1.75}
+
+/* ═══════════════════════════════════════════════
+   SERVICES PRICING
+═══════════════════════════════════════════════ */
+#services{background:var(--off)}
+.svc-grid{display:flex;flex-direction:column;gap:1.5rem}
+.svc-cat{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.svc-head{
+  background:linear-gradient(90deg,var(--teal-d),var(--teal));
+  padding:1.1rem 1.8rem;display:flex;align-items:center;gap:12px;
+}
+.sh-ic{width:40px;height:40px;background:rgba(255,255,255,0.15);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.sh-title{font-size:0.96rem;font-weight:800;color:#fff}
+.sh-sub{font-size:0.65rem;color:rgba(255,255,255,0.7)}
+.svc-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.svc-i{padding:1rem 1.8rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background 0.2s}
+.svc-i:hover{background:var(--teal-pale2)}
+.si-name{font-size:0.8rem;font-weight:600;color:var(--teal-d)}
+.si-name small{display:block;font-size:0.62rem;color:var(--muted);font-weight:400;margin-top:2px}
+.si-price{font-size:0.84rem;font-weight:900;color:var(--teal);white-space:nowrap;background:var(--teal-gl);padding:0.22rem 0.6rem;border-radius:100px}
+.svc-note{margin-top:1.2rem;background:var(--teal-pale2);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:10px;padding:1rem 1.3rem;font-size:0.8rem;color:var(--text2);line-height:1.7}
+
+/* ═══════════════════════════════════════════════
+   BRACES
+═══════════════════════════════════════════════ */
+#braces{background:#fff}
+.braces-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.5rem}
+.bcard{background:var(--off);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;position:relative}
+.bcard:hover{transform:translateY(-6px);border-color:var(--border2);box-shadow:var(--shadow2)}
+.best-tag{position:absolute;top:1rem;right:1rem;background:var(--gold);color:#000;font-size:0.58rem;font-weight:900;padding:0.2rem 0.6rem;border-radius:100px;letter-spacing:0.05em}
+.bc-top{padding:2rem 2rem 1.5rem;background:linear-gradient(135deg,var(--teal-pale2),var(--teal-pale));border-bottom:1px solid var(--border);text-align:center}
+.bc-icon{font-size:2.8rem;margin-bottom:0.6rem}
+.bc-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--teal-d)}
+.bc-tag{font-size:0.62rem;font-weight:700;color:var(--teal);background:var(--teal-gl);padding:0.2rem 0.6rem;border-radius:100px;display:inline-block;margin-top:0.3rem}
+.bc-body{padding:1.5rem}
+.bc-price{font-size:1.3rem;font-weight:900;color:var(--teal);margin-bottom:0.8rem}
+.bc-price small{font-size:0.65rem;font-weight:500;color:var(--muted)}
+.bc-desc{font-size:0.76rem;color:var(--text2);line-height:1.75;margin-bottom:1rem}
+.bc-pros{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.bc-pros li{font-size:0.72rem;color:var(--text2);display:flex;align-items:flex-start;gap:6px}
+.bc-pros li::before{content:'✓';color:var(--green);font-weight:900;font-size:0.72rem;flex-shrink:0;margin-top:1px}
+
+/* ═══════════════════════════════════════════════
+   CLINICS
+═══════════════════════════════════════════════ */
+#clinics{background:var(--off)}
+.clinics-g{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cc{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.25s,box-shadow 0.25s}
+.cc:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.cc-head{background:linear-gradient(135deg,var(--teal-d),var(--teal));padding:1.4rem 1.8rem;display:flex;align-items:center;gap:12px}
+.cc-num{width:38px;height:38px;background:rgba(255,255,255,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900;color:#fff;flex-shrink:0}
+.cc-ht strong{display:block;font-size:0.92rem;font-weight:800;color:#fff}
+.cc-ht span{font-size:0.63rem;color:rgba(255,255,255,0.72)}
+.cc-body{padding:1.8rem}
+.cc-r{display:flex;align-items:flex-start;gap:12px;margin-bottom:1.1rem}
+.cc-ic{width:38px;height:38px;background:var(--teal-pale2);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cc-rt label{display:block;font-size:0.57rem;font-weight:800;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2px}
+.cc-rt p,.cc-rt a{font-size:0.78rem;font-weight:500;color:var(--teal-d)}
+.cc-rt a{transition:color 0.2s}.cc-rt a:hover{color:var(--teal)}
+.timing-g{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.6rem}
+.tg{background:var(--teal-pale2);border:1px solid var(--border);border-radius:8px;padding:0.7rem;text-align:center}
+.tg-day{font-size:0.58rem;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px}
+.tg-time{font-size:0.74rem;font-weight:700;color:var(--teal-d)}
+.cc-btns{display:flex;gap:0.7rem;margin-top:1.2rem}
+.cc-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:0.68rem;border-radius:9px;font-size:0.76rem;font-weight:700;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s}
+.cc-btn:hover{opacity:0.85;transform:translateY(-1px)}
+.ccb-c{background:var(--teal-gl);color:var(--teal);border:1.5px solid var(--border2)!important}
+.ccb-w{background:rgba(16,185,129,0.08);color:#059669;border:1.5px solid rgba(16,185,129,0.2)!important}
+
+/* ═══════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════ */
+#faq{background:#fff}
+.faq-wrap{max-width:780px;margin:0 auto}
+.faq-i{background:var(--off);border:1px solid var(--border);border-radius:13px;margin-bottom:0.75rem;overflow:hidden;transition:border-color 0.25s}
+.faq-i.open{border-color:var(--border2);background:#fff}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 1.5rem;cursor:pointer;font-size:0.86rem;font-weight:600;color:var(--teal-d);user-select:none}
+.faq-q:hover{color:var(--teal)}
+.faq-plus{width:28px;height:28px;border-radius:50%;background:var(--teal-gl);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--teal);flex-shrink:0;transition:transform 0.3s,background 0.2s}
+.faq-i.open .faq-plus{transform:rotate(45deg);background:var(--teal);color:#fff;border-color:var(--teal)}
+.faq-a{display:none;padding:0 1.5rem 1.3rem;font-size:0.8rem;color:var(--text2);line-height:1.82}
+.faq-a strong{color:var(--teal-d)}
+.faq-i.open .faq-a{display:block}
+.faq-hin{font-size:0.73rem;color:var(--muted);margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid var(--border);font-style:italic}
+
+/* ═══════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════ */
+#contact{background:var(--off)}
+.contact-g{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
+.ci .sub{margin-bottom:2rem}
+.cdet{display:flex;align-items:flex-start;gap:12px;margin-bottom:1.2rem}
+.cdet-ic{width:42px;height:42px;border-radius:10px;background:var(--teal-pale2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cdet-t label{display:block;font-size:0.57rem;font-weight:800;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2px}
+.cdet-t p,.cdet-t a{font-size:0.79rem;font-weight:500;color:var(--teal-d);transition:color 0.2s}
+.cdet-t a:hover{color:var(--teal)}
+.c-act{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem}
+.ca{display:flex;align-items:center;justify-content:center;gap:8px;padding:0.9rem;border-radius:10px;font-size:0.8rem;font-weight:700;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s}
+.ca:hover{opacity:0.85;transform:translateY(-1px)}
+.ca-c{background:var(--teal-gl);color:var(--teal);border:1.5px solid var(--border2)!important}
+.ca-w{background:rgba(16,185,129,0.08);color:#059669;border:1.5px solid rgba(16,185,129,0.2)!important}
+.owner-c{background:#fff;border:1px solid var(--border);border-radius:13px;padding:1.2rem;display:flex;align-items:center;gap:14px;margin-top:1.4rem;transition:border-color 0.25s}
+.owner-c:hover{border-color:var(--border2)}
+.oc-av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal3));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;flex-shrink:0}
+.oc-t strong{display:block;font-size:0.82rem;font-weight:700;color:var(--teal-d)}
+.oc-t span{font-size:0.63rem;color:var(--muted)}
+/* Form */
+.cform{display:flex;flex-direction:column;gap:1rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:0.64rem;font-weight:700;color:var(--text2);letter-spacing:0.07em;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{background:#fff;border:1.5px solid var(--border);border-radius:9px;padding:0.78rem 1rem;font-family:'Outfit',sans-serif;font-size:0.8rem;color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(2,132,199,0.09)}
+.fg textarea{height:115px;resize:none}
+.fg select{cursor:pointer}.fg select option{background:#fff}
+.fnote{font-size:0.63rem;color:var(--muted)}
+.bsub{background:var(--teal);color:#fff;padding:1rem;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.84rem;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 2px 14px rgba(2,132,199,0.25);transition:background 0.2s,transform 0.15s}
+.bsub:hover{background:var(--teal2);transform:translateY(-1px)}
+.fsuccess{display:none;background:var(--teal-pale2);border:1px solid var(--border2);border-left:4px solid var(--teal);border-radius:10px;padding:2rem;text-align:center;color:var(--teal-d);font-size:0.86rem;font-weight:600}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer{background:var(--teal-dd);padding:4rem 2rem 1.5rem}
+.fg-g{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
+.fbrand-logo{display:flex;align-items:center;gap:10px;margin-bottom:0.9rem}
+.fl-ic{width:40px;height:40px;border-radius:9px;overflow:hidden;flex-shrink:0}
+.fl-ic img{width:100%;height:100%;object-fit:cover;object-position:top}
+.fl-t strong{display:block;font-size:0.88rem;font-weight:800;color:#fff}
+.fl-t span{font-size:0.58rem;color:rgba(255,255,255,0.45)}
+.fbrand p{font-size:0.72rem;color:rgba(255,255,255,0.52);line-height:1.78;max-width:260px;margin-bottom:1.2rem}
+.fcqs{display:flex;flex-direction:column;gap:0.45rem}
+.fcq{display:flex;align-items:center;gap:7px;font-size:0.72rem;color:rgba(255,255,255,0.6)}
+.fcq a{color:rgba(255,255,255,0.6);transition:color 0.2s}.fcq a:hover{color:#fff}
+.fcol h4{font-size:0.58rem;font-weight:800;color:rgba(255,255,255,0.38);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1.1rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.fcol ul a{font-size:0.74rem;color:rgba(255,255,255,0.54);transition:color 0.2s}.fcol ul a:hover{color:#fff}
+.fbot{max-width:1200px;margin:1.2rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:0.63rem;color:rgba(255,255,255,0.28)}
+.fbot span{color:rgba(255,255,255,0.48)}
+
+/* ═══════════════════════════════════════════════
+   AI CHATBOT
+═══════════════════════════════════════════════ */
+#chatLauncher{
+  position:fixed;bottom:5.5rem;right:1.5rem;z-index:850;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,var(--teal-d),var(--teal));
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 22px rgba(2,132,199,0.4);
+  transition:transform 0.2s,box-shadow 0.2s;
+  animation:chatPulse 3s infinite;
+}
+#chatLauncher:hover{transform:scale(1.08);box-shadow:0 6px 30px rgba(2,132,199,0.5)}
+#chatLauncher .ci{font-size:1.5rem;transition:opacity 0.2s}
+#chatLauncher .cx{display:none;font-size:1.3rem}
+#chatLauncher.open .ci{display:none}
+#chatLauncher.open .cx{display:block}
+.chat-badge{
+  position:absolute;top:-2px;right:-2px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--red);color:#fff;
+  font-size:0.6rem;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid #fff;
+}
+.chat-tooltip{
+  position:absolute;right:70px;top:50%;transform:translateY(-50%);
+  background:var(--teal-d);color:#fff;
+  padding:0.45rem 0.9rem;border-radius:8px;
+  font-size:0.72rem;font-weight:700;white-space:nowrap;
+  box-shadow:var(--shadow);
+  animation:tooltipPop 0.3s 1s ease backwards;
+  pointer-events:none;
+}
+.chat-tooltip::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:var(--teal-d)}
+
+/* CHAT WINDOW */
+#chatWindow{
+  position:fixed;bottom:10.5rem;right:1.5rem;z-index:849;
+  width:370px;max-width:calc(100vw - 2rem);
+  height:520px;max-height:calc(100vh - 220px);
+  background:#fff;border-radius:20px;
+  box-shadow:0 20px 60px rgba(2,132,199,0.18),0 4px 20px rgba(0,0,0,0.08);
+  display:flex;flex-direction:column;overflow:hidden;
+  transform:translateY(20px) scale(0.95);opacity:0;
+  pointer-events:none;
+  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),opacity 0.25s ease;
+  border:1px solid var(--border);
+}
+#chatWindow.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+
+/* Chat header */
+.cw-head{
+  background:linear-gradient(135deg,var(--teal-dd),var(--teal-d),var(--teal));
+  padding:0.9rem 1rem;display:flex;align-items:center;gap:9px;flex-shrink:0;
+  position:relative;overflow:hidden;
+}
+.cw-head::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:16px 16px}
+.cw-av{width:38px;height:38px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);overflow:hidden;flex-shrink:0;position:relative;z-index:1}
+.cw-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cw-info{flex:1;position:relative;z-index:1}
+.cw-info strong{display:block;font-size:0.82rem;font-weight:800;color:#fff}
+.cw-info span{font-size:0.6rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:4px}
+.cw-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0}
+.cw-acts{display:flex;gap:0.3rem;position:relative;z-index:1}
+.cwa{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.12);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.8rem;transition:background 0.2s}
+.cwa:hover{background:rgba(255,255,255,0.22)}
+
+/* Messages */
+.cw-msgs{flex:1;overflow-y:auto;padding:0.9rem;display:flex;flex-direction:column;gap:0.8rem;scroll-behavior:smooth}
+.cw-msgs::-webkit-scrollbar{width:2px}
+.cw-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:1px}
+
+.cmsg{display:flex;gap:7px;align-items:flex-end;animation:msgIn 0.3s ease}
+.cmsg.user{flex-direction:row-reverse}
+.cmsg-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;flex-shrink:0;overflow:hidden}
+.cmsg-av.b{background:linear-gradient(135deg,var(--teal-d),var(--teal));border:2px solid var(--teal-pale)}
+.cmsg-av.b img{width:100%;height:100%;object-fit:cover;object-position:top}
+.cmsg-av.u{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:0.65rem;font-weight:700}
+.cbubble{max-width:82%;padding:0.65rem 0.9rem;font-size:0.79rem;line-height:1.65}
+.cmsg.bot .cbubble{background:var(--teal-pale2);border:1px solid var(--border);border-radius:14px 14px 14px 3px;color:var(--text);box-shadow:0 1px 6px rgba(2,132,199,0.05)}
+.cmsg.user .cbubble{background:linear-gradient(135deg,var(--teal-d),var(--teal));border-radius:14px 14px 3px 14px;color:#fff;box-shadow:0 2px 10px rgba(2,132,199,0.22)}
+.cbubble strong{color:var(--teal-d);font-weight:700}
+.cmsg.user .cbubble strong{color:#fff}
+.cbubble ul{padding-left:1.1rem;margin:0.3rem 0}
+.cbubble li{margin-bottom:0.2rem}
+.cmsg-time{font-size:0.55rem;color:var(--muted);margin-top:3px}
+.cmsg.user .cmsg-time{text-align:right;color:rgba(255,255,255,0.55)}
+
+/* Typing */
+.ctyping{display:flex;gap:7px;align-items:flex-end}
+.ctyping-b{background:var(--teal-pale2);border:1px solid var(--border);border-radius:14px 14px 14px 3px;padding:0.65rem 0.9rem;display:flex;align-items:center;gap:3px}
+.ctyping-b span{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:typing 1.2s infinite;display:block}
+.ctyping-b span:nth-child(2){animation-delay:0.18s}
+.ctyping-b span:nth-child(3){animation-delay:0.36s}
+
+/* Quick replies */
+.cqr-wrap{padding:0 0.4rem;display:flex;flex-wrap:wrap;gap:0.4rem}
+.cqr{background:#fff;border:1.5px solid var(--border);color:var(--teal);padding:0.35rem 0.8rem;border-radius:100px;font-size:0.68rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.cqr:hover{background:var(--teal-pale);border-color:var(--teal);transform:translateY(-1px)}
+
+/* Action cards in chat */
+.chat-actions{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;max-width:82%}
+.cha{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:0.7rem;text-align:center;cursor:pointer;transition:all 0.2s}
+.cha:hover{border-color:var(--teal);background:var(--teal-pale2);transform:translateY(-1px)}
+.cha-ic{font-size:1.2rem;margin-bottom:0.25rem}
+.cha-t{font-size:0.65rem;font-weight:700;color:var(--teal-d)}
+
+/* Chat input */
+.cw-input{padding:0.7rem 0.9rem;border-top:1px solid var(--border);display:flex;align-items:flex-end;gap:0.5rem;flex-shrink:0;background:#fff}
+#chatInput{flex:1;background:var(--teal-pale2);border:1.5px solid var(--border);border-radius:11px;padding:0.6rem 0.85rem;font-family:'Outfit',sans-serif;font-size:0.79rem;color:var(--text);outline:none;resize:none;max-height:90px;min-height:36px;line-height:1.5;transition:border-color 0.2s,box-shadow 0.2s}
+#chatInput:focus{border-color:var(--teal);box-shadow:0 0 0 2px rgba(2,132,199,0.08)}
+#chatInput::placeholder{color:var(--muted)}
+#chatSend{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal-d),var(--teal));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(2,132,199,0.3);transition:transform 0.15s,opacity 0.2s;flex-shrink:0}
+#chatSend:hover{transform:scale(1.08)}
+#chatSend:disabled{opacity:0.45;cursor:default;transform:none}
+#chatSend svg{width:15px;height:15px;fill:#fff;margin-left:1px}
+.cw-foot{text-align:center;padding:0.35rem;font-size:0.55rem;color:var(--muted);flex-shrink:0}
+.cw-foot span{color:var(--teal);font-weight:700}
+
+/* ═══════════════════════════════════════════════
+   FLOATS
+═══════════════════════════════════════════════ */
+.fab-wa{position:fixed;right:1.5rem;bottom:1.5rem;z-index:840;width:50px;height:50px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 4px 20px rgba(37,211,102,0.38);transition:transform 0.2s;animation:waf 3s ease-in-out infinite}
+.fab-wa:hover{transform:scale(1.1)}
+.fab-wa.mob{bottom:72px;right:1rem;width:44px;height:44px;font-size:1.2rem}
+#btt{position:fixed;bottom:1.5rem;left:1.5rem;z-index:840;width:38px;height:38px;border-radius:9px;background:var(--teal-pale2);border:1px solid var(--border);color:var(--teal);font-size:0.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity 0.3s,transform 0.3s,background 0.2s}
+#btt.vis{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* ═══════════════════════════════════════════════
+   REVEAL
+═══════════════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.rv.visible{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════════════════════
+   KEYFRAMES
+═══════════════════════════════════════════════ */
+@keyframes gradShift{0%{background-position:0 50%}100%{background-position:300% 50%}}
+@keyframes slideUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(16px,-20px)}}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-4px);opacity:1}}
+@keyframes chatPulse{0%,100%{box-shadow:0 4px 22px rgba(2,132,199,0.4)}50%{box-shadow:0 4px 32px rgba(2,132,199,0.6),0 0 0 8px rgba(2,132,199,0.08)}}
+@keyframes tooltipPop{from{opacity:0;transform:translateY(-50%) scale(0.8)}to{opacity:1;transform:translateY(-50%) scale(1)}}
+@keyframes countUp{from{opacity:0}to{opacity:1}}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media(max-width:1100px){
+  .hero-in{grid-template-columns:1fr;gap:2.5rem}
+  .hero-right{padding-bottom:1rem}
+  .about-g{grid-template-columns:1fr;gap:3rem}
+  .clinics-g{grid-template-columns:1fr}
+  .fg-g{grid-template-columns:1fr 1fr}
+  .braces-g{grid-template-columns:1fr 1fr}
+  .why-g{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  #nav .nav-links,#nav .nav-right{display:none}
+  .hbg{display:flex}
+  .nav-in{padding:0 1rem;height:60px}
+  .ann{padding:0.4rem 1rem;flex-direction:column;gap:0.3rem;text-align:center}
+  .ann-calls{justify-content:center}
+  section{padding:3.5rem 1.2rem}
+  #hero{padding:2.5rem 1.2rem 1.5rem;min-height:auto}
+  .hero-h{font-size:1.9rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas a,.hero-ctas button{justify-content:center}
+  .why-g{grid-template-columns:1fr 1fr}
+  .braces-g{grid-template-columns:1fr}
+  .svc-items{grid-template-columns:1fr}
+  .contact-g{grid-template-columns:1fr;gap:2.5rem}
+  .frow{grid-template-columns:1fr}
+  .fg-g{grid-template-columns:1fr}
+  .fbot{flex-direction:column;text-align:center}
+  .c-act{grid-template-columns:1fr 1fr}
+  #mbn{display:block}
+  body{padding-bottom:60px}
+  .fab-wa{bottom:72px;right:1rem;width:46px;height:46px;font-size:1.2rem}
+  #chatLauncher{bottom:5rem;right:1rem;width:52px;height:52px}
+  .chat-tooltip{display:none}
+  #chatWindow{right:0.5rem;bottom:9.5rem;width:calc(100vw - 1rem)}
+  #btt{display:none}
+  .timing-g{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .why-g{grid-template-columns:1fr}
+  .hero-chips{gap:0.4rem}
+  .abtns{flex-direction:column}
+  .hero-h{font-size:1.7rem}
+  .c-act{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="ann">
+  <div class="ann-msg">
+    <div class="ann-badge">🎉 10% OFF</div>
+    More than 10% off this month on ALL dental treatments!
+    &nbsp;·&nbsp; 2 Clinics: Etawah &amp; Saifai
+    &nbsp;·&nbsp; MDS Orthodontist
+  </div>
+  <div class="ann-calls">
+    <a href="tel:6397692840" class="ann-call">📞 6397692840</a>
+    <a href="tel:9456995372" class="ann-call">📞 9456995372</a>
+  </div>
+</div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="nav">
+  <div class="nav-in">
+    <div class="nav-brand">
+      <div class="nav-brand-icon">🦷</div>
+      <div class="nav-brand-text">
+        <strong>Orthodontic Clinic Etawah</strong>
+        <span>Dr. Shashi Kumar · BDS, MDS Orthodontics</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#braces">Braces</a></li>
+      <li><a href="#clinics">Clinics</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="n-wa" target="_blank">💬 WhatsApp</a>
+      <a href="tel:6397692840" class="n-appt">📞 Book Now</a>
+    </div>
+    <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══ MOBILE MENU ═══ -->
+<div id="mob">
+  <div class="mob-head">
+    <div class="nav-brand">
+      <div class="nav-brand-icon" style="width:36px;height:36px;font-size:1.1rem">🦷</div>
+      <div class="nav-brand-text"><strong>Orthodontic Clinic</strong><span>Dr. Shashi Kumar · MDS</span></div>
+    </div>
+    <button class="mob-x" id="mX">✕</button>
+  </div>
+  <nav class="mob-nav">
+    <a href="#about"     onclick="cm()">🩺 About Dr. Shashi Kumar</a>
+    <a href="#why"       onclick="cm()">⭐ Why Choose Us</a>
+    <a href="#services"  onclick="cm()">💊 Services &amp; Pricing</a>
+    <a href="#braces"    onclick="cm()">😁 Braces Guide</a>
+    <a href="#clinics"   onclick="cm()">📍 Our Clinics</a>
+    <a href="#faq"       onclick="cm()">❓ FAQ</a>
+    <a href="#contact"   onclick="cm()">📩 Contact</a>
+  </nav>
+  <div class="mob-act">
+    <a href="tel:6397692840"  class="ma ma-c" onclick="cm()">📞 Call Clinic 1 — 6397692840</a>
+    <a href="tel:9456995372"  class="ma ma-c" onclick="cm()">📞 Call Clinic 2 — 9456995372</a>
+    <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="ma ma-w" target="_blank" onclick="cm()">💬 WhatsApp Appointment</a>
+    <a href="#contact" class="ma ma-a" onclick="cm()">📅 Book Online</a>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-glow1"></div><div class="hero-glow2"></div><div class="hero-dots"></div>
+  <div class="hero-in">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-pill"><span class="hp-dot"></span>MDS Certified Orthodontist · Etawah, UP</div>
+      <h1 class="hero-h">Expert <em>Braces &amp; Dental</em><br/>Care in Etawah</h1>
+      <div class="hero-dr">
+        <div class="hero-dr-av">
+          <img src="dr-shashi-kumar.webp" alt="Dr. Shashi Kumar" onerror="this.parentElement.innerHTML='👩‍⚕️'"/>
+        </div>
+        <div class="hero-dr-info">
+          <strong>Dr. Shashi Kumar</strong>
+          <span>BDS · MDS (Orthodontics) · UPUMS Saifai · 14+ Years</span>
+        </div>
+      </div>
+      <p class="hero-p">टेढ़े-मेढ़े दांतों को ब्रेसेस, तार एवं एलाइनर से सही कराएं। Expert in braces, root canal, implants &amp; all dental procedures. Etawah's most trusted MDS Orthodontist.</p>
+      <div class="hero-ctas">
+        <a href="tel:6397692840" class="btn-pri">📞 Book Appointment</a>
+        <a href="#services" class="btn-sec">💊 Services &amp; Prices</a>
+        <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="btn-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="hero-chips">
+        <div class="chip"><span class="ck">✓</span>MDS Qualified</div>
+        <div class="chip"><span class="ck">✓</span>14+ Years Exp.</div>
+        <div class="chip"><span class="ck">✓</span>1000+ Patients</div>
+        <div class="chip"><span class="ck">✓</span>2 Clinics</div>
+        <div class="chip"><span class="ck">✓</span>10% OFF Now</div>
+      </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <div class="dr-card">
+        <div class="dr-card-banner">
+          <img src="clinic-banner.webp" alt="Orthodontic Clinic Etawah" onerror="this.parentElement.style.background='linear-gradient(135deg,#0c4a6e,#0284c7)'"/>
+          <div class="dr-card-banner-overlay"></div>
+          <div class="dr-card-info">
+            <div class="dr-card-av">
+              <img src="dr-shashi-kumar.webp" alt="Dr. Shashi Kumar" onerror="this.parentElement.innerHTML='👩‍⚕️'"/>
+            </div>
+            <div class="dr-card-name">
+              <strong>Dr. Shashi Kumar</strong>
+              <span>BDS, MDS — Orthodontics</span>
+            </div>
+          </div>
+        </div>
+        <div class="dr-card-body">
+          <div class="counter-row">
+            <div class="ctr-item"><span class="ctr-num" data-target="14" data-suffix="+">0</span><span class="ctr-lbl">Yrs Exp.</span></div>
+            <div class="ctr-item"><span class="ctr-num" data-target="1000" data-suffix="+">0</span><span class="ctr-lbl">Patients</span></div>
+            <div class="ctr-item"><span class="ctr-num" data-target="2" data-suffix="">0</span><span class="ctr-lbl">Clinics</span></div>
+          </div>
+          <div class="offer-strip">
+            <div class="os-text"><strong>🎉 Special Offer — This Month!</strong><span>10%+ off on all treatments</span></div>
+            <div class="os-badge">10% OFF</div>
+          </div>
+        </div>
+      </div>
+      <div class="clinic-q">
+        <div class="cq-item"><div class="cq-lbl">Clinic 1 — Etawah</div><div class="cq-val">ITI Chauraha, NH2</div><div class="cq-time">Mon–Sat 2–6 PM · Sun 10–4 PM</div></div>
+        <div class="cq-item"><div class="cq-lbl">Clinic 2 — Saifai</div><div class="cq-val">Hospital Chauraha</div><div class="cq-time">Mon–Sat 9:30 AM–2 PM</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINIC BANNER PHOTO -->
+<div class="clinic-banner">
+  <img src="clinic-banner.webp" alt="Orthodontic Clinic Etawah — Dr Shashi Kumar MDS Orthodontics"/>
+  <div class="cb-overlay">
+    <div class="cb-content">
+      <div class="cb-tag">✦ ऑर्थोडॉन्टिक क्लीनिक — दाँतो का अस्पताल</div>
+      <div class="cb-title">Dr. Shashi Kumar<br/>BDS, MDS (Orthodontics)</div>
+      <div class="cb-sub">सैफई डेंटल एंड ऑर्थोडॉन्टिक क्लिनिक · Etawah &amp; Saifai</div>
+      <div class="cb-btns">
+        <a href="tel:6397692840" class="cb-btn cb-b1">📞 6397692840</a>
+        <a href="https://wa.me/919456995372" class="cb-btn cb-b2" target="_blank">💬 9456995372</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ti">
+  <span>Braces Specialist</span><span>Root Canal Treatment</span><span>Dental Implants</span>
+  <span>Teeth Whitening</span><span>Metal Braces ₹1500/month</span><span>Ceramic Braces ₹2500/month</span>
+  <span>Aligners ₹3500/month</span><span>10% Off This Month</span><span>Call 6397692840</span>
+  <span>Etawah &amp; Saifai</span><span>14+ Years Experience</span><span>1000+ Happy Patients</span>
+  <span>Braces Specialist</span><span>Root Canal Treatment</span><span>Dental Implants</span>
+  <span>Teeth Whitening</span><span>Metal Braces ₹1500/month</span><span>Ceramic Braces ₹2500/month</span>
+  <span>Aligners ₹3500/month</span><span>10% Off This Month</span><span>Call 6397692840</span>
+  <span>Etawah &amp; Saifai</span><span>14+ Years Experience</span><span>1000+ Happy Patients</span>
+</div></div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about"><div class="mw">
+  <div class="about-g">
+    <div class="rv">
+      <div class="about-card">
+        <div class="ac-banner">
+          <div class="ac-banner-text"><strong>Orthodontic Clinic Etawah</strong><span>www.orthodonticclinic.co.in</span></div>
+        </div>
+        <div class="ac-body">
+          <div class="ac-dr">
+            <div class="ac-dr-av"><img src="dr-shashi-kumar.webp" alt="Dr. Shashi Kumar" onerror="this.parentElement.innerHTML='👩‍⚕️'"/></div>
+            <div class="ac-dr-info">
+              <strong>Dr. Shashi Kumar</strong>
+              <div class="qual">BDS, MDS (Orthodontics)</div>
+              <div class="loc">📍 Etawah &amp; Saifai, Uttar Pradesh</div>
+            </div>
+          </div>
+          <p class="ac-desc">Dr. Shashi Kumar is an eminent orthodontist &amp; dentist with <strong>14+ years</strong> of experience and <strong>1000+ patients treated</strong>. She holds an MDS in Orthodontics — one of dentistry's most specialised and difficult degrees.</p>
+          <div class="ac-stats">
+            <div class="acs"><strong>14+</strong><span>Years Experience</span></div>
+            <div class="acs"><strong>1000+</strong><span>Patients Treated</span></div>
+            <div class="acs"><strong>MDS</strong><span>Orthodontics</span></div>
+            <div class="acs"><strong>2</strong><span>Clinic Locations</span></div>
+          </div>
+          <div class="edu-list">
+            <div class="edu-i"><strong>BDS</strong> — Chhattisgarh Dental College &amp; Research Center (CDCRI)</div>
+            <div class="edu-i"><strong>MDS (Orthodontics)</strong> — Braces, wire &amp; aligner specialist</div>
+            <div class="edu-i"><strong>Residency</strong> — UPUMS, Saifai, Uttar Pradesh</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right rv" style="transition-delay:0.12s">
+      <div class="ey">About Dr. Shashi Kumar</div>
+      <h2 class="sh2">Etawah's Most Trusted<br/><em>MDS Orthodontist</em></h2>
+      <p class="alead">Dr. Shashi Kumar is a <strong>certified MDS Orthodontist</strong> — the highest qualification in dentistry for treating crooked teeth. She currently practices at two locations in Etawah and Saifai, offering expert care to patients of all ages.</p>
+      <div class="feat-list">
+        <div class="fi"><div class="fi-ic">🦷</div><div class="fi-t"><strong>MDS Orthodontist — Only Qualified Specialist</strong><span>Corrects all types of crooked, crowded, gapped &amp; protruded teeth with braces &amp; aligners</span></div></div>
+        <div class="fi"><div class="fi-ic">⚕️</div><div class="fi-t"><strong>Full-Service Dental Clinic</strong><span>Root canal, implants, dentures, extractions, whitening, scaling &amp; more</span></div></div>
+        <div class="fi"><div class="fi-ic">💰</div><div class="fi-t"><strong>Affordable &amp; Transparent Prices</strong><span>Metal braces from ₹1500/month · 10% off this month on everything</span></div></div>
+        <div class="fi"><div class="fi-ic">📍</div><div class="fi-t"><strong>2 Convenient Locations</strong><span>ITI Chauraha Etawah · Hospital Chauraha Saifai · Open 6 days + Sunday</span></div></div>
+      </div>
+      <div class="verified-pill">
+        <span class="vp-dot"></span>
+        <div class="vp-t"><strong>Amazon Verified Seller</strong><strong>MDS Qualified — Orthodontic Clinic Etawah</strong><span>Serving patients since 2010 · Etawah &amp; Saifai, Uttar Pradesh</span></div>
+      </div>
+      <div class="abtns" style="margin-top:1.5rem">
+        <a href="tel:6397692840" class="btn-pri" style="font-size:0.82rem;padding:0.82rem 1.6rem">📞 Book Appointment</a>
+        <a href="#services" class="btn-sec" style="font-size:0.82rem;padding:0.82rem 1.6rem">View All Services →</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why"><div class="mw">
+  <div class="shdr ctr-sec rv">
+    <div class="ey">Why Choose Us</div>
+    <h2 class="sh2">Why <em>Orthodontic Clinic</em> Etawah?</h2>
+    <p class="sub">हमारे क्लिनिक में इटावा के सर्वश्रेष्ठ ऑर्थोडॉन्टिस्ट और डेंटल विशेषज्ञ उपलब्ध हैं।</p>
+  </div>
+  <div class="why-g">
+    <div class="wcard rv"><div class="w-ic">🏆</div><div class="w-t">Team of Super-Specialists</div><p class="w-d">Orthodontist, Periodontist, Endodontist, Prosthodontist &amp; Oral Surgeon — every dental specialty under one roof.</p></div>
+    <div class="wcard rv" style="transition-delay:0.07s"><div class="w-ic">🔬</div><div class="w-t">Latest Treatment Technology</div><p class="w-d">Cutting-edge techniques and modern equipment for comfortable, effective, and faster treatment results.</p></div>
+    <div class="wcard rv" style="transition-delay:0.14s"><div class="w-ic">🎯</div><div class="w-t">Personalised Care</div><p class="w-d">Each patient is analysed individually. A customised treatment plan is created specifically for your needs.</p></div>
+    <div class="wcard rv" style="transition-delay:0.05s"><div class="w-ic">💰</div><div class="w-t">Affordable Pricing</div><p class="w-d">Metal braces from ₹1500/month. All treatments transparently priced. 10% off this month for all patients.</p></div>
+    <div class="wcard rv" style="transition-delay:0.12s"><div class="w-ic">📍</div><div class="w-t">2 Convenient Locations</div><p class="w-d">ITI Chauraha, Etawah and Hospital Chauraha, Saifai — open 6 days a week including Sundays at Clinic 1.</p></div>
+    <div class="wcard rv" style="transition-delay:0.19s"><div class="w-ic">😊</div><div class="w-t">1000+ Happy Patients</div><p class="w-d">Dr. Shashi Kumar has successfully treated 1000+ patients. Join a community of confident, beautiful smiles.</p></div>
+  </div>
+</div></section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services"><div class="mw">
+  <div class="shdr ctr-sec rv">
+    <div class="ey">Services &amp; Pricing</div>
+    <h2 class="sh2">Complete Dental <em>Price List</em></h2>
+    <p class="sub">All procedures by MDS qualified specialists. <strong>10% discount this month</strong> on all treatments!</p>
+  </div>
+  <div class="svc-grid rv">
+    <div class="svc-cat">
+      <div class="svc-head"><div class="sh-ic">🦷</div><div><div class="sh-title">Orthodontics — टेढ़े मेढ़े दाँत</div><div class="sh-sub">Braces, Wires &amp; Aligners</div></div></div>
+      <div class="svc-items">
+        <div class="svc-i"><div class="si-name">Metal Braces<small>Self-ligating</small></div><div class="si-price">₹1,500/mo</div></div>
+        <div class="svc-i"><div class="si-name">Ceramic Braces<small>Self-ligating, tooth-colored</small></div><div class="si-price">₹2,500/mo</div></div>
+        <div class="svc-i"><div class="si-name">Aligner / Invisalign<small>Clear removable aligners</small></div><div class="si-price">₹3,500/mo</div></div>
+        <div class="svc-i"><div class="si-name">Lingual Braces<small>Hidden behind teeth</small></div><div class="si-price">Consult</div></div>
+      </div>
+    </div>
+    <div class="svc-cat">
+      <div class="svc-head"><div class="sh-ic">🔪</div><div><div class="sh-title">Oral &amp; Maxillofacial Surgery</div><div class="sh-sub">Extractions &amp; surgical procedures</div></div></div>
+      <div class="svc-items">
+        <div class="svc-i"><div class="si-name">Tooth Extraction</div><div class="si-price">₹100–500</div></div>
+        <div class="svc-i"><div class="si-name">Impacted Tooth Extraction</div><div class="si-price">₹2,000</div></div>
+        <div class="svc-i"><div class="si-name">Swelling / Benign Growth</div><div class="si-price">₹2,000–5,000</div></div>
+        <div class="svc-i"><div class="si-name">Jaw Fracture — जबड़े का टूटना</div><div class="si-price">₹2,000–10,000</div></div>
+      </div>
+    </div>
+    <div class="svc-cat">
+      <div class="svc-head"><div class="sh-ic">🦷</div><div><div class="sh-title">Prosthodontics</div><div class="sh-sub">Dentures, crowns, bridges &amp; implants</div></div></div>
+      <div class="svc-items">
+        <div class="svc-i"><div class="si-name">Complete Denture — बत्तीसी</div><div class="si-price">₹5,000</div></div>
+        <div class="svc-i"><div class="si-name">Crown &amp; Bridge<small>Per tooth</small></div><div class="si-price">₹2,000/tooth</div></div>
+        <div class="svc-i"><div class="si-name">Capping — कैपिंग</div><div class="si-price">₹300–10,000</div></div>
+        <div class="svc-i"><div class="si-name">Dental Implant — परमानेंट दाँत</div><div class="si-price">₹10,000–50,000</div></div>
+        <div class="svc-i"><div class="si-name">Zirconium Crown (China)<small>5–10 yr guarantee</small></div><div class="si-price">Consult</div></div>
+        <div class="svc-i"><div class="si-name">Zirconium Crown (German)<small>Lifetime guarantee</small></div><div class="si-price">Consult</div></div>
+      </div>
+    </div>
+    <div class="svc-cat">
+      <div class="svc-head"><div class="sh-ic">🔩</div><div><div class="sh-title">Endodontics — Root Canal · आर सी टी</div><div class="sh-sub">Inner tooth &amp; nerve treatments</div></div></div>
+      <div class="svc-items">
+        <div class="svc-i"><div class="si-name">Root Canal Treatment (RCT)<small>Front &amp; back teeth</small></div><div class="si-price">₹1,000–5,000</div></div>
+        <div class="svc-i"><div class="si-name">Apicoectomy — एपिकोएक्टोमी</div><div class="si-price">₹3,000</div></div>
+        <div class="svc-i"><div class="si-name">Cracked Teeth Treatment</div><div class="si-price">₹3,000</div></div>
+      </div>
+    </div>
+    <div class="svc-cat">
+      <div class="svc-head"><div class="sh-ic">🫁</div><div><div class="sh-title">Periodontics — मसूढ़ों की बीमारी</div><div class="sh-sub">Gum treatment, cleaning &amp; whitening</div></div></div>
+      <div class="svc-items">
+        <div class="svc-i"><div class="si-name">Pyorrhea</div><div class="si-price">₹500</div></div>
+        <div class="svc-i"><div class="si-name">Scaling — दाँतों की सफाई</div><div class="si-price">₹500</div></div>
+        <div class="svc-i"><div class="si-name">Scaling &amp; Polishing</div><div class="si-price">₹1,000</div></div>
+        <div class="svc-i"><div class="si-name">Deep Scaling &amp; Polishing</div><div class="si-price">₹2,000</div></div>
+        <div class="svc-i"><div class="si-name">Laser Curettage<small>Per quadrant</small></div><div class="si-price">₹2,000/quad</div></div>
+        <div class="svc-i"><div class="si-name">Teeth Whitening — ब्लीचिंग</div><div class="si-price">₹5,000</div></div>
+        <div class="svc-i"><div class="si-name">Gum Graft</div><div class="si-price">₹1,000</div></div>
+        <div class="svc-i"><div class="si-name">Laser Gum Surgery</div><div class="si-price">Consult</div></div>
+        <div class="svc-i"><div class="si-name">Smile Designing<small>Composite &amp; ceramic laminates</small></div><div class="si-price">Consult</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="svc-note rv">💡 <strong>Note:</strong> Prices are indicative. Final cost depends on case complexity. <strong>10% off on all treatments this month!</strong> Call <a href="tel:6397692840" style="color:var(--teal);font-weight:700">6397692840</a> for exact quote.</div>
+</div></section>
+
+<!-- ═══ BRACES ═══ -->
+<section id="braces"><div class="mw">
+  <div class="shdr rv">
+    <div class="ey">Braces Guide</div>
+    <h2 class="sh2">Types of <em>Braces</em> We Offer</h2>
+    <p class="sub">ब्रेसिज़ वे उपकरण हैं जो दांतों पर लगाए जाते हैं ताकि तार लगाया जा सके। Three types — choose based on budget, comfort &amp; aesthetics.</p>
+  </div>
+  <div class="braces-g">
+    <div class="bcard rv" style="position:relative">
+      <div class="best-tag">MOST POPULAR</div>
+      <div class="bc-top"><div class="bc-icon">🔩</div><div class="bc-name">Metal Braces</div><div class="bc-tag">मेटल ब्रेसिज़</div></div>
+      <div class="bc-body">
+        <div class="bc-price">₹1,500 <small>/month</small></div>
+        <p class="bc-desc">Cheapest and strongest braces. Preferred by most patients as they don't break easily and reduce treatment duration. Available conventional &amp; self-ligating.</p>
+        <ul class="bc-pros"><li>Most affordable option</li><li>Strongest — doesn't break easily</li><li>Reduces treatment time</li><li>Self-ligating option available</li><li>Treatment: 6 months to 2 years</li></ul>
+      </div>
+    </div>
+    <div class="bcard rv" style="transition-delay:0.1s">
+      <div class="bc-top"><div class="bc-icon">🫶</div><div class="bc-name">Ceramic Braces</div><div class="bc-tag">सिरेमिक ब्रेसिज़</div></div>
+      <div class="bc-body">
+        <div class="bc-price">₹2,500 <small>/month</small></div>
+        <p class="bc-desc">Tooth-colored, much less visible than metal. Great for appearance-conscious patients. Slightly more fragile but highly aesthetic. Available conventional &amp; self-ligating.</p>
+        <ul class="bc-pros"><li>Barely visible — tooth-colored</li><li>Aesthetically superior</li><li>Great for adults &amp; professionals</li><li>Two types available</li><li>Slightly higher cost than metal</li></ul>
+      </div>
+    </div>
+    <div class="bcard rv" style="transition-delay:0.2s">
+      <div class="bc-top"><div class="bc-icon">🫦</div><div class="bc-name">Lingual Braces</div><div class="bc-tag">लिंगुअल ब्रेसस</div></div>
+      <div class="bc-body">
+        <div class="bc-price">Consult <small>for price</small></div>
+        <p class="bc-desc">Placed on the inner tongue-side of teeth — completely invisible to others. Most aesthetic, but complex placement and not suitable for all misalignment types.</p>
+        <ul class="bc-pros"><li>100% invisible — hidden behind teeth</li><li>Highest aesthetic appeal</li><li>Complex — MDS specialist required</li><li>Not for all cases</li><li>Premium treatment option</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="svc-note rv" style="margin-top:1.5rem">⏱️ <strong>Duration:</strong> Gap-only teeth → ~6 months. Protruded/crowded → 8 months–2 years. &nbsp;|&nbsp; 💰 <strong>Example Cost:</strong> 1 year metal braces = approx. <strong>₹25,000</strong> (₹1,500 × 12 months).</div>
+</div></section>
+
+<!-- ═══ CLINICS ═══ -->
+<section id="clinics"><div class="mw">
+  <div class="shdr ctr-sec rv">
+    <div class="ey">Our Locations</div>
+    <h2 class="sh2">Visit Our <em>2 Clinics</em></h2>
+    <p class="sub">Etawah and Saifai — open 6 days a week with Sunday availability at Clinic 1.</p>
+  </div>
+  <div class="clinics-g">
+    <div class="cc rv">
+      <div class="cc-head"><div class="cc-num">1</div><div class="cc-ht"><strong>Orthodontic Clinic Etawah</strong><span>Main Clinic — ITI Chauraha</span></div></div>
+      <div class="cc-body">
+        <div class="cc-r"><div class="cc-ic">📍</div><div class="cc-rt"><label>Address</label><p>ITI Chauraha, NH2 Highway Service Road, Etawah, Uttar Pradesh</p></div></div>
+        <div class="cc-r"><div class="cc-ic">📞</div><div class="cc-rt"><label>Phone</label><a href="tel:6397692840">6397692840</a></div></div>
+        <div class="cc-r"><div class="cc-ic">📧</div><div class="cc-rt"><label>Email</label><a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div></div>
+        <div class="timing-g">
+          <div class="tg"><div class="tg-day">Mon — Sat</div><div class="tg-time">2:00 PM – 6:00 PM</div></div>
+          <div class="tg"><div class="tg-day">Sunday</div><div class="tg-time">10:00 AM – 4:00 PM</div></div>
+        </div>
+        <div class="cc-btns">
+          <a href="tel:6397692840" class="cc-btn ccb-c">📞 Call Now</a>
+          <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment%20at%20Orthodontic%20Clinic%20Etawah." class="cc-btn ccb-w" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="cc rv" style="transition-delay:0.12s">
+      <div class="cc-head"><div class="cc-num">2</div><div class="cc-ht"><strong>Saifai Dental &amp; Orthodontic Clinic</strong><span>Hospital Chauraha, Saifai</span></div></div>
+      <div class="cc-body">
+        <div class="cc-r"><div class="cc-ic">📍</div><div class="cc-rt"><label>Address</label><p>Fauji Market, Hospital Chauraha, Saifai, Uttar Pradesh</p></div></div>
+        <div class="cc-r"><div class="cc-ic">📞</div><div class="cc-rt"><label>Phone</label><a href="tel:9456995372">9456995372</a></div></div>
+        <div class="cc-r"><div class="cc-ic">📧</div><div class="cc-rt"><label>Email</label><a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div></div>
+        <div class="timing-g">
+          <div class="tg"><div class="tg-day">Mon — Sat</div><div class="tg-time">9:30 AM – 2:00 PM</div></div>
+          <div class="tg"><div class="tg-day">Sunday</div><div class="tg-time">Closed</div></div>
+        </div>
+        <div class="cc-btns">
+          <a href="tel:9456995372" class="cc-btn ccb-c">📞 Call Now</a>
+          <a href="https://wa.me/919456995372?text=Hi!%20I%20want%20to%20book%20an%20appointment%20at%20Saifai%20Dental%20Clinic." class="cc-btn ccb-w" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq"><div class="mw">
+  <div class="shdr ctr-sec rv">
+    <div class="ey">FAQ</div>
+    <h2 class="sh2">Frequently Asked <em>Questions</em></h2>
+    <p class="sub">Common questions answered by Dr. Shashi Kumar — in English &amp; Hindi.</p>
+  </div>
+  <div class="faq-wrap rv">
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>What is orthodontic treatment and who needs it?</span><span class="faq-plus">+</span></div><div class="faq-a">Orthodontic treatment corrects the position and alignment of teeth using braces, wires, and aligners. You need it if your teeth are <strong>crooked, crowded, protruding, gapped</strong>, or affect your smile and confidence.<div class="faq-hin">ऑर्थोडॉन्टिक उपचार का अर्थ है ब्रेसेस, वायर और अलाइनर से दांतों की स्थिति को सही करना।</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Is the treatment painful? क्या इलाज में दर्द होता है?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>No</strong> — the procedure is not painful at all. Some patients feel mild discomfort initially, easily relieved with paracetamol.<div class="faq-hin">बिल्कुल नहीं — थोड़ी असुविधा हो सकती है जो पैरासिटामोल से तुरंत ठीक हो जाती है।</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>How long does braces treatment take?</span><span class="faq-plus">+</span></div><div class="faq-a">Duration depends on the case. <strong>Gap-only teeth:</strong> ~6 months. <strong>Protruded/crowded:</strong> 8 months–2 years. Metal braces are generally fastest.<div class="faq-hin">केवल गैप वाले दांत: 6 महीने। गंभीर टेढ़ापन: 8 महीने से 2 साल।</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>How much does braces treatment cost?</span><span class="faq-plus">+</span></div><div class="faq-a">Example: 1 year with metal braces = approx. <strong>₹25,000</strong> (₹1,500/month × 12). Ceramic = ₹2,500/mo. Aligners = ₹3,500/mo. <strong>10% off this month!</strong><div class="faq-hin">एक साल मेटल ब्रेसेस = लगभग ₹25,000। इस महीने 10% की छूट!</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Why choose an MDS Orthodontist and not a BDS dentist?</span><span class="faq-plus">+</span></div><div class="faq-a">MDS is a specialized master's degree. Only MDS Orthodontists are qualified to treat crooked teeth correctly. BDS attempts often lead to unsatisfactory results and side effects.<div class="faq-hin">MDS एक विशेष मास्टर डिग्री है। सामान्य BDS द्वारा किया गया इलाज असंतोषजनक हो सकता है।</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Can adults (35+ years) get braces?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>Absolutely!</strong> There is NO age limit for braces. Adults in their 30s, 40s, 50s get excellent results. Treatment typically takes 12–30 months.<div class="faq-hin">बिल्कुल! 35, 40, 50 साल में भी ब्रेसेस हो सकती है। कोई आयु सीमा नहीं है।</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>My child (9 years) has protruding teeth. Is this the right age?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>Yes!</strong> Age 9 is an excellent time. The AAO recommends first check-up by age 7. Growing jaws respond better to treatment early, reducing complexity later.<div class="faq-hin">9 साल बिल्कुल सही उम्र है। जबड़े अभी बढ़ रहे हैं — इलाज आसान और प्रभावी होता है।</div></div></div>
+    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Why do teeth become crooked?</span><span class="faq-plus">+</span></div><div class="faq-a">Causes: <strong>1.</strong> Genetics &nbsp;<strong>2.</strong> Poor oral hygiene &nbsp;<strong>3.</strong> Early baby tooth loss &nbsp;<strong>4.</strong> Thumb sucking &nbsp;<strong>5.</strong> Tongue thrusting &nbsp;<strong>6.</strong> Malnutrition &nbsp;<strong>7.</strong> Mouth breathing &nbsp;<strong>8.</strong> Trauma<div class="faq-hin">कारण: अनुवांशिक, खराब मौखिक स्वच्छता, अंगूठा चूसना, मुँह से सांस लेना, कुपोषण, चोट।</div></div></div>
+  </div>
+</div></section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact"><div class="mw">
+  <div class="contact-g">
+    <div class="rv">
+      <div class="ey">Contact Us</div>
+      <h2 class="sh2">Book Your <em>Appointment</em></h2>
+      <p class="ci sub" style="margin-bottom:2rem">Reach out to book, ask about treatments, or get a consultation. We respond quickly.</p>
+      <div class="cdet"><div class="cdet-ic">📞</div><div class="cdet-t"><label>Clinic 1 — Etawah</label><a href="tel:6397692840">6397692840 (ITI Chauraha, Etawah)</a></div></div>
+      <div class="cdet"><div class="cdet-ic">📞</div><div class="cdet-t"><label>Clinic 2 — Saifai</label><a href="tel:9456995372">9456995372 (Hospital Chauraha, Saifai)</a></div></div>
+      <div class="cdet"><div class="cdet-ic">💬</div><div class="cdet-t"><label>WhatsApp</label><a href="https://wa.me/916397692840" target="_blank">+91 6397692840</a></div></div>
+      <div class="cdet"><div class="cdet-ic">📧</div><div class="cdet-t"><label>Email</label><a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div></div>
+      <div class="cdet"><div class="cdet-ic">📍</div><div class="cdet-t"><label>Clinic 1</label><p>ITI Chauraha, NH2, Etawah · 2–6 PM Mon–Sat · 10 AM–4 PM Sun</p></div></div>
+      <div class="cdet"><div class="cdet-ic">📍</div><div class="cdet-t"><label>Clinic 2</label><p>Hospital Chauraha, Saifai · 9:30 AM–2 PM Mon–Sat</p></div></div>
+      <div class="c-act">
+        <a href="tel:6397692840" class="ca ca-c">📞 Call Clinic 1</a>
+        <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="ca ca-w" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="owner-c">
+        <div class="oc-av">SK</div>
+        <div class="oc-t"><strong>Dr. Shashi Kumar</strong><span>Owner · BDS, MDS Orthodontics · Etawah, UP</span><span><a href="mailto:shashidr2009@gmail.com" style="color:var(--teal)">shashidr2009@gmail.com</a></span></div>
+      </div>
+    </div>
+    <div class="rv" style="transition-delay:0.12s">
+      <div class="cform" id="cForm">
+        <div class="frow">
+          <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name" id="fn"/></div>
+          <div class="fg"><label>Phone *</label><input type="tel" placeholder="+91 XXXXX XXXXX" id="fp"/></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="fg"><label>Treatment Interested In</label>
+          <select><option value="">Select treatment...</option><option>Braces / Orthodontic Treatment</option><option>Root Canal (RCT)</option><option>Dental Implant</option><option>Teeth Whitening</option><option>Scaling &amp; Polishing</option><option>Crown &amp; Bridge</option><option>Dentures</option><option>Tooth Extraction</option><option>General Checkup</option><option>Other</option></select>
+        </div>
+        <div class="fg"><label>Preferred Clinic</label>
+          <select><option value="">Select clinic...</option><option>Clinic 1 — ITI Chauraha, Etawah</option><option>Clinic 2 — Hospital Chauraha, Saifai</option></select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Describe your dental concern or ask a question..."></textarea></div>
+        <p class="fnote">* Required. We will call back to confirm your appointment.</p>
+        <button class="bsub" onclick="sendForm()">📅 Request Appointment</button>
+      </div>
+      <div class="fsuccess" id="fSucc">✅ Appointment request received! We'll call you back shortly to confirm. You can also call directly: <strong>6397692840</strong></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="fg-g">
+    <div class="fbrand">
+      <div class="fbrand-logo">
+        <div class="fl-ic"><img src="dr-shashi-kumar.webp" alt="Dr Shashi Kumar" onerror="this.parentElement.innerHTML='🦷'" style="width:40px;height:40px;border-radius:9px;object-fit:cover;object-position:top"/></div>
+        <div class="fl-t"><strong>Orthodontic Clinic Etawah</strong><span>Dr. Shashi Kumar · MDS Orthodontics</span></div>
+      </div>
+      <p>Expert orthodontic &amp; dental care in Etawah and Saifai. Specialising in braces, aligners &amp; all dental procedures. 14+ years experience, 1000+ patients.</p>
+      <div class="fcqs">
+        <div class="fcq">📞 <a href="tel:6397692840">6397692840</a> &nbsp;·&nbsp; <a href="tel:9456995372">9456995372</a></div>
+        <div class="fcq">📧 <a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div>
+        <div class="fcq">📍 Etawah &amp; Saifai, Uttar Pradesh</div>
+      </div>
+    </div>
+    <div class="fcol"><h4>Navigation</h4><ul><li><a href="#about">About Dr. Shashi Kumar</a></li><li><a href="#why">Why Choose Us</a></li><li><a href="#services">Services &amp; Pricing</a></li><li><a href="#braces">Braces Guide</a></li><li><a href="#clinics">Our Clinics</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact / Appointment</a></li></ul></div>
+    <div class="fcol"><h4>Services</h4><ul><li><a href="#services">Metal Braces ₹1500/mo</a></li><li><a href="#services">Ceramic Braces ₹2500/mo</a></li><li><a href="#services">Aligners ₹3500/mo</a></li><li><a href="#services">Root Canal ₹1k–5k</a></li><li><a href="#services">Dental Implant ₹10k–50k</a></li><li><a href="#services">Teeth Whitening ₹5000</a></li><li><a href="#services">Scaling ₹500</a></li></ul></div>
+    <div class="fcol"><h4>Clinics &amp; Hours</h4><ul><li><a href="#clinics">Clinic 1 — Etawah</a></li><li><a href="#clinics">Mon–Sat: 2–6 PM</a></li><li><a href="#clinics">Sunday: 10 AM–4 PM</a></li><li><a href="#clinics">Clinic 2 — Saifai</a></li><li><a href="#clinics">Mon–Sat: 9:30 AM–2 PM</a></li><li><a href="tel:6397692840">📞 6397692840</a></li><li><a href="tel:9456995372">📞 9456995372</a></li></ul></div>
+  </div>
+  <div class="fbot">
+    <p>© 2024 <span>Orthodontic Clinic Etawah</span>. All Rights Reserved · Dr. Shashi Kumar BDS, MDS</p>
+    <p>ITI Chauraha, NH2, <span>Etawah, Uttar Pradesh</span></p>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING WHATSAPP ═══ -->
+<a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment%20at%20Orthodontic%20Clinic%20Etawah." class="fab-wa mob" target="_blank" title="WhatsApp">💬</a>
+<button id="btt" onclick="scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- ═══ MOBILE BOTTOM NAV ═══ -->
+<div id="mbn">
+  <div class="mbn-in">
+    <a href="#" class="mbn-i act" onclick="scrollTo({top:0,behavior:'smooth'});return false"><span class="mbn-ic">🏠</span><span>Home</span></a>
+    <a href="#services" class="mbn-i"><span class="mbn-ic">💊</span><span>Services</span></a>
+    <div class="mbn-cta"><a href="tel:6397692840" class="mbn-cta-btn" title="Call">📞</a></div>
+    <a href="#clinics" class="mbn-i"><span class="mbn-ic">📍</span><span>Clinics</span></a>
+    <button class="mbn-i" onclick="document.getElementById('mob').classList.add('open')"><span class="mbn-ic">☰</span><span>Menu</span></button>
+  </div>
+</div>
+
+<!-- ═══ AI CHATBOT ═══ -->
+<button id="chatLauncher" onclick="toggleChat()">
+  <span class="ci">🤖</span>
+  <span class="cx">✕</span>
+  <div class="chat-badge">AI</div>
+  <div class="chat-tooltip">Ask Dr. Kumar's AI! 🦷</div>
+</button>
+
+<div id="chatWindow">
+  <!-- Chat Header -->
+  <div class="cw-head">
+    <div class="cw-av"><img src="dr-shashi-kumar.webp" alt="Dr" onerror="this.parentElement.innerHTML='👩‍⚕️'"/></div>
+    <div class="cw-info">
+      <strong>Dr. Shashi Kumar — AI Assistant</strong>
+      <span><span class="cw-dot"></span>Online · Replies instantly · Hindi &amp; English</span>
+    </div>
+    <div class="cw-acts">
+      <a href="tel:6397692840" class="cwa" title="Call">📞</a>
+      <a href="https://wa.me/916397692840" class="cwa" target="_blank" title="WhatsApp">💬</a>
+      <button class="cwa" onclick="clearChat()" title="Clear">🗑️</button>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div class="cw-msgs" id="chatMsgs">
+    <!-- Welcome -->
+    <div class="cmsg bot">
+      <div class="cmsg-av b"><img src="dr-shashi-kumar.webp" alt="Dr" onerror="this.style.display='none';this.parentElement.textContent='🦷'"/></div>
+      <div>
+        <div class="cbubble" style="background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fff;border:none">
+          <strong style="color:#fff;display:block;margin-bottom:4px">🦷 नमस्ते! Welcome!</strong>
+          I'm Dr. Shashi Kumar's AI assistant. Ask me anything about <strong style="color:#bae6fd">braces, prices, appointments</strong> or dental procedures — in Hindi or English!
+        </div>
+        <div class="cmsg-time" id="cWelcomeTime"></div>
+      </div>
+    </div>
+    <!-- Action cards -->
+    <div class="cmsg bot">
+      <div class="cmsg-av b" style="visibility:hidden"></div>
+      <div class="chat-actions">
+        <div class="cha" onclick="cq('📅 Book appointment')"><div class="cha-ic">📅</div><div class="cha-t">Book Appointment</div></div>
+        <div class="cha" onclick="cq('💰 Price list')"><div class="cha-ic">💰</div><div class="cha-t">Price List</div></div>
+        <div class="cha" onclick="cq('🦷 Braces options and cost')"><div class="cha-ic">🦷</div><div class="cha-t">Braces Guide</div></div>
+        <div class="cha" onclick="cq('📍 Clinic timings and location')"><div class="cha-ic">📍</div><div class="cha-t">Clinic Info</div></div>
+      </div>
+    </div>
+    <!-- Quick replies -->
+    <div class="cmsg bot" id="initQR">
+      <div class="cmsg-av b" style="visibility:hidden"></div>
+      <div class="cqr-wrap">
+        <button class="cqr" onclick="cq('मेरे दांत टेढ़े हैं क्या करूं?')">टेढ़े दांत 🦷</button>
+        <button class="cqr" onclick="cq('Braces cost?')">Braces Cost 💰</button>
+        <button class="cqr" onclick="cq('Is it painful?')">Painful? 😬</button>
+        <button class="cqr" onclick="cq('Sunday timing?')">Sunday? 📅</button>
+        <button class="cqr" onclick="cq('Root canal cost?')">RCT Cost 🔩</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="cw-input">
+    <textarea id="chatInput" placeholder="Ask in Hindi or English... 🦷" rows="1" onkeydown="chatKey(event)" oninput="chatResize(this)"></textarea>
+    <button id="chatSend" onclick="chatSend()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+  <div class="cw-foot">Powered by <span>Gemini AI</span> · Orthodontic Clinic Etawah</div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   🔑 PASTE YOUR GEMINI API KEY HERE
+════════════════════════════════════════════ */
+const GEMINI_KEY = "AIzaSyAVA5EM9CSe1vinmx4bzHGstd1bQewJcI4";
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
+
+const SYS = `You are the official AI assistant for Orthodontic Clinic Etawah — Dr. Shashi Kumar's dental clinic. Be warm, friendly, and professional. Reply in the same language the user writes — Hindi or English. Mix languages if they do.
+
+DOCTOR: Dr. Shashi Kumar · BDS, MDS (Orthodontics) · 14+ years · 1000+ patients · CDCRI + UPUMS Saifai · Only MDS Orthodontist in area.
+
+CLINIC 1: Orthodontic Clinic Etawah · ITI Chauraha, NH2, Etawah, UP · Phone: 6397692840 · Mon–Sat 2–6 PM · Sunday 10 AM–4 PM
+CLINIC 2: Saifai Dental & Orthodontic Clinic · Hospital Chauraha, Saifai, UP · Phone: 9456995372 · Mon–Sat 9:30 AM–2 PM · Sunday Closed
+Email: shashidr2009@gmail.com
+
+SPECIAL OFFER: 10%+ off this month on ALL treatments!
+
+PRICES:
+Orthodontics: Metal Braces ₹1500/mo · Ceramic Braces ₹2500/mo · Aligner ₹3500/mo · Lingual: Consult
+Oral Surgery: Extraction ₹100–500 · Impacted ₹2000 · Swelling ₹2000–5000 · Jaw Fracture ₹2000–10000
+Prosthodontics: Denture ₹5000 · Crown/Bridge ₹2000/tooth · Capping ₹300–10000 · Implant ₹10000–50000
+Endodontics: RCT ₹1000–5000 · Apicoectomy ₹3000 · Cracked Teeth ₹3000
+Periodontics: Pyorrhea ₹500 · Scaling ₹500 · Scaling+Polish ₹1000 · Deep Scaling ₹2000 · Laser Curettage ₹2000/quad · Whitening ₹5000 · Gum Graft ₹1000
+
+BRACES DURATION: Gaps only: ~6 months. Moderate: 8–18 months. Severe: up to 2 years. Full year metal = ~₹25000.
+NO age limit for braces. Adults in 30s/40s/50s can get braces.
+NOT painful — mild discomfort only, relieved by paracetamol.
+
+RULES: Keep responses concise. Use emojis naturally. Always mention 10% offer when cost is discussed. Give both numbers when booking. For unknown questions say "call 6397692840". Never give medical diagnosis — recommend in-person visit. Be extra reassuring to anxious patients.`;
+
+let chatHistory = [];
+let chatTyping = false;
+document.getElementById('cWelcomeTime').textContent = getT();
+
+/* Chat toggle */
+function toggleChat(){
+  const w = document.getElementById('chatWindow');
+  const l = document.getElementById('chatLauncher');
+  const isOpen = w.classList.toggle('open');
+  l.classList.toggle('open', isOpen);
+  document.querySelector('.chat-badge').style.display = isOpen ? 'none' : 'flex';
+  if(isOpen) setTimeout(() => document.getElementById('chatInput').focus(), 300);
+}
+
+/* Time */
+function getT(){ return new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true}); }
+
+/* Resize textarea */
+function chatResize(el){ el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,90)+'px'; }
+
+/* Enter key */
+function chatKey(e){ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); chatSend(); }}
+
+/* Quick message */
+function cq(t){ document.getElementById('chatInput').value=t; chatSend(); }
+
+/* Clear chat */
+function clearChat(){
+  chatHistory=[];
+  const m=document.getElementById('chatMsgs');
+  while(m.children.length>3) m.removeChild(m.lastChild);
+  const qr=document.getElementById('initQR');
+  if(!qr){
+    const d=document.createElement('div');d.className='cmsg bot';d.id='initQR';
+    const av=document.createElement('div');av.className='cmsg-av b';av.style.visibility='hidden';
+    const w=document.createElement('div');w.className='cqr-wrap';
+    [['मेरे दांत टेढ़े हैं?','टेढ़े दांत 🦷'],['Braces cost?','Braces 💰'],['Painful?','Painful? 😬'],['Sunday timing?','Sunday? 📅'],['Root canal cost?','RCT 🔩']].forEach(([msg,lbl])=>{
+      const b=document.createElement('button');b.className='cqr';b.textContent=lbl;b.onclick=()=>cq(msg);w.appendChild(b);
+    });
+    d.appendChild(av);d.appendChild(w);m.appendChild(d);
+  }
+}
+
+/* Add message */
+function addChatMsg(text, role){
+  const m = document.getElementById('chatMsgs');
+  const qr = document.getElementById('initQR');
+  if(role==='user'&&qr) qr.remove();
+
+  const wrap=document.createElement('div');
+  wrap.className=`cmsg ${role}`;
+
+  const av=document.createElement('div');
+  av.className=`cmsg-av ${role==='bot'?'b':'u'}`;
+  if(role==='bot'){
+    av.innerHTML=`<img src="dr-shashi-kumar.webp" alt="Dr" onerror="this.style.display='none';this.parentElement.textContent='🦷'"/>`;
+  } else { av.textContent='👤'; }
+
+  const inner=document.createElement('div');
+  const bub=document.createElement('div');
+  bub.className='cbubble';
+  bub.innerHTML=fmtChat(text);
+  const tm=document.createElement('div');
+  tm.className='cmsg-time';
+  tm.textContent=getT()+(role==='user'?' ✓✓':'');
+  inner.appendChild(bub);inner.appendChild(tm);
+  wrap.appendChild(av);wrap.appendChild(inner);
+  m.appendChild(wrap);
+  m.scrollTop=m.scrollHeight;
+}
+
+/* Format chat text */
+function fmtChat(t){
+  return t
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/^- (.*)/gm,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>)+/gs,s=>`<ul>${s}</ul>`)
+    .replace(/\n\n/g,'<br/><br/>')
+    .replace(/\n/g,'<br/>');
+}
+
+/* Show typing */
+function showTyping(){
+  const m=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='ctyping';d.id='chatTypingEl';
+  const av=document.createElement('div');av.className='cmsg-av b';
+  av.innerHTML=`<img src="dr-shashi-kumar.webp" onerror="this.style.display='none';this.parentElement.textContent='🦷'"/>`;
+  const b=document.createElement('div');b.className='ctyping-b';
+  b.innerHTML='<span></span><span></span><span></span>';
+  d.appendChild(av);d.appendChild(b);m.appendChild(d);
+  m.scrollTop=m.scrollHeight;
+}
+function hideTyping(){ const t=document.getElementById('chatTypingEl');if(t)t.remove(); }
+
+/* Add smart quick replies */
+function addSmartQR(userMsg){
+  const m=document.getElementById('chatMsgs');
+  const l=userMsg.toLowerCase();
+  let replies=[];
+  if(l.includes('brac')||l.includes('ब्रेस')||l.includes('wire')||l.includes('तार')){
+    replies=[['Metal vs Ceramic?','Metal vs Ceramic?'],['How long?','How long is treatment?'],['Book','📅 Book appointment'],["Hurt?",'Does it hurt?']];
+  } else if(l.includes('price')||l.includes('cost')||l.includes('खर्च')||l.includes('कीमत')){
+    replies=[['Metal braces cost','Metal braces cost?'],['RCT cost','Root canal cost?'],['Book consult','📅 Book consultation'],['10% offer','Tell me about 10% offer']];
+  } else if(l.includes('appoint')||l.includes('book')||l.includes('अपॉइंट')){
+    replies=[['📞 Call Clinic 1','call1'],['📞 Call Clinic 2','call2'],['Timings','Clinic timings?'],['Sunday?','Sunday availability?']];
+  } else if(l.includes('pain')||l.includes('दर्द')){
+    replies=[['How long?','How long does treatment take?'],['Cost?','How much does it cost?'],['Book','📅 Book appointment'],['Types?','What types of braces?']];
+  } else {
+    replies=[['Braces','🦷 Braces options'],['Prices','💰 Price list'],['Book','📅 Book appointment'],['Timings','⏰ Clinic timings']];
+  }
+  const wrap=document.createElement('div');wrap.className='cmsg bot';
+  const av=document.createElement('div');av.className='cmsg-av b';av.style.visibility='hidden';
+  const qw=document.createElement('div');qw.className='cqr-wrap';qw.style.maxWidth='85%';
+  replies.forEach(([lbl,msg])=>{
+    const b=document.createElement('button');b.className='cqr';b.textContent=lbl;
+    if(msg==='call1') b.onclick=()=>window.location.href='tel:6397692840';
+    else if(msg==='call2') b.onclick=()=>window.location.href='tel:9456995372';
+    else b.onclick=()=>cq(msg);
+    qw.appendChild(b);
+  });
+  wrap.appendChild(av);wrap.appendChild(qw);
+  m.appendChild(wrap);m.scrollTop=m.scrollHeight;
+}
+
+/* MAIN SEND */
+async function chatSend(){
+  const inp=document.getElementById('chatInput');
+  const text=inp.value.trim();
+  if(!text||chatTyping) return;
+  inp.value='';inp.style.height='auto';
+  chatTyping=true;
+  document.getElementById('chatSend').disabled=true;
+  addChatMsg(text,'user');
+  chatHistory.push({role:'user',parts:[{text}]});
+  showTyping();
+  try{
+    const msgs=[
+      {role:'user',parts:[{text:SYS+'\n\nFirst user message: '+text}]},
+      {role:'model',parts:[{text:'Understood! I am Dr. Shashi Kumar\'s AI assistant ready to help patients.'}]},
+      ...chatHistory
+    ];
+    const res=await fetch(GEMINI_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      contents:msgs,
+      generationConfig:{temperature:0.7,maxOutputTokens:500,topP:0.9}
+    })});
+    if(!res.ok) throw new Error('API '+res.status);
+    const data=await res.json();
+    const reply=data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if(!reply) throw new Error('No reply');
+    hideTyping();
+    chatHistory.push({role:'model',parts:[{text:reply}]});
+    addChatMsg(reply,'bot');
+    addSmartQR(text);
+  } catch(err){
+    hideTyping();
+    if(GEMINI_KEY==='YOUR_GEMINI_API_KEY_HERE'){
+      addChatMsg('⚠️ **API Key needed!**\n\n1. Go to **aistudio.google.com**\n2. Click "Get API Key" (free)\n3. Open HTML file → find `YOUR_GEMINI_API_KEY_HERE`\n4. Paste your key\n\nMeanwhile call us directly:\n📞 **6397692840**','bot');
+    } else {
+      addChatMsg('Sorry, having trouble connecting. Please try again or call **6397692840** directly! 😊','bot');
+    }
+  }
+  chatTyping=false;
+  document.getElementById('chatSend').disabled=false;
+}
+
+/* ════ WEBSITE JS ════ */
+/* Navbar scroll */
+const nav=document.getElementById('nav');
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',scrollY>60);
+  btt.classList.toggle('vis',scrollY>400);
+},{passive:true});
+
+/* Mobile menu */
+document.getElementById('hbg').onclick=()=>document.getElementById('mob').classList.add('open');
+document.getElementById('mX').onclick=cm;
+document.getElementById('mob').onclick=function(e){if(e.target===this)cm();}
+function cm(){document.getElementById('mob').classList.remove('open');}
+
+/* Scroll reveal */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+},{threshold:0.09});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+/* Active nav */
+const secs=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.nav-links a');
+const mnis=document.querySelectorAll('.mbn-i[href]');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(scrollY>=s.offsetTop-90)cur=s.id;});
+  nls.forEach(a=>{const on=a.getAttribute('href')==='#'+cur;a.style.color=on?'var(--teal)':'';a.style.background=on?'var(--teal-gl)':'';});
+  mnis.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* FAQ */
+function faq(el){
+  const item=el.parentElement;
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.faq-i.open').forEach(i=>i.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+
+/* Animated counters */
+function animateCounters(){
+  document.querySelectorAll('.ctr-num[data-target]').forEach(el=>{
+    const target=parseInt(el.getAttribute('data-target'));
+    const suffix=el.getAttribute('data-suffix')||'';
+    const duration=1500;
+    const step=target/60;
+    let current=0;
+    const timer=setInterval(()=>{
+      current=Math.min(current+step,target);
+      el.textContent=Math.floor(current)+suffix;
+      if(current>=target)clearInterval(timer);
+    },duration/60);
+  });
+}
+/* Fire counters when hero is visible */
+const heroObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){animateCounters();heroObs.disconnect();}
+},{threshold:0.3});
+heroObs.observe(document.getElementById('hero'));
+
+/* Contact form */
+function sendForm(){
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  if(!n){alert('Please enter your name.');return;}
+  if(!p){alert('Please enter your phone number.');return;}
+  document.getElementById('cForm').style.display='none';
+  document.getElementById('fSucc').style.display='block';
+}
+
+/* Mobile padding */
+function checkMob(){document.body.style.paddingBottom=window.innerWidth<=768?'60px':'0';}
+checkMob();
+window.addEventListener('resize',checkMob);
+</script>
+</body>
+</html>
