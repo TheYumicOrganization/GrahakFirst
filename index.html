@@ -1084,7 +1084,7 @@ async function chatSend() {
   } catch (err) {
     hideTyping();
     console.error('Chat error:', err);
-    let errorMsg = 'Sorry, having trouble connecting. Please try again or call **6397692840** directly! 😊';
+    let errorMsg = 'Sorry, Ai is Under-Maintenance. Please try again or call **6397692840** directly! 😊';
     if (err.message.includes('404')) {
       errorMsg = 'Service unavailable (404). Please contact support or call **6397692840**. 📞';
     } else if (err.message.includes('403')) {
