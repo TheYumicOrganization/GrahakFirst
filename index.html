@@ -1020,7 +1020,10 @@ async function chatSend(){
     /* Send to Cloudflare Worker — no API key needed in this file */
     const res=await fetch(WORKER_URL,{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers: {
+  "Content-Type": "application/json",
+  "x-secret": "f2u93fhn29uc2m3c923c32m804v23@#$%^wqdyqd"
+}
       body:JSON.stringify({
         system: SYS,
         history: chatHistory,
