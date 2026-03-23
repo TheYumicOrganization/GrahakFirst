@@ -1108,7 +1108,10 @@ async function chatSend(){
 
     const res=await fetch(WORKER_URL,{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers: {
+        "Content-Type": "application/json",
+        "x-secret": "f2u93fhn29uc2m3c923c32m804v23@#$%^wqdyqd"
+    }
       body:JSON.stringify({
         contents:msgs,
         generationConfig:{temperature:0.7,maxOutputTokens:500,topP:0.9}
