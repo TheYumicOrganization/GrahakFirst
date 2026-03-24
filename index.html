@@ -1258,3 +1258,366 @@ window.addEventListener('resize', checkMob);
 </script>
 </body>
 </html>
+<script>
+(() => {
+  "use strict";
+
+  const WORKER_BASE = "https://call-api.utkrishtahirwar5.workers.dev";
+  const BASE_PATH = window.location.pathname;
+  const APPOINTMENT_URL = `${BASE_PATH}?view=appointment`;
+  const STAFF_URL = `${BASE_PATH}?view=staff`;
+  const VIEW = (new URLSearchParams(window.location.search).get("view") || "").toLowerCase();
+
+  const esc = (v) =>
+    String(v ?? "").replace(/[&<>"']/g, (ch) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[ch]));
+
+  const api = (path) => WORKER_BASE.replace(/\/+$/, "") + path;
+
+  function ensureStyles() {
+    if (document.getElementById("oc-inline-ui-style")) return;
+    const style = document.createElement("style");
+    style.id = "oc-inline-ui-style";
+    style.textContent = `
+      .oc-staff-mini{position:fixed;right:10px;bottom:122px;z-index:9999;padding:6px 8px;border-radius:999px;background:#082f49;color:#fff;font-size:10px;font-weight:700;line-height:1;text-decoration:none;border:1px solid rgba(255,255,255,.35);box-shadow:0 2px 10px rgba(0,0,0,.2)}
+      .oc-staff-mini:hover{background:#0c4a6e}
+      @media(max-width:768px){.oc-staff-mini{right:8px;bottom:116px;font-size:9px;padding:5px 7px}}
+
+      #oc-shell{max-width:900px;margin:18px auto;padding:0 12px;font-family:Arial,sans-serif;color:#083344}
+      #oc-shell .oc-card{background:#fff;border:1px solid #c7e2f0;border-radius:14px;padding:16px}
+      #oc-shell h1{margin:0 0 8px;font-size:24px}
+      #oc-shell p{margin:0 0 14px;color:#335e73}
+      #oc-shell .oc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+      #oc-shell .oc-col{display:grid;gap:6px}
+      #oc-shell label{font-size:12px;font-weight:700;color:#0c4a6e}
+      #oc-shell input,#oc-shell select,#oc-shell textarea{width:100%;padding:11px;border:1px solid #b7ddef;border-radius:8px;font:inherit}
+      #oc-shell textarea{min-height:115px;resize:vertical}
+      #oc-shell .oc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+      #oc-shell button,#oc-shell .oc-link-btn{padding:11px 14px;border:none;border-radius:8px;background:#0284c7;color:#fff;cursor:pointer;font-weight:700;text-decoration:none;display:inline-flex;align-items:center}
+      #oc-shell button:hover,#oc-shell .oc-link-btn:hover{background:#0ea5e9}
+      #oc-shell .oc-secondary{background:#e0f2fe;color:#0c4a6e}
+      #oc-shell .oc-secondary:hover{background:#bae6fd}
+      #oc-shell .oc-msg,#oc-shell .oc-err{display:none;margin-top:10px;padding:10px;border-radius:8px}
+      #oc-shell .oc-msg{background:#ecfeff;border:1px solid #67e8f9;color:#155e75}
+      #oc-shell .oc-err{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+      #oc-shell table{width:100%;border-collapse:collapse;margin-top:12px;border:1px solid #c7e2f0;background:#fff}
+      #oc-shell th,#oc-shell td{padding:9px;border-bottom:1px solid #e8f4fb;text-align:left;vertical-align:top;font-size:13px}
+      #oc-shell th{background:#f3fbff}
+      @media(max-width:780px){#oc-shell .oc-row{grid-template-columns:1fr}}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function setAsAppointmentAction(el) {
+    if (!el) return;
+    if (el.tagName === "A") {
+      el.href = APPOINTMENT_URL;
+      el.removeAttribute("target");
+      el.onclick = null;
+      return;
+    }
+    el.type = "button";
+    el.onclick = (e) => {
+      e.preventDefault();
+      window.location.href = APPOINTMENT_URL;
+    };
+  }
+
+  function patchHomeBookingActions() {
+    document.querySelectorAll(".n-appt,.ma-a,.bsub").forEach(setAsAppointmentAction);
+
+    document.querySelectorAll("a").forEach((a) => {
+      const text = (a.textContent || "").trim().toLowerCase();
+      if (text.includes("book appointment") || text.includes("book online")) {
+        setAsAppointmentAction(a);
+      }
+    });
+
+    window.sendForm = function () {
+      window.location.href = APPOINTMENT_URL;
+    };
+  }
+
+  function addStaffMiniButton() {
+    if (document.getElementById("oc-staff-mini")) return;
+    const btn = document.createElement("a");
+    btn.id = "oc-staff-mini";
+    btn.className = "oc-staff-mini";
+    btn.href = STAFF_URL;
+    btn.textContent = "Staff dashboard";
+    document.body.appendChild(btn);
+  }
+
+  function renderAppointmentPage() {
+    ensureStyles();
+    document.title = "Book Appointment";
+    document.body.innerHTML = `
+      <div id="oc-shell">
+        <div class="oc-card">
+          <h1>Book Appointment</h1>
+          <p>Fill details. Clinic team will call you back.</p>
+          <form id="oc-appt-form">
+            <div class="oc-row">
+              <div class="oc-col">
+                <label>Full Name *</label>
+                <input id="oc-fullName" required />
+              </div>
+              <div class="oc-col">
+                <label>Gmail *</label>
+                <input id="oc-email" type="email" placeholder="name@gmail.com" required />
+              </div>
+            </div>
+            <div class="oc-row" style="margin-top:10px">
+              <div class="oc-col">
+                <label>Phone Number *</label>
+                <input id="oc-phone" required />
+              </div>
+              <div class="oc-col">
+                <label>What do you want? *</label>
+                <select id="oc-treatment" required>
+                  <option value="">Select treatment</option>
+                  <option>Braces</option>
+                  <option>Aligners</option>
+                  <option>Root Canal</option>
+                  <option>Dental Implant</option>
+                  <option>Teeth Whitening</option>
+                  <option>General Checkup</option>
+                </select>
+              </div>
+            </div>
+            <div class="oc-col" style="margin-top:10px">
+              <label>What is wrong with your teeth? *</label>
+              <input id="oc-issue" placeholder="Crooked teeth / gap / pain / protrusion" required />
+            </div>
+            <div class="oc-col" style="margin-top:10px">
+              <label>Describe your problem *</label>
+              <textarea id="oc-description" required placeholder="Describe your problem in detail"></textarea>
+            </div>
+            <div class="oc-actions">
+              <button id="oc-submit" type="submit">Submit Appointment</button>
+              <a class="oc-link-btn oc-secondary" id="oc-back-home" href="${BASE_PATH}">Back to Home</a>
+            </div>
+          </form>
+          <div id="oc-ok" class="oc-msg"></div>
+          <div id="oc-error" class="oc-err"></div>
+        </div>
+      </div>
+    `;
+
+    const form = document.getElementById("oc-appt-form");
+    const submitBtn = document.getElementById("oc-submit");
+    const okBox = document.getElementById("oc-ok");
+    const errBox = document.getElementById("oc-error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      okBox.style.display = "none";
+      errBox.style.display = "none";
+
+      const fullName = document.getElementById("oc-fullName").value.trim();
+      const email = document.getElementById("oc-email").value.trim();
+      const phone = document.getElementById("oc-phone").value.trim();
+      const treatment = document.getElementById("oc-treatment").value.trim();
+      const toothIssue = document.getElementById("oc-issue").value.trim();
+      const description = document.getElementById("oc-description").value.trim();
+
+      if (!fullName || !email || !phone || !treatment || !toothIssue || !description) {
+        errBox.textContent = "Please fill all required fields.";
+        errBox.style.display = "block";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      try {
+        const res = await fetch(api("/appointments"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fullName, email, phone, treatment, toothIssue, description })
+        });
+
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) {
+          throw new Error(data.error || "Appointment submit failed.");
+        }
+
+        okBox.innerHTML = `Appointment submitted successfully. ID: <strong>${esc(data.id || "-")}</strong>`;
+        okBox.style.display = "block";
+        form.reset();
+      } catch (err) {
+        errBox.textContent = err.message || "Unable to submit appointment.";
+        errBox.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Appointment";
+      }
+    });
+  }
+
+  function renderStaffPage() {
+    ensureStyles();
+    document.title = "Staff Dashboard";
+    document.body.innerHTML = `
+      <div id="oc-shell">
+        <div class="oc-card" id="oc-login-card">
+          <h1>Staff Dashboard</h1>
+          <p>Enter owner PIN (verified by Cloudflare Worker).</p>
+          <div class="oc-row">
+            <div class="oc-col">
+              <label>Owner PIN</label>
+              <input id="oc-owner-pin" type="password" />
+            </div>
+            <div class="oc-col" style="align-self:end">
+              <button id="oc-login-btn">Login</button>
+            </div>
+          </div>
+          <div id="oc-login-error" class="oc-err"></div>
+          <div class="oc-actions">
+            <a class="oc-link-btn oc-secondary" id="oc-staff-home" href="${BASE_PATH}">Back to Home</a>
+          </div>
+        </div>
+
+        <div class="oc-card" id="oc-dashboard-card" style="display:none">
+          <h1>Appointments</h1>
+          <div class="oc-actions">
+            <button id="oc-reload">Reload</button>
+            <button class="oc-secondary" id="oc-logout">Logout</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Name</th>
+                <th>Gmail</th>
+                <th>Phone</th>
+                <th>Treatment</th>
+                <th>Tooth Problem</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody id="oc-rows">
+              <tr><td colspan="7">No records yet.</td></tr>
+            </tbody>
+          </table>
+          <div id="oc-dash-error" class="oc-err"></div>
+        </div>
+      </div>
+    `;
+
+    const pinInput = document.getElementById("oc-owner-pin");
+    const loginBtn = document.getElementById("oc-login-btn");
+    const loginErr = document.getElementById("oc-login-error");
+    const dashErr = document.getElementById("oc-dash-error");
+    const loginCard = document.getElementById("oc-login-card");
+    const dashCard = document.getElementById("oc-dashboard-card");
+    const rows = document.getElementById("oc-rows");
+    let ownerPin = "";
+
+    async function verifyPin(pin) {
+      const res = await fetch(api("/owner/verify"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || "Invalid PIN.");
+    }
+
+    async function loadAppointments() {
+      dashErr.style.display = "none";
+      const res = await fetch(api("/owner/appointments"), {
+        method: "GET",
+        headers: { "x-owner-pin": ownerPin }
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || "Failed to load appointments.");
+
+      const list = Array.isArray(data.appointments) ? data.appointments : [];
+      if (list.length === 0) {
+        rows.innerHTML = `<tr><td colspan="7">No appointments found.</td></tr>`;
+        return;
+      }
+
+      rows.innerHTML = list.map((item) => {
+        const timeText = item.createdAt ? new Date(item.createdAt).toLocaleString("en-IN") : "-";
+        return `
+          <tr>
+            <td>${esc(timeText)}</td>
+            <td>${esc(item.fullName)}</td>
+            <td>${esc(item.email)}</td>
+            <td>${esc(item.phone)}</td>
+            <td>${esc(item.treatment)}</td>
+            <td>${esc(item.toothIssue)}</td>
+            <td>${esc(item.description)}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    loginBtn.addEventListener("click", async () => {
+      loginErr.style.display = "none";
+      const pin = pinInput.value.trim();
+      if (!pin) {
+        loginErr.textContent = "Enter PIN.";
+        loginErr.style.display = "block";
+        return;
+      }
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = "Checking...";
+      try {
+        await verifyPin(pin);
+        ownerPin = pin;
+        loginCard.style.display = "none";
+        dashCard.style.display = "block";
+        await loadAppointments();
+      } catch (err) {
+        loginErr.textContent = err.message || "Login failed.";
+        loginErr.style.display = "block";
+      } finally {
+        loginBtn.disabled = false;
+        loginBtn.textContent = "Login";
+      }
+    });
+
+    pinInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") loginBtn.click();
+    });
+
+    document.getElementById("oc-reload").addEventListener("click", async () => {
+      try {
+        await loadAppointments();
+      } catch (err) {
+        dashErr.textContent = err.message || "Reload failed.";
+        dashErr.style.display = "block";
+      }
+    });
+
+    document.getElementById("oc-logout").addEventListener("click", () => {
+      ownerPin = "";
+      window.location.href = BASE_PATH;
+    });
+  }
+
+  if (VIEW === "appointment") {
+    renderAppointmentPage();
+    return;
+  }
+
+  if (VIEW === "staff") {
+    renderStaffPage();
+    return;
+  }
+
+  ensureStyles();
+  patchHomeBookingActions();
+  addStaffMiniButton();
+})();
+</script>
+
