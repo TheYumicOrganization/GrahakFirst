@@ -1286,31 +1286,28 @@ window.cm = window.cm || function () {
     const style = document.createElement("style");
     style.id = "oc-inline-ui-style";
     style.textContent = `
-      .oc-staff-mini{position:fixed;right:10px;bottom:122px;z-index:9999;padding:6px 8px;border-radius:999px;background:#082f49;color:#fff;font-size:10px;font-weight:700;line-height:1;text-decoration:none;border:1px solid rgba(255,255,255,.35);box-shadow:0 2px 10px rgba(0,0,0,.2)}
-      .oc-staff-mini:hover{background:#0c4a6e}
-      @media(max-width:768px){.oc-staff-mini{right:8px;bottom:116px;font-size:9px;padding:5px 7px}}
-      #oc-shell{max-width:900px;margin:18px auto;padding:0 12px;font-family:Arial,sans-serif;color:#083344}
-      #oc-shell .oc-card{background:#fff;border:1px solid #c7e2f0;border-radius:14px;padding:16px}
-      #oc-shell h1{margin:0 0 8px;font-size:24px}
-      #oc-shell p{margin:0 0 14px;color:#335e73}
-      #oc-shell .oc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-      #oc-shell .oc-col{display:grid;gap:6px}
-      #oc-shell label{font-size:12px;font-weight:700;color:#0c4a6e}
-      #oc-shell input,#oc-shell select,#oc-shell textarea{width:100%;padding:11px;border:1px solid #b7ddef;border-radius:8px;font:inherit}
-      #oc-shell textarea{min-height:115px;resize:vertical}
-      #oc-shell .oc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-      #oc-shell button,#oc-shell .oc-link-btn{padding:11px 14px;border:none;border-radius:8px;background:#0284c7;color:#fff;cursor:pointer;font-weight:700;text-decoration:none;display:inline-flex;align-items:center}
-      #oc-shell button:hover,#oc-shell .oc-link-btn:hover{background:#0ea5e9}
-      #oc-shell .oc-secondary{background:#e0f2fe;color:#0c4a6e}
-      #oc-shell .oc-secondary:hover{background:#bae6fd}
-      #oc-shell .oc-msg,#oc-shell .oc-err{display:none;margin-top:10px;padding:10px;border-radius:8px}
-      #oc-shell .oc-msg{background:#ecfeff;border:1px solid #67e8f9;color:#155e75}
-      #oc-shell .oc-err{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-      #oc-shell table{width:100%;border-collapse:collapse;margin-top:12px;border:1px solid #c7e2f0;background:#fff}
-      #oc-shell th,#oc-shell td{padding:9px;border-bottom:1px solid #e8f4fb;text-align:left;vertical-align:top;font-size:13px}
-      #oc-shell th{background:#f3fbff}
-      @media(max-width:780px){#oc-shell .oc-row{grid-template-columns:1fr}}
-    `;
+  .oc-staff-mini{
+    position:static;
+    display:inline-flex;
+    align-items:center;
+    margin-left:8px;
+    padding:4px 7px;
+    border-radius:999px;
+    background:#082f49;
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.35);
+  }
+  .oc-staff-mini:hover{background:#0c4a6e}
+  @media(max-width:768px){
+    .oc-staff-mini{font-size:9px;padding:4px 6px;margin-left:6px}
+  }
+  ...
+`;
+
     document.head.appendChild(style);
   }
 
@@ -1339,14 +1336,22 @@ window.cm = window.cm || function () {
   }
 
   function addStaffMiniButton() {
-    if (document.getElementById("oc-staff-mini")) return;
-    const btn = document.createElement("a");
-    btn.id = "oc-staff-mini";
-    btn.className = "oc-staff-mini";
-    btn.href = STAFF_URL;
-    btn.textContent = "Staff dashboard";
+  if (document.getElementById("oc-staff-mini")) return;
+
+  const btn = document.createElement("a");
+  btn.id = "oc-staff-mini";
+  btn.className = "oc-staff-mini";
+  btn.href = STAFF_URL;
+  btn.textContent = "Staff dashboard";
+
+  const navBrand = document.querySelector(".nav-brand");
+  if (navBrand) {
+    navBrand.appendChild(btn); // upper-left near blue logo
+  } else {
     document.body.appendChild(btn);
   }
+}
+
 
   function renderAppointmentPage() {
     ensureStyles();
