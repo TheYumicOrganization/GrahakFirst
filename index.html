@@ -2,1560 +2,1885 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#0369a1"/>
-<meta name="description" content="Dr. Shashi Kumar BDS MDS Orthodontist Etawah — Expert Braces, Aligners, Root Canal. 14+ Years, 1000+ Patients. 2 Clinics. Call 6397692840."/>
-<title>Orthodontic Clinic Etawah | Dr. Shashi Kumar | Braces Specialist</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#0a0a0a"/>
+<meta name="description" content="GrahakFirst Retailers – Fashion & Imitation Jewellery on Amazon India. Owner: Brijesh Kumar Ahirwar, Phone: 9752403398. Nowgong, MP. Buy · Sell · Save"/>
+<meta name="keywords" content="GrahakFirst, Fashion, Jewellery, Amazon India, Brijesh Kumar Ahirwar, Nowgong, MP, Online Shopping"/>
+<meta name="author" content="Brijesh Kumar Ahirwar"/>
+<meta property="og:title" content="GrahakFirst Retailers | Buy · Sell · Save"/>
+<meta property="og:description" content="Premium Fashion & Imitation Jewellery on Amazon India. Quality products delivered PAN India."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.GrahakFirst.com"/>
+<title>GrahakFirst Retailers | Buy · Sell · Save</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
-/* ========== YOUR ORIGINAL CSS – unchanged ========== */
+/* ═══════════════════════════════════════════════════════════════════════════════
+   GRAHAKFIRST RETAILERS - PREMIUM WEBSITE
+   Theme: Black & Orange | Owner: Brijesh Kumar Ahirwar
+   Phone: +91 97524 03398 | Email: grahakfirst@gmail.com
+═══════════════════════════════════════════════════════════════════════════════ */
+
 :root{
-  --teal:#0284c7;--teal2:#0ea5e9;--teal3:#38bdf8;
-  --teal-d:#0c4a6e;--teal-dd:#082f49;
-  --teal-gl:rgba(2,132,199,0.09);
-  --teal-pale:#e0f2fe;--teal-pale2:#f0f9ff;
-  --white:#fff;--off:#f8fbfd;
-  --text:#0c2d3d;--text2:#2d5f75;--muted:#7a9aaa;
-  --border:#c7e2f0;--border2:#a5d4ec;
-  --gold:#f59e0b;--green:#10b981;--red:#ef4444;
-  --shadow:0 4px 24px rgba(2,132,199,0.1);
-  --shadow2:0 8px 40px rgba(2,132,199,0.14);
+  /* Primary Colors - Black & Orange Theme */
+  --bg:#050505; --bg2:#0a0a0a; --bg3:#111; --bg4:#1a1a1a; --bg5:#222;
+  --or:#f97316; --or2:#fb923c; --or3:#fdba74; --or-glow:rgba(249,115,22,0.4);
+  --or-grad:linear-gradient(135deg, #f97316 0%, #fb923c 50%, #ea580c 100%);
+  --bl:#3b82f6; --bl2:#60a5fa; --bl-glow:rgba(59,130,246,0.3);
+  --gn:#22c55e; --gn2:#4ade80;
+  --w:#fff; --t1:#f5f5f5; --t2:#a3a3a3; --t3:#737373; --t4:#525252;
+  --brd:rgba(255,255,255,0.06); --brd2:rgba(249,115,22,0.2);
+  --radius:16px; --radius-sm:10px;
+  
+  /* Shadows */
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.3);
+  --shadow:0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.5);
+  --shadow-or:0 0 40px rgba(249,115,22,0.15);
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.65}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);color:var(--t1);
+  overflow-x:hidden;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+body.mob-nav-active{padding-bottom:72px}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--teal-pale)}
-::-webkit-scrollbar-thumb{background:var(--teal2);border-radius:2px}
+img{display:block;max-width:100%;height:auto}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--or);border-radius:2px}
+::selection{background:var(--or);color:#000}
 
-/* ANNOUNCEMENT BAR */
-.ann{background:linear-gradient(90deg,var(--teal-dd),var(--teal-d),var(--teal),var(--teal-d));background-size:300% 100%;animation:gradShift 6s linear infinite;padding:0.52rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
-.ann-msg{font-size:0.72rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.ann-badge{background:var(--gold);color:#000;padding:0.18rem 0.65rem;border-radius:100px;font-size:0.65rem;font-weight:900}
-.ann-calls{display:flex;gap:0.5rem}
-.ann-call{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);color:#fff;padding:0.22rem 0.75rem;border-radius:100px;font-size:0.68rem;font-weight:700;transition:background 0.2s}
-.ann-call:hover{background:rgba(255,255,255,0.24)}
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════════════════════════════════ */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes floatSlow{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:0.8}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(249,115,22,0.3)}50%{box-shadow:0 0 40px rgba(249,115,22,0.6)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes bounce-subtle{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes scale-in{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes slide-up{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes slide-in-right{from{transform:translateX(50px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+@keyframes border-glow{0%,100%{border-color:rgba(249,115,22,0.2)}50%{border-color:rgba(249,115,22,0.6)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes wave{0%,100%{transform:translateY(0)}25%{transform:translateY(-5px)}75%{transform:translateY(5px)}}
 
-/* NAVBAR */
-#nav{position:sticky;top:0;z-index:800;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
-#nav.scrolled{box-shadow:0 2px 28px rgba(2,132,199,0.1)}
-.nav-in{max-width:1200px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.nav-brand{display:flex;align-items:center;gap:10px}
-.nav-brand-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--teal-d),var(--teal));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;box-shadow:0 2px 10px rgba(2,132,199,0.25)}
-.nav-brand-text strong{display:block;font-size:0.88rem;font-weight:800;color:var(--teal-d);line-height:1.1}
-.nav-brand-text span{font-size:0.58rem;font-weight:500;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase}
-.nav-links{display:flex;list-style:none;gap:0.1rem}
-.nav-links a{padding:0.4rem 0.8rem;font-size:0.78rem;font-weight:500;color:var(--text2);border-radius:7px;transition:color 0.2s,background 0.2s}
-.nav-links a:hover,.nav-links a.act{color:var(--teal);background:var(--teal-gl)}
-.nav-right{display:flex;align-items:center;gap:0.55rem}
-.n-wa{display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.2);color:#059669;padding:0.44rem 0.95rem;border-radius:8px;font-size:0.74rem;font-weight:700;transition:background 0.2s}
-.n-wa:hover{background:rgba(16,185,129,0.14)}
-.n-appt{display:inline-flex;align-items:center;gap:5px;background:var(--teal);color:#fff;padding:0.48rem 1.1rem;border-radius:8px;font-size:0.76rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 2px 12px rgba(2,132,199,0.3);transition:background 0.2s,transform 0.15s}
-.n-appt:hover{background:var(--teal2);transform:translateY(-1px)}
-.hbg{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
-.hbg span{width:22px;height:2px;background:var(--teal);border-radius:2px;display:block;transition:all 0.3s}
-
-/* MOBILE MENU */
-#mob{display:none;position:fixed;inset:0;z-index:1100;background:#fff;flex-direction:column;overflow-y:auto}
-#mob.open{display:flex}
-.mob-head{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;border-bottom:1px solid var(--border)}
-.mob-x{background:none;border:none;color:var(--muted);font-size:1.7rem;cursor:pointer}
-.mob-nav{display:flex;flex-direction:column;padding:1rem 1.5rem;gap:0.2rem;flex:1}
-.mob-nav a{font-size:0.95rem;font-weight:600;color:var(--text);padding:0.88rem 1rem;border-radius:9px;display:flex;align-items:center;gap:10px;transition:background 0.2s,color 0.2s}
-.mob-nav a:hover{background:var(--teal-pale);color:var(--teal)}
-.mob-act{display:flex;flex-direction:column;gap:0.7rem;padding:1.5rem;border-top:1px solid var(--border)}
-.ma{display:flex;align-items:center;justify-content:center;gap:8px;padding:0.9rem;border-radius:10px;font-size:0.88rem;font-weight:700;border:none;cursor:pointer}
-.ma-c{background:var(--teal-gl);color:var(--teal);border:1.5px solid var(--border2)!important}
-.ma-w{background:rgba(16,185,129,0.08);color:#059669;border:1.5px solid rgba(16,185,129,0.2)!important}
-.ma-a{background:var(--teal);color:#fff}
-
-/* MOBILE BOTTOM NAV */
-#mbn{display:none;position:fixed;bottom:0;left:0;right:0;z-index:790;background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom,0)}
-.mbn-in{display:flex;align-items:stretch;height:58px}
-.mbn-i{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:0.55rem;font-weight:700;color:var(--muted);cursor:pointer;border:none;background:none;-webkit-tap-highlight-color:transparent;transition:color 0.2s}
-.mbn-i.act,.mbn-i:hover{color:var(--teal)}
-.mbn-ic{font-size:1.2rem;line-height:1}
-.mbn-cta{flex:1.3;display:flex;align-items:center;justify-content:center;padding:6px}
-.mbn-cta-btn{width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.2rem;border:none;cursor:pointer;box-shadow:0 2px 14px rgba(2,132,199,0.4);display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
-.mbn-cta-btn:active{transform:scale(0.92)}
-
-/* HERO */
-#hero{background:linear-gradient(160deg,#e0f2fe 0%,#f0f9ff 35%,#fff 70%);padding:4.5rem 2rem 0;position:relative;overflow:hidden;min-height:calc(100vh - 105px);display:flex;align-items:center}
-.hero-glow1{position:absolute;top:-120px;right:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(2,132,199,0.09),transparent 65%);pointer-events:none;animation:drift 11s ease-in-out infinite}
-.hero-glow2{position:absolute;bottom:-80px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,0.07),transparent 65%);pointer-events:none;animation:drift 13s ease-in-out infinite reverse}
-.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(2,132,199,0.05) 1px,transparent 1px);background-size:34px 34px;pointer-events:none}
-.hero-in{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:center;position:relative;z-index:2}
-.hero-left{opacity:0;animation:slideUp 0.8s 0.1s ease forwards}
-.hero-pill{display:inline-flex;align-items:center;gap:7px;background:var(--teal-gl);border:1px solid rgba(2,132,199,0.22);padding:0.36rem 1rem;border-radius:100px;font-size:0.68rem;font-weight:700;color:var(--teal);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.3rem}
-.hp-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
-.hero-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3.3rem);font-weight:800;color:var(--teal-d);line-height:1.08;letter-spacing:-0.02em;margin-bottom:0.7rem}
-.hero-h em{font-style:italic;color:var(--teal)}
-.hero-dr{display:flex;align-items:center;gap:10px;margin-bottom:1.1rem}
-.hero-dr-av{width:44px;height:44px;border-radius:50%;border:3px solid var(--teal-pale);overflow:hidden;flex-shrink:0}
-.hero-dr-av img{width:100%;height:100%;object-fit:cover;object-position:top}
-.hero-dr-info strong{display:block;font-size:0.9rem;font-weight:800;color:var(--teal)}
-.hero-dr-info span{font-size:0.7rem;color:var(--text2);font-weight:500}
-.hero-p{font-size:0.94rem;color:var(--text2);line-height:1.8;max-width:490px;margin-bottom:2rem}
-.hero-ctas{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2rem}
-.btn-pri{display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:#fff;padding:0.86rem 2rem;border-radius:10px;font-size:0.86rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(2,132,199,0.32);transition:background 0.2s,transform 0.15s}
-.btn-pri:hover{background:var(--teal2);transform:translateY(-2px)}
-.btn-sec{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1.5px solid var(--border2);color:var(--teal);padding:0.86rem 1.8rem;border-radius:10px;font-size:0.86rem;font-weight:700;cursor:pointer;transition:border-color 0.2s,background 0.2s}
-.btn-sec:hover{border-color:var(--teal);background:var(--teal-gl)}
-.btn-wa{display:inline-flex;align-items:center;gap:7px;background:rgba(16,185,129,0.09);border:1.5px solid rgba(16,185,129,0.22);color:#059669;padding:0.86rem 1.8rem;border-radius:10px;font-size:0.86rem;font-weight:700;cursor:pointer;transition:background 0.2s}
-.btn-wa:hover{background:rgba(16,185,129,0.16)}
-.hero-chips{display:flex;flex-wrap:wrap;gap:0.55rem}
-.chip{display:flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--border);padding:0.3rem 0.75rem;border-radius:100px;font-size:0.68rem;font-weight:600;color:var(--text2);box-shadow:0 1px 4px rgba(2,132,199,0.05)}
-.chip .ck{color:var(--green);font-weight:900}
-.hero-right{opacity:0;animation:slideUp 0.9s 0.3s ease forwards;display:flex;flex-direction:column;gap:1rem;padding-bottom:3rem}
-.dr-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow2);position:relative}
-.dr-card-banner{height:160px;overflow:hidden;position:relative}
-.dr-card-banner img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.dr-card-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(8,47,73,0.85))}
-.dr-card-info{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.2rem;display:flex;align-items:flex-end;gap:10px}
-.dr-card-av{width:56px;height:56px;border-radius:50%;border:3px solid #fff;overflow:hidden;flex-shrink:0;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
-.dr-card-av img{width:100%;height:100%;object-fit:cover;object-position:top}
-.dr-card-name strong{display:block;font-size:0.92rem;font-weight:800;color:#fff}
-.dr-card-name span{font-size:0.65rem;color:rgba(255,255,255,0.78)}
-.dr-card-body{padding:1.2rem}
-.counter-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1.1rem}
-.ctr-item{background:var(--teal-pale2);border:1px solid var(--border);border-radius:10px;padding:0.9rem 0.6rem;text-align:center}
-.ctr-num{font-size:1.4rem;font-weight:900;color:var(--teal);line-height:1;display:block}
-.ctr-lbl{font-size:0.56rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
-.offer-strip{background:linear-gradient(90deg,var(--teal-d),var(--teal));border-radius:10px;padding:0.9rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:0.8rem}
-.os-text strong{display:block;font-size:0.88rem;font-weight:900;color:#fff}
-.os-text span{font-size:0.65rem;color:rgba(255,255,255,0.75)}
-.os-badge{background:var(--gold);color:#000;font-size:1rem;font-weight:900;padding:0.35rem 0.75rem;border-radius:8px;white-space:nowrap}
-.clinic-q{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:1fr 1fr;gap:0.7rem}
-.cq-item{background:var(--teal-pale2);border-radius:9px;padding:0.82rem}
-.cq-lbl{font-size:0.57rem;font-weight:800;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3px}
-.cq-val{font-size:0.76rem;font-weight:700;color:var(--teal-d);line-height:1.3}
-.cq-time{font-size:0.62rem;color:var(--muted);margin-top:2px}
-
-/* CLINIC BANNER */
-.clinic-banner{position:relative;overflow:hidden}
-.clinic-banner img{width:100%;height:380px;object-fit:cover;object-position:center;display:block}
-.cb-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,47,73,0.78) 0%,rgba(8,47,73,0.35) 55%,transparent 100%);display:flex;align-items:center}
-.cb-content{padding:2.5rem 3rem;max-width:520px}
-.cb-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.28rem 0.8rem;border-radius:100px;font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem}
-.cb-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:0.6rem}
-.cb-sub{font-size:0.82rem;color:rgba(255,255,255,0.82);margin-bottom:1.3rem;line-height:1.6}
-.cb-btns{display:flex;gap:0.7rem;flex-wrap:wrap}
-.cb-btn{display:inline-flex;align-items:center;gap:6px;padding:0.62rem 1.4rem;border-radius:9px;font-size:0.78rem;font-weight:800;border:none;cursor:pointer;transition:transform 0.15s,opacity 0.2s}
-.cb-btn:hover{transform:translateY(-1px);opacity:0.9}
-.cb-b1{background:var(--teal);color:#fff;box-shadow:0 2px 14px rgba(2,132,199,0.4)}
-.cb-b2{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.3)!important;color:#fff}
-
-/* TICKER */
-.ticker{background:var(--teal);padding:0.62rem 0;overflow:hidden;white-space:nowrap}
-.ti{display:inline-block;animation:tick 28s linear infinite}
-.ti span{font-size:0.68rem;font-weight:700;color:#fff;letter-spacing:0.08em;text-transform:uppercase;padding:0 2rem}
-.ti span::before{content:'✦';margin-right:2rem;opacity:0.4;font-size:0.42rem}
-
-/* SECTIONS */
-section{padding:5.5rem 2rem}
-.mw{max-width:1200px;margin:0 auto}
-.ey{display:inline-flex;align-items:center;gap:7px;font-size:0.67rem;font-weight:800;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.75rem}
-.ey::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:1px;display:block}
-.sh2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--teal-d);line-height:1.13;letter-spacing:-0.02em;margin-bottom:0.9rem}
-.sh2 em{font-style:italic;color:var(--teal)}
-.sub{font-size:0.88rem;color:var(--text2);line-height:1.75;max-width:520px}
-.ctr-sec{text-align:center}.ctr-sec .sub{margin:0 auto}.ctr-sec .ey{display:flex;justify-content:center}.ctr-sec .ey::before{display:none}
-.shdr{margin-bottom:3rem}
-
-/* ABOUT */
-#about{background:var(--off)}
-.about-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:start}
-.about-card{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-.ac-banner{height:120px;background:linear-gradient(135deg,var(--teal-d),var(--teal));position:relative;overflow:hidden}
-.ac-banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:18px 18px}
-.ac-banner-text{position:absolute;bottom:1rem;left:1.5rem;color:#fff}
-.ac-banner-text strong{display:block;font-size:1rem;font-weight:800}
-.ac-banner-text span{font-size:0.65rem;color:rgba(255,255,255,0.75)}
-.ac-body{padding:1.5rem}
-.ac-dr{display:flex;align-items:center;gap:12px;margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px solid var(--border)}
-.ac-dr-av{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid var(--teal-pale)}
-.ac-dr-av img{width:100%;height:100%;object-fit:cover;object-position:top}
-.ac-dr-info strong{display:block;font-size:0.9rem;font-weight:800;color:var(--teal-d)}
-.ac-dr-info .qual{font-size:0.68rem;color:var(--teal);font-weight:700}
-.ac-dr-info .loc{font-size:0.62rem;color:var(--muted)}
-.ac-desc{font-size:0.8rem;color:var(--text2);line-height:1.82;margin-bottom:1.4rem}
-.ac-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:1.3rem}
-.acs{background:var(--teal-pale2);border:1px solid var(--border);border-radius:10px;padding:0.95rem;text-align:center}
-.acs strong{display:block;font-size:1.35rem;font-weight:900;color:var(--teal);line-height:1}
-.acs span{font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px;display:block}
-.edu-list{display:flex;flex-direction:column;gap:0.55rem}
-.edu-i{display:flex;align-items:flex-start;gap:9px;background:var(--teal-pale2);border-radius:9px;padding:0.75rem 0.9rem;font-size:0.75rem;color:var(--text2)}
-.edu-i::before{content:'🎓';flex-shrink:0;margin-top:0}
-.alead{font-size:0.9rem;color:var(--text2);line-height:1.82;margin-bottom:1.8rem}
-.alead strong{color:var(--teal-d);font-weight:700}
-.feat-list{display:flex;flex-direction:column;gap:0.82rem;margin-bottom:2rem}
-.fi{display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid var(--border);border-radius:11px;padding:1rem 1.2rem;transition:border-color 0.25s,box-shadow 0.25s}
-.fi:hover{border-color:var(--border2);box-shadow:0 2px 12px rgba(2,132,199,0.06)}
-.fi-ic{font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.fi-t strong{display:block;font-size:0.82rem;font-weight:700;color:var(--teal-d);margin-bottom:2px}
-.fi-t span{font-size:0.72rem;color:var(--muted)}
-.abtns{display:flex;gap:0.8rem;flex-wrap:wrap}
-.verified-pill{display:flex;align-items:center;gap:8px;background:var(--teal-pale2);border:1px solid rgba(2,132,199,0.2);border-radius:10px;padding:0.85rem 1.1rem;margin-top:1.2rem}
-.vp-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0}
-.vp-t strong{display:block;font-size:0.73rem;font-weight:700;color:var(--teal-d)}
-.vp-t span{font-size:0.6rem;color:var(--muted);margin-top:1px;display:block}
-
-/* WHY */
-#why{background:#fff}
-.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.wcard{background:var(--off);border:1px solid var(--border);border-radius:15px;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s}
-.wcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-d),var(--teal));transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
-.wcard:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 10px 28px rgba(2,132,199,0.08)}
-.wcard:hover::after{transform:scaleX(1)}
-.w-ic{width:50px;height:50px;background:var(--teal-gl);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem}
-.w-t{font-size:0.9rem;font-weight:700;color:var(--teal-d);margin-bottom:0.45rem}
-.w-d{font-size:0.76rem;color:var(--text2);line-height:1.75}
-
-/* SERVICES */
-#services{background:var(--off)}
-.svc-grid{display:flex;flex-direction:column;gap:1.5rem}
-.svc-cat{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
-.svc-head{background:linear-gradient(90deg,var(--teal-d),var(--teal));padding:1.1rem 1.8rem;display:flex;align-items:center;gap:12px}
-.sh-ic{width:40px;height:40px;background:rgba(255,255,255,0.15);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.sh-title{font-size:0.96rem;font-weight:800;color:#fff}
-.sh-sub{font-size:0.65rem;color:rgba(255,255,255,0.7)}
-.svc-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-.svc-i{padding:1rem 1.8rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background 0.2s}
-.svc-i:hover{background:var(--teal-pale2)}
-.si-name{font-size:0.8rem;font-weight:600;color:var(--teal-d)}
-.si-name small{display:block;font-size:0.62rem;color:var(--muted);font-weight:400;margin-top:2px}
-.si-price{font-size:0.84rem;font-weight:900;color:var(--teal);white-space:nowrap;background:var(--teal-gl);padding:0.22rem 0.6rem;border-radius:100px}
-.svc-note{margin-top:1.2rem;background:var(--teal-pale2);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:10px;padding:1rem 1.3rem;font-size:0.8rem;color:var(--text2);line-height:1.7}
-
-/* BRACES */
-#braces{background:#fff}
-.braces-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.5rem}
-.bcard{background:var(--off);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;position:relative}
-.bcard:hover{transform:translateY(-6px);border-color:var(--border2);box-shadow:var(--shadow2)}
-.best-tag{position:absolute;top:1rem;right:1rem;background:var(--gold);color:#000;font-size:0.58rem;font-weight:900;padding:0.2rem 0.6rem;border-radius:100px;letter-spacing:0.05em}
-.bc-top{padding:2rem 2rem 1.5rem;background:linear-gradient(135deg,var(--teal-pale2),var(--teal-pale));border-bottom:1px solid var(--border);text-align:center}
-.bc-icon{font-size:2.8rem;margin-bottom:0.6rem}
-.bc-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--teal-d)}
-.bc-tag{font-size:0.62rem;font-weight:700;color:var(--teal);background:var(--teal-gl);padding:0.2rem 0.6rem;border-radius:100px;display:inline-block;margin-top:0.3rem}
-.bc-body{padding:1.5rem}
-.bc-price{font-size:1.3rem;font-weight:900;color:var(--teal);margin-bottom:0.8rem}
-.bc-price small{font-size:0.65rem;font-weight:500;color:var(--muted)}
-.bc-desc{font-size:0.76rem;color:var(--text2);line-height:1.75;margin-bottom:1rem}
-.bc-pros{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
-.bc-pros li{font-size:0.72rem;color:var(--text2);display:flex;align-items:flex-start;gap:6px}
-.bc-pros li::before{content:'✓';color:var(--green);font-weight:900;font-size:0.72rem;flex-shrink:0;margin-top:1px}
-
-/* CLINICS */
-#clinics{background:var(--off)}
-.clinics-g{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.cc{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.25s,box-shadow 0.25s}
-.cc:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
-.cc-head{background:linear-gradient(135deg,var(--teal-d),var(--teal));padding:1.4rem 1.8rem;display:flex;align-items:center;gap:12px}
-.cc-num{width:38px;height:38px;background:rgba(255,255,255,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900;color:#fff;flex-shrink:0}
-.cc-ht strong{display:block;font-size:0.92rem;font-weight:800;color:#fff}
-.cc-ht span{font-size:0.63rem;color:rgba(255,255,255,0.72)}
-.cc-body{padding:1.8rem}
-.cc-r{display:flex;align-items:flex-start;gap:12px;margin-bottom:1.1rem}
-.cc-ic{width:38px;height:38px;background:var(--teal-pale2);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.cc-rt label{display:block;font-size:0.57rem;font-weight:800;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2px}
-.cc-rt p,.cc-rt a{font-size:0.78rem;font-weight:500;color:var(--teal-d)}
-.cc-rt a{transition:color 0.2s}.cc-rt a:hover{color:var(--teal)}
-.timing-g{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.6rem}
-.tg{background:var(--teal-pale2);border:1px solid var(--border);border-radius:8px;padding:0.7rem;text-align:center}
-.tg-day{font-size:0.58rem;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px}
-.tg-time{font-size:0.74rem;font-weight:700;color:var(--teal-d)}
-.cc-btns{display:flex;gap:0.7rem;margin-top:1.2rem}
-.cc-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:0.68rem;border-radius:9px;font-size:0.76rem;font-weight:700;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s}
-.cc-btn:hover{opacity:0.85;transform:translateY(-1px)}
-.ccb-c{background:var(--teal-gl);color:var(--teal);border:1.5px solid var(--border2)!important}
-.ccb-w{background:rgba(16,185,129,0.08);color:#059669;border:1.5px solid rgba(16,185,129,0.2)!important}
-
-/* FAQ */
-#faq{background:#fff}
-.faq-wrap{max-width:780px;margin:0 auto}
-.faq-i{background:var(--off);border:1px solid var(--border);border-radius:13px;margin-bottom:0.75rem;overflow:hidden;transition:border-color 0.25s}
-.faq-i.open{border-color:var(--border2);background:#fff}
-.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 1.5rem;cursor:pointer;font-size:0.86rem;font-weight:600;color:var(--teal-d);user-select:none}
-.faq-q:hover{color:var(--teal)}
-.faq-plus{width:28px;height:28px;border-radius:50%;background:var(--teal-gl);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--teal);flex-shrink:0;transition:transform 0.3s,background 0.2s}
-.faq-i.open .faq-plus{transform:rotate(45deg);background:var(--teal);color:#fff;border-color:var(--teal)}
-.faq-a{display:none;padding:0 1.5rem 1.3rem;font-size:0.8rem;color:var(--text2);line-height:1.82}
-.faq-a strong{color:var(--teal-d)}
-.faq-i.open .faq-a{display:block}
-.faq-hin{font-size:0.73rem;color:var(--muted);margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid var(--border);font-style:italic}
-
-/* CONTACT */
-#contact{background:var(--off)}
-.contact-g{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
-.cdet{display:flex;align-items:flex-start;gap:12px;margin-bottom:1.2rem}
-.cdet-ic{width:42px;height:42px;border-radius:10px;background:var(--teal-pale2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.cdet-t label{display:block;font-size:0.57rem;font-weight:800;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2px}
-.cdet-t p,.cdet-t a{font-size:0.79rem;font-weight:500;color:var(--teal-d);transition:color 0.2s}
-.cdet-t a:hover{color:var(--teal)}
-.c-act{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem}
-.ca{display:flex;align-items:center;justify-content:center;gap:8px;padding:0.9rem;border-radius:10px;font-size:0.8rem;font-weight:700;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s}
-.ca:hover{opacity:0.85;transform:translateY(-1px)}
-.ca-c{background:var(--teal-gl);color:var(--teal);border:1.5px solid var(--border2)!important}
-.ca-w{background:rgba(16,185,129,0.08);color:#059669;border:1.5px solid rgba(16,185,129,0.2)!important}
-.owner-c{background:#fff;border:1px solid var(--border);border-radius:13px;padding:1.2rem;display:flex;align-items:center;gap:14px;margin-top:1.4rem;transition:border-color 0.25s}
-.owner-c:hover{border-color:var(--border2)}
-.oc-av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal3));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;flex-shrink:0}
-.oc-t strong{display:block;font-size:0.82rem;font-weight:700;color:var(--teal-d)}
-.oc-t span{font-size:0.63rem;color:var(--muted)}
-.cform{display:flex;flex-direction:column;gap:1rem}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.fg{display:flex;flex-direction:column;gap:5px}
-.fg label{font-size:0.64rem;font-weight:700;color:var(--text2);letter-spacing:0.07em;text-transform:uppercase}
-.fg input,.fg textarea,.fg select{background:#fff;border:1.5px solid var(--border);border-radius:9px;padding:0.78rem 1rem;font-family:'Outfit',sans-serif;font-size:0.8rem;color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(2,132,199,0.09)}
-.fg textarea{height:115px;resize:none}
-.fg select{cursor:pointer}.fg select option{background:#fff}
-.fnote{font-size:0.63rem;color:var(--muted)}
-.bsub{background:var(--teal);color:#fff;padding:1rem;border-radius:10px;font-family:'Outfit',sans-serif;font-size:0.84rem;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 2px 14px rgba(2,132,199,0.25);transition:background 0.2s,transform 0.15s}
-.bsub:hover{background:var(--teal2);transform:translateY(-1px)}
-.fsuccess{display:none;background:var(--teal-pale2);border:1px solid var(--border2);border-left:4px solid var(--teal);border-radius:10px;padding:2rem;text-align:center;color:var(--teal-d);font-size:0.86rem;font-weight:600}
-
-/* FOOTER */
-footer{background:var(--teal-dd);padding:4rem 2rem 1.5rem}
-.fg-g{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.07)}
-.fbrand-logo{display:flex;align-items:center;gap:10px;margin-bottom:0.9rem}
-.fl-ic{width:40px;height:40px;border-radius:9px;overflow:hidden;flex-shrink:0}
-.fl-ic img{width:100%;height:100%;object-fit:cover;object-position:top}
-.fl-t strong{display:block;font-size:0.88rem;font-weight:800;color:#fff}
-.fl-t span{font-size:0.58rem;color:rgba(255,255,255,0.45)}
-.fbrand p{font-size:0.72rem;color:rgba(255,255,255,0.52);line-height:1.78;max-width:260px;margin-bottom:1.2rem}
-.fcqs{display:flex;flex-direction:column;gap:0.45rem}
-.fcq{display:flex;align-items:center;gap:7px;font-size:0.72rem;color:rgba(255,255,255,0.6)}
-.fcq a{color:rgba(255,255,255,0.6);transition:color 0.2s}.fcq a:hover{color:#fff}
-.fcol h4{font-size:0.58rem;font-weight:800;color:rgba(255,255,255,0.38);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1.1rem}
-.fcol ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
-.fcol ul a{font-size:0.74rem;color:rgba(255,255,255,0.54);transition:color 0.2s}.fcol ul a:hover{color:#fff}
-.fbot{max-width:1200px;margin:1.2rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.fbot p{font-size:0.63rem;color:rgba(255,255,255,0.28)}
-.fbot span{color:rgba(255,255,255,0.48)}
-
-/* AI CHATBOT */
-#chatLauncher{position:fixed;bottom:5.5rem;right:1.5rem;z-index:850;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--teal-d),var(--teal));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(2,132,199,0.4);transition:transform 0.2s,box-shadow 0.2s;animation:chatPulse 3s infinite}
-#chatLauncher:hover{transform:scale(1.08);box-shadow:0 6px 30px rgba(2,132,199,0.5)}
-#chatLauncher .ci{font-size:1.5rem;transition:opacity 0.2s}
-#chatLauncher .cx{display:none;font-size:1.3rem}
-#chatLauncher.open .ci{display:none}
-#chatLauncher.open .cx{display:block}
-.chat-badge{position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;background:var(--red);color:#fff;font-size:0.6rem;font-weight:900;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
-.chat-tooltip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:var(--teal-d);color:#fff;padding:0.45rem 0.9rem;border-radius:8px;font-size:0.72rem;font-weight:700;white-space:nowrap;box-shadow:var(--shadow);animation:tooltipPop 0.3s 1s ease backwards;pointer-events:none}
-.chat-tooltip::after{content:'';position:absolute;left:100%;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:var(--teal-d)}
-#chatWindow{position:fixed;bottom:10.5rem;right:1.5rem;z-index:849;width:370px;max-width:calc(100vw - 2rem);height:520px;max-height:calc(100vh - 220px);background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(2,132,199,0.18),0 4px 20px rgba(0,0,0,0.08);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px) scale(0.95);opacity:0;pointer-events:none;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),opacity 0.25s ease;border:1px solid var(--border)}
-#chatWindow.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
-.cw-head{background:linear-gradient(135deg,var(--teal-dd),var(--teal-d),var(--teal));padding:0.9rem 1rem;display:flex;align-items:center;gap:9px;flex-shrink:0;position:relative;overflow:hidden}
-.cw-head::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:16px 16px}
-.cw-av{width:38px;height:38px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);overflow:hidden;flex-shrink:0;position:relative;z-index:1}
-.cw-av img{width:100%;height:100%;object-fit:cover;object-position:top}
-.cw-info{flex:1;position:relative;z-index:1}
-.cw-info strong{display:block;font-size:0.82rem;font-weight:800;color:#fff}
-.cw-info span{font-size:0.6rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:4px}
-.cw-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0}
-.cw-acts{display:flex;gap:0.3rem;position:relative;z-index:1}
-.cwa{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.12);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.8rem;transition:background 0.2s}
-.cwa:hover{background:rgba(255,255,255,0.22)}
-.cw-msgs{flex:1;overflow-y:auto;padding:0.9rem;display:flex;flex-direction:column;gap:0.8rem;scroll-behavior:smooth}
-.cw-msgs::-webkit-scrollbar{width:2px}
-.cw-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:1px}
-.cmsg{display:flex;gap:7px;align-items:flex-end;animation:msgIn 0.3s ease}
-.cmsg.user{flex-direction:row-reverse}
-.cmsg-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;flex-shrink:0;overflow:hidden}
-.cmsg-av.b{background:linear-gradient(135deg,var(--teal-d),var(--teal));border:2px solid var(--teal-pale)}
-.cmsg-av.b img{width:100%;height:100%;object-fit:cover;object-position:top}
-.cmsg-av.u{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:0.65rem;font-weight:700}
-.cbubble{max-width:82%;padding:0.65rem 0.9rem;font-size:0.79rem;line-height:1.65}
-.cmsg.bot .cbubble{background:var(--teal-pale2);border:1px solid var(--border);border-radius:14px 14px 14px 3px;color:var(--text);box-shadow:0 1px 6px rgba(2,132,199,0.05)}
-.cmsg.user .cbubble{background:linear-gradient(135deg,var(--teal-d),var(--teal));border-radius:14px 14px 3px 14px;color:#fff;box-shadow:0 2px 10px rgba(2,132,199,0.22)}
-.cbubble strong{color:var(--teal-d);font-weight:700}
-.cmsg.user .cbubble strong{color:#fff}
-.cbubble ul{padding-left:1.1rem;margin:0.3rem 0}
-.cbubble li{margin-bottom:0.2rem}
-.cmsg-time{font-size:0.55rem;color:var(--muted);margin-top:3px}
-.cmsg.user .cmsg-time{text-align:right;color:rgba(255,255,255,0.55)}
-.ctyping{display:flex;gap:7px;align-items:flex-end}
-.ctyping-b{background:var(--teal-pale2);border:1px solid var(--border);border-radius:14px 14px 14px 3px;padding:0.65rem 0.9rem;display:flex;align-items:center;gap:3px}
-.ctyping-b span{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:typing 1.2s infinite;display:block}
-.ctyping-b span:nth-child(2){animation-delay:0.18s}
-.ctyping-b span:nth-child(3){animation-delay:0.36s}
-.cqr-wrap{padding:0 0.4rem;display:flex;flex-wrap:wrap;gap:0.4rem}
-.cqr{background:#fff;border:1.5px solid var(--border);color:var(--teal);padding:0.35rem 0.8rem;border-radius:100px;font-size:0.68rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap}
-.cqr:hover{background:var(--teal-pale);border-color:var(--teal);transform:translateY(-1px)}
-.chat-actions{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;max-width:82%}
-.cha{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:0.7rem;text-align:center;cursor:pointer;transition:all 0.2s}
-.cha:hover{border-color:var(--teal);background:var(--teal-pale2);transform:translateY(-1px)}
-.cha-ic{font-size:1.2rem;margin-bottom:0.25rem}
-.cha-t{font-size:0.65rem;font-weight:700;color:var(--teal-d)}
-.cw-input{padding:0.7rem 0.9rem;border-top:1px solid var(--border);display:flex;align-items:flex-end;gap:0.5rem;flex-shrink:0;background:#fff}
-#chatInput{flex:1;background:var(--teal-pale2);border:1.5px solid var(--border);border-radius:11px;padding:0.6rem 0.85rem;font-family:'Outfit',sans-serif;font-size:0.79rem;color:var(--text);outline:none;resize:none;max-height:90px;min-height:36px;line-height:1.5;transition:border-color 0.2s,box-shadow 0.2s}
-#chatInput:focus{border-color:var(--teal);box-shadow:0 0 0 2px rgba(2,132,199,0.08)}
-#chatInput::placeholder{color:var(--muted)}
-#chatSend{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal-d),var(--teal));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(2,132,199,0.3);transition:transform 0.15s,opacity 0.2s;flex-shrink:0}
-#chatSend:hover{transform:scale(1.08)}
-#chatSend:disabled{opacity:0.45;cursor:default;transform:none}
-#chatSend svg{width:15px;height:15px;fill:#fff;margin-left:1px}
-.cw-foot{text-align:center;padding:0.35rem;font-size:0.55rem;color:var(--muted);flex-shrink:0}
-.cw-foot span{color:var(--teal);font-weight:700}
-
-/* FLOATS */
-.fab-wa{position:fixed;right:1.5rem;bottom:1.5rem;z-index:840;width:50px;height:50px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 4px 20px rgba(37,211,102,0.38);transition:transform 0.2s;animation:waf 3s ease-in-out infinite}
-.fab-wa:hover{transform:scale(1.1)}
-.fab-wa.mob{bottom:72px;right:1rem;width:44px;height:44px;font-size:1.2rem}
-#btt{position:fixed;bottom:1.5rem;left:1.5rem;z-index:840;width:38px;height:38px;border-radius:9px;background:var(--teal-pale2);border:1px solid var(--border);color:var(--teal);font-size:0.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity 0.3s,transform 0.3s,background 0.2s}
-#btt.vis{opacity:1;transform:translateY(0)}
-#btt:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
-
-/* REVEAL */
-.rv{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
-.rv.visible{opacity:1;transform:translateY(0)}
-
-/* KEYFRAMES */
-@keyframes gradShift{0%{background-position:0 50%}100%{background-position:300% 50%}}
-@keyframes slideUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
-@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(16px,-20px)}}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-4px);opacity:1}}
-@keyframes chatPulse{0%,100%{box-shadow:0 4px 22px rgba(2,132,199,0.4)}50%{box-shadow:0 4px 32px rgba(2,132,199,0.6),0 0 0 8px rgba(2,132,199,0.08)}}
-@keyframes tooltipPop{from{opacity:0;transform:translateY(-50%) scale(0.8)}to{opacity:1;transform:translateY(-50%) scale(1)}}
-
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .hero-in{grid-template-columns:1fr;gap:2.5rem}
-  .hero-right{padding-bottom:1rem}
-  .about-g{grid-template-columns:1fr;gap:3rem}
-  .clinics-g{grid-template-columns:1fr}
-  .fg-g{grid-template-columns:1fr 1fr}
-  .braces-g{grid-template-columns:1fr 1fr}
-  .why-g{grid-template-columns:1fr 1fr}
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════════════════════════════════════════════════════════ */
+.announcement-bar{
+  background:var(--or-grad);
+  background-size:200% 200%;
+  animation:gradient-shift 4s ease infinite;
+  padding:0.6rem 1rem;
+  text-align:center;
+  font-size:0.72rem;
+  font-weight:700;
+  color:#000;
+  letter-spacing:0.04em;
+  position:relative;
+  z-index:1001;
 }
+.announcement-bar a{color:#000;font-weight:800}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════════════════════════════════ */
+#navbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(5,5,5,0.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--brd);
+  transition:all 0.3s ease;
+}
+#navbar.scrolled{
+  background:rgba(5,5,5,0.95);
+  box-shadow:0 4px 30px rgba(0,0,0,0.5);
+}
+.nav-inner{
+  max-width:1400px;margin:0 auto;
+  padding:0 2rem;height:70px;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:0.75rem;
+  font-family:'Sora',sans-serif;
+  font-weight:800;font-size:1.3rem;
+  color:var(--w);
+}
+.nav-logo img{height:45px;width:auto;filter:drop-shadow(0 0 10px rgba(249,115,22,0.3))}
+.nav-logo span{background:var(--or-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.nav-links{display:flex;list-style:none;gap:0.5rem}
+.nav-links a{
+  padding:0.5rem 1rem;font-size:0.82rem;font-weight:500;
+  color:var(--t2);border-radius:8px;
+  transition:all 0.25s ease;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:50%;right:50%;
+  height:2px;background:var(--or);border-radius:2px;
+  transition:all 0.25s ease;
+}
+.nav-links a:hover,.nav-links a.active{
+  color:var(--t1);background:rgba(255,255,255,0.04);
+}
+.nav-links a:hover::after,.nav-links a.active::after{left:1rem;right:1rem}
+
+.nav-actions{display:flex;align-items:center;gap:0.6rem}
+.nav-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:0.55rem 1.1rem;border-radius:8px;
+  font-size:0.75rem;font-weight:600;cursor:pointer;
+  transition:all 0.25s ease;white-space:nowrap;
+}
+.nav-btn-primary{
+  background:var(--or-grad);color:#000;border:none;
+  box-shadow:0 4px 15px rgba(249,115,22,0.3);
+  animation:pulse-glow 2s ease infinite;
+}
+.nav-btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(249,115,22,0.5)}
+.nav-btn-secondary{
+  background:transparent;border:1.5px solid rgba(255,255,255,0.1);
+  color:var(--t2);
+}
+.nav-btn-secondary:hover{border-color:var(--or);color:var(--or);background:rgba(249,115,22,0.05)}
+
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--t2);border-radius:2px;transition:all 0.3s}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MOBILE NAVIGATION
+═══════════════════════════════════════════════════════════════════════════════ */
+#mobileMenu{
+  display:none;position:fixed;inset:0;z-index:1100;
+  background:var(--bg2);flex-direction:column;overflow-y:auto;
+  animation:fade-in 0.3s ease;
+}
+#mobileMenu.open{display:flex}
+.mm-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 1.5rem;border-bottom:1px solid var(--brd);
+}
+.mm-header img{height:40px}
+.mm-close{background:none;border:none;color:var(--t2);font-size:1.8rem;cursor:pointer}
+.mm-links{display:flex;flex-direction:column;padding:1.5rem;gap:0.3rem}
+.mm-links a{
+  font-size:1rem;font-weight:600;color:var(--t1);
+  padding:1rem 1.2rem;border-radius:10px;
+  display:flex;align-items:center;gap:12px;
+  transition:all 0.2s;
+}
+.mm-links a:hover{background:var(--bg3);color:var(--or)}
+.mm-icon{font-size:1.2rem}
+.mm-actions{display:flex;flex-direction:column;gap:0.8rem;padding:1.5rem;border-top:1px solid var(--brd)}
+.mm-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:1rem;border-radius:12px;font-size:0.9rem;font-weight:700;
+  border:none;cursor:pointer;transition:all 0.2s;
+}
+.mm-btn:hover{transform:translateY(-2px)}
+.mm-btn-call{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.22)}
+.mm-btn-wa{background:rgba(37,211,102,0.1);color:#25d366;border:1.5px solid rgba(37,211,102,0.18)}
+.mm-btn-shop{background:var(--or-grad);color:#000}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MOBILE BOTTOM NAV
+═══════════════════════════════════════════════════════════════════════════════ */
+#mobileBottomNav{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:990;
+  background:rgba(10,10,10,0.98);backdrop-filter:blur(20px);
+  border-top:1px solid var(--brd);padding:0 0 env(safe-area-inset-bottom,0);
+}
+.mbn-inner{display:flex;align-items:center;height:65px}
+.mbn-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  font-size:0.6rem;font-weight:600;color:var(--t3);cursor:pointer;
+  border:none;background:none;transition:all 0.2s;padding:8px 4px;
+  -webkit-tap-highlight-color:transparent;
+}
+.mbn-item:hover,.mbn-item.active{color:var(--or)}
+.mbn-item.active .mbn-icon{background:var(--or-glow);padding:4px 12px;border-radius:10px}
+.mbn-icon{font-size:1.3rem;transition:all 0.2s}
+.mbn-cta{flex:1.2;display:flex;justify-content:center;padding:8px}
+.mbn-cta-btn{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--or-grad);color:#000;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;border:none;cursor:pointer;box-shadow:0 0 25px rgba(249,115,22,0.5);
+  animation:pulse-glow 2s ease infinite;transition:transform 0.2s;
+}
+.mbn-cta-btn:active{transform:scale(0.95)}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   FLOATING ELEMENTS
+═══════════════════════════════════════════════════════════════════════════════ */
+.fab-wa{
+  position:fixed;right:1.5rem;bottom:1.5rem;z-index:985;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;box-shadow:0 4px 25px rgba(37,211,102,0.4);
+  transition:all 0.3s ease;animation:float 3s ease-in-out infinite;
+}
+.fab-wa:hover{transform:scale(1.1) rotate(5deg);box-shadow:0 6px 35px rgba(37,211,102,0.5)}
+
+#backToTop{
+  position:fixed;bottom:1.5rem;left:1.5rem;z-index:984;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--bg3);border:1px solid var(--brd);
+  color:var(--t2);font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;transform:translateY(10px);transition:all 0.3s ease;
+}
+#backToTop.visible{opacity:1;transform:translateY(0)}
+#backToTop:hover{background:var(--or);color:#000;border-color:var(--or);transform:translateY(-3px)}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  background:var(--bg);
+  display:flex;align-items:center;position:relative;
+  padding:4rem 2rem;overflow:hidden;
+}
+.hero-glow-1{
+  position:absolute;top:-200px;right:-100px;width:700px;height:700px;
+  background:radial-gradient(circle,rgba(249,115,22,0.15) 0%,transparent 60%);
+  pointer-events:none;animation:floatSlow 15s ease-in-out infinite;
+}
+.hero-glow-2{
+  position:absolute;bottom:-150px;left:-100px;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(59,130,246,0.08) 0%,transparent 60%);
+  pointer-events:none;animation:floatSlow 18s ease-in-out infinite reverse;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 50%,rgba(249,115,22,0.03) 0%,transparent 40%),
+    radial-gradient(circle at 80% 20%,rgba(59,130,246,0.02) 0%,transparent 40%);
+  pointer-events:none;
+}
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;
+}
+
+.hero-inner{
+  max-width:1400px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;
+  align-items:center;position:relative;z-index:2;
+}
+
+.hero-content{animation:slide-up 0.8s ease-out}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(249,115,22,0.1);border:1px solid var(--brd2);
+  padding:0.4rem 1rem;border-radius:100px;
+  font-size:0.7rem;font-weight:700;color:var(--or2);
+  letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1.5rem;
+  animation:pulse-glow 3s ease infinite;
+}
+.hero-badge .dot{width:8px;height:8px;background:var(--gn);border-radius:50%;animation:blink 2s infinite}
+
+h1.hero-title{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:900;color:var(--w);
+  line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;
+}
+h1.hero-title .highlight{
+  background:var(--or-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  position:relative;
+}
+h1.hero-title .highlight::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:var(--or-grad);border-radius:2px;opacity:0.5;
+}
+
+.hero-subtitle{
+  font-size:1.1rem;color:var(--t2);line-height:1.8;
+  max-width:500px;margin-bottom:2rem;
+}
+
+.hero-cta-group{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:1rem 2rem;border-radius:12px;
+  font-size:0.9rem;font-weight:700;cursor:pointer;
+  transition:all 0.3s ease;border:none;
+}
+.btn-lg{padding:1.1rem 2.2rem;font-size:0.95rem}
+.btn-primary{
+  background:var(--or-grad);color:#000;
+  box-shadow:0 4px 20px rgba(249,115,22,0.35);
+  position:relative;overflow:hidden;
+}
+.btn-primary::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  transition:left 0.5s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 35px rgba(249,115,22,0.5)}
+.btn-primary:hover::before{left:100%}
+.btn-secondary{
+  background:transparent;border:2px solid rgba(255,255,255,0.15);
+  color:var(--t1);
+}
+.btn-secondary:hover{border-color:var(--or);color:var(--or);background:rgba(249,115,22,0.05)}
+
+.hero-chips{display:flex;gap:0.8rem;flex-wrap:wrap}
+.chip{
+  display:flex;align-items:center;gap:6px;
+  background:var(--bg3);border:1px solid var(--brd);
+  padding:0.4rem 1rem;border-radius:100px;
+  font-size:0.72rem;font-weight:600;color:var(--t2);
+  transition:all 0.2s;
+}
+.chip:hover{border-color:var(--or2);color:var(--t1)}
+.chip-icon{color:var(--gn);font-weight:900}
+
+/* Hero Visual */
+.hero-visual{
+  display:flex;flex-direction:column;gap:1.5rem;
+  animation:slide-in-right 0.9s ease-out 0.2s both;
+}
+.hero-logo-card{
+  background:var(--bg3);border:1px solid var(--brd);border-radius:24px;
+  padding:2.5rem;text-align:center;position:relative;overflow:hidden;
+  transition:all 0.4s ease;
+}
+.hero-logo-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(249,115,22,0.1) 0%,transparent 60%);
+}
+.hero-logo-card:hover{border-color:var(--brd2);box-shadow:var(--shadow-or)}
+.hero-logo-card img{
+  height:100px;width:auto;margin:0 auto 1rem;
+  filter:drop-shadow(0 0 20px rgba(249,115,22,0.3));
+  animation:float 4s ease-in-out infinite;
+}
+.hero-logo-tag{
+  font-size:0.65rem;font-weight:700;color:var(--t3);
+  letter-spacing:0.15em;text-transform:uppercase;
+}
+
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+}
+.stat-box{
+  background:var(--bg3);border:1px solid var(--brd);border-radius:16px;
+  padding:1.2rem 1rem;text-align:center;transition:all 0.3s ease;
+}
+.stat-box:hover{border-color:var(--brd2);transform:translateY(-5px);box-shadow:var(--shadow)}
+.stat-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.stat-number{font-size:1.6rem;font-weight:900;color:var(--w);line-height:1}
+.stat-label{font-size:0.6rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px}
+
+.hero-actions{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.action-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:1rem;border-radius:12px;font-size:0.8rem;font-weight:700;
+  cursor:pointer;border:none;transition:all 0.25s;
+}
+.action-btn:hover{transform:translateY(-3px)}
+.action-call{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.22)}
+.action-wa{background:rgba(37,211,102,0.1);color:#25d366;border:1.5px solid rgba(37,211,102,0.18)}
+
+.amazon-badge{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:var(--bg3);border:1px solid rgba(255,153,0,0.2);border-radius:14px;
+  padding:1.2rem 1.5rem;transition:all 0.3s;
+}
+.amazon-badge:hover{border-color:rgba(255,153,0,0.4);transform:translateY(-3px)}
+.amazon-text{font-size:1.1rem;font-weight:900}
+.amazon-text .a{color:#ff9900}.amazon-text .i{color:var(--t2)}
+.amazon-verify{font-size:0.65rem;color:var(--t3);text-align:right;font-weight:600}
+.amazon-verify span{display:block;color:var(--gn);font-weight:700;font-size:0.7rem}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   TICKER
+═══════════════════════════════════════════════════════════════════════════════ */
+.ticker-wrap{
+  background:var(--or);padding:0.8rem 0;overflow:hidden;position:relative;
+}
+.ticker-wrap::before,.ticker-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;
+  pointer-events:none;
+}
+.ticker-wrap::before{left:0;background:linear-gradient(90deg,var(--or),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(-90deg,var(--or),transparent)}
+.ticker{
+  display:flex;animation:ticker 30s linear infinite;
+  white-space:nowrap;
+}
+.ticker-item{
+  font-size:0.75rem;font-weight:800;color:#000;
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:0 2.5rem;display:flex;align-items:center;gap:0.8rem;
+}
+.ticker-item::before{content:'◆';font-size:0.5rem;opacity:0.4}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════════════════════════════════════════════════ */
+.trust-bar{
+  background:var(--bg2);border-bottom:1px solid var(--brd);
+}
+.trust-inner{
+  max-width:1400px;margin:0 auto;padding:0 2rem;
+  display:flex;align-items:stretch;overflow-x:auto;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.trust-inner::-webkit-scrollbar{display:none}
+.trust-item{
+  display:flex;align-items:center;gap:12px;padding:1.2rem 2rem;
+  flex-shrink:0;border-right:1px solid var(--brd);
+  transition:all 0.3s;
+}
+.trust-item:last-child{border-right:none}
+.trust-item:hover{background:rgba(255,255,255,0.02)}
+.trust-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(249,115,22,0.1);display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;transition:all 0.3s;
+}
+.trust-item:hover .trust-icon{background:var(--or-glow);transform:scale(1.1)}
+.trust-text strong{display:block;font-size:0.82rem;font-weight:700;color:var(--t1)}
+.trust-text span{font-size:0.65rem;color:var(--t3)}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   SECTION UTILITIES
+═══════════════════════════════════════════════════════════════════════════════ */
+section{padding:6rem 2rem;position:relative}
+.section-inner{max-width:1400px;margin:0 auto}
+.section-header{margin-bottom:3.5rem}
+.section-header.center{text-align:center}
+.section-header.center .section-subtitle{justify-content:center}
+.section-subtitle{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:0.7rem;font-weight:800;color:var(--or);
+  letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;
+}
+.section-subtitle::before{
+  content:'';width:20px;height:2px;background:var(--or);border-radius:1px;
+}
+.section-title{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(2rem,4vw,3rem);font-weight:900;
+  color:var(--w);line-height:1.1;letter-spacing:-0.025em;margin-bottom:1rem;
+}
+.section-title .highlight{
+  background:var(--or-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.section-desc{
+  font-size:1rem;color:var(--t2);line-height:1.8;max-width:600px;
+}
+.section-header.center .section-desc{margin:0 auto}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ABOUT SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#about{background:var(--bg2)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.about-card{
+  background:var(--bg3);border:1px solid var(--brd);border-radius:24px;
+  padding:2.5rem;position:relative;overflow:hidden;
+  transition:all 0.4s ease;
+}
+.about-card:hover{border-color:var(--brd2);box-shadow:var(--shadow-or)}
+.about-card::before{
+  content:'';position:absolute;top:-80px;right:-80px;width:250px;height:250px;
+  background:radial-gradient(circle,rgba(249,115,22,0.12) 0%,transparent 70%);
+}
+.about-card-header{
+  display:flex;align-items:center;gap:14px;padding-bottom:1.5rem;margin-bottom:1.5rem;
+  border-bottom:1px solid var(--brd);
+}
+.about-card-header img{height:55px;width:auto;filter:drop-shadow(0 0 10px rgba(249,115,22,0.2))}
+.about-card-header strong{display:block;font-size:1rem;font-weight:800;color:var(--t1)}
+.about-card-header span{font-size:0.65rem;color:var(--t3);letter-spacing:0.08em}
+.about-card-desc{font-size:0.9rem;color:var(--t2);line-height:1.9;margin-bottom:1.5rem}
+
+.about-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.5rem}
+.about-stat{
+  background:var(--bg4);border:1px solid var(--brd);border-radius:12px;padding:1.2rem;
+  transition:all 0.3s;
+}
+.about-stat:hover{border-color:var(--brd2);transform:translateY(-3px)}
+.about-stat strong{display:block;font-size:1.6rem;font-weight:900;color:var(--or);line-height:1}
+.about-stat span{font-size:0.62rem;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:0.1em;margin-top:4px;display:block}
+
+.about-verified{
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg4);border:1px solid var(--brd2);border-radius:12px;padding:1rem 1.2rem;
+}
+.about-verified .dot{width:10px;height:10px;border-radius:50%;background:var(--gn);animation:blink 2s infinite}
+.about-verified strong{font-size:0.8rem;font-weight:700;color:var(--t1)}
+.about-verified span{font-size:0.65rem;color:var(--t3)}
+
+.about-content{animation:slide-up 0.6s ease}
+.about-lead{font-size:1rem;color:var(--t2);line-height:1.9;margin-bottom:2rem}
+.about-lead strong{color:var(--t1);font-weight:700}
+
+.feature-list{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem}
+.feature-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--bg3);border:1px solid var(--brd);border-radius:14px;
+  padding:1.2rem;transition:all 0.3s;
+}
+.feature-item:hover{border-color:var(--brd2);transform:translateX(5px)}
+.feature-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:rgba(249,115,22,0.1);display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.feature-text strong{display:block;font-size:0.9rem;font-weight:700;color:var(--t1);margin-bottom:3px}
+.feature-text span{font-size:0.78rem;color:var(--t2)}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CATEGORIES SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#categories{background:var(--bg)}
+.categories-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;
+}
+.category-card{
+  background:var(--bg2);border:1px solid var(--brd);border-radius:24px;
+  overflow:hidden;transition:all 0.4s ease;cursor:pointer;
+}
+.category-card:hover{
+  transform:translateY(-8px);border-color:var(--or);
+  box-shadow:0 30px 60px rgba(249,115,22,0.1);
+}
+.category-banner{
+  padding:3rem;position:relative;overflow:hidden;min-height:200px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.category-card:nth-child(1) .category-banner{background:linear-gradient(135deg,#050510 0%,#0d1830 60%,#1a1030 100%)}
+.category-card:nth-child(2) .category-banner{background:linear-gradient(135deg,#0a0500 0%,#1a0d00 60%,#2a1500 100%)}
+.category-banner::before{
+  content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;
+  border-radius:50%;filter:blur(50px);opacity:0.6;
+}
+.category-card:nth-child(1) .category-banner::before{background:rgba(59,130,246,0.4)}
+.category-card:nth-child(2) .category-banner::before{background:rgba(249,115,22,0.4)}
+.category-num{
+  position:absolute;top:1.5rem;right:2rem;font-size:5rem;font-weight:900;
+  color:rgba(255,255,255,0.04);line-height:1;font-family:'Sora',sans-serif;
+}
+.category-icon{font-size:3rem;margin-bottom:1rem;position:relative;z-index:1;animation:bounce-subtle 3s ease infinite}
+.category-title{
+  font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:800;color:var(--w);
+  position:relative;z-index:1;
+}
+.category-body{padding:2rem 2.5rem 2.5rem}
+.category-desc{font-size:0.85rem;color:var(--t2);line-height:1.9;margin-bottom:1.5rem}
+.category-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.category-tag{
+  font-size:0.7rem;font-weight:600;padding:0.35rem 0.9rem;
+  border-radius:100px;border:1px solid var(--brd);color:var(--t2);
+  transition:all 0.2s;
+}
+.category-card:hover .category-tag{border-color:rgba(249,115,22,0.3);color:var(--or);background:rgba(249,115,22,0.05)}
+.category-cta{
+  display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;font-weight:700;
+  color:var(--or);transition:gap 0.3s;
+}
+.category-card:hover .category-cta{gap:12px}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   WHY US SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#why{background:var(--bg2)}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+}
+.why-card{
+  background:var(--bg3);border:1px solid var(--brd);border-radius:20px;
+  padding:2rem;position:relative;overflow:hidden;transition:all 0.4s ease;
+}
+.why-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--or-grad);transform:scaleX(0);transition:transform 0.4s;transform-origin:left;
+}
+.why-card:hover{
+  border-color:rgba(249,115,22,0.25);transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+.why-card:hover::after{transform:scaleX(1)}
+.why-icon{
+  width:60px;height:60px;border-radius:16px;
+  background:rgba(249,115,22,0.1);display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;margin-bottom:1.5rem;transition:all 0.3s;
+}
+.why-card:hover .why-icon{background:var(--or-glow);transform:scale(1.1) rotate(5deg)}
+.why-title{font-size:1.1rem;font-weight:800;color:var(--t1);margin-bottom:0.6rem}
+.why-desc{font-size:0.85rem;color:var(--t2);line-height:1.8}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   GALLERY/SHOWCASE SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#showcase{background:var(--bg)}
+.showcase-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+}
+.showcase-item{
+  background:var(--bg2);border:1px solid var(--brd);border-radius:20px;
+  overflow:hidden;transition:all 0.4s ease;position:relative;
+}
+.showcase-item:hover{border-color:var(--brd2);transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.showcase-image{
+  aspect-ratio:1;background:var(--bg3);display:flex;align-items:center;justify-content:center;
+  font-size:3.5rem;position:relative;overflow:hidden;
+}
+.showcase-image::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at center,rgba(249,115,22,0.1) 0%,transparent 70%);
+}
+.showcase-content{padding:1.5rem}
+.showcase-title{font-size:0.95rem;font-weight:700;color:var(--t1);margin-bottom:0.3rem}
+.showcase-price{font-size:0.8rem;color:var(--or);font-weight:800}
+.showcase-badge{
+  position:absolute;top:1rem;left:1rem;
+  background:var(--or);color:#000;font-size:0.65rem;font-weight:800;
+  padding:0.3rem 0.7rem;border-radius:6px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   TESTIMONIALS SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#testimonials{background:var(--bg3)}
+.testimonials-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+}
+.testimonial-card{
+  background:var(--bg2);border:1px solid var(--brd);border-radius:20px;
+  padding:2rem;position:relative;overflow:hidden;transition:all 0.4s ease;
+}
+.testimonial-card:hover{border-color:rgba(249,115,22,0.2);transform:translateY(-6px)}
+.testimonial-quote{
+  position:absolute;top:1rem;right:1.5rem;font-size:4rem;
+  color:var(--or);opacity:0.08;font-family:'Sora',sans-serif;font-weight:900;
+}
+.testimonial-header{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;
+}
+.testimonial-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--or-grad);display:flex;align-items:center;justify-content:center;
+  font-size:1rem;font-weight:800;color:#fff;
+}
+.testimonial-stars{color:#fbbf24;font-size:0.9rem;letter-spacing:1px}
+.testimonial-text{
+  font-size:0.88rem;color:var(--t2);line-height:1.9;margin-bottom:1.5rem;font-style:italic;
+}
+.testimonial-footer{
+  border-top:1px solid var(--brd);padding-top:1rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.testimonial-name{font-size:0.85rem;font-weight:700;color:var(--t1)}
+.testimonial-location{font-size:0.65rem;color:var(--t3)}
+.testimonial-badge{
+  font-size:0.6rem;font-weight:800;color:#ff9900;
+  background:rgba(255,153,0,0.1);padding:4px 10px;border-radius:100px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   FAQ SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#faq{background:var(--bg)}
+.faq-container{max-width:850px;margin:0 auto}
+.faq-item{
+  background:var(--bg2);border:1px solid var(--brd);border-radius:14px;
+  margin-bottom:1rem;overflow:hidden;transition:all 0.3s;
+}
+.faq-item:hover{border-color:rgba(249,115,22,0.15)}
+.faq-item.open{border-color:var(--brd2);box-shadow:var(--shadow-sm)}
+.faq-question{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.3rem 1.8rem;cursor:pointer;font-size:0.95rem;font-weight:600;color:var(--t1);
+  user-select:none;transition:all 0.2s;
+}
+.faq-question:hover{color:var(--w)}
+.faq-icon{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;color:var(--or);flex-shrink:0;transition:all 0.3s;
+}
+.faq-item.open .faq-icon{background:var(--or);color:#000;border-color:var(--or);transform:rotate(45deg)}
+.faq-answer{
+  display:none;padding:0 1.8rem 1.5rem;font-size:0.88rem;color:var(--t2);line-height:1.9;
+}
+.faq-item.open .faq-answer{display:block;animation:slide-up 0.3s ease}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CONTACT SECTION
+═══════════════════════════════════════════════════════════════════════════════ */
+#contact{background:var(--bg2)}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;
+}
+.contact-info{animation:slide-up 0.6s ease}
+.contact-detail{
+  display:flex;align-items:flex-start;gap:14px;margin-bottom:1.5rem;
+}
+.contact-icon{
+  width:50px;height:50px;border-radius:12px;
+  background:var(--bg3);border:1px solid var(--brd);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;transition:all 0.3s;
+}
+.contact-detail:hover .contact-icon{background:var(--or-glow);border-color:var(--brd2)}
+.contact-label{font-size:0.65rem;font-weight:800;color:var(--or);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:3px}
+.contact-value,.contact-value a{font-size:0.92rem;font-weight:600;color:var(--t1);transition:color 0.2s}
+.contact-value a:hover{color:var(--or)}
+
+.contact-actions{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;
+}
+.contact-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:1.1rem;border-radius:12px;font-size:0.88rem;font-weight:700;
+  border:none;cursor:pointer;transition:all 0.25s;
+}
+.contact-btn:hover{transform:translateY(-3px)}
+.contact-btn-call{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.22)}
+.contact-btn-wa{background:rgba(37,211,102,0.1);color:#25d366;border:1.5px solid rgba(37,211,102,0.18)}
+
+.owner-card{
+  background:var(--bg3);border:1px solid var(--brd);border-radius:16px;
+  padding:1.5rem;display:flex;align-items:center;gap:16px;
+  transition:all 0.3s;
+}
+.owner-card:hover{border-color:var(--brd2);box-shadow:var(--shadow-or)}
+.owner-avatar{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--or-grad);display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;font-weight:900;color:#000;flex-shrink:0;
+}
+.owner-info strong{display:block;font-size:1rem;font-weight:800;color:var(--t1);margin-bottom:2px}
+.owner-info span{font-size:0.75rem;color:var(--t3);display:block}
+.owner-info a{font-size:0.75rem;color:var(--or);font-weight:600}
+
+.contact-form{background:var(--bg3);border:1px solid var(--brd);border-radius:20px;padding:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:0.7rem;font-weight:700;color:var(--t2);letter-spacing:0.08em;text-transform:uppercase}
+.form-group input,.form-group textarea,.form-group select{
+  background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;
+  padding:1rem 1.2rem;font-family:'Inter',sans-serif;font-size:0.9rem;
+  color:var(--t1);outline:none;transition:all 0.25s;
+}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{
+  border-color:var(--or);background:var(--bg5);box-shadow:0 0 0 3px rgba(249,115,22,0.1);
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--t4)}
+.form-group textarea{height:140px;resize:none}
+.form-group select{cursor:pointer}
+.form-note{font-size:0.72rem;color:var(--t3);margin:1rem 0}
+.form-submit{
+  width:100%;background:var(--or-grad);color:#000;
+  padding:1.1rem;border-radius:12px;font-family:'Inter',sans-serif;
+  font-size:0.95rem;font-weight:800;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  box-shadow:0 4px 20px rgba(249,115,22,0.3);transition:all 0.25s;
+}
+.form-submit:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(249,115,22,0.45)}
+.form-success{
+  display:none;background:var(--bg4);border:1px solid rgba(34,197,94,0.25);
+  border-radius:14px;padding:2.5rem;text-align:center;color:var(--gn);
+  animation:scale-in 0.4s ease;
+}
+.form-success-icon{font-size:3rem;margin-bottom:1rem}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════════════════════ */
+.footer{
+  background:#020202;border-top:1px solid var(--brd);padding:5rem 2rem 2rem;
+}
+.footer-grid{
+  max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;
+  padding-bottom:3rem;border-bottom:1px solid var(--brd);
+}
+.footer-brand img{height:60px;margin-bottom:1rem;filter:drop-shadow(0 0 15px rgba(249,115,22,0.2))}
+.footer-domain{font-size:0.7rem;color:var(--t3);letter-spacing:0.12em;margin-bottom:1rem;font-weight:600}
+.footer-desc{font-size:0.8rem;color:var(--t2);line-height:1.9;max-width:300px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:0.7rem}
+.footer-social a{
+  width:38px;height:38px;border-radius:10px;border:1px solid var(--brd);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.85rem;color:var(--t3);font-weight:700;transition:all 0.25s;
+}
+.footer-social a:hover{background:var(--or-glow);color:var(--or);border-color:var(--brd2);transform:translateY(-3px)}
+
+.footer-column h4{font-size:0.7rem;font-weight:800;color:var(--or);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem}
+.footer-column ul{list-style:none;display:flex;flex-direction:column;gap:0.8rem}
+.footer-column a{font-size:0.82rem;color:var(--t2);transition:all 0.2s;display:flex;align-items:center;gap:8px}
+.footer-column a:hover{color:var(--t1);transform:translateX(4px)}
+
+.footer-bottom{
+  max-width:1400px;margin:0 auto;padding-top:2rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-copyright{font-size:0.75rem;color:var(--t3)}
+.footer-copyright span{color:var(--t1);font-weight:600}
+.footer-owner{font-size:0.75rem;color:var(--t3)}
+.footer-owner strong{color:var(--or);font-weight:700}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE STYLES
+═══════════════════════════════════════════════════════════════════════════════ */
+@media(max-width:1200px){
+  .hero-inner{gap:3rem}
+  .about-grid{gap:3rem}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .showcase-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:992px){
+  .nav-links,.nav-actions{display:none}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;text-align:center}
+  .hero-subtitle{margin:0 auto 2rem}
+  .hero-cta-group{justify-content:center}
+  .hero-chips{justify-content:center}
+  .hero-visual{max-width:500px;margin:0 auto}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .categories-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
 @media(max-width:768px){
-  #nav .nav-links,#nav .nav-right{display:none}
-  .hbg{display:flex}
-  .nav-in{padding:0 1rem;height:60px}
-  .ann{padding:0.4rem 1rem;flex-direction:column;gap:0.3rem;text-align:center}
-  .ann-calls{justify-content:center}
-  section{padding:3.5rem 1.2rem}
-  #hero{padding:2.5rem 1.2rem 1.5rem;min-height:auto}
-  .hero-h{font-size:1.9rem}
-  .hero-ctas{flex-direction:column}
-  .hero-ctas a,.hero-ctas button{justify-content:center}
-  .why-g{grid-template-columns:1fr 1fr}
-  .braces-g{grid-template-columns:1fr}
-  .svc-items{grid-template-columns:1fr}
-  .contact-g{grid-template-columns:1fr;gap:2.5rem}
-  .frow{grid-template-columns:1fr}
-  .fg-g{grid-template-columns:1fr}
-  .fbot{flex-direction:column;text-align:center}
-  .c-act{grid-template-columns:1fr 1fr}
-  #mbn{display:block}
-  body{padding-bottom:60px}
-  .fab-wa{bottom:72px;right:1rem;width:46px;height:46px;font-size:1.2rem}
-  #chatLauncher{bottom:5rem;right:1rem;width:52px;height:52px}
-  .chat-tooltip{display:none}
-  #chatWindow{right:0.5rem;bottom:9.5rem;width:calc(100vw - 1rem)}
-  #btt{display:none}
-  .timing-g{grid-template-columns:1fr 1fr}
-  .clinic-banner img{height:200px}.cb-content{padding:1.3rem 1.5rem}.cb-title{font-size:1.1rem}.cb-sub{display:none}
+  #mobileBottomNav{display:block}
+  .fab-wa{bottom:90px;right:1rem}
+  #backToTop{display:none}
+  section{padding:4rem 1.5rem}
+  .nav-inner{padding:0 1.2rem;height:60px}
+  .nav-logo img{height:38px}
+  .hero-logo-card img{height:80px}
+  .why-grid{grid-template-columns:1fr}
+  .showcase-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonials-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .form-row{grid-template-columns:1fr}
+  .contact-actions{grid-template-columns:1fr}
 }
+
 @media(max-width:480px){
-  .why-g{grid-template-columns:1fr}
-  .hero-chips{gap:0.4rem}
-  .abtns{flex-direction:column}
-  .hero-h{font-size:1.7rem}
-  .c-act{grid-template-columns:1fr}
+  h1.hero-title{font-size:2.2rem}
+  .section-title{font-size:1.8rem}
+  .btn-lg{padding:1rem 1.5rem;font-size:0.85rem}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:0.7rem}
+  .stat-box{padding:1rem 0.5rem}
+  .stat-number{font-size:1.2rem}
+  .hero-actions{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ========== YOUR EXISTING HTML CONTENT (unchanged) ========== -->
-<div class="ann">
-  <div class="ann-msg"><div class="ann-badge">🎉 10% OFF</div>More than 10% off this month on ALL dental treatments! &nbsp;·&nbsp; 2 Clinics: Etawah &amp; Saifai &nbsp;·&nbsp; MDS Orthodontist</div>
-  <div class="ann-calls">
-    <a href="tel:6397692840" class="ann-call">📞 6397692840</a>
-    <a href="tel:9456995372" class="ann-call">📞 9456995372</a>
-  </div>
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🛍️ Now Selling on <a href="https://www.amazon.in" target="_blank">Amazon India</a> &nbsp;·&nbsp; 📞 <strong>+91 97524 03398</strong> &nbsp;·&nbsp; 📍 Nowgong, Madhya Pradesh &nbsp;·&nbsp; Buy · Sell · Save
 </div>
 
-<nav id="nav">
-  <div class="nav-in">
-    <div class="nav-brand">
-      <div class="nav-brand-icon">🦷</div>
-      <div class="nav-brand-text"><strong>Orthodontic Clinic Etawah</strong><span>Dr. Shashi Kumar · BDS, MDS Orthodontics</span></div>
-    </div>
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span>Grahak</span>First
+    </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li><li><a href="#why">Why Us</a></li><li><a href="#services">Services</a></li>
-      <li><a href="#braces">Braces</a></li><li><a href="#clinics">Clinics</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Collections</a></li>
+      <li><a href="#showcase">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-right">
-      <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="n-wa" target="_blank">💬 WhatsApp</a>
-      <a href="tel:6397692840" class="n-appt">📞 Book Now</a>
+    <div class="nav-actions">
+      <a href="tel:+919752403398" class="nav-btn nav-btn-secondary">📞 Call</a>
+      <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="nav-btn nav-btn-secondary" target="_blank">💬 WhatsApp</a>
+      <a href="https://www.amazon.in" class="nav-btn nav-btn-primary" target="_blank">🛒 Shop Now</a>
     </div>
-    <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<div id="mob">
-  <div class="mob-head">
-    <div class="nav-brand"><div class="nav-brand-icon" style="width:36px;height:36px;font-size:1.1rem">🦷</div><div class="nav-brand-text"><strong>Orthodontic Clinic</strong><span>Dr. Shashi Kumar · MDS</span></div></div>
-    <button class="mob-x" id="mX">✕</button>
+<!-- MOBILE MENU -->
+<div id="mobileMenu">
+  <div class="mm-header">
+    <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--w);"><span style="color:var(--or)">Grahak</span>First</span>
+    <button class="mm-close" id="mmClose">✕</button>
   </div>
-  <nav class="mob-nav">
-    <a href="#about" onclick="cm()">🩺 About Dr. Shashi Kumar</a>
-    <a href="#why" onclick="cm()">⭐ Why Choose Us</a>
-    <a href="#services" onclick="cm()">💊 Services &amp; Pricing</a>
-    <a href="#braces" onclick="cm()">😁 Braces Guide</a>
-    <a href="#clinics" onclick="cm()">📍 Our Clinics</a>
-    <a href="#faq" onclick="cm()">❓ FAQ</a>
-    <a href="#contact" onclick="cm()">📩 Contact</a>
+  <nav class="mm-links">
+    <a href="#about" onclick="closeMobileMenu()"><span class="mm-icon">🏢</span>About Us</a>
+    <a href="#categories" onclick="closeMobileMenu()"><span class="mm-icon">🛍️</span>Collections</a>
+    <a href="#showcase" onclick="closeMobileMenu()"><span class="mm-icon">✨</span>Products</a>
+    <a href="#why" onclick="closeMobileMenu()"><span class="mm-icon">⭐</span>Why Choose Us</a>
+    <a href="#testimonials" onclick="closeMobileMenu()"><span class="mm-icon">💬</span>Reviews</a>
+    <a href="#faq" onclick="closeMobileMenu()"><span class="mm-icon">❓</span>FAQ</a>
+    <a href="#contact" onclick="closeMobileMenu()"><span class="mm-icon">📩</span>Contact</a>
   </nav>
-  <div class="mob-act">
-    <a href="tel:6397692840" class="ma ma-c" onclick="cm()">📞 Call Clinic 1 — 6397692840</a>
-    <a href="tel:9456995372" class="ma ma-c" onclick="cm()">📞 Call Clinic 2 — 9456995372</a>
-    <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="ma ma-w" target="_blank" onclick="cm()">💬 WhatsApp Appointment</a>
-    <a href="#contact" class="ma ma-a" onclick="cm()">📅 Book Online</a>
+  <div class="mm-actions">
+    <a href="tel:+919752403398" class="mm-btn mm-btn-call">📞 Call +91 97524 03398</a>
+    <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="mm-btn mm-btn-wa" target="_blank">💬 WhatsApp Us</a>
+    <a href="https://www.amazon.in" class="mm-btn mm-btn-shop" target="_blank">🛒 Shop on Amazon</a>
   </div>
 </div>
 
+<!-- HERO SECTION -->
 <section id="hero">
-  <div class="hero-glow1"></div><div class="hero-glow2"></div><div class="hero-dots"></div>
-  <div class="hero-in">
-    <div class="hero-left">
-      <div class="hero-pill"><span class="hp-dot"></span>MDS Certified Orthodontist · Etawah, UP</div>
-      <h1 class="hero-h">Expert <em>Braces &amp; Dental</em><br/>Care in Etawah</h1>
-      <div class="hero-dr">
-        <div class="hero-dr-av"><img src="dr-shashi-kumar.webp" alt="Dr. Shashi Kumar" onerror="this.parentElement.innerHTML='👩‍⚕️'"/></div>
-        <div class="hero-dr-info"><strong>Dr. Shashi Kumar</strong><span>BDS · MDS (Orthodontics) · UPUMS Saifai · 14+ Years</span></div>
-      </div>
-      <p class="hero-p">टेढ़े-मेढ़े दांतों को ब्रेसेस, तार एवं एलाइनर से सही कराएं। Expert in braces, root canal, implants &amp; all dental procedures. Etawah's most trusted MDS Orthodontist.</p>
-      <div class="hero-ctas">
-        <a href="tel:6397692840" class="btn-pri">📞 Book Appointment</a>
-        <a href="#services" class="btn-sec">💊 Services &amp; Prices</a>
-        <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="btn-wa" target="_blank">💬 WhatsApp</a>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span>Amazon Verified Seller · GrahakFirst.com</div>
+      <h1 class="hero-title">India's Trusted<br/><span class="highlight">Fashion</span> & <span class="highlight">Jewellery</span><br/>Destination</h1>
+      <p class="hero-subtitle">Premium fashion wear and imitation jewellery — quality-checked, fairly priced, delivered pan-India. Experience the GrahakFirst difference with every purchase.</p>
+      <div class="hero-cta-group">
+        <a href="https://www.amazon.in" class="btn btn-lg btn-primary" target="_blank">🛒 Shop on Amazon</a>
+        <a href="#contact" class="btn btn-lg btn-secondary">📩 Contact Owner</a>
       </div>
       <div class="hero-chips">
-        <div class="chip"><span class="ck">✓</span>MDS Qualified</div>
-        <div class="chip"><span class="ck">✓</span>14+ Years Exp.</div>
-        <div class="chip"><span class="ck">✓</span>1000+ Patients</div>
-        <div class="chip"><span class="ck">✓</span>2 Clinics</div>
-        <div class="chip"><span class="ck">✓</span>10% OFF Now</div>
+        <div class="chip"><span class="chip-icon">✓</span>Quality Assured</div>
+        <div class="chip"><span class="chip-icon">✓</span>PAN India Delivery</div>
+        <div class="chip"><span class="chip-icon">✓</span>Easy Returns</div>
+        <div class="chip"><span class="chip-icon">✓</span>Amazon Verified</div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="dr-card">
-        <div class="dr-card-banner">
-          <img src="clinic-banner.webp" alt="Orthodontic Clinic Etawah" onerror="this.parentElement.style.background='linear-gradient(135deg,#0c4a6e,#0284c7)'"/>
-          <div class="dr-card-banner-overlay"></div>
-          <div class="dr-card-info">
-            <div class="dr-card-av"><img src="dr-shashi-kumar.webp" alt="Dr. Shashi Kumar" onerror="this.parentElement.innerHTML='👩‍⚕️'"/></div>
-            <div class="dr-card-name"><strong>Dr. Shashi Kumar</strong><span>BDS, MDS — Orthodontics</span></div>
-          </div>
+    <div class="hero-visual">
+      <div class="hero-logo-card">
+        <svg viewBox="0 0 200 100" style="height:100px;margin:0 auto 1rem;display:block;">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f97316"/>
+              <stop offset="100%" style="stop-color:#fb923c"/>
+            </linearGradient>
+          </defs>
+          <!-- Cart Icon -->
+          <g transform="translate(10,20)">
+            <rect x="0" y="15" width="35" height="25" rx="3" fill="#1e40af"/>
+            <rect x="5" y="5" width="8" height="15" rx="1" fill="#f97316"/>
+            <circle cx="10" cy="42" r="4" fill="#1e40af"/>
+            <circle cx="28" cy="42" r="4" fill="#1e40af"/>
+            <rect x="8" y="22" width="20" height="12" fill="#3b82f6"/>
+          </g>
+          <!-- Text -->
+          <text x="55" y="45" font-family="Sora,sans-serif" font-size="28" font-weight="800" fill="url(#logoGrad)">Grahak</text>
+          <text x="55" y="70" font-family="Sora,sans-serif" font-size="28" font-weight="800" fill="#1e40af">First</text>
+          <!-- Arrow -->
+          <path d="M180 50 L195 35 L190 35 L190 25 L170 25 L170 35 L165 35 Z" fill="#1e40af"/>
+          <!-- Tag -->
+          <g transform="translate(140,5)">
+            <path d="M0 0 L25 0 L35 15 L25 30 L0 30 Z" fill="#f97316"/>
+            <circle cx="8" cy="15" r="3" fill="#fff"/>
+            <text x="12" y="19" font-size="10" fill="#fff" font-weight="bold">%</text>
+          </g>
+        </svg>
+        <div class="hero-logo-tag">Buy · Sell · Save · Since 2024</div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-icon">👗</div>
+          <div class="stat-number">2+</div>
+          <div class="stat-label">Categories</div>
         </div>
-        <div class="dr-card-body">
-          <div class="counter-row">
-            <div class="ctr-item"><span class="ctr-num" data-target="14" data-suffix="+">0</span><span class="ctr-lbl">Yrs Exp.</span></div>
-            <div class="ctr-item"><span class="ctr-num" data-target="1000" data-suffix="+">0</span><span class="ctr-lbl">Patients</span></div>
-            <div class="ctr-item"><span class="ctr-num" data-target="2" data-suffix="">0</span><span class="ctr-lbl">Clinics</span></div>
-          </div>
-          <div class="offer-strip">
-            <div class="os-text"><strong>🎉 Special Offer — This Month!</strong><span>10%+ off on all treatments</span></div>
-            <div class="os-badge">10% OFF</div>
-          </div>
+        <div class="stat-box">
+          <div class="stat-icon">🚚</div>
+          <div class="stat-number">PAN</div>
+          <div class="stat-label">India</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🔄</div>
+          <div class="stat-number">Easy</div>
+          <div class="stat-label">Returns</div>
         </div>
       </div>
-      <div class="clinic-q">
-        <div class="cq-item"><div class="cq-lbl">Clinic 1 — Etawah</div><div class="cq-val">ITI Chauraha, NH2</div><div class="cq-time">Mon–Sat 2–6 PM · Sun 10–4 PM</div></div>
-        <div class="cq-item"><div class="cq-lbl">Clinic 2 — Saifai</div><div class="cq-val">Hospital Chauraha</div><div class="cq-time">Mon–Sat 9:30 AM–2 PM</div></div>
+      <div class="hero-actions">
+        <a href="tel:+919752403398" class="action-btn action-call">📞 +91 97524 03398</a>
+        <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="action-btn action-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="amazon-badge">
+        <div class="amazon-text"><span class="a">amazon</span><span class="i">.in</span></div>
+        <div class="amazon-verify">Authorised Reseller<span>✓ Verified Seller</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="clinic-banner">
-  <img src="clinic-banner.webp" alt="Orthodontic Clinic Etawah — Dr Shashi Kumar MDS Orthodontics"/>
-  <div class="cb-overlay"><div class="cb-content">
-    <div class="cb-tag">✦ ऑर्थोडॉन्टिक क्लीनिक — दाँतो का अस्पताल</div>
-    <div class="cb-title">Dr. Shashi Kumar<br/>BDS, MDS (Orthodontics)</div>
-    <div class="cb-sub">सैफई डेंटल एंड ऑर्थोडॉन्टिक क्लिनिक · Etawah &amp; Saifai</div>
-    <div class="cb-btns">
-      <a href="tel:6397692840" class="cb-btn cb-b1">📞 6397692840</a>
-      <a href="https://wa.me/919456995372" class="cb-btn cb-b2" target="_blank">💬 9456995372</a>
-    </div>
-  </div></div>
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Fashion & Clothing</span>
+    <span class="ticker-item">Imitation Jewellery</span>
+    <span class="ticker-item">Buy · Sell · Save</span>
+    <span class="ticker-item">Nowgong, MP</span>
+    <span class="ticker-item">Amazon Verified</span>
+    <span class="ticker-item">Fast Delivery</span>
+    <span class="ticker-item">Easy Returns</span>
+    <span class="ticker-item">+91 97524 03398</span>
+    <span class="ticker-item">GrahakFirst.com</span>
+    <span class="ticker-item">Fashion & Clothing</span>
+    <span class="ticker-item">Imitation Jewellery</span>
+    <span class="ticker-item">Buy · Sell · Save</span>
+    <span class="ticker-item">Nowgong, MP</span>
+    <span class="ticker-item">Amazon Verified</span>
+    <span class="ticker-item">Fast Delivery</span>
+    <span class="ticker-item">Easy Returns</span>
+    <span class="ticker-item">+91 97524 03398</span>
+    <span class="ticker-item">GrahakFirst.com</span>
+  </div>
 </div>
 
-<div class="ticker"><div class="ti">
-  <span>Braces Specialist</span><span>Root Canal Treatment</span><span>Dental Implants</span><span>Teeth Whitening</span>
-  <span>Metal Braces ₹1500/month</span><span>Ceramic Braces ₹2500/month</span><span>Aligners ₹3500/month</span>
-  <span>10% Off This Month</span><span>Call 6397692840</span><span>Etawah &amp; Saifai</span>
-  <span>14+ Years Experience</span><span>1000+ Happy Patients</span>
-  <span>Braces Specialist</span><span>Root Canal Treatment</span><span>Dental Implants</span><span>Teeth Whitening</span>
-  <span>Metal Braces ₹1500/month</span><span>Ceramic Braces ₹2500/month</span><span>Aligners ₹3500/month</span>
-  <span>10% Off This Month</span><span>Call 6397692840</span><span>Etawah &amp; Saifai</span>
-  <span>14+ Years Experience</span><span>1000+ Happy Patients</span>
-</div></div>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">🏆</div>
+      <div class="trust-text"><strong>Quality Products</strong><span>Hand-inspected always</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚚</div>
+      <div class="trust-text"><strong>Fast Delivery</strong><span>Pan India via Amazon</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🔄</div>
+      <div class="trust-text"><strong>Easy Returns</strong><span>Hassle-free refunds</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📞</div>
+      <div class="trust-text"><strong>+91 97524 03398</strong><span>Owner Direct Contact</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">📍</div>
+      <div class="trust-text"><strong>Nowgong, MP</strong><span>Chhatarpur District</span></div>
+    </div>
+  </div>
+</div>
 
-<section id="about"><div class="mw"><div class="about-g">
-  <div class="rv">
-    <div class="about-card">
-      <div class="ac-banner"><div class="ac-banner-text"><strong>Orthodontic Clinic Etawah</strong><span>www.orthodonticclinic.co.in</span></div></div>
-      <div class="ac-body">
-        <div class="ac-dr">
-          <div class="ac-dr-av"><img src="dr-shashi-kumar.webp" alt="Dr. Shashi Kumar" onerror="this.parentElement.innerHTML='👩‍⚕️'"/></div>
-          <div class="ac-dr-info"><strong>Dr. Shashi Kumar</strong><div class="qual">BDS, MDS (Orthodontics)</div><div class="loc">📍 Etawah &amp; Saifai, Uttar Pradesh</div></div>
+<!-- ABOUT SECTION -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-card">
+          <div class="about-card-header">
+            <svg viewBox="0 0 60 40" style="height:45px;width:auto;">
+              <g transform="scale(0.3)">
+                <rect x="0" y="15" width="35" height="25" rx="3" fill="#1e40af"/>
+                <rect x="5" y="5" width="8" height="15" rx="1" fill="#f97316"/>
+                <circle cx="10" cy="42" r="4" fill="#1e40af"/>
+                <circle cx="28" cy="42" r="4" fill="#1e40af"/>
+                <rect x="8" y="22" width="20" height="12" fill="#3b82f6"/>
+              </g>
+            </svg>
+            <div><strong>GrahakFirst Retailers</strong><span>www.GrahakFirst.com</span></div>
+          </div>
+          <p class="about-card-desc">Founded with a mission — make quality fashion & jewellery accessible to every Indian household through Amazon. Owned and operated by Brijesh Kumar Ahirwar from Nowgong, Madhya Pradesh.</p>
+          <div class="about-stats">
+            <div class="about-stat"><strong>2+</strong><span>Categories</span></div>
+            <div class="about-stat"><strong>PAN</strong><span>India Delivery</span></div>
+            <div class="about-stat"><strong>100%</strong><span>Quality Checked</span></div>
+            <div class="about-stat"><strong>2024</strong><span>Established</span></div>
+          </div>
+          <div class="about-verified">
+            <span class="dot"></span>
+            <div><strong>Amazon Verified Seller</strong><span>Nowgong, Chhatarpur, Madhya Pradesh · India</span></div>
+          </div>
         </div>
-        <p class="ac-desc">Dr. Shashi Kumar is an eminent orthodontist &amp; dentist with <strong>14+ years</strong> of experience and <strong>1000+ patients treated</strong>. She holds an MDS in Orthodontics — one of dentistry's most specialised and difficult degrees.</p>
-        <div class="ac-stats">
-          <div class="acs"><strong>14+</strong><span>Years Experience</span></div>
-          <div class="acs"><strong>1000+</strong><span>Patients Treated</span></div>
-          <div class="acs"><strong>MDS</strong><span>Orthodontics</span></div>
-          <div class="acs"><strong>2</strong><span>Clinic Locations</span></div>
+      </div>
+      <div class="about-content reveal" style="transition-delay:0.15s">
+        <div class="section-subtitle">About Us</div>
+        <h2 class="section-title">We Put the <span class="highlight">Customer</span> First — Always</h2>
+        <p class="about-lead">At <strong>GrahakFirst Retailers</strong>, every customer deserves <strong>premium quality</strong> without premium prices. Owned by <strong>Brijesh Kumar Ahirwar</strong> from Nowgong, MP — we handpick fashion & jewellery sold exclusively through Amazon India.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-text"><strong>Hand-Picked Products</strong><span>Every item personally reviewed before listing on Amazon</span></div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">💰</div>
+            <div class="feature-text"><strong>Best Value Pricing</strong><span>Premium look at prices every Indian family can afford</span></div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🌍</div>
+            <div class="feature-text"><strong>PAN India Delivery</strong><span>Fast tracked delivery to every pin code via Amazon logistics</span></div>
+          </div>
         </div>
-        <div class="edu-list">
-          <div class="edu-i"><strong>BDS</strong> — Chhattisgarh Dental College &amp; Research Center (CDCRI)</div>
-          <div class="edu-i"><strong>MDS (Orthodontics)</strong> — Braces, wire &amp; aligner specialist</div>
-          <div class="edu-i"><strong>Residency</strong> — UPUMS, Saifai, Uttar Pradesh</div>
+        <div class="hero-cta-group">
+          <a href="https://www.amazon.in" class="btn btn-primary" target="_blank">🛒 View Our Store</a>
+          <a href="#contact" class="btn btn-secondary">📩 Contact Brijesh</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="about-right rv" style="transition-delay:0.12s">
-    <div class="ey">About Dr. Shashi Kumar</div>
-    <h2 class="sh2">Etawah's Most Trusted<br/><em>MDS Orthodontist</em></h2>
-    <p class="alead">Dr. Shashi Kumar is a <strong>certified MDS Orthodontist</strong> — the highest qualification in dentistry for treating crooked teeth. She practices at two locations in Etawah and Saifai, offering expert care to patients of all ages.</p>
-    <div class="feat-list">
-      <div class="fi"><div class="fi-ic">🦷</div><div class="fi-t"><strong>MDS Orthodontist — Only Qualified Specialist</strong><span>Corrects all types of crooked, crowded, gapped &amp; protruded teeth with braces &amp; aligners</span></div></div>
-      <div class="fi"><div class="fi-ic">⚕️</div><div class="fi-t"><strong>Full-Service Dental Clinic</strong><span>Root canal, implants, dentures, extractions, whitening, scaling &amp; more</span></div></div>
-      <div class="fi"><div class="fi-ic">💰</div><div class="fi-t"><strong>Affordable &amp; Transparent Prices</strong><span>Metal braces from ₹1500/month · 10% off this month on everything</span></div></div>
-      <div class="fi"><div class="fi-ic">📍</div><div class="fi-t"><strong>2 Convenient Locations</strong><span>ITI Chauraha Etawah · Hospital Chauraha Saifai · Open 6 days + Sunday</span></div></div>
+</section>
+
+<!-- CATEGORIES SECTION -->
+<section id="categories">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-subtitle">What We Sell</div>
+      <h2 class="section-title">Our Product <span class="highlight">Collections</span></h2>
+      <p class="section-desc">Two carefully curated categories — sold on Amazon India with fast PAN India delivery and Amazon's trusted return policy.</p>
     </div>
-    <div class="verified-pill">
-      <span class="vp-dot"></span>
-      <div class="vp-t"><strong>MDS Qualified Orthodontist — Verified Specialist</strong><span>Serving patients since 2010 · Etawah &amp; Saifai, Uttar Pradesh</span></div>
-    </div>
-    <div class="abtns" style="margin-top:1.5rem">
-      <a href="tel:6397692840" class="btn-pri" style="font-size:0.82rem;padding:0.82rem 1.6rem">📞 Book Appointment</a>
-      <a href="#services" class="btn-sec" style="font-size:0.82rem;padding:0.82rem 1.6rem">View All Services →</a>
-    </div>
-  </div>
-</div></div></section>
-
-<section id="why"><div class="mw">
-  <div class="shdr ctr-sec rv"><div class="ey">Why Choose Us</div><h2 class="sh2">Why <em>Orthodontic Clinic</em> Etawah?</h2><p class="sub">हमारे क्लिनिक में इटावा के सर्वश्रेष्ठ ऑर्थोडॉन्टिस्ट और डेंटल विशेषज्ञ उपलब्ध हैं।</p></div>
-  <div class="why-g">
-    <div class="wcard rv"><div class="w-ic">🏆</div><div class="w-t">Team of Super-Specialists</div><p class="w-d">Orthodontist, Periodontist, Endodontist, Prosthodontist &amp; Oral Surgeon — every dental specialty under one roof.</p></div>
-    <div class="wcard rv" style="transition-delay:0.07s"><div class="w-ic">🔬</div><div class="w-t">Latest Treatment Technology</div><p class="w-d">Cutting-edge techniques and modern equipment for comfortable, effective, and faster treatment results.</p></div>
-    <div class="wcard rv" style="transition-delay:0.14s"><div class="w-ic">🎯</div><div class="w-t">Personalised Care</div><p class="w-d">Each patient is analysed individually. A customised treatment plan is created specifically for your needs.</p></div>
-    <div class="wcard rv" style="transition-delay:0.05s"><div class="w-ic">💰</div><div class="w-t">Affordable Pricing</div><p class="w-d">Metal braces from ₹1500/month. All treatments transparently priced. 10% off this month for all patients.</p></div>
-    <div class="wcard rv" style="transition-delay:0.12s"><div class="w-ic">📍</div><div class="w-t">2 Convenient Locations</div><p class="w-d">ITI Chauraha, Etawah and Hospital Chauraha, Saifai — open 6 days a week including Sundays at Clinic 1.</p></div>
-    <div class="wcard rv" style="transition-delay:0.19s"><div class="w-ic">😊</div><div class="w-t">1000+ Happy Patients</div><p class="w-d">Dr. Shashi Kumar has successfully treated 1000+ patients. Join a community of confident, beautiful smiles.</p></div>
-  </div>
-</div></section>
-
-<section id="services"><div class="mw">
-  <div class="shdr ctr-sec rv"><div class="ey">Services &amp; Pricing</div><h2 class="sh2">Complete Dental <em>Price List</em></h2><p class="sub">All procedures by MDS qualified specialists. <strong>10% discount this month</strong> on all treatments!</p></div>
-  <div class="svc-grid rv">
-    <div class="svc-cat"><div class="svc-head"><div class="sh-ic">🦷</div><div><div class="sh-title">Orthodontics — टेढ़े मेढ़े दाँत</div><div class="sh-sub">Braces, Wires &amp; Aligners</div></div></div><div class="svc-items">
-      <div class="svc-i"><div class="si-name">Metal Braces<small>Self-ligating</small></div><div class="si-price">₹1,500/mo</div></div>
-      <div class="svc-i"><div class="si-name">Ceramic Braces<small>Self-ligating, tooth-colored</small></div><div class="si-price">₹2,500/mo</div></div>
-      <div class="svc-i"><div class="si-name">Aligner / Invisalign<small>Clear removable aligners</small></div><div class="si-price">₹3,500/mo</div></div>
-      <div class="svc-i"><div class="si-name">Lingual Braces<small>Hidden behind teeth</small></div><div class="si-price">Consult</div></div>
-    </div></div>
-    <div class="svc-cat"><div class="svc-head"><div class="sh-ic">🔪</div><div><div class="sh-title">Oral &amp; Maxillofacial Surgery</div><div class="sh-sub">Extractions &amp; surgical procedures</div></div></div><div class="svc-items">
-      <div class="svc-i"><div class="si-name">Tooth Extraction</div><div class="si-price">₹100–500</div></div>
-      <div class="svc-i"><div class="si-name">Impacted Tooth Extraction</div><div class="si-price">₹2,000</div></div>
-      <div class="svc-i"><div class="si-name">Swelling / Benign Growth</div><div class="si-price">₹2,000–5,000</div></div>
-      <div class="svc-i"><div class="si-name">Jaw Fracture — जबड़े का टूटना</div><div class="si-price">₹2,000–10,000</div></div>
-    </div></div>
-    <div class="svc-cat"><div class="svc-head"><div class="sh-ic">🦷</div><div><div class="sh-title">Prosthodontics</div><div class="sh-sub">Dentures, crowns, bridges &amp; implants</div></div></div><div class="svc-items">
-      <div class="svc-i"><div class="si-name">Complete Denture — बत्तीसी</div><div class="si-price">₹5,000</div></div>
-      <div class="svc-i"><div class="si-name">Crown &amp; Bridge<small>Per tooth</small></div><div class="si-price">₹2,000/tooth</div></div>
-      <div class="svc-i"><div class="si-name">Capping — कैपिंग</div><div class="si-price">₹300–10,000</div></div>
-      <div class="svc-i"><div class="si-name">Dental Implant — परमानेंट दाँत</div><div class="si-price">₹10,000–50,000</div></div>
-      <div class="svc-i"><div class="si-name">Zirconium Crown (China)<small>5–10 yr guarantee</small></div><div class="si-price">Consult</div></div>
-      <div class="svc-i"><div class="si-name">Zirconium Crown (German)<small>Lifetime guarantee</small></div><div class="si-price">Consult</div></div>
-    </div></div>
-    <div class="svc-cat"><div class="svc-head"><div class="sh-ic">🔩</div><div><div class="sh-title">Endodontics — Root Canal · आर सी टी</div><div class="sh-sub">Inner tooth &amp; nerve treatments</div></div></div><div class="svc-items">
-      <div class="svc-i"><div class="si-name">Root Canal Treatment (RCT)<small>Front &amp; back teeth</small></div><div class="si-price">₹1,000–5,000</div></div>
-      <div class="svc-i"><div class="si-name">Apicoectomy — एपिकोएक्टोमी</div><div class="si-price">₹3,000</div></div>
-      <div class="svc-i"><div class="si-name">Cracked Teeth Treatment</div><div class="si-price">₹3,000</div></div>
-    </div></div>
-    <div class="svc-cat"><div class="svc-head"><div class="sh-ic">🫁</div><div><div class="sh-title">Periodontics — मसूढ़ों की बीमारी</div><div class="sh-sub">Gum treatment, cleaning &amp; whitening</div></div></div><div class="svc-items">
-      <div class="svc-i"><div class="si-name">Pyorrhea</div><div class="si-price">₹500</div></div>
-      <div class="svc-i"><div class="si-name">Scaling — दाँतों की सफाई</div><div class="si-price">₹500</div></div>
-      <div class="svc-i"><div class="si-name">Scaling &amp; Polishing</div><div class="si-price">₹1,000</div></div>
-      <div class="svc-i"><div class="si-name">Deep Scaling &amp; Polishing</div><div class="si-price">₹2,000</div></div>
-      <div class="svc-i"><div class="si-name">Laser Curettage<small>Per quadrant</small></div><div class="si-price">₹2,000/quad</div></div>
-      <div class="svc-i"><div class="si-name">Teeth Whitening — ब्लीचिंग</div><div class="si-price">₹5,000</div></div>
-      <div class="svc-i"><div class="si-name">Gum Graft</div><div class="si-price">₹1,000</div></div>
-      <div class="svc-i"><div class="si-name">Laser Gum Surgery</div><div class="si-price">Consult</div></div>
-      <div class="svc-i"><div class="si-name">Smile Designing<small>Composite &amp; ceramic laminates</small></div><div class="si-price">Consult</div></div>
-    </div></div>
-  </div>
-  <div class="svc-note rv">💡 <strong>Note:</strong> Prices are indicative. Final cost depends on case complexity. <strong>10% off on all treatments this month!</strong> Call <a href="tel:6397692840" style="color:var(--teal);font-weight:700">6397692840</a> for exact quote.</div>
-</div></section>
-
-<section id="braces"><div class="mw">
-  <div class="shdr rv"><div class="ey">Braces Guide</div><h2 class="sh2">Types of <em>Braces</em> We Offer</h2><p class="sub">ब्रेसिज़ वे उपकरण हैं जो दांतों पर लगाए जाते हैं। Three types — choose based on budget, comfort &amp; aesthetics.</p></div>
-  <div class="braces-g">
-    <div class="bcard rv" style="position:relative"><div class="best-tag">MOST POPULAR</div><div class="bc-top"><div class="bc-icon">🔩</div><div class="bc-name">Metal Braces</div><div class="bc-tag">मेटल ब्रेसिज़</div></div><div class="bc-body"><div class="bc-price">₹1,500 <small>/month</small></div><p class="bc-desc">Cheapest and strongest braces. Preferred by most patients as they don't break easily and reduce treatment duration.</p><ul class="bc-pros"><li>Most affordable option</li><li>Strongest — doesn't break easily</li><li>Reduces treatment time</li><li>Self-ligating option available</li><li>Treatment: 6 months to 2 years</li></ul></div></div>
-    <div class="bcard rv" style="transition-delay:0.1s"><div class="bc-top"><div class="bc-icon">🫶</div><div class="bc-name">Ceramic Braces</div><div class="bc-tag">सिरेमिक ब्रेसिज़</div></div><div class="bc-body"><div class="bc-price">₹2,500 <small>/month</small></div><p class="bc-desc">Tooth-colored, much less visible than metal. Great for appearance-conscious patients.</p><ul class="bc-pros"><li>Barely visible — tooth-colored</li><li>Aesthetically superior</li><li>Great for adults &amp; professionals</li><li>Two types available</li><li>Slightly higher cost than metal</li></ul></div></div>
-    <div class="bcard rv" style="transition-delay:0.2s"><div class="bc-top"><div class="bc-icon">🫦</div><div class="bc-name">Lingual Braces</div><div class="bc-tag">लिंगुअल ब्रेसस</div></div><div class="bc-body"><div class="bc-price">Consult <small>for price</small></div><p class="bc-desc">Placed on the inner tongue-side of teeth — completely invisible to others. Most aesthetic option.</p><ul class="bc-pros"><li>100% invisible — hidden behind teeth</li><li>Highest aesthetic appeal</li><li>Complex — MDS specialist required</li><li>Not for all cases</li><li>Premium treatment option</li></ul></div></div>
-  </div>
-  <div class="svc-note rv" style="margin-top:1.5rem">⏱️ <strong>Duration:</strong> Gap-only → ~6 months. Protruded/crowded → 8 months–2 years. &nbsp;|&nbsp; 💰 <strong>Example:</strong> 1 year metal braces ≈ <strong>₹25,000</strong>.</div>
-</div></section>
-
-<section id="clinics"><div class="mw">
-  <div class="shdr ctr-sec rv"><div class="ey">Our Locations</div><h2 class="sh2">Visit Our <em>2 Clinics</em></h2><p class="sub">Etawah and Saifai — open 6 days a week with Sunday availability at Clinic 1.</p></div>
-  <div class="clinics-g">
-    <div class="cc rv">
-      <div class="cc-head"><div class="cc-num">1</div><div class="cc-ht"><strong>Orthodontic Clinic Etawah</strong><span>Main Clinic — ITI Chauraha</span></div></div>
-      <div class="cc-body">
-        <div class="cc-r"><div class="cc-ic">📍</div><div class="cc-rt"><label>Address</label><p>ITI Chauraha, NH2 Highway Service Road, Etawah, Uttar Pradesh</p></div></div>
-        <div class="cc-r"><div class="cc-ic">📞</div><div class="cc-rt"><label>Phone</label><a href="tel:6397692840">6397692840</a></div></div>
-        <div class="cc-r"><div class="cc-ic">📧</div><div class="cc-rt"><label>Email</label><a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div></div>
-        <div class="timing-g"><div class="tg"><div class="tg-day">Mon — Sat</div><div class="tg-time">2:00 PM – 6:00 PM</div></div><div class="tg"><div class="tg-day">Sunday</div><div class="tg-time">10:00 AM – 4:00 PM</div></div></div>
-        <div class="cc-btns"><a href="tel:6397692840" class="cc-btn ccb-c">📞 Call Now</a><a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="cc-btn ccb-w" target="_blank">💬 WhatsApp</a></div>
+    <div class="categories-grid">
+      <div class="category-card reveal">
+        <div class="category-banner">
+          <span class="category-num">01</span>
+          <span class="category-icon">👗</span>
+          <div class="category-title">Fashion & Clothing</div>
+        </div>
+        <div class="category-body">
+          <p class="category-desc">Trendy, comfortable and affordable clothing for every modern Indian — from ethnic wear to everyday casuals, crafted for Indian tastes and every budget.</p>
+          <div class="category-tags">
+            <span class="category-tag">Kurtis</span>
+            <span class="category-tag">Sarees</span>
+            <span class="category-tag">Tops</span>
+            <span class="category-tag">Ethnic Wear</span>
+            <span class="category-tag">Casual Wear</span>
+            <span class="category-tag">Lehengas</span>
+            <span class="category-tag">Dresses</span>
+            <span class="category-tag">Bottom Wear</span>
+          </div>
+          <a href="https://www.amazon.in" class="category-cta" target="_blank">Shop Collection →</a>
+        </div>
       </div>
-    </div>
-    <div class="cc rv" style="transition-delay:0.12s">
-      <div class="cc-head"><div class="cc-num">2</div><div class="cc-ht"><strong>Saifai Dental &amp; Orthodontic Clinic</strong><span>Hospital Chauraha, Saifai</span></div></div>
-      <div class="cc-body">
-        <div class="cc-r"><div class="cc-ic">📍</div><div class="cc-rt"><label>Address</label><p>Fauji Market, Hospital Chauraha, Saifai, Uttar Pradesh</p></div></div>
-        <div class="cc-r"><div class="cc-ic">📞</div><div class="cc-rt"><label>Phone</label><a href="tel:9456995372">9456995372</a></div></div>
-        <div class="cc-r"><div class="cc-ic">📧</div><div class="cc-rt"><label>Email</label><a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div></div>
-        <div class="timing-g"><div class="tg"><div class="tg-day">Mon — Sat</div><div class="tg-time">9:30 AM – 2:00 PM</div></div><div class="tg"><div class="tg-day">Sunday</div><div class="tg-time">Closed</div></div></div>
-        <div class="cc-btns"><a href="tel:9456995372" class="cc-btn ccb-c">📞 Call Now</a><a href="https://wa.me/919456995372?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="cc-btn ccb-w" target="_blank">💬 WhatsApp</a></div>
+      <div class="category-card reveal" style="transition-delay:0.15s">
+        <div class="category-banner">
+          <span class="category-num">02</span>
+          <span class="category-icon">💎</span>
+          <div class="category-title">Imitation Jewellery</div>
+        </div>
+        <div class="category-body">
+          <p class="category-desc">Elegant, bold jewellery — the look and feel of precious metals at a fraction of the cost. Perfect for weddings, festivals, and daily wear.</p>
+          <div class="category-tags">
+            <span class="category-tag">Necklace Sets</span>
+            <span class="category-tag">Earrings</span>
+            <span class="category-tag">Bangles</span>
+            <span class="category-tag">Rings</span>
+            <span class="category-tag">Anklets</span>
+            <span class="category-tag">Maang Tikka</span>
+            <span class="category-tag">Bridal Sets</span>
+            <span class="category-tag">Hair Accessories</span>
+          </div>
+          <a href="https://www.amazon.in" class="category-cta" target="_blank">Shop Collection →</a>
+        </div>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section id="faq"><div class="mw">
-  <div class="shdr ctr-sec rv"><div class="ey">FAQ</div><h2 class="sh2">Frequently Asked <em>Questions</em></h2><p class="sub">Common questions answered by Dr. Shashi Kumar — in English &amp; Hindi.</p></div>
-  <div class="faq-wrap rv">
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>What is orthodontic treatment and who needs it?</span><span class="faq-plus">+</span></div><div class="faq-a">Orthodontic treatment corrects teeth position using braces, wires, and aligners. You need it if your teeth are <strong>crooked, crowded, protruding, or gapped</strong>.<div class="faq-hin">ऑर्थोडॉन्टिक उपचार ब्रेसेस, वायर और अलाइनर से दांतों की स्थिति को सही करता है।</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Is the treatment painful? क्या इलाज में दर्द होता है?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>No</strong> — not painful at all. Mild discomfort initially, easily relieved with paracetamol.<div class="faq-hin">बिल्कुल नहीं — थोड़ी असुविधा हो सकती है जो पैरासिटामोल से ठीक हो जाती है।</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>How long does braces treatment take?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>Gap-only teeth:</strong> ~6 months. <strong>Protruded/crowded:</strong> 8 months–2 years.<div class="faq-hin">केवल गैप: 6 महीने। गंभीर टेढ़ापन: 8 महीने से 2 साल।</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>How much does braces treatment cost?</span><span class="faq-plus">+</span></div><div class="faq-a">1 year metal braces ≈ <strong>₹25,000</strong> (₹1,500/mo × 12). Ceramic = ₹2,500/mo. Aligners = ₹3,500/mo. <strong>10% off this month!</strong><div class="faq-hin">एक साल मेटल ब्रेसेस ≈ ₹25,000। इस महीने 10% की छूट!</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Why choose an MDS Orthodontist and not a BDS dentist?</span><span class="faq-plus">+</span></div><div class="faq-a">MDS is a specialized master's degree. Only MDS Orthodontists are fully qualified. BDS attempts often lead to unsatisfactory results.<div class="faq-hin">MDS एक विशेष मास्टर डिग्री है। सामान्य BDS द्वारा इलाज असंतोषजनक हो सकता है।</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Can adults (35+ years) get braces?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>Absolutely!</strong> NO age limit. Adults in 30s, 40s, 50s get excellent results.<div class="faq-hin">बिल्कुल! कोई आयु सीमा नहीं है।</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>My child (9 years) has protruding teeth. Is this the right age?</span><span class="faq-plus">+</span></div><div class="faq-a"><strong>Yes!</strong> Age 9 is excellent for treatment. Growing jaws respond better early.<div class="faq-hin">9 साल बिल्कुल सही उम्र है। जबड़े अभी बढ़ रहे हैं।</div></div></div>
-    <div class="faq-i"><div class="faq-q" onclick="faq(this)"><span>Why do teeth become crooked?</span><span class="faq-plus">+</span></div><div class="faq-a">Causes: <strong>1.</strong> Genetics <strong>2.</strong> Poor hygiene <strong>3.</strong> Early tooth loss <strong>4.</strong> Thumb sucking <strong>5.</strong> Tongue thrusting <strong>6.</strong> Malnutrition <strong>7.</strong> Mouth breathing <strong>8.</strong> Trauma<div class="faq-hin">कारण: अनुवांशिक, खराब स्वच्छता, अंगूठा चूसना, मुँह से सांस, कुपोषण, चोट।</div></div></div>
+<!-- SHOWCASE SECTION -->
+<section id="showcase">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-subtitle">Featured Products</div>
+      <h2 class="section-title">Best Sellers on <span class="highlight">Amazon</span></h2>
+      <p class="section-desc">Our most loved products with highest customer ratings on Amazon India.</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-item reveal">
+        <span class="showcase-badge">BESTSELLER</span>
+        <div class="showcase-image">👗</div>
+        <div class="showcase-content">
+          <div class="showcase-title">Designer Kurti Collection</div>
+          <div class="showcase-price">Starting from ₹499</div>
+        </div>
+      </div>
+      <div class="showcase-item reveal" style="transition-delay:0.1s">
+        <span class="showcase-badge">TRENDING</span>
+        <div class="showcase-image">💎</div>
+        <div class="showcase-content">
+          <div class="showcase-title">Bridal Jewellery Set</div>
+          <div class="showcase-price">Starting from ₹899</div>
+        </div>
+      </div>
+      <div class="showcase-item reveal" style="transition-delay:0.2s">
+        <span class="showcase-badge">NEW ARRIVAL</span>
+        <div class="showcase-image">👚</div>
+        <div class="showcase-content">
+          <div class="showcase-title">Ethnic Top Collection</div>
+          <div class="showcase-price">Starting from ₹399</div>
+        </div>
+      </div>
+      <div class="showcase-item reveal" style="transition-delay:0.3s">
+        <span class="showcase-badge">POPULAR</span>
+        <div class="showcase-image">📿</div>
+        <div class="showcase-content">
+          <div class="showcase-title">Traditional Necklace Set</div>
+          <div class="showcase-price">Starting from ₹599</div>
+        </div>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="contact"><div class="mw"><div class="contact-g">
-  <div class="rv">
-    <div class="ey">Contact Us</div>
-    <h2 class="sh2">Book Your <em>Appointment</em></h2>
-    <p class="sub" style="margin-bottom:2rem">Reach out to book, ask about treatments, or get a consultation. We respond quickly.</p>
-    <div class="cdet"><div class="cdet-ic">📞</div><div class="cdet-t"><label>Clinic 1 — Etawah</label><a href="tel:6397692840">6397692840 (ITI Chauraha, Etawah)</a></div></div>
-    <div class="cdet"><div class="cdet-ic">📞</div><div class="cdet-t"><label>Clinic 2 — Saifai</label><a href="tel:9456995372">9456995372 (Hospital Chauraha, Saifai)</a></div></div>
-    <div class="cdet"><div class="cdet-ic">💬</div><div class="cdet-t"><label>WhatsApp</label><a href="https://wa.me/916397692840" target="_blank">+91 6397692840</a></div></div>
-    <div class="cdet"><div class="cdet-ic">📧</div><div class="cdet-t"><label>Email</label><a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div></div>
-    <div class="cdet"><div class="cdet-ic">📍</div><div class="cdet-t"><label>Clinic 1</label><p>ITI Chauraha, NH2, Etawah · 2–6 PM Mon–Sat · 10 AM–4 PM Sun</p></div></div>
-    <div class="cdet"><div class="cdet-ic">📍</div><div class="cdet-t"><label>Clinic 2</label><p>Hospital Chauraha, Saifai · 9:30 AM–2 PM Mon–Sat</p></div></div>
-    <div class="c-act">
-      <a href="tel:6397692840" class="ca ca-c">📞 Call Clinic 1</a>
-      <a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment." class="ca ca-w" target="_blank">💬 WhatsApp</a>
+<!-- WHY US SECTION -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-subtitle">Why Choose Us</div>
+      <h2 class="section-title">The <span class="highlight">GrahakFirst</span> Promise</h2>
+      <p class="section-desc">Six reasons thousands of Indian shoppers trust GrahakFirst for their fashion & jewellery needs.</p>
     </div>
-    <div class="owner-c">
-      <div class="oc-av">SK</div>
-      <div class="oc-t"><strong>Dr. Shashi Kumar</strong><span>Owner · BDS, MDS Orthodontics · Etawah, UP</span><span><a href="mailto:shashidr2009@gmail.com" style="color:var(--teal)">shashidr2009@gmail.com</a></span></div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🏆</div>
+        <div class="why-title">Quality Guaranteed</div>
+        <p class="why-desc">Every product personally inspected. We only sell items we are proud to put our name on.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.1s">
+        <div class="why-icon">💰</div>
+        <div class="why-title">Unbeatable Value</div>
+        <p class="why-desc">We source smart and price fairly — premium look at prices that won't break the bank.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.2s">
+        <div class="why-icon">🚚</div>
+        <div class="why-title">Fast PAN India Delivery</div>
+        <p class="why-desc">Powered by Amazon's logistics. Your order arrives quickly and safely, anywhere in India.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.05s">
+        <div class="why-icon">🔄</div>
+        <div class="why-title">Zero-Hassle Returns</div>
+        <p class="why-desc">Full Amazon return policy honored. Not satisfied? Return it — no questions asked.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.15s">
+        <div class="why-icon">📞</div>
+        <div class="why-title">Direct Owner Support</div>
+        <p class="why-desc">Call or WhatsApp Brijesh directly at <strong style="color:var(--t1)">+91 97524 03398</strong> — real person, quick responses.</p>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.25s">
+        <div class="why-icon">✨</div>
+        <div class="why-title">New Arrivals Weekly</div>
+        <p class="why-desc">Fresh styles added every week. Follow our Amazon store to never miss the latest drops.</p>
+      </div>
     </div>
   </div>
-  <div class="rv" style="transition-delay:0.12s">
-    <div class="cform" id="cForm">
-      <div class="frow">
-        <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name" id="fn"/></div>
-        <div class="fg"><label>Phone *</label><input type="tel" placeholder="+91 XXXXX XXXXX" id="fp"/></div>
-      </div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
-      <div class="fg"><label>Treatment Interested In</label>
-        <select><option value="">Select treatment...</option><option>Braces / Orthodontic Treatment</option><option>Root Canal (RCT)</option><option>Dental Implant</option><option>Teeth Whitening</option><option>Scaling &amp; Polishing</option><option>Crown &amp; Bridge</option><option>Dentures</option><option>Tooth Extraction</option><option>General Checkup</option><option>Other</option></select>
-      </div>
-      <div class="fg"><label>Preferred Clinic</label>
-        <select><option value="">Select clinic...</option><option>Clinic 1 — ITI Chauraha, Etawah</option><option>Clinic 2 — Hospital Chauraha, Saifai</option></select>
-      </div>
-      <div class="fg"><label>Message</label><textarea placeholder="Describe your dental concern or ask a question..."></textarea></div>
-      <p class="fnote">* Required. We will call back to confirm your appointment.</p>
-      <button class="bsub" onclick="sendForm()">📅 Request Appointment</button>
-    </div>
-    <div class="fsuccess" id="fSucc">✅ Appointment request received! We'll call you back shortly. You can also call: <strong>6397692840</strong></div>
-  </div>
-</div></div></section>
+</section>
 
-<footer>
-  <div class="fg-g">
-    <div class="fbrand">
-      <div class="fbrand-logo">
-        <div class="fl-ic"><img src="dr-shashi-kumar.webp" alt="Dr Shashi Kumar" onerror="this.parentElement.innerHTML='🦷'" style="width:40px;height:40px;border-radius:9px;object-fit:cover;object-position:top"/></div>
-        <div class="fl-t"><strong>Orthodontic Clinic Etawah</strong><span>Dr. Shashi Kumar · MDS Orthodontics</span></div>
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-subtitle">Customer Reviews</div>
+      <h2 class="section-title">What <span class="highlight">Customers</span> Say</h2>
+      <p class="section-desc">Real reviews from verified Amazon buyers across India.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">PS</div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">"Ordered a kurti set and it arrived in 2 days! The quality was exactly as shown. Will definitely order again from GrahakFirst!"</p>
+        <div class="testimonial-footer">
+          <div><div class="testimonial-name">Priya Sharma</div><div class="testimonial-location">New Delhi</div></div>
+          <span class="testimonial-badge">Amazon Review</span>
+        </div>
       </div>
-      <p>Expert orthodontic &amp; dental care in Etawah and Saifai. Specialising in braces, aligners &amp; all dental procedures. 14+ years, 1000+ patients.</p>
-      <div class="fcqs">
-        <div class="fcq">📞 <a href="tel:6397692840">6397692840</a> &nbsp;·&nbsp; <a href="tel:9456995372">9456995372</a></div>
-        <div class="fcq">📧 <a href="mailto:shashidr2009@gmail.com">shashidr2009@gmail.com</a></div>
-        <div class="fcq">📍 Etawah &amp; Saifai, Uttar Pradesh</div>
+      <div class="testimonial-card reveal" style="transition-delay:0.1s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#1a4fa0,#3b82f6)">AP</div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">"The jewellery set looked absolutely stunning at the wedding! So many compliments — looked 100% real at a fraction of the cost!"</p>
+        <div class="testimonial-footer">
+          <div><div class="testimonial-name">Anjali Patel</div><div class="testimonial-location">Ahmedabad, Gujarat</div></div>
+          <span class="testimonial-badge">Amazon Review</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal" style="transition-delay:0.2s">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#153872,#2a7de1)">RV</div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">"Great pricing, fast delivery. The return was smooth — refund in 3 days, zero hassle. A seller you can genuinely trust!"</p>
+        <div class="testimonial-footer">
+          <div><div class="testimonial-name">Rahul Verma</div><div class="testimonial-location">Bhopal, MP</div></div>
+          <span class="testimonial-badge">Amazon Review</span>
+        </div>
       </div>
     </div>
-    <div class="fcol"><h4>Navigation</h4><ul><li><a href="#about">About Dr. Shashi Kumar</a></li><li><a href="#why">Why Choose Us</a></li><li><a href="#services">Services &amp; Pricing</a></li><li><a href="#braces">Braces Guide</a></li><li><a href="#clinics">Our Clinics</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact / Appointment</a></li></ul></div>
-    <div class="fcol"><h4>Services</h4><ul><li><a href="#services">Metal Braces ₹1500/mo</a></li><li><a href="#services">Ceramic Braces ₹2500/mo</a></li><li><a href="#services">Aligners ₹3500/mo</a></li><li><a href="#services">Root Canal ₹1k–5k</a></li><li><a href="#services">Dental Implant ₹10k–50k</a></li><li><a href="#services">Teeth Whitening ₹5000</a></li><li><a href="#services">Scaling ₹500</a></li></ul></div>
-    <div class="fcol"><h4>Clinics &amp; Hours</h4><ul><li><a href="#clinics">Clinic 1 — Etawah</a></li><li><a href="#clinics">Mon–Sat: 2–6 PM</a></li><li><a href="#clinics">Sunday: 10 AM–4 PM</a></li><li><a href="#clinics">Clinic 2 — Saifai</a></li><li><a href="#clinics">Mon–Sat: 9:30 AM–2 PM</a></li><li><a href="tel:6397692840">📞 6397692840</a></li><li><a href="tel:9456995372">📞 9456995372</a></li></ul></div>
   </div>
-  <div class="fbot">
-    <p>© 2024 <span>Orthodontic Clinic Etawah</span>. All Rights Reserved · Dr. Shashi Kumar BDS, MDS</p>
-    <p>ITI Chauraha, NH2, <span>Etawah, Uttar Pradesh</span></p>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-header center reveal">
+      <div class="section-subtitle">FAQ</div>
+      <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+      <p class="section-desc">Everything you need to know about GrahakFirst Retailers.</p>
+    </div>
+    <div class="faq-container reveal" style="transition-delay:0.15s">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Where are you located?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">We are based in <strong>Nowgong, Chhatarpur District, Madhya Pradesh, India</strong>. Our products are sold and shipped pan-India through Amazon India's trusted fulfillment network.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>How can I buy your products?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">All our products are sold exclusively on <strong>Amazon India</strong>. Visit <a href="https://www.amazon.in" target="_blank" style="color:var(--or)">amazon.in</a> and search for "GrahakFirst" to browse our full catalogue. You can also click any "Shop on Amazon" button on this website.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>What products do you sell?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">We currently sell two main categories — <strong>Fashion & Clothing</strong> (kurtis, sarees, tops, ethnic wear, casual wear, dresses) and <strong>Imitation Jewellery</strong> (necklace sets, earrings, bangles, rings, anklets, maang tikka, bridal sets). New products are added every week.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>How do I contact the owner Brijesh?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">You can reach Brijesh Kumar Ahirwar directly via:<br/>📞 <strong>Call:</strong> +91 97524 03398<br/>💬 <strong>WhatsApp:</strong> +91 97524 03398<br/>📧 <strong>Email:</strong> grahakfirst@gmail.com<br/>📍 <strong>Address:</strong> Nowgong, Chhatarpur, Madhya Pradesh<br/><br/>We typically respond within a few hours on business days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>What is your return & refund policy?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">We follow <strong>Amazon India's standard return policy</strong>. If you're not satisfied with your purchase, you can easily initiate a return through your Amazon account. Refunds are processed quickly and without hassle, typically within 3-5 business days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Do you deliver outside India?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Currently, we deliver <strong>across all of India</strong> through Amazon's fulfillment network. We do not offer international shipping at this time, but we may consider it in the future based on customer demand.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>Can I place a bulk or wholesale order?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Yes! For bulk or wholesale orders, please contact Brijesh directly on <strong>WhatsApp (+91 97524 03398)</strong> or email <strong>grahakfirst@gmail.com</strong>. We offer special pricing for bulk orders and can work out custom arrangements for retailers and event organizers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)"><span>How long does delivery take?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Delivery times depend on your location and Amazon's logistics network. Typically, <strong>2–5 business days</strong> for most pin codes across India. Prime members may receive faster delivery. You can track your order directly on Amazon.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-subtitle">Contact Us</div>
+        <h2 class="section-title">Let's <span class="highlight">Talk</span></h2>
+        <p class="section-desc" style="margin-bottom:2rem">Have a query, bulk order request, or just want to say hello? Brijesh is here and responds quickly.</p>
+        
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+919752403398">+91 97524 03398</a></div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">💬</div>
+          <div><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." target="_blank">+91 97524 03398</a></div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📧</div>
+          <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:grahakfirst@gmail.com">grahakfirst@gmail.com</a></div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-label">Location</div><div class="contact-value">Nowgong, Chhatarpur District, Madhya Pradesh</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🌐</div>
+          <div><div class="contact-label">Website</div><div class="contact-value">www.GrahakFirst.com</div></div>
+        </div>
+        
+        <div class="contact-actions">
+          <a href="tel:+919752403398" class="contact-btn contact-btn-call">📞 Call Now</a>
+          <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="contact-btn contact-btn-wa" target="_blank">💬 WhatsApp</a>
+        </div>
+        
+        <div class="owner-card">
+          <div class="owner-avatar">BK</div>
+          <div class="owner-info">
+            <strong>Brijesh Kumar Ahirwar</strong>
+            <span>Founder & Owner, GrahakFirst Retailers</span>
+            <span>Nowgong, Madhya Pradesh, India</span>
+            <a href="mailto:grahakfirst@gmail.com">grahakfirst@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reveal" style="transition-delay:0.15s">
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your full name" id="formName"/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" id="formPhone"/>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label>Email Address *</label>
+            <input type="email" placeholder="you@email.com" id="formEmail"/>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label>Subject</label>
+            <select id="formSubject">
+              <option value="">Select a topic...</option>
+              <option>Order Enquiry</option>
+              <option>Product Question</option>
+              <option>Return / Refund</option>
+              <option>Bulk / Wholesale Order</option>
+              <option>Partnership / Supplier</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label>Message *</label>
+            <textarea placeholder="How can we help you? Tell us more details..." id="formMessage"></textarea>
+          </div>
+          <p class="form-note">* Required fields. We respond within 24 hours. For urgent queries, please WhatsApp or call directly.</p>
+          <button class="form-submit" onclick="submitForm()">Send Message →</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✅</div>
+          <h3 style="font-size:1.3rem;font-weight:800;color:var(--w);margin-bottom:0.5rem">Message Sent!</h3>
+          <p style="color:var(--t2)">Thank you for reaching out. Brijesh will get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <svg viewBox="0 0 200 60" style="height:50px;margin-bottom:1rem;">
+        <g transform="scale(0.6)">
+          <rect x="0" y="15" width="35" height="25" rx="3" fill="#1e40af"/>
+          <rect x="5" y="5" width="8" height="15" rx="1" fill="#f97316"/>
+          <circle cx="10" cy="42" r="4" fill="#1e40af"/>
+          <circle cx="28" cy="42" r="4" fill="#1e40af"/>
+          <rect x="8" y="22" width="20" height="12" fill="#3b82f6"/>
+        </g>
+        <text x="30" y="40" font-family="Sora,sans-serif" font-size="22" font-weight="800" fill="#f97316">Grahak</text>
+        <text x="30" y="62" font-family="Sora,sans-serif" font-size="22" font-weight="800" fill="#1e40af">First</text>
+      </svg>
+      <div class="footer-domain">www.GrahakFirst.com · Buy · Sell · Save</div>
+      <p class="footer-desc">Your trusted Amazon reseller for fashion wear and imitation jewellery. Quality products delivered to every corner of India — customer first, always.</p>
+      <div class="footer-social">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="Instagram">ig</a>
+        <a href="#" title="WhatsApp">wa</a>
+        <a href="mailto:grahakfirst@gmail.com" title="Email">@</a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#categories">Collections</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="https://www.amazon.in" target="_blank">Fashion & Clothing</a></li>
+        <li><a href="https://www.amazon.in" target="_blank">Imitation Jewellery</a></li>
+        <li><a href="https://www.amazon.in" target="_blank">New Arrivals</a></li>
+        <li><a href="https://www.amazon.in" target="_blank">Best Sellers</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Owner</h4>
+      <ul>
+        <li><a href="tel:+919752403398">📞 +91 97524 03398</a></li>
+        <li><a href="https://wa.me/919752403398" target="_blank">💬 WhatsApp Us</a></li>
+        <li><a href="mailto:grahakfirst@gmail.com">📧 grahakfirst@gmail.com</a></li>
+        <li><a href="#">📍 Nowgong, Chhatarpur, MP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2024 <span>GrahakFirst Retailers</span>. All Rights Reserved.</p>
+    <p class="footer-owner">Owner: <strong>Brijesh Kumar Ahirwar</strong> · Nowgong, Chhatarpur, Madhya Pradesh, India</p>
   </div>
 </footer>
 
-<a href="https://wa.me/916397692840?text=Hi!%20I%20want%20to%20book%20an%20appointment%20at%20Orthodontic%20Clinic%20Etawah." class="fab-wa mob" target="_blank" title="WhatsApp">💬</a>
-<button id="btt" onclick="scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<!-- FLOATING ELEMENTS -->
+<a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="fab-wa" target="_blank" title="Chat on WhatsApp">💬</a>
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
-<div id="mbn"><div class="mbn-in">
-  <a href="#" class="mbn-i act" onclick="scrollTo({top:0,behavior:'smooth'});return false"><span class="mbn-ic">🏠</span><span>Home</span></a>
-  <a href="#services" class="mbn-i"><span class="mbn-ic">💊</span><span>Services</span></a>
-  <div class="mbn-cta"><a href="tel:6397692840" class="mbn-cta-btn" title="Call">📞</a></div>
-  <a href="#clinics" class="mbn-i"><span class="mbn-ic">📍</span><span>Clinics</span></a>
-  <button class="mbn-i" onclick="document.getElementById('mob').classList.add('open')"><span class="mbn-ic">☰</span><span>Menu</span></button>
-</div></div>
-
-<!-- AI CHATBOT -->
-<button id="chatLauncher" onclick="toggleChat()">
-  <span class="ci">🤖</span><span class="cx">✕</span>
-  <div class="chat-badge">AI</div>
-  <div class="chat-tooltip">Ask Dr. Kumar's AI! 🦷</div>
-</button>
-
-<div id="chatWindow">
-  <div class="cw-head">
-    <div class="cw-av"><img src="dr-shashi-kumar.webp" alt="Dr" onerror="this.parentElement.innerHTML='👩‍⚕️'"/></div>
-    <div class="cw-info"><strong>Dr. Shashi Kumar — AI Assistant</strong><span><span class="cw-dot"></span>Online · Replies instantly · Hindi &amp; English</span></div>
-    <div class="cw-acts">
-      <a href="tel:6397692840" class="cwa" title="Call">📞</a>
-      <a href="https://wa.me/916397692840" class="cwa" target="_blank" title="WhatsApp">💬</a>
-      <button class="cwa" onclick="clearChat()" title="Clear">🗑️</button>
+<!-- MOBILE BOTTOM NAV -->
+<div id="mobileBottomNav">
+  <div class="mbn-inner">
+    <a href="#" class="mbn-item active" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
+      <span class="mbn-icon">🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="#categories" class="mbn-item">
+      <span class="mbn-icon">🛍️</span>
+      <span>Shop</span>
+    </a>
+    <div class="mbn-cta">
+      <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." target="_blank" class="mbn-cta-btn" title="WhatsApp">💬</a>
     </div>
+    <a href="tel:+919752403398" class="mbn-item">
+      <span class="mbn-icon">📞</span>
+      <span>Call</span>
+    </a>
+    <button class="mbn-item" onclick="document.getElementById('mobileMenu').classList.add('open')">
+      <span class="mbn-icon">☰</span>
+      <span>Menu</span>
+    </button>
   </div>
-  <div class="cw-msgs" id="chatMsgs">
-    <div class="cmsg bot">
-      <div class="cmsg-av b"><img src="dr-shashi-kumar.webp" alt="Dr" onerror="this.style.display='none';this.parentElement.textContent='🦷'"/></div>
-      <div>
-        <div class="cbubble" style="background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fff;border:none">
-          <strong style="color:#fff;display:block;margin-bottom:4px">🦷 नमस्ते! Welcome!</strong>
-          I'm Dr. Shashi Kumar's AI assistant. Ask me anything about <strong style="color:#bae6fd">braces, prices, appointments</strong> or dental procedures — in Hindi or English!
-        </div>
-        <div class="cmsg-time" id="cWelcomeTime"></div>
-      </div>
-    </div>
-    <div class="cmsg bot">
-      <div class="cmsg-av b" style="visibility:hidden"></div>
-      <div class="chat-actions">
-        <div class="cha" onclick="cq('📅 Book appointment')"><div class="cha-ic">📅</div><div class="cha-t">Book Appointment</div></div>
-        <div class="cha" onclick="cq('💰 Price list')"><div class="cha-ic">💰</div><div class="cha-t">Price List</div></div>
-        <div class="cha" onclick="cq('🦷 Braces options and cost')"><div class="cha-ic">🦷</div><div class="cha-t">Braces Guide</div></div>
-        <div class="cha" onclick="cq('📍 Clinic timings and location')"><div class="cha-ic">📍</div><div class="cha-t">Clinic Info</div></div>
-      </div>
-    </div>
-    <div class="cmsg bot" id="initQR">
-      <div class="cmsg-av b" style="visibility:hidden"></div>
-      <div class="cqr-wrap">
-        <button class="cqr" onclick="cq('मेरे दांत टेढ़े हैं क्या करूं?')">टेढ़े दांत 🦷</button>
-        <button class="cqr" onclick="cq('Braces cost?')">Braces Cost 💰</button>
-        <button class="cqr" onclick="cq('Is it painful?')">Painful? 😬</button>
-        <button class="cqr" onclick="cq('Sunday timing?')">Sunday? 📅</button>
-        <button class="cqr" onclick="cq('Root canal cost?')">RCT Cost 🔩</button>
-      </div>
-    </div>
-  </div>
-  <div class="cw-input">
-    <textarea id="chatInput" placeholder="Ask in Hindi or English... 🦷" rows="1" onkeydown="chatKey(event)" oninput="chatResize(this)"></textarea>
-    <button id="chatSend" onclick="chatSend()"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
-  </div>
-  <div class="cw-foot">Powered by <span>Gemini AI</span> via Cloudflare · Orthodontic Clinic Etawah</div>
 </div>
 
 <script>
-// ========== UPDATED AI CHATBOT SCRIPT (modified to work with the new worker) ==========
-const WORKER_URL = "https://call-api.utkrishtahirwar5.workers.dev"; // 🔁 REPLACE WITH YOUR WORKER URL
-const SECRET = "f2u93fhn29uc2m3c923c32m804v23@#$%^wqdyqd";
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+}, {passive:true});
 
-let chatHistory = [];
-let chatTyping = false;
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mmClose = document.getElementById('mmClose');
 
-function getT() {
-  return new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+mmClose.addEventListener('click', closeMobileMenu);
+mobileMenu.addEventListener('click', (e) => { if(e.target === mobileMenu) closeMobileMenu(); });
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
 }
 
-function chatResize(el) {
-  el.style.height = 'auto';
-  el.style.height = Math.min(el.scrollHeight, 90) + 'px';
+// Mobile bottom nav active state
+const mbnItems = document.querySelectorAll('.mbn-item[href]');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if(window.scrollY >= sectionTop) current = section.id;
+  });
+  mbnItems.forEach(item => {
+    item.classList.toggle('active', item.getAttribute('href') === '#' + current || (current === '' && item.getAttribute('href') === '#'));
+  });
+}, {passive:true});
+
+// Desktop nav active state
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 90;
+    if(window.scrollY >= sectionTop) current = section.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}, {passive:true});
+
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+revealElements.forEach(el => revealObserver.observe(el));
+
+// FAQ toggle
+function toggleFaq(element) {
+  const item = element.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
 }
 
-function addChatMsg(text, role) {
-  const msgsDiv = document.getElementById('chatMsgs');
-  const msgDiv = document.createElement('div');
-  msgDiv.className = `cmsg ${role}`;
+// Form submission to Cloudflare Worker
+const WORKER_URL = 'https://workerdevgf.utkrishtahirwar5.workers.dev'; // Your worker URL
 
-  const avatar = document.createElement('div');
-  avatar.className = `cmsg-av ${role === 'bot' ? 'b' : 'u'}`;
-  if (role === 'bot') {
-    avatar.innerHTML = `<img src="dr-shashi-kumar.webp" alt="Dr" onerror="this.style.display='none';this.parentElement.textContent='🦷'"/>`;
-  } else {
-    avatar.textContent = '👤';
+async function submitForm() {
+  const name = document.getElementById('formName').value.trim();
+  const email = document.getElementById('formEmail').value.trim();
+  const phone = document.getElementById('formPhone').value.trim();
+  const subject = document.getElementById('formSubject').value;
+  const message = document.getElementById('formMessage').value.trim();
+  
+  // Validation
+  if(!name) { alert('Please enter your full name.'); return; }
+  if(!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  if(!message) { alert('Please enter your message.'); return; }
+  
+  // Show loading state
+  const submitBtn = document.querySelector('.form-submit');
+  const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = 'Sending...';
+  submitBtn.disabled = true;
+  
+  try {
+    const response = await fetch(WORKER_URL + '/api/query', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, subject, message })
+    });
+    
+    const result = await response.json();
+    
+    if(result.success) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      alert('Error: ' + (result.error || 'Failed to send message'));
+    }
+  } catch(error) {
+    console.error('Error:', error);
+    alert('Failed to send message. Please try again or contact directly via WhatsApp/Phone.');
+  } finally {
+    submitBtn.innerHTML = originalText;
+    submitBtn.disabled = false;
   }
-
-  const inner = document.createElement('div');
-  const bubble = document.createElement('div');
-  bubble.className = 'cbubble';
-  bubble.innerHTML = formatMessage(text);
-
-  const time = document.createElement('div');
-  time.className = 'cmsg-time';
-  time.textContent = getT() + (role === 'user' ? ' ✓✓' : '');
-
-  inner.appendChild(bubble);
-  inner.appendChild(time);
-  msgDiv.appendChild(avatar);
-  msgDiv.appendChild(inner);
-  msgsDiv.appendChild(msgDiv);
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
-
-  // Remove quick replies container if it exists
-  const qr = document.getElementById('initQR');
-  if (qr) qr.remove();
 }
 
-function formatMessage(text) {
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/^- (.*)/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)+/gs, s => `<ul>${s}</ul>`)
-    .replace(/\n\n/g, '<br/><br/>')
-    .replace(/\n/g, '<br/>');
+// ═══════════════════════════════════════════════════════════════════════════════
+// CHATBOT WIDGET
+// ═══════════════════════════════════════════════════════════════════════════════
+let chatHistory = [];
+let chatSessionId = 'session_' + Math.random().toString(36).substr(2, 9);
+
+function toggleChat() {
+  const widget = document.getElementById('chatWidget');
+  const isVisible = widget.style.display === 'flex';
+  widget.style.display = isVisible ? 'none' : 'flex';
+  if (!isVisible) {
+    document.getElementById('chatInput').focus();
+  }
+}
+
+function addMessage(text, sender) {
+  const messagesDiv = document.getElementById('chatMessages');
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'chat-message ' + sender;
+  msgDiv.innerHTML = text;
+  messagesDiv.appendChild(msgDiv);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
 function showTyping() {
-  const msgsDiv = document.getElementById('chatMsgs');
+  const messagesDiv = document.getElementById('chatMessages');
   const typingDiv = document.createElement('div');
-  typingDiv.className = 'ctyping';
-  typingDiv.id = 'chatTypingEl';
-  const avatar = document.createElement('div');
-  avatar.className = 'cmsg-av b';
-  avatar.innerHTML = `<img src="dr-shashi-kumar.webp" onerror="this.style.display='none';this.parentElement.textContent='🦷'"/>`;
-  const dots = document.createElement('div');
-  dots.className = 'ctyping-b';
-  dots.innerHTML = '<span></span><span></span><span></span>';
-  typingDiv.appendChild(avatar);
-  typingDiv.appendChild(dots);
-  msgsDiv.appendChild(typingDiv);
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
+  typingDiv.id = 'typingIndicator';
+  typingDiv.className = 'chat-message bot typing';
+  typingDiv.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  messagesDiv.appendChild(typingDiv);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
 function hideTyping() {
-  const el = document.getElementById('chatTypingEl');
-  if (el) el.remove();
+  const typingDiv = document.getElementById('typingIndicator');
+  if (typingDiv) typingDiv.remove();
 }
 
-function addSmartQR(userMsg) {
-  const lower = userMsg.toLowerCase();
-  let replies = [];
-
-  if (lower.includes('brac') || lower.includes('ब्रेस') || lower.includes('wire') || lower.includes('तार')) {
-    replies = [
-      ['Metal vs Ceramic?', 'Metal vs Ceramic?'],
-      ['How long?', 'How long is treatment?'],
-      ['Book', '📅 Book appointment'],
-      ['Hurt?', 'Does it hurt?']
-    ];
-  } else if (lower.includes('price') || lower.includes('cost') || lower.includes('खर्च') || lower.includes('कीमत')) {
-    replies = [
-      ['Metal cost', 'Metal braces cost?'],
-      ['RCT cost', 'Root canal cost?'],
-      ['Book', '📅 Book consultation'],
-      ['10% offer', 'Tell me about 10% offer']
-    ];
-  } else if (lower.includes('appoint') || lower.includes('book') || lower.includes('अपॉइंट')) {
-    replies = [
-      ['📞 Call Clinic 1', 'call1'],
-      ['📞 Call Clinic 2', 'call2'],
-      ['Timings', 'Clinic timings?'],
-      ['Sunday?', 'Sunday availability?']
-    ];
-  } else if (lower.includes('pain') || lower.includes('दर्द')) {
-    replies = [
-      ['How long?', 'How long does treatment take?'],
-      ['Cost?', 'How much does it cost?'],
-      ['Book', '📅 Book appointment'],
-      ['Types?', 'What types of braces?']
-    ];
-  } else {
-    replies = [
-      ['Braces', '🦷 Braces options'],
-      ['Prices', '💰 Price list'],
-      ['Book', '📅 Book appointment'],
-      ['Timings', '⏰ Clinic timings']
-    ];
-  }
-
-  const msgsDiv = document.getElementById('chatMsgs');
-  const qrDiv = document.createElement('div');
-  qrDiv.className = 'cmsg bot';
-  const hiddenAvatar = document.createElement('div');
-  hiddenAvatar.className = 'cmsg-av b';
-  hiddenAvatar.style.visibility = 'hidden';
-  const buttonWrap = document.createElement('div');
-  buttonWrap.className = 'cqr-wrap';
-  buttonWrap.style.maxWidth = '85%';
-
-  replies.forEach(([label, msg]) => {
-    const btn = document.createElement('button');
-    btn.className = 'cqr';
-    btn.textContent = label;
-    if (msg === 'call1') btn.onclick = () => window.location.href = 'tel:6397692840';
-    else if (msg === 'call2') btn.onclick = () => window.location.href = 'tel:9456995372';
-    else btn.onclick = () => quickQuestion(msg);
-    buttonWrap.appendChild(btn);
-  });
-
-  qrDiv.appendChild(hiddenAvatar);
-  qrDiv.appendChild(buttonWrap);
-  msgsDiv.appendChild(qrDiv);
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
-}
-
-function quickQuestion(text) {
-  document.getElementById('chatInput').value = text;
-  chatSend();
-}
-
-async function chatSend() {
+async function sendChatMessage() {
   const input = document.getElementById('chatInput');
   const text = input.value.trim();
-  if (!text || chatTyping) return;
-
+  if (!text) return;
+  
+  addMessage(text, 'user');
   input.value = '';
-  input.style.height = 'auto';
-  chatTyping = true;
-  document.getElementById('chatSend').disabled = true;
-
-  addChatMsg(text, 'user');
-  chatHistory.push({ role: 'user', parts: [{ text }] });
+  
   showTyping();
-
+  
   try {
-    const requestBody = {
-      contents: chatHistory,
-      generationConfig: { temperature: 0.7, maxOutputTokens: 500, topP: 0.9 }
-    };
-
-    const response = await fetch(WORKER_URL, {
+    const response = await fetch(WORKER_URL + '/api/chat', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-secret': SECRET
-      },
-      body: JSON.stringify(requestBody)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        message: text, 
+        sessionId: chatSessionId,
+        chatHistory: chatHistory.slice(-10)
+      })
     });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Worker error:', response.status, errorText);
-      throw new Error(`Worker returned ${response.status}: ${errorText}`);
-    }
-
+    
     const data = await response.json();
-    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!reply) throw new Error(data?.error || 'No reply from AI');
-
     hideTyping();
-    chatHistory.push({ role: 'model', parts: [{ text: reply }] });
-    addChatMsg(reply, 'bot');
-    addSmartQR(text);
-  } catch (err) {
+    
+    if (data.success) {
+      addMessage(data.response, 'bot');
+      chatHistory.push({ role: 'user', content: text });
+      chatHistory.push({ role: 'assistant', content: data.response });
+    } else {
+      addMessage('Sorry, I encountered an error. Please try again or contact Brijesh directly at +91 97524 03398 📞', 'bot');
+    }
+  } catch (e) {
     hideTyping();
-    console.error('Chat error:', err);
-    let errorMsg = 'Sorry, Ai is Under-Maintenance. Please try again or call **6397692840** directly! 😊';
-    if (err.message.includes('404')) {
-      errorMsg = 'Service unavailable (404). Please contact support or call **6397692840**. 📞';
-    } else if (err.message.includes('403')) {
-      errorMsg = 'Access denied. Please check your configuration. 🔒';
-    }
-    addChatMsg(errorMsg, 'bot');
-  } finally {
-    chatTyping = false;
-    document.getElementById('chatSend').disabled = false;
+    console.error('Chat error:', e);
+    addMessage('Sorry, I\'m having trouble connecting. 📞 Please call Brijesh directly: +91 97524 03398 or WhatsApp him.', 'bot');
   }
 }
 
-function toggleChat() {
-  const win = document.getElementById('chatWindow');
-  const launcher = document.getElementById('chatLauncher');
-  const isOpen = win.classList.toggle('open');
-  launcher.classList.toggle('open', isOpen);
-  const badge = document.querySelector('.chat-badge');
-  if (badge) badge.style.display = isOpen ? 'none' : 'flex';
-  if (isOpen) setTimeout(() => document.getElementById('chatInput').focus(), 300);
-}
-
-function clearChat() {
-  chatHistory = [];
-  const msgsDiv = document.getElementById('chatMsgs');
-  // Keep only the first three messages (welcome + actions + quick replies)
-  while (msgsDiv.children.length > 3) {
-    msgsDiv.removeChild(msgsDiv.lastChild);
-  }
-  // Re-add the quick replies container if missing
-  if (!document.getElementById('initQR')) {
-    const qrContainer = document.createElement('div');
-    qrContainer.className = 'cmsg bot';
-    qrContainer.id = 'initQR';
-    const hiddenAvatar = document.createElement('div');
-    hiddenAvatar.className = 'cmsg-av b';
-    hiddenAvatar.style.visibility = 'hidden';
-    const buttonWrap = document.createElement('div');
-    buttonWrap.className = 'cqr-wrap';
-    const quickButtons = [
-      ['मेरे दांत टेढ़े हैं?', 'मेरे दांत टेढ़े हैं?'],
-      ['Braces cost?', 'Braces cost?'],
-      ['Painful?', 'Painful?'],
-      ['Sunday timing?', 'Sunday timing?'],
-      ['Root canal cost?', 'Root canal cost?']
-    ];
-    quickButtons.forEach(([label, msg]) => {
-      const btn = document.createElement('button');
-      btn.className = 'cqr';
-      btn.textContent = label;
-      btn.onclick = () => quickQuestion(msg);
-      buttonWrap.appendChild(btn);
-    });
-    qrContainer.appendChild(hiddenAvatar);
-    qrContainer.appendChild(buttonWrap);
-    msgsDiv.appendChild(qrContainer);
-  }
-  msgsDiv.scrollTop = msgsDiv.scrollHeight;
-}
-
-function chatKey(event) {
-  if (event.key === 'Enter' && !event.shiftKey) {
-    event.preventDefault();
-    chatSend();
+function handleChatKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendChatMessage();
   }
 }
 
-// Set welcome time
-document.getElementById('cWelcomeTime').textContent = getT();
-
-// Attach event listeners
-document.getElementById('chatInput').addEventListener('input', () => chatResize(document.getElementById('chatInput')));
-document.getElementById('chatInput').addEventListener('keydown', chatKey);
-
-// ========== REST OF THE SITE JAVASCRIPT (unchanged) ==========
-// Navbar scroll, mobile menu, counters, etc. – keep everything else as is.
-
-// Example: Navbar scroll
-const nav = document.getElementById('nav');
-const btt = document.getElementById('btt');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', scrollY > 60);
-  if (btt) btt.classList.toggle('vis', scrollY > 400);
-}, { passive: true });
-
-// Mobile menu
-document.getElementById('hbg')?.addEventListener('click', () => document.getElementById('mob').classList.add('open'));
-document.getElementById('mX')?.addEventListener('click', () => document.getElementById('mob').classList.remove('open'));
-document.getElementById('mob')?.addEventListener('click', function(e) {
-  if (e.target === this) document.getElementById('mob').classList.remove('open');
-});
-
-// Scroll reveal
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      ro.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.09 });
-document.querySelectorAll('.rv').forEach(el => ro.observe(el));
-
-// Active nav links
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const mbnLinks = document.querySelectorAll('.mbn-i[href]');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (scrollY >= s.offsetTop - 90) current = s.id;
-  });
-  navLinks.forEach(a => {
-    const isActive = a.getAttribute('href') === `#${current}`;
-    a.style.color = isActive ? 'var(--teal)' : '';
-    a.style.background = isActive ? 'var(--teal-gl)' : '';
-  });
-  mbnLinks.forEach(a => {
-    const isActive = a.getAttribute('href') === `#${current}`;
-    a.classList.toggle('act', isActive);
-  });
-}, { passive: true });
-
-// FAQ toggle
-function faq(el) {
-  const item = el.parentElement;
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-i.open').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+function chatResize(textarea) {
+  textarea.style.height = 'auto';
+  textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px';
 }
 
-// Animated counters
-function animateCounters() {
-  document.querySelectorAll('.ctr-num[data-target]').forEach(el => {
-    const target = parseInt(el.getAttribute('data-target'));
-    const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1500;
-    const step = target / 60;
-    let current = 0;
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.floor(current) + suffix;
-      if (current >= target) clearInterval(timer);
-    }, duration / 60);
-  });
+// Mobile padding adjustment
+function checkMobile() {
+  document.body.classList.toggle('mob-nav-active', window.innerWidth <= 768);
 }
-const heroObs = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    animateCounters();
-    heroObs.disconnect();
-  }
-}, { threshold: 0.3 });
-heroObs.observe(document.getElementById('hero'));
-
-// Contact form
-function sendForm() {
-  const name = document.getElementById('fn')?.value.trim();
-  const phone = document.getElementById('fp')?.value.trim();
-  if (!name) { alert('Please enter your name.'); return; }
-  if (!phone) { alert('Please enter your phone number.'); return; }
-  document.getElementById('cForm').style.display = 'none';
-  document.getElementById('fSucc').style.display = 'block';
-}
-
-// Mobile bottom padding
-function checkMob() {
-  document.body.style.paddingBottom = window.innerWidth <= 768 ? '60px' : '0';
-}
-checkMob();
-window.addEventListener('resize', checkMob);
+checkMobile();
+window.addEventListener('resize', checkMobile);
 </script>
-  <script>
-window.cm = window.cm || function () {
-  document.getElementById("mob")?.classList.remove("open");
-};
 
-(() => {
-  "use strict";
+<!-- CHATBOT WIDGET -->
+<div id="chatToggle" class="chat-toggle" onclick="toggleChat()">
+  <span class="chat-toggle-icon">💬</span>
+  <span class="chat-toggle-pulse"></span>
+</div>
 
-  const WORKER_BASE = "https://call-api.utkrishtahirwar5.workers.dev";
-  const BASE_PATH = window.location.pathname;
-  const APPOINTMENT_URL = `${BASE_PATH}?view=appointment`;
-  const STAFF_URL = `${BASE_PATH}?view=staff`;
-  const VIEW = (new URLSearchParams(window.location.search).get("view") || "").toLowerCase();
-
-  const esc = (v) =>
-    String(v ?? "").replace(/[&<>"']/g, (ch) => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    }[ch]));
-
-  const api = (path) => WORKER_BASE.replace(/\/+$/, "") + path;
-
-function ensureStyles() {
-  if (document.getElementById("oc-inline-ui-style")) return;
-  const style = document.createElement("style");
-  style.id = "oc-inline-ui-style";
-  style.textContent = `
-    .oc-staff-mini{
-      position:static;display:inline-flex;align-items:center;margin-left:8px;
-      padding:4px 7px;border-radius:999px;background:#082f49;color:#fff;
-      font-size:10px;font-weight:700;line-height:1;text-decoration:none;
-      border:1px solid rgba(255,255,255,.35)
-    }
-    .oc-staff-mini:hover{background:#0c4a6e}
-    @media(max-width:768px){.oc-staff-mini{font-size:9px;padding:4px 6px;margin-left:6px}}
-
-    #oc-shell{max-width:900px;margin:18px auto;padding:0 12px;font-family:Arial,sans-serif;color:#083344}
-    #oc-shell .oc-card{background:#fff;border:1px solid #c7e2f0;border-radius:14px;padding:16px}
-    #oc-shell h1{margin:0 0 8px;font-size:24px}
-    #oc-shell p{margin:0 0 14px;color:#335e73}
-    #oc-shell .oc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    #oc-shell .oc-col{display:grid;gap:6px}
-    #oc-shell label{font-size:12px;font-weight:700;color:#0c4a6e}
-    #oc-shell input,#oc-shell select,#oc-shell textarea{
-      width:100%;padding:11px;border:1px solid #b7ddef;border-radius:8px;font:inherit
-    }
-    #oc-shell textarea{min-height:115px;resize:vertical}
-    #oc-shell .oc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    #oc-shell button,#oc-shell .oc-link-btn{
-      padding:11px 14px;border:none;border-radius:8px;background:#0284c7;color:#fff;
-      cursor:pointer;font-weight:700;text-decoration:none;display:inline-flex;align-items:center
-    }
-    #oc-shell button:hover,#oc-shell .oc-link-btn:hover{background:#0ea5e9}
-    #oc-shell .oc-secondary{background:#e0f2fe;color:#0c4a6e}
-    #oc-shell .oc-secondary:hover{background:#bae6fd}
-    #oc-shell .oc-msg,#oc-shell .oc-err{display:none;margin-top:10px;padding:10px;border-radius:8px}
-    #oc-shell .oc-msg{background:#ecfeff;border:1px solid #67e8f9;color:#155e75}
-    #oc-shell .oc-err{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-    #oc-shell table{width:100%;border-collapse:collapse;margin-top:12px;border:1px solid #c7e2f0;background:#fff}
-    #oc-shell th,#oc-shell td{padding:9px;border-bottom:1px solid #e8f4fb;text-align:left;vertical-align:top;font-size:13px}
-    #oc-shell th{background:#f3fbff}
-    @media(max-width:780px){#oc-shell .oc-row{grid-template-columns:1fr}}
-  `;
-  document.head.appendChild(style);
-}
-
-  function setAsAppointmentAction(el) {
-    if (!el) return;
-    if (el.tagName === "A") {
-      el.href = APPOINTMENT_URL;
-      el.removeAttribute("target");
-      el.onclick = null;
-      return;
-    }
-    el.type = "button";
-    el.onclick = (e) => {
-      e.preventDefault();
-      window.location.href = APPOINTMENT_URL;
-    };
-  }
-
-  function patchHomeBookingActions() {
-    document.querySelectorAll(".n-appt,.ma-a,.bsub").forEach(setAsAppointmentAction);
-    document.querySelectorAll("a").forEach((a) => {
-      const text = (a.textContent || "").trim().toLowerCase();
-      if (text.includes("book appointment") || text.includes("book online")) setAsAppointmentAction(a);
-    });
-    window.sendForm = function () { window.location.href = APPOINTMENT_URL; };
-  }
-
-  function addStaffMiniButton() {
-  if (document.getElementById("oc-staff-mini")) return;
-
-  const btn = document.createElement("a");
-  btn.id = "oc-staff-mini";
-  btn.className = "oc-staff-mini";
-  btn.href = STAFF_URL;
-  btn.textContent = "Staff dashboard";
-
-  const navBrand = document.querySelector(".nav-brand");
-  if (navBrand) {
-    navBrand.appendChild(btn); // upper-left near blue logo
-  } else {
-    document.body.appendChild(btn);
-  }
-}
-
-
-  function renderAppointmentPage() {
-    ensureStyles();
-    document.title = "Book Appointment";
-    document.body.innerHTML = `
-      <div id="oc-shell">
-        <div class="oc-card">
-          <h1>Book Appointment</h1>
-          <p>Fill details. Clinic team will call you back.</p>
-          <form id="oc-appt-form">
-            <div class="oc-row">
-              <div class="oc-col"><label>Full Name *</label><input id="oc-fullName" required /></div>
-              <div class="oc-col"><label>Gmail *</label><input id="oc-email" type="email" placeholder="name@gmail.com" required /></div>
-            </div>
-            <div class="oc-row" style="margin-top:10px">
-              <div class="oc-col"><label>Phone Number *</label><input id="oc-phone" required /></div>
-              <div class="oc-col">
-                <label>What do you want? *</label>
-                <select id="oc-treatment" required>
-                  <option value="">Select treatment</option>
-                  <option>Braces</option><option>Aligners</option><option>Root Canal</option>
-                  <option>Dental Implant</option><option>Teeth Whitening</option><option>General Checkup</option>
-                </select>
-              </div>
-            </div>
-            <div class="oc-col" style="margin-top:10px"><label>What is wrong with your teeth? *</label><input id="oc-issue" required /></div>
-            <div class="oc-col" style="margin-top:10px"><label>Describe your problem *</label><textarea id="oc-description" required></textarea></div>
-            <div class="oc-actions">
-              <button id="oc-submit" type="submit">Submit Appointment</button>
-              <a class="oc-link-btn oc-secondary" href="${BASE_PATH}">Back to Home</a>
-            </div>
-          </form>
-          <div id="oc-ok" class="oc-msg"></div>
-          <div id="oc-error" class="oc-err"></div>
-        </div>
+<div id="chatWidget" class="chat-widget">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <div class="chat-title">GrahakFirst Assistant</div>
+        <div class="chat-status"><span class="status-dot"></span>Online now</div>
       </div>
-    `;
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-welcome">
+      <div class="welcome-icon">🙏</div>
+      <p><strong>Namaste!</strong> I'm your AI assistant for GrahakFirst.</p>
+      <p>I can help you with:</p>
+      <ul>
+        <li>🛍️ Product information</li>
+        <li>💰 Pricing & availability</li>
+        <li>📦 Order status</li>
+        <li>📞 Contact details</li>
+      </ul>
+      <p style="font-size:0.75rem;color:#888;margin-top:0.5rem;">Ask in Hindi or English!</p>
+    </div>
+  </div>
+  <div class="chat-input-area">
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button onclick="quickAsk('What products do you sell?')">🛍️ Products</button>
+      <button onclick="quickAsk('What are the prices?')">💰 Prices</button>
+      <button onclick="quickAsk('How to contact owner?')">📞 Contact</button>
+    </div>
+    <div class="chat-input-wrapper">
+      <textarea id="chatInput" placeholder="Type your message..." rows="1" onkeydown="handleChatKey(event)" oninput="chatResize(this)"></textarea>
+      <button class="chat-send" onclick="sendChatMessage()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+    <div class="chat-footer">Powered by <span>Gemini AI</span> via Cloudflare · GrahakFirst</div>
+  </div>
+</div>
 
-    const form = document.getElementById("oc-appt-form");
-    const submitBtn = document.getElementById("oc-submit");
-    const okBox = document.getElementById("oc-ok");
-    const errBox = document.getElementById("oc-error");
+<style>
+/* Chatbot Widget Styles */
+.chat-toggle { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: linear-gradient(135deg, #f97316, #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(249,115,22,0.4); z-index: 9999; transition: transform 0.3s; }
+.chat-toggle:hover { transform: scale(1.1); }
+.chat-toggle-icon { font-size: 1.8rem; animation: wave 2s ease-in-out infinite; }
+.chat-toggle-pulse { position: absolute; width: 100%; height: 100%; border-radius: 50%; background: rgba(249,115,22,0.4); animation: pulse-ring 2s ease-out infinite; z-index: -1; }
+@keyframes pulse-ring { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      okBox.style.display = "none";
-      errBox.style.display = "none";
+.chat-widget { position: fixed; bottom: 90px; right: 20px; width: 380px; height: 550px; background: #0a0a0a; border: 1px solid rgba(249,115,22,0.3); border-radius: 20px; overflow: hidden; display: none; flex-direction: column; z-index: 9998; box-shadow: 0 20px 60px rgba(0,0,0,0.5); animation: slide-up 0.3s ease; }
+.chat-header { background: linear-gradient(135deg, #f97316, #fb923c); padding: 1rem 1.2rem; display: flex; align-items: center; justify-content: space-between; }
+.chat-header-info { display: flex; align-items: center; gap: 0.75rem; }
+.chat-avatar { width: 40px; height: 40px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.chat-title { font-weight: 700; color: #000; font-size: 1rem; }
+.chat-status { font-size: 0.75rem; color: rgba(0,0,0,0.7); display: flex; align-items: center; gap: 0.3rem; }
+.status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: blink 2s infinite; }
+.chat-close { background: none; border: none; color: #000; font-size: 1.5rem; cursor: pointer; padding: 0.25rem; }
 
-      const payload = {
-        fullName: document.getElementById("oc-fullName").value.trim(),
-        email: document.getElementById("oc-email").value.trim(),
-        phone: document.getElementById("oc-phone").value.trim(),
-        treatment: document.getElementById("oc-treatment").value.trim(),
-        toothIssue: document.getElementById("oc-issue").value.trim(),
-        description: document.getElementById("oc-description").value.trim()
-      };
+.chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.chat-welcome { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); border-radius: 12px; padding: 1rem; text-align: center; }
+.welcome-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.chat-welcome p { font-size: 0.85rem; color: #ccc; margin-bottom: 0.5rem; }
+.chat-welcome ul { text-align: left; font-size: 0.8rem; color: #aaa; list-style: none; padding-left: 1rem; }
+.chat-welcome li { margin-bottom: 0.25rem; }
 
-      if (Object.values(payload).some(v => !v)) {
-        errBox.textContent = "Please fill all required fields.";
-        errBox.style.display = "block";
-        return;
-      }
+.chat-message { max-width: 85%; padding: 0.75rem 1rem; border-radius: 12px; font-size: 0.9rem; line-height: 1.5; animation: fade-in 0.3s ease; }
+.chat-message.user { align-self: flex-end; background: linear-gradient(135deg, #f97316, #fb923c); color: #000; border-bottom-right-radius: 4px; }
+.chat-message.bot { align-self: flex-start; background: #1a1a1a; color: #f5f5f5; border: 1px solid rgba(255,255,255,0.1); border-bottom-left-radius: 4px; }
+.chat-message.typing { display: flex; gap: 0.3rem; padding: 1rem; }
+.typing-dot { width: 8px; height: 8px; background: #888; border-radius: 50%; animation: typing-bounce 1.4s infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-      try {
-        const res = await fetch(api("/appointments"), {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok || !data.ok) throw new Error(data.error || "Appointment submit failed.");
-        okBox.innerHTML = `Appointment submitted successfully. ID: <strong>${esc(data.id || "-")}</strong>`;
-        okBox.style.display = "block";
-        form.reset();
-      } catch (err) {
-        errBox.textContent = err.message || "Unable to submit appointment.";
-        errBox.style.display = "block";
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Appointment";
-      }
-    });
-  }
+.chat-input-area { padding: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.chat-suggestions { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; overflow-x: auto; }
+.chat-suggestions button { background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); color: #f97316; padding: 0.4rem 0.75rem; border-radius: 20px; font-size: 0.75rem; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+.chat-suggestions button:hover { background: rgba(249,115,22,0.2); }
+.chat-input-wrapper { display: flex; gap: 0.5rem; align-items: flex-end; }
+.chat-input-wrapper textarea { flex: 1; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.15); color: #f5f5f5; padding: 0.75rem 1rem; border-radius: 12px; resize: none; max-height: 100px; font-family: inherit; font-size: 0.9rem; outline: none; }
+.chat-input-wrapper textarea:focus { border-color: #f97316; }
+.chat-send { width: 44px; height: 44px; background: linear-gradient(135deg, #f97316, #fb923c); border: none; border-radius: 12px; color: #000; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+.chat-send:hover { transform: scale(1.05); }
+.chat-send svg { width: 20px; height: 20px; }
+.chat-footer { text-align: center; font-size: 0.65rem; color: #666; margin-top: 0.5rem; }
+.chat-footer span { color: #f97316; }
 
-  function renderStaffPage() {
-    ensureStyles();
-    document.title = "Staff Dashboard";
-    document.body.innerHTML = `
-      <div id="oc-shell">
-        <div class="oc-card" id="oc-login-card">
-          <h1>Staff Dashboard</h1>
-          <p>Enter owner PIN (verified by Cloudflare Worker).</p>
-          <div class="oc-row">
-            <div class="oc-col"><label>Owner PIN</label><input id="oc-owner-pin" type="password" /></div>
-            <div class="oc-col" style="align-self:end"><button id="oc-login-btn">Login</button></div>
-          </div>
-          <div id="oc-login-error" class="oc-err"></div>
-          <div class="oc-actions"><a class="oc-link-btn oc-secondary" href="${BASE_PATH}">Back to Home</a></div>
-        </div>
-        <div class="oc-card" id="oc-dashboard-card" style="display:none">
-          <h1>Appointments</h1>
-          <div class="oc-actions"><button id="oc-reload">Reload</button><button class="oc-secondary" id="oc-logout">Logout</button></div>
-          <table>
-            <thead><tr><th>Time</th><th>Name</th><th>Gmail</th><th>Phone</th><th>Treatment</th><th>Tooth Problem</th><th>Description</th></tr></thead>
-            <tbody id="oc-rows"><tr><td colspan="7">No records yet.</td></tr></tbody>
-          </table>
-          <div id="oc-dash-error" class="oc-err"></div>
-        </div>
-      </div>
-    `;
+@media (max-width: 480px) { 
+  .chat-widget { width: calc(100vw - 40px); height: 60vh; right: 20px; left: 20px; } 
+  .chat-toggle { width: 50px; height: 50px; }
+  .chat-toggle-icon { font-size: 1.5rem; }
+}
+</style>
 
-    const pinInput = document.getElementById("oc-owner-pin");
-    const loginBtn = document.getElementById("oc-login-btn");
-    const loginErr = document.getElementById("oc-login-error");
-    const dashErr = document.getElementById("oc-dash-error");
-    const loginCard = document.getElementById("oc-login-card");
-    const dashCard = document.getElementById("oc-dashboard-card");
-    const rows = document.getElementById("oc-rows");
-    let ownerPin = "";
-
-    async function verifyPin(pin) {
-      const res = await fetch(api("/owner/verify"), {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pin })
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error(data.error || "Invalid PIN.");
-    }
-
-    async function loadAppointments() {
-      dashErr.style.display = "none";
-      const res = await fetch(api("/owner/appointments"), {
-        method: "GET",
-        headers: { "x-owner-pin": ownerPin }
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error(data.error || "Failed to load appointments.");
-      const list = Array.isArray(data.appointments) ? data.appointments : [];
-      rows.innerHTML = list.length ? list.map((item) => `
-        <tr>
-          <td>${esc(item.createdAt ? new Date(item.createdAt).toLocaleString("en-IN") : "-")}</td>
-          <td>${esc(item.fullName)}</td><td>${esc(item.email)}</td><td>${esc(item.phone)}</td>
-          <td>${esc(item.treatment)}</td><td>${esc(item.toothIssue)}</td><td>${esc(item.description)}</td>
-        </tr>
-      `).join("") : `<tr><td colspan="7">No appointments found.</td></tr>`;
-    }
-
-    loginBtn.addEventListener("click", async () => {
-      loginErr.style.display = "none";
-      const pin = pinInput.value.trim();
-      if (!pin) {
-        loginErr.textContent = "Enter PIN.";
-        loginErr.style.display = "block";
-        return;
-      }
-      loginBtn.disabled = true;
-      loginBtn.textContent = "Checking...";
-      try {
-        await verifyPin(pin);
-        ownerPin = pin;
-        loginCard.style.display = "none";
-        dashCard.style.display = "block";
-        await loadAppointments();
-      } catch (err) {
-        loginErr.textContent = err.message || "Login failed.";
-        loginErr.style.display = "block";
-      } finally {
-        loginBtn.disabled = false;
-        loginBtn.textContent = "Login";
-      }
-    });
-
-    pinInput.addEventListener("keydown", (e) => { if (e.key === "Enter") loginBtn.click(); });
-    document.getElementById("oc-reload").addEventListener("click", async () => {
-      try { await loadAppointments(); } catch (err) { dashErr.textContent = err.message || "Reload failed."; dashErr.style.display = "block"; }
-    });
-    document.getElementById("oc-logout").addEventListener("click", () => { window.location.href = BASE_PATH; });
-  }
-
-  if (VIEW === "appointment") return renderAppointmentPage();
-  if (VIEW === "staff") return renderStaffPage();
-
-  ensureStyles();
-  patchHomeBookingActions();
-  addStaffMiniButton();
-})();
+<script>
+function quickAsk(text) {
+  document.getElementById('chatInput').value = text;
+  sendChatMessage();
+}
 </script>
- </body>
+
+</body>
 </html>
-
