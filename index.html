@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <style>
 /* ═══════════════════════════════════════════════════════════════════════════════
    GRAHAKFIRST RETAILERS - PREMIUM WEBSITE
@@ -1252,6 +1253,8 @@ section{padding:6rem 2rem;position:relative}
       </div>
       <div id="signupError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
       <div id="signupSuccess" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
       <button type="submit" id="signupSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;">
         ✚ Create Account
       </button>
@@ -1844,6 +1847,8 @@ section{padding:6rem 2rem;position:relative}
             <label>Message *</label>
             <textarea placeholder="How can we help you? Tell us more details..." id="formMessage"></textarea>
           </div>
+          <!-- Google reCAPTCHA -->
+          <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
           <p class="form-note">* Required fields. We respond within 24 hours. For urgent queries, please WhatsApp or call directly.</p>
           <button class="form-submit" onclick="submitForm()">Send Message →</button>
         </div>
@@ -2110,17 +2115,25 @@ async function handleSignup(e) {
   const errorDiv = document.getElementById('signupError');
   const successDiv = document.getElementById('signupSuccess');
   
+  // Get reCAPTCHA token
+  const recaptchaToken = grecaptcha.getResponse();
+  if(!recaptchaToken) {
+    errorDiv.textContent = 'Please complete the CAPTCHA.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
   btn.disabled = true;
   btn.innerHTML = '⏳ Sending verification code...';
   errorDiv.style.display = 'none';
   successDiv.style.display = 'none';
   
   try {
-    // Step 1: Send OTP
+    // Step 1: Send OTP with reCAPTCHA
     const response = await fetch(WORKER_URL + '/api/auth/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, password })
+      body: JSON.stringify({ name, email, phone, password, recaptchaToken })
     });
     
     const data = await response.json();
@@ -2141,13 +2154,16 @@ async function handleSignup(e) {
       
       successDiv.textContent = 'Verification code sent! Check your email.';
       successDiv.style.display = 'block';
+      grecaptcha.reset();
     } else {
       errorDiv.textContent = data.error || 'Failed to send verification code';
       errorDiv.style.display = 'block';
+      grecaptcha.reset();
     }
   } catch (err) {
     errorDiv.textContent = 'Connection error. Please try again.';
     errorDiv.style.display = 'block';
+    grecaptcha.reset();
   } finally {
     btn.disabled = false;
     btn.innerHTML = '✚ Create Account';
@@ -2495,6 +2511,10 @@ async function submitForm() {
   if(!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
   if(!message) { alert('Please enter your message.'); return; }
   
+  // Get reCAPTCHA token
+  const recaptchaToken = grecaptcha.getResponse();
+  if(!recaptchaToken) { alert('Please complete the CAPTCHA.'); return; }
+  
   // Show loading state
   const submitBtn = document.querySelector('.form-submit');
   const originalText = submitBtn.innerHTML;
@@ -2507,7 +2527,7 @@ async function submitForm() {
     const response = await fetch(WORKER_URL + '/api/query', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, subject, message, userId })
+      body: JSON.stringify({ name, email, phone, subject, message, userId, recaptchaToken })
     });
     
     const result = await response.json();
@@ -2516,12 +2536,15 @@ async function submitForm() {
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       showNotification('Query submitted successfully! 📨', 'success');
+      grecaptcha.reset();
     } else {
       alert('Error: ' + (result.error || 'Failed to send message'));
+      grecaptcha.reset();
     }
   } catch(error) {
     console.error('Error:', error);
     alert('Failed to send message. Please try again or contact directly via WhatsApp/Phone.');
+    grecaptcha.reset();
   } finally {
     submitBtn.innerHTML = originalText;
     submitBtn.disabled = false;
