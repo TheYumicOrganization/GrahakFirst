@@ -196,6 +196,7 @@ img{display:block;max-width:100%;height:auto}
 .mm-btn-call{background:rgba(59,130,246,0.12);color:var(--bl2);border:1.5px solid rgba(59,130,246,0.22)}
 .mm-btn-wa{background:rgba(37,211,102,0.1);color:#25d366;border:1.5px solid rgba(37,211,102,0.18)}
 .mm-btn-shop{background:var(--or-grad);color:#000}
+.mm-btn-login{background:rgba(249,115,22,0.2);color:var(--or);border:2px solid var(--or);font-weight:700}
 
 /* ═══════════════════════════════════════════════════════════════════════════════
    MOBILE BOTTOM NAV
@@ -205,13 +206,9 @@ img{display:block;max-width:100%;height:auto}
   background:rgba(10,10,10,0.98);backdrop-filter:blur(20px);
   border-top:1px solid var(--brd);padding:0 0 env(safe-area-inset-bottom,0);
 }
-.mbn-inner{display:flex;align-items:center;height:65px}
-.mbn-item{
-  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-  font-size:0.6rem;font-weight:600;color:var(--t3);cursor:pointer;
-  border:none;background:none;transition:all 0.2s;padding:8px 4px;
-  -webkit-tap-highlight-color:transparent;
-}
+.mbn-inner{display:flex;align-items:center;height:65px;justify-content:space-around}
+.mbn-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--t3);text-decoration:none;font-size:0.7rem;font-weight:600;transition:all 0.2s;height:100%}
+.mbn-call-item{background:rgba(59,130,246,0.1);color:var(--bl2)}
 .mbn-item:hover,.mbn-item.active{color:var(--or)}
 .mbn-item.active .mbn-icon{background:var(--or-glow);padding:4px 12px;border-radius:10px}
 .mbn-icon{font-size:1.3rem;transition:all 0.2s}
@@ -1094,6 +1091,7 @@ section{padding:6rem 2rem;position:relative}
     <a href="#contact" onclick="closeMobileMenu()"><span class="mm-icon">📩</span>Contact</a>
   </nav>
   <div class="mm-actions">
+    <a href="#" class="mm-btn mm-btn-login" onclick="closeMobileMenu();openLoginModal();return false;">🔐 Login / Sign Up</a>
     <a href="tel:+919752403398" class="mm-btn mm-btn-call">📞 Call +91 97524 03398</a>
     <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="mm-btn mm-btn-wa" target="_blank">💬 WhatsApp Us</a>
     <a href="https://www.amazon.in" class="mm-btn mm-btn-shop" target="_blank">🛒 Shop on Amazon</a>
@@ -1696,14 +1694,18 @@ section{padding:6rem 2rem;position:relative}
     <div class="mbn-cta">
       <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." target="_blank" class="mbn-cta-btn" title="WhatsApp">💬</a>
     </div>
-    <a href="tel:+919752403398" class="mbn-item">
-      <span class="mbn-icon">📞</span>
-      <span>Call</span>
-    </a>
+    <button class="mbn-item" onclick="openLoginModal()">
+      <span class="mbn-icon">🔐</span>
+      <span>Login</span>
+    </button>
     <button class="mbn-item" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <span class="mbn-icon">☰</span>
       <span>Menu</span>
     </button>
+    <a href="tel:+919752403398" class="mbn-item mbn-call-item">
+      <span class="mbn-icon">📞</span>
+      <span>Call</span>
+    </a>
   </div>
 </div>
 
