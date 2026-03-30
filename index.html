@@ -993,8 +993,10 @@ section{padding:6rem 2rem;position:relative}
     <button onclick="closeSignupModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
     <div style="text-align:center;margin-bottom:2rem;">
       <h2 style="font-family:'Sora',sans-serif;font-size:1.5rem;color:var(--w);margin-bottom:0.5rem;">Create Account</h2>
-      <p style="font-size:0.85rem;color:var(--t3);">Join GrahakFirst to track your inquiries</p>
+      <p style="font-size:0.85rem;color:var(--t3);" id="signupSubtitle">Join GrahakFirst to track your inquiries</p>
     </div>
+    
+    <!-- Step 1: Registration Form -->
     <form id="signupFormModal" onsubmit="handleSignup(event)">
       <div style="margin-bottom:1rem;">
         <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Full Name</label>
@@ -1018,7 +1020,41 @@ section{padding:6rem 2rem;position:relative}
         ✚ Create Account
       </button>
     </form>
-    <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--brd);">
+    
+    <!-- Step 2: OTP Verification (Hidden initially) -->
+    <div id="otpVerificationSection" style="display:none;">
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <div style="font-size:3rem;margin-bottom:0.5rem;">📧</div>
+        <p style="color:var(--t2);font-size:0.9rem;">We've sent a 6-digit verification code to</p>
+        <p id="otpEmailDisplay" style="color:var(--or);font-weight:600;font-size:0.95rem;"></p>
+      </div>
+      
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;text-align:center;">Enter Verification Code</label>
+        <div style="display:flex;gap:0.5rem;justify-content:center;">
+          <input type="text" id="otpInput" maxlength="6" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:1.5rem;letter-spacing:0.5rem;text-align:center;font-weight:700;outline:none;transition:all 0.25s;" placeholder="000000">
+        </div>
+      </div>
+      
+      <div id="otpError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;text-align:center;"></div>
+      <div id="otpSuccess" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;text-align:center;"></div>
+      
+      <button onclick="verifyOTP()" id="verifyOtpBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:1rem;">
+        ✓ Verify & Create Account
+      </button>
+      
+      <div style="text-align:center;">
+        <p style="font-size:0.8rem;color:var(--t3);margin-bottom:0.5rem;">Didn't receive the code?</p>
+        <button onclick="resendOTP()" id="resendOtpBtn" style="background:none;border:none;color:var(--or);font-size:0.85rem;font-weight:600;cursor:pointer;text-decoration:underline;">Resend Code</button>
+        <p id="resendTimer" style="font-size:0.75rem;color:var(--t3);margin-top:0.5rem;display:none;">Wait 30 seconds before resending</p>
+      </div>
+      
+      <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--brd);">
+        <a href="#" onclick="backToSignup();return false;" style="color:var(--t3);font-size:0.85rem;">← Back to registration</a>
+      </div>
+    </div>
+    
+    <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--brd);" id="signupFooter">
       <p style="font-size:0.75rem;color:var(--t3);margin-bottom:0.5rem;">Already have an account?</p>
       <a href="#" onclick="closeSignupModal();openLoginModal();return false;" style="color:var(--or);font-size:0.85rem;font-weight:600;">Login here →</a>
     </div>
@@ -1799,6 +1835,9 @@ function closeSignupModal() {
   document.getElementById('signupFormModal').reset();
 }
 
+// Store pending registration data for OTP
+let pendingRegistration = null;
+
 async function handleSignup(e) {
   e.preventDefault();
   
@@ -1811,12 +1850,13 @@ async function handleSignup(e) {
   const successDiv = document.getElementById('signupSuccess');
   
   btn.disabled = true;
-  btn.innerHTML = '⏳ Creating account...';
+  btn.innerHTML = '⏳ Sending verification code...';
   errorDiv.style.display = 'none';
   successDiv.style.display = 'none';
   
   try {
-    const response = await fetch(WORKER_URL + '/api/auth/register', {
+    // Step 1: Send OTP
+    const response = await fetch(WORKER_URL + '/api/auth/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, phone, password })
@@ -1825,14 +1865,23 @@ async function handleSignup(e) {
     const data = await response.json();
     
     if (response.ok && data.success) {
-      successDiv.textContent = 'Account created successfully! Please login.';
+      // Store registration data for later
+      pendingRegistration = { name, email, phone };
+      
+      // Show OTP verification section
+      document.getElementById('signupFormModal').style.display = 'none';
+      document.getElementById('signupFooter').style.display = 'none';
+      document.getElementById('otpVerificationSection').style.display = 'block';
+      document.getElementById('otpEmailDisplay').textContent = data.email;
+      document.getElementById('signupSubtitle').textContent = 'Verify your email to complete registration';
+      
+      // Focus on OTP input
+      setTimeout(() => document.getElementById('otpInput').focus(), 100);
+      
+      successDiv.textContent = 'Verification code sent! Check your email.';
       successDiv.style.display = 'block';
-      setTimeout(() => {
-        closeSignupModal();
-        openLoginModal();
-      }, 1500);
     } else {
-      errorDiv.textContent = data.error || 'Failed to create account';
+      errorDiv.textContent = data.error || 'Failed to send verification code';
       errorDiv.style.display = 'block';
     }
   } catch (err) {
@@ -1844,15 +1893,144 @@ async function handleSignup(e) {
   }
 }
 
+async function verifyOTP() {
+  const otp = document.getElementById('otpInput').value.trim();
+  const btn = document.getElementById('verifyOtpBtn');
+  const errorDiv = document.getElementById('otpError');
+  const successDiv = document.getElementById('otpSuccess');
+  
+  if (!otp || otp.length !== 6) {
+    errorDiv.textContent = 'Please enter the 6-digit verification code';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Verifying...';
+  errorDiv.style.display = 'none';
+  successDiv.style.display = 'none';
+  
+  try {
+    const response = await fetch(WORKER_URL + '/api/auth/verify-otp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: pendingRegistration?.email, otp })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok && data.success) {
+      successDiv.textContent = 'Account created successfully! Logging you in...';
+      successDiv.style.display = 'block';
+      
+      // Auto-login after successful registration
+      localStorage.setItem('userToken', data.token);
+      localStorage.setItem('userData', JSON.stringify(data.user));
+      currentUser = data.user;
+      
+      setTimeout(() => {
+        closeSignupModal();
+        showLoggedInUI();
+        showNotification('Welcome to GrahakFirst! 🎉', 'success');
+      }, 1500);
+    } else {
+      errorDiv.textContent = data.error || 'Invalid verification code';
+      if (data.attemptsRemaining !== undefined) {
+        errorDiv.textContent += ` (${data.attemptsRemaining} attempts remaining)`;
+      }
+      errorDiv.style.display = 'block';
+    }
+  } catch (err) {
+    errorDiv.textContent = 'Connection error. Please try again.';
+    errorDiv.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '✓ Verify & Create Account';
+  }
+}
+
+async function resendOTP() {
+  const btn = document.getElementById('resendOtpBtn');
+  const timer = document.getElementById('resendTimer');
+  
+  if (!pendingRegistration?.email) {
+    showNotification('Please start registration again', 'error');
+    return;
+  }
+  
+  btn.disabled = true;
+  btn.style.opacity = '0.5';
+  
+  try {
+    const response = await fetch(WORKER_URL + '/api/auth/resend-otp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: pendingRegistration.email })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok && data.success) {
+      showNotification('New verification code sent!', 'success');
+      
+      // Start 30-second cooldown
+      let seconds = 30;
+      timer.style.display = 'block';
+      timer.textContent = `Wait ${seconds}s before resending`;
+      
+      const countdown = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+          timer.textContent = `Wait ${seconds}s before resending`;
+        } else {
+          clearInterval(countdown);
+          timer.style.display = 'none';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }
+      }, 1000);
+    } else {
+      showNotification(data.error || 'Failed to resend code', 'error');
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }
+  } catch (err) {
+    showNotification('Connection error. Please try again.', 'error');
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+
+function backToSignup() {
+  // Reset to registration form
+  document.getElementById('signupFormModal').style.display = 'block';
+  document.getElementById('signupFooter').style.display = 'block';
+  document.getElementById('otpVerificationSection').style.display = 'none';
+  document.getElementById('signupSubtitle').textContent = 'Join GrahakFirst to track your inquiries';
+  document.getElementById('otpInput').value = '';
+  document.getElementById('otpError').style.display = 'none';
+  document.getElementById('otpSuccess').style.display = 'none';
+}
+
+function closeSignupModal() {
+  document.getElementById('signupModal').style.display = 'none';
+  document.getElementById('signupError').style.display = 'none';
+  document.getElementById('signupSuccess').style.display = 'none';
+  document.getElementById('signupFormModal').reset();
+  
+  // Reset OTP section
+  backToSignup();
+  pendingRegistration = null;
+}
+
+function openSignupModal() {
+  document.getElementById('signupModal').style.display = 'flex';
+  document.getElementById('signupName').focus();
+}
+
 function openLoginModal() {
   document.getElementById('loginModal').style.display = 'flex';
   document.getElementById('loginEmail').focus();
-}
-
-function closeLoginModal() {
-  document.getElementById('loginModal').style.display = 'none';
-  document.getElementById('loginError').style.display = 'none';
-  document.getElementById('loginFormModal').reset();
 }
 
 function toggleUserMenu() {
