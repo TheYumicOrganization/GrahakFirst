@@ -1079,7 +1079,10 @@ section{padding:6rem 2rem;position:relative}
 <div id="mobileMenu">
   <div class="mm-header">
     <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--w);"><span style="color:var(--or)">Grahak</span>First</span>
-    <button class="mm-close" id="mmClose">✕</button>
+    <div style="display:flex;gap:1rem;align-items:center;">
+      <button onclick="closeMobileMenu();openLoginModal();" style="background:var(--or-glow);border:none;color:var(--or);padding:0.5rem 1rem;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;">🔐 Login</button>
+      <button class="mm-close" id="mmClose">✕</button>
+    </div>
   </div>
   <nav class="mm-links">
     <a href="#about" onclick="closeMobileMenu()"><span class="mm-icon">🏢</span>About Us</a>
@@ -1091,7 +1094,6 @@ section{padding:6rem 2rem;position:relative}
     <a href="#contact" onclick="closeMobileMenu()"><span class="mm-icon">📩</span>Contact</a>
   </nav>
   <div class="mm-actions">
-    <a href="#" class="mm-btn mm-btn-login" onclick="closeMobileMenu();openLoginModal();return false;">🔐 Login / Sign Up</a>
     <a href="tel:+919752403398" class="mm-btn mm-btn-call">📞 Call +91 97524 03398</a>
     <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="mm-btn mm-btn-wa" target="_blank">💬 WhatsApp Us</a>
     <a href="https://www.amazon.in" class="mm-btn mm-btn-shop" target="_blank">🛒 Shop on Amazon</a>
