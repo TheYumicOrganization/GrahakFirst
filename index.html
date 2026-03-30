@@ -16,7 +16,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 /* ═══════════════════════════════════════════════════════════════════════════════
    GRAHAKFIRST RETAILERS - PREMIUM WEBSITE
@@ -403,6 +402,115 @@ img{display:block;max-width:100%;height:auto}
   position:absolute;inset:0;
   background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);
   background-size:40px 40px;pointer-events:none;
+}
+
+/* Hero Particles */
+.hero-particles{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;
+}
+.particle{
+  position:absolute;width:4px;height:4px;background:var(--or);border-radius:50%;
+  opacity:0.3;animation:float-particle 8s ease-in-out infinite;
+}
+@keyframes float-particle{
+  0%,100%{transform:translateY(100vh) scale(0);opacity:0}
+  10%{opacity:0.6}
+  90%{opacity:0.6}
+  100%{transform:translateY(-10vh) scale(1);opacity:0}
+}
+
+/* 3D Tilt Cards */
+.tilt-card{
+  transform-style:preserve-3d;transition:transform 0.3s ease;
+}
+.tilt-card:hover{transform:perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.02)}
+
+/* Typing Animation */
+.typing-text{
+  display:inline-block;overflow:hidden;border-right:3px solid var(--or);
+  white-space:nowrap;animation:typing 2s steps(8) forwards,blink-caret 0.75s step-end infinite;
+}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink-caret{50%{border-color:transparent}}
+
+/* Magnetic Buttons */
+.magnetic-btn{
+  position:relative;transition:transform 0.2s ease;
+}
+.magnetic-btn::after{
+  content:'';position:absolute;inset:-20px;border-radius:50%;
+  pointer-events:none;
+}
+
+/* Ripple Effect */
+.ripple{
+  position:absolute;border-radius:50%;background:rgba(255,255,255,0.4);
+  transform:scale(0);animation:ripple-effect 0.6s ease-out;pointer-events:none;
+}
+@keyframes ripple-effect{to{transform:scale(4);opacity:0}}
+
+/* Gradient Text Animation */
+.gradient-text-animated{
+  background:linear-gradient(90deg,var(--or),#fb923c,var(--or2),var(--or));
+  background-size:300% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradient-shift 3s ease infinite;
+}
+
+/* Glow Effects */
+.glow-orange{box-shadow:0 0 30px rgba(249,115,22,0.3),0 0 60px rgba(249,115,22,0.1)}
+.glow-blue{box-shadow:0 0 30px rgba(59,130,246,0.3),0 0 60px rgba(59,130,246,0.1)}
+
+/* Shimmer Effect */
+.shimmer{
+  position:relative;overflow:hidden;
+}
+.shimmer::after{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);
+  animation:shimmer 2s infinite;
+}
+@keyframes shimmer{to{left:100%}}
+
+/* Hover Lift Effect */
+.hover-lift{
+  transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.hover-lift:hover{
+  transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Pulse Ring */
+.pulse-ring{
+  position:relative;
+}
+.pulse-ring::before{
+  content:'';position:absolute;inset:-4px;border-radius:inherit;
+  border:2px solid var(--or);opacity:0;
+  animation:pulse-ring-anim 2s ease-out infinite;
+}
+@keyframes pulse-ring-anim{
+  0%{transform:scale(1);opacity:0.5}
+  100%{transform:scale(1.1);opacity:0}
+}
+
+/* Neon Border */
+.neon-border{
+  position:relative;border:1px solid transparent;
+}
+.neon-border::before{
+  content:'';position:absolute;inset:-1px;border-radius:inherit;
+  padding:1px;background:linear-gradient(45deg,var(--or),#fb923c,var(--or2));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:rotate-gradient 4s linear infinite;
+}
+@keyframes rotate-gradient{
+  0%{filter:hue-rotate(0deg)}
+  100%{filter:hue-rotate(360deg)}
 }
 
 .hero-inner{
@@ -1083,10 +1191,13 @@ section{padding:6rem 2rem;position:relative}
 </nav>
 
 <!-- LOGIN MODAL -->
-<div id="loginModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);align-items:center;justify-content:center;">
+<div id="loginModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;">
   <div style="background:var(--bg3);border:1px solid var(--brd);border-radius:24px;padding:2.5rem;width:90%;max-width:420px;position:relative;animation:scale-in 0.3s ease;">
-    <button onclick="closeLoginModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
-    <div style="text-align:center;margin-bottom:2rem;">
+    <div style="position:absolute;top:1rem;right:1rem;display:flex;gap:0.5rem;align-items:center;">
+      <button type="submit" form="loginFormModal" style="background:var(--or-grad);border:none;color:#000;padding:0.5rem 1rem;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:6px;">🔐 Login</button>
+      <button onclick="closeLoginModal()" style="background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">✕</button>
+    </div>
+    <div style="text-align:center;margin-bottom:2rem;padding-top:1rem;">
       <h2 style="font-family:'Sora',sans-serif;font-size:1.5rem;color:var(--w);margin-bottom:0.5rem;">Welcome Back</h2>
       <p style="font-size:0.85rem;color:var(--t3);">Login to access your account & inquiries</p>
     </div>
@@ -1095,12 +1206,13 @@ section{padding:6rem 2rem;position:relative}
         <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Email Address</label>
         <input type="email" id="loginEmail" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your email">
       </div>
-      <div style="margin-bottom:1.5rem;">
+      <div style="margin-bottom:1rem;">
         <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Password</label>
         <input type="password" id="loginPassword" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your password">
       </div>
       <div id="loginError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
-      <button type="submit" id="loginSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;">
+      <!-- Mobile only login button (hidden on desktop) -->
+      <button type="submit" id="loginSubmitBtnMobile" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:none;align-items:center;justify-content:center;gap:8px;">
         🔐 Login
       </button>
     </form>
@@ -1108,14 +1220,11 @@ section{padding:6rem 2rem;position:relative}
       <p style="font-size:0.75rem;color:var(--t3);margin-bottom:0.5rem;">Don't have an account?</p>
       <a href="#" onclick="closeLoginModal();openSignupModal();return false;" style="color:var(--or);font-size:0.85rem;font-weight:600;">Create account now →</a>
     </div>
-    <div style="text-align:center;margin-top:1rem;">
-      <p style="font-size:0.7rem;color:var(--t4);">Owner Login: utkrishtahirwar5@gmail.com</p>
-    </div>
   </div>
 </div>
 
 <!-- SIGNUP MODAL -->
-<div id="signupModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);align-items:center;justify-content:center;">
+<div id="signupModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;">
   <div style="background:var(--bg3);border:1px solid var(--brd);border-radius:24px;padding:2.5rem;width:90%;max-width:420px;position:relative;animation:scale-in 0.3s ease;">
     <button onclick="closeSignupModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
     <div style="text-align:center;margin-bottom:2rem;">
@@ -1141,8 +1250,6 @@ section{padding:6rem 2rem;position:relative}
         <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Password</label>
         <input type="password" id="signupPassword" required minlength="6" style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Create a password (min 6 chars)">
       </div>
-      <!-- Cloudflare Turnstile CAPTCHA -->
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAAQTptwA7E-Io42h" data-theme="dark" style="margin-bottom:1rem;"></div>
       <div id="signupError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
       <div id="signupSuccess" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
       <button type="submit" id="signupSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;">
@@ -1191,7 +1298,7 @@ section{padding:6rem 2rem;position:relative}
 </div>
 
 <!-- MY INQUIRIES MODAL -->
-<div id="inquiriesModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);align-items:center;justify-content:center;">
+<div id="inquiriesModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;">
   <div style="background:var(--bg3);border:1px solid var(--brd);border-radius:24px;padding:2rem;width:90%;max-width:600px;max-height:80vh;overflow-y:auto;position:relative;animation:scale-in 0.3s ease;">
     <button onclick="closeInquiriesModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
     <div style="text-align:center;margin-bottom:1.5rem;">
@@ -1236,6 +1343,7 @@ section{padding:6rem 2rem;position:relative}
 
 <!-- HERO SECTION -->
 <section id="hero">
+  <div class="hero-particles" id="heroParticles"></div>
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
   <div class="hero-grid"></div>
@@ -1243,11 +1351,11 @@ section{padding:6rem 2rem;position:relative}
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge"><span class="dot"></span>Amazon Verified Seller · GrahakFirst.com</div>
-      <h1 class="hero-title">India's Trusted<br/><span class="highlight">Fashion</span> & <span class="highlight">Jewellery</span><br/>Destination</h1>
+      <h1 class="hero-title">India's Trusted<br/><span class="highlight typing-text" data-text="Fashion"></span> & <span class="highlight typing-text" data-text="Jewellery"></span><br/>Destination</h1>
       <p class="hero-subtitle">Premium fashion wear and imitation jewellery — quality-checked, fairly priced, delivered pan-India. Experience the GrahakFirst difference with every purchase.</p>
       <div class="hero-cta-group">
-        <a href="https://www.amazon.in" class="btn btn-lg btn-primary" target="_blank">🛒 Shop on Amazon</a>
-        <a href="#contact" class="btn btn-lg btn-secondary">📩 Contact Owner</a>
+        <a href="https://www.amazon.in" class="btn btn-lg btn-primary magnetic-btn" target="_blank">🛒 Shop on Amazon</a>
+        <a href="#contact" class="btn btn-lg btn-secondary magnetic-btn">📩 Contact Owner</a>
       </div>
       <div class="hero-chips">
         <div class="chip"><span class="chip-icon">✓</span>Quality Assured</div>
@@ -1256,8 +1364,8 @@ section{padding:6rem 2rem;position:relative}
         <div class="chip"><span class="chip-icon">✓</span>Amazon Verified</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-logo-card">
+    <div class="hero-visual" id="heroVisual">
+      <div class="hero-logo-card tilt-card">
         <svg viewBox="0 0 200 100" style="height:100px;margin:0 auto 1rem;display:block;">
           <defs>
             <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -1265,7 +1373,6 @@ section{padding:6rem 2rem;position:relative}
               <stop offset="100%" style="stop-color:#fb923c"/>
             </linearGradient>
           </defs>
-          <!-- Cart Icon -->
           <g transform="translate(10,20)">
             <rect x="0" y="15" width="35" height="25" rx="3" fill="#1e40af"/>
             <rect x="5" y="5" width="8" height="15" rx="1" fill="#f97316"/>
@@ -1273,12 +1380,9 @@ section{padding:6rem 2rem;position:relative}
             <circle cx="28" cy="42" r="4" fill="#1e40af"/>
             <rect x="8" y="22" width="20" height="12" fill="#3b82f6"/>
           </g>
-          <!-- Text -->
           <text x="55" y="45" font-family="Sora,sans-serif" font-size="28" font-weight="800" fill="url(#logoGrad)">Grahak</text>
           <text x="55" y="70" font-family="Sora,sans-serif" font-size="28" font-weight="800" fill="#1e40af">First</text>
-          <!-- Arrow -->
           <path d="M180 50 L195 35 L190 35 L190 25 L170 25 L170 35 L165 35 Z" fill="#1e40af"/>
-          <!-- Tag -->
           <g transform="translate(140,5)">
             <path d="M0 0 L25 0 L35 15 L25 30 L0 30 Z" fill="#f97316"/>
             <circle cx="8" cy="15" r="3" fill="#fff"/>
@@ -1288,27 +1392,27 @@ section{padding:6rem 2rem;position:relative}
         <div class="hero-logo-tag">Buy · Sell · Save · Since 2024</div>
       </div>
       <div class="hero-stats">
-        <div class="stat-box">
+        <div class="stat-box tilt-card">
           <div class="stat-icon">👗</div>
-          <div class="stat-number">2+</div>
+          <div class="stat-number" data-count="2">0</div>
           <div class="stat-label">Categories</div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box tilt-card">
           <div class="stat-icon">🚚</div>
           <div class="stat-number">PAN</div>
           <div class="stat-label">India</div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box tilt-card">
           <div class="stat-icon">🔄</div>
           <div class="stat-number">Easy</div>
           <div class="stat-label">Returns</div>
         </div>
       </div>
       <div class="hero-actions">
-        <a href="tel:+919752403398" class="action-btn action-call">📞 +91 97524 03398</a>
-        <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="action-btn action-wa" target="_blank">💬 WhatsApp</a>
+        <a href="tel:+919752403398" class="action-btn action-call magnetic-btn">📞 +91 97524 03398</a>
+        <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="action-btn action-wa magnetic-btn" target="_blank">💬 WhatsApp</a>
       </div>
-      <div class="amazon-badge">
+      <div class="amazon-badge tilt-card">
         <div class="amazon-text"><span class="a">amazon</span><span class="i">.in</span></div>
         <div class="amazon-verify">Authorised Reseller<span>✓ Verified Seller</span></div>
       </div>
@@ -1740,8 +1844,6 @@ section{padding:6rem 2rem;position:relative}
             <label>Message *</label>
             <textarea placeholder="How can we help you? Tell us more details..." id="formMessage"></textarea>
           </div>
-          <!-- Cloudflare Turnstile CAPTCHA -->
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAAQTptwA7E-Io42h" data-theme="dark" style="margin-bottom:1rem;"></div>
           <p class="form-note">* Required fields. We respond within 24 hours. For urgent queries, please WhatsApp or call directly.</p>
           <button class="form-submit" onclick="submitForm()">Send Message →</button>
         </div>
@@ -2441,13 +2543,41 @@ function toggleChat() {
   }
 }
 
-function addMessage(text, sender) {
+function addMessage(text, sender, isTyping = false) {
   const messagesDiv = document.getElementById('chatMessages');
   const msgDiv = document.createElement('div');
   msgDiv.className = 'chat-message ' + sender;
-  msgDiv.innerHTML = text;
-  messagesDiv.appendChild(msgDiv);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  
+  if (sender === 'bot' && isTyping) {
+    // Create container for typewriter effect
+    const contentSpan = document.createElement('span');
+    contentSpan.className = 'typewriter-content';
+    msgDiv.appendChild(contentSpan);
+    messagesDiv.appendChild(msgDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    return { msgDiv, contentSpan };
+  } else {
+    msgDiv.innerHTML = text;
+    messagesDiv.appendChild(msgDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    return null;
+  }
+}
+
+// Typewriter effect - word by word
+async function typeWriter(text, contentSpan, msgDiv) {
+  const words = text.split(' ');
+  let currentText = '';
+  
+  for (let i = 0; i < words.length; i++) {
+    currentText += words[i] + ' ';
+    contentSpan.innerHTML = currentText;
+    msgDiv.parentElement.scrollTop = msgDiv.parentElement.scrollHeight;
+    
+    // Random delay between 30-80ms for natural feel
+    const delay = Math.random() * 50 + 30;
+    await new Promise(resolve => setTimeout(resolve, delay));
+  }
 }
 
 function showTyping() {
@@ -2487,13 +2617,24 @@ async function sendChatMessage() {
     });
     
     const data = await response.json();
-    hideTyping();
     
     if (data.success) {
-      addMessage(data.response, 'bot');
+      // Show typing indicator briefly before starting typewriter
+      const typingDelay = Math.min(data.response.length * 10, 800);
+      await new Promise(resolve => setTimeout(resolve, typingDelay));
+      
+      hideTyping();
+      
+      // Create empty bot message for typewriter
+      const typewriterElements = addMessage('', 'bot', true);
+      
+      // Animate word by word
+      await typeWriter(data.response, typewriterElements.contentSpan, typewriterElements.msgDiv);
+      
       chatHistory.push({ role: 'user', content: text });
       chatHistory.push({ role: 'assistant', content: data.response });
     } else {
+      hideTyping();
       addMessage('Sorry, I encountered an error. Please try again or contact Brijesh directly at +91 97524 03398 📞', 'bot');
     }
   } catch (e) {
@@ -2521,6 +2662,137 @@ function checkMobile() {
 }
 checkMobile();
 window.addEventListener('resize', checkMobile);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// PREMIUM EFFECTS - Masterpiece Edition
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// Hero Particles
+function createParticles() {
+  const container = document.getElementById('heroParticles');
+  if (!container) return;
+  const particleCount = 25;
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 8 + 's';
+    particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+    particle.style.width = (2 + Math.random() * 4) + 'px';
+    particle.style.height = particle.style.width;
+    container.appendChild(particle);
+  }
+}
+createParticles();
+
+// Magnetic Buttons
+function initMagneticButtons() {
+  const buttons = document.querySelectorAll('.magnetic-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+}
+initMagneticButtons();
+
+// Ripple Effect
+function initRippleEffect() {
+  const buttons = document.querySelectorAll('.btn, .action-btn, .nav-btn');
+  buttons.forEach(btn => {
+    btn.style.position = 'relative';
+    btn.style.overflow = 'hidden';
+    btn.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+}
+initRippleEffect();
+
+// 3D Tilt Cards
+function init3DTilt() {
+  const cards = document.querySelectorAll('.tilt-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rotateX = (y - 0.5) * -10;
+      const rotateY = (x - 0.5) * 10;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+}
+init3DTilt();
+
+// Counter Animation
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-number[data-count]');
+  counters.forEach(counter => {
+    const target = parseInt(counter.dataset.count);
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    const update = () => {
+      current += step;
+      if (current < target) {
+        counter.textContent = Math.floor(current);
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target + '+';
+      }
+    };
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        update();
+        observer.disconnect();
+      }
+    });
+    observer.observe(counter);
+  });
+}
+animateCounters();
+
+// Parallax Effect
+function initParallax() {
+  const hero = document.getElementById('hero');
+  const visual = document.getElementById('heroVisual');
+  if (!hero || !visual) return;
+  hero.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    visual.style.transform = `translate(${x}px, ${y}px)`;
+  });
+}
+initParallax();
+
+// Smooth Scroll Enhancement
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 </script>
 
 <!-- CHATBOT WIDGET -->
@@ -2615,6 +2887,12 @@ window.addEventListener('resize', checkMobile);
 .chat-send svg { width: 20px; height: 20px; }
 .chat-footer { text-align: center; font-size: 0.65rem; color: #666; margin-top: 0.5rem; }
 .chat-footer span { color: #f97316; }
+
+/* Login Modal Responsive */
+@media (max-width: 480px) {
+  #loginSubmitBtnMobile { display: flex !important; }
+  #loginModal > div > div:first-child > button[type="submit"] { display: none !important; }
+}
 
 @media (max-width: 480px) { 
   .chat-widget { width: calc(100vw - 40px); height: 60vh; right: 20px; left: 20px; } 
