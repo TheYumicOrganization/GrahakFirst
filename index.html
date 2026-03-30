@@ -927,12 +927,119 @@ section{padding:6rem 2rem;position:relative}
     </ul>
     <div class="nav-actions">
       <a href="tel:+919752403398" class="nav-btn nav-btn-secondary">📞 Call</a>
-      <a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="nav-btn nav-btn-secondary" target="_blank">💬 WhatsApp</a>
       <a href="https://www.amazon.in" class="nav-btn nav-btn-primary" target="_blank">🛒 Shop Now</a>
+      <div id="authButtons" style="display:flex;gap:0.5rem;">
+        <button class="nav-btn nav-btn-secondary" onclick="openLoginModal()" style="display:flex;align-items:center;gap:6px;">
+          <span style="font-size:1rem;">👤</span> Login
+        </button>
+        <button class="nav-btn nav-btn-primary" onclick="openSignupModal()" style="display:flex;align-items:center;gap:6px;background:transparent;border:2px solid var(--or);color:var(--or);">
+          <span style="font-size:1rem;">✚</span> Sign Up
+        </button>
+      </div>
+      <div id="userMenu" style="display:none;position:relative;">
+        <button class="nav-btn nav-btn-secondary" onclick="toggleUserMenu()" id="userBtn" style="display:flex;align-items:center;gap:6px;padding:0.55rem 1rem;">
+          <span style="font-size:1.1rem;">👤</span> <span id="userName">User</span> <span style="font-size:0.7rem;">▼</span>
+        </button>
+        <div id="userDropdown" style="display:none;position:absolute;top:100%;right:0;margin-top:0.5rem;background:var(--bg3);border:1px solid var(--brd);border-radius:12px;padding:0.5rem;min-width:200px;box-shadow:var(--shadow-lg);z-index:1000;">
+          <div style="padding:0.75rem 1rem;border-bottom:1px solid var(--brd);margin-bottom:0.5rem;">
+            <p id="dropdownUserName" style="font-size:0.9rem;font-weight:700;color:var(--t1);margin:0;">User</p>
+            <p id="dropdownUserEmail" style="font-size:0.7rem;color:var(--t3);margin:0.25rem 0 0 0;">email@example.com</p>
+          </div>
+          <a href="#" onclick="showMyInquiries();return false;" style="display:flex;align-items:center;gap:8px;padding:0.75rem 1rem;color:var(--t2);font-size:0.85rem;border-radius:8px;transition:all 0.2s;text-decoration:none;">📋 My Inquiries</a>
+          <a href="#" id="ownerDashboardLink" onclick="openOwnerDashboard();return false;" style="display:none;align-items:center;gap:8px;padding:0.75rem 1rem;color:var(--or);font-size:0.85rem;border-radius:8px;transition:all 0.2s;text-decoration:none;font-weight:600;">⚡ Owner Dashboard</a>
+          <a href="#" onclick="logout();return false;" style="display:flex;align-items:center;gap:8px;padding:0.75rem 1rem;color:var(--t2);font-size:0.85rem;border-radius:8px;transition:all 0.2s;text-decoration:none;border-top:1px solid var(--brd);margin-top:0.5rem;">🚪 Logout</a>
+        </div>
+      </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg3);border:1px solid var(--brd);border-radius:24px;padding:2.5rem;width:90%;max-width:420px;position:relative;animation:scale-in 0.3s ease;">
+    <button onclick="closeLoginModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div style="text-align:center;margin-bottom:2rem;">
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.5rem;color:var(--w);margin-bottom:0.5rem;">Welcome Back</h2>
+      <p style="font-size:0.85rem;color:var(--t3);">Login to access your account & inquiries</p>
+    </div>
+    <form id="loginFormModal" onsubmit="handleLogin(event)">
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Email Address</label>
+        <input type="email" id="loginEmail" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your email">
+      </div>
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Password</label>
+        <input type="password" id="loginPassword" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your password">
+      </div>
+      <div id="loginError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
+      <button type="submit" id="loginSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;">
+        🔐 Login
+      </button>
+    </form>
+    <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--brd);">
+      <p style="font-size:0.75rem;color:var(--t3);margin-bottom:0.5rem;">Don't have an account?</p>
+      <a href="#contact" onclick="closeLoginModal();showRegisterMessage();" style="color:var(--or);font-size:0.85rem;font-weight:600;">Contact us to register →</a>
+    </div>
+    <div style="text-align:center;margin-top:1rem;">
+      <p style="font-size:0.7rem;color:var(--t4);">Owner Login: utkrishtahirwar5@gmail.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP MODAL -->
+<div id="signupModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg3);border:1px solid var(--brd);border-radius:24px;padding:2.5rem;width:90%;max-width:420px;position:relative;animation:scale-in 0.3s ease;">
+    <button onclick="closeSignupModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div style="text-align:center;margin-bottom:2rem;">
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.5rem;color:var(--w);margin-bottom:0.5rem;">Create Account</h2>
+      <p style="font-size:0.85rem;color:var(--t3);">Join GrahakFirst to track your inquiries</p>
+    </div>
+    <form id="signupFormModal" onsubmit="handleSignup(event)">
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Full Name</label>
+        <input type="text" id="signupName" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your full name">
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Email Address</label>
+        <input type="email" id="signupEmail" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your email">
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Phone Number</label>
+        <input type="tel" id="signupPhone" style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your phone (optional)">
+      </div>
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--t2);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.05em;">Password</label>
+        <input type="password" id="signupPassword" required minlength="6" style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Create a password (min 6 chars)">
+      </div>
+      <div id="signupError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
+      <div id="signupSuccess" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
+      <button type="submit" id="signupSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;">
+        ✚ Create Account
+      </button>
+    </form>
+    <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--brd);">
+      <p style="font-size:0.75rem;color:var(--t3);margin-bottom:0.5rem;">Already have an account?</p>
+      <a href="#" onclick="closeSignupModal();openLoginModal();return false;" style="color:var(--or);font-size:0.85rem;font-weight:600;">Login here →</a>
+    </div>
+  </div>
+</div>
+
+<!-- MY INQUIRIES MODAL -->
+<div id="inquiriesModal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg3);border:1px solid var(--brd);border-radius:24px;padding:2rem;width:90%;max-width:600px;max-height:80vh;overflow-y:auto;position:relative;animation:scale-in 0.3s ease;">
+    <button onclick="closeInquiriesModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--t3);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <h2 style="font-family:'Sora',sans-serif;font-size:1.5rem;color:var(--w);margin-bottom:0.5rem;">📋 My Inquiries</h2>
+      <p style="font-size:0.85rem;color:var(--t3);">View and track your submitted queries</p>
+    </div>
+    <div id="inquiriesList" style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="text-align:center;padding:2rem;color:var(--t3);">
+        <p>Loading your inquiries...</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- MOBILE MENU -->
 <div id="mobileMenu">
@@ -1535,8 +1642,7 @@ section{padding:6rem 2rem;position:relative}
   </div>
 </footer>
 
-<!-- FLOATING ELEMENTS -->
-<a href="https://wa.me/919752403398?text=Hi!%20I%20found%20GrahakFirst%20and%20want%20to%20know%20more." class="fab-wa" target="_blank" title="Chat on WhatsApp">💬</a>
+<!-- BACK TO TOP -->
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
 <!-- MOBILE BOTTOM NAV -->
@@ -1636,6 +1742,302 @@ function toggleFaq(element) {
 // Form submission to Cloudflare Worker
 const WORKER_URL = 'https://workerdevgf.utkrishtahirwar5.workers.dev'; // Your worker URL
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// AUTHENTICATION SYSTEM
+// ═══════════════════════════════════════════════════════════════════════════════
+let currentUser = null;
+const OWNER_EMAIL = 'utkrishtahirwar5@gmail.com';
+
+// Check if user is logged in on page load
+document.addEventListener('DOMContentLoaded', function() {
+  checkAuthStatus();
+});
+
+function checkAuthStatus() {
+  const token = localStorage.getItem('userToken');
+  const userData = localStorage.getItem('userData');
+  
+  if (token && userData) {
+    currentUser = JSON.parse(userData);
+    showLoggedInUI();
+  } else {
+    showLoggedOutUI();
+  }
+}
+
+function showLoggedInUI() {
+  document.getElementById('authButtons').style.display = 'none';
+  document.getElementById('userMenu').style.display = 'block';
+  document.getElementById('userName').textContent = currentUser.name || 'User';
+  document.getElementById('dropdownUserName').textContent = currentUser.name || 'User';
+  document.getElementById('dropdownUserEmail').textContent = currentUser.email || '';
+  
+  // Show owner dashboard link only for owner
+  if (currentUser.email === OWNER_EMAIL) {
+    document.getElementById('ownerDashboardLink').style.display = 'flex';
+    document.getElementById('ownerDashboardLink').style.background = 'rgba(249,115,22,0.1)';
+  } else {
+    document.getElementById('ownerDashboardLink').style.display = 'none';
+  }
+}
+
+function showLoggedOutUI() {
+  document.getElementById('authButtons').style.display = 'flex';
+  document.getElementById('userMenu').style.display = 'none';
+  currentUser = null;
+}
+
+function openSignupModal() {
+  document.getElementById('signupModal').style.display = 'flex';
+  document.getElementById('signupName').focus();
+}
+
+function closeSignupModal() {
+  document.getElementById('signupModal').style.display = 'none';
+  document.getElementById('signupError').style.display = 'none';
+  document.getElementById('signupSuccess').style.display = 'none';
+  document.getElementById('signupFormModal').reset();
+}
+
+async function handleSignup(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('signupName').value;
+  const email = document.getElementById('signupEmail').value;
+  const phone = document.getElementById('signupPhone').value;
+  const password = document.getElementById('signupPassword').value;
+  const btn = document.getElementById('signupSubmitBtn');
+  const errorDiv = document.getElementById('signupError');
+  const successDiv = document.getElementById('signupSuccess');
+  
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Creating account...';
+  errorDiv.style.display = 'none';
+  successDiv.style.display = 'none';
+  
+  try {
+    const response = await fetch(WORKER_URL + '/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, password })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok && data.success) {
+      successDiv.textContent = 'Account created successfully! Please login.';
+      successDiv.style.display = 'block';
+      setTimeout(() => {
+        closeSignupModal();
+        openLoginModal();
+      }, 1500);
+    } else {
+      errorDiv.textContent = data.error || 'Failed to create account';
+      errorDiv.style.display = 'block';
+    }
+  } catch (err) {
+    errorDiv.textContent = 'Connection error. Please try again.';
+    errorDiv.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '✚ Create Account';
+  }
+}
+
+function openLoginModal() {
+  document.getElementById('loginModal').style.display = 'flex';
+  document.getElementById('loginEmail').focus();
+}
+
+function closeLoginModal() {
+  document.getElementById('loginModal').style.display = 'none';
+  document.getElementById('loginError').style.display = 'none';
+  document.getElementById('loginFormModal').reset();
+}
+
+function toggleUserMenu() {
+  const dropdown = document.getElementById('userDropdown');
+  dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const userMenu = document.getElementById('userMenu');
+  if (userMenu && !userMenu.contains(e.target)) {
+    const dropdown = document.getElementById('userDropdown');
+    if (dropdown) dropdown.style.display = 'none';
+  }
+});
+
+async function handleLogin(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  const btn = document.getElementById('loginSubmitBtn');
+  const errorDiv = document.getElementById('loginError');
+  
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Logging in...';
+  errorDiv.style.display = 'none';
+  
+  try {
+    const response = await fetch(WORKER_URL + '/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok && data.success) {
+      localStorage.setItem('userToken', data.token);
+      localStorage.setItem('userData', JSON.stringify(data.user));
+      
+      // If owner, also store owner token
+      if (data.user.isOwner) {
+        localStorage.setItem('ownerToken', data.token);
+      }
+      
+      currentUser = data.user;
+      showLoggedInUI();
+      closeLoginModal();
+      
+      const welcomeMsg = data.user.isOwner ? 'Welcome back, Owner! 👋' : 'Welcome back, ' + data.user.name + '! 👋';
+      showNotification(welcomeMsg, 'success');
+    } else {
+      errorDiv.textContent = data.error || 'Invalid email or password';
+      errorDiv.style.display = 'block';
+    }
+  } catch (err) {
+    errorDiv.textContent = 'Connection error. Please try again.';
+    errorDiv.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '🔐 Login';
+  }
+}
+
+function logout() {
+  localStorage.removeItem('userToken');
+  localStorage.removeItem('ownerToken');
+  localStorage.removeItem('userData');
+  currentUser = null;
+  showLoggedOutUI();
+  showNotification('Logged out successfully 👋', 'info');
+  document.getElementById('userDropdown').style.display = 'none';
+}
+
+function openOwnerDashboard() {
+  const token = localStorage.getItem('ownerToken');
+  if (token) {
+    window.open(WORKER_URL + '/owner/dashboard', '_blank');
+  } else {
+    showNotification('Please login as owner first', 'error');
+    openLoginModal();
+  }
+}
+
+async function showMyInquiries() {
+  document.getElementById('userDropdown').style.display = 'none';
+  
+  if (!currentUser) {
+    showNotification('Please login first', 'error');
+    openLoginModal();
+    return;
+  }
+  
+  document.getElementById('inquiriesModal').style.display = 'flex';
+  const listDiv = document.getElementById('inquiriesList');
+  listDiv.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--t3);"><p>Loading your inquiries...</p></div>';
+  
+  try {
+    const response = await fetch(WORKER_URL + '/api/auth/profile', {
+      headers: { 'Authorization': 'Bearer ' + localStorage.getItem('userToken') }
+    });
+    
+    if (!response.ok) {
+      if (response.status === 401) {
+        logout();
+        showNotification('Session expired. Please login again.', 'error');
+        return;
+      }
+      throw new Error('Failed to load profile');
+    }
+    
+    const data = await response.json();
+    const queries = data.user.queries || [];
+    
+    if (queries.length === 0) {
+      listDiv.innerHTML = `
+        <div style="text-align:center;padding:3rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">📭</div>
+          <p style="color:var(--t2);margin-bottom:0.5rem;">No inquiries yet</p>
+          <p style="font-size:0.8rem;color:var(--t3);">Submit a query through the contact form</p>
+          <a href="#contact" onclick="closeInquiriesModal();" style="display:inline-block;margin-top:1rem;background:var(--or-grad);color:#000;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;">Contact Us →</a>
+        </div>
+      `;
+      return;
+    }
+    
+    // Fetch query details (simplified - in production, create a bulk fetch endpoint)
+    listDiv.innerHTML = queries.map(q => `
+      <div style="background:var(--bg4);border:1px solid var(--brd);border-radius:12px;padding:1.25rem;transition:all 0.3s;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <span style="font-size:0.7rem;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:0.05em;">Inquiry #${q.id.slice(-6)}</span>
+          <span style="font-size:0.75rem;color:var(--t3);">${new Date(q.createdAt || Date.now()).toLocaleDateString('en-IN')}</span>
+        </div>
+        <p style="font-size:0.9rem;color:var(--t1);margin-bottom:0.5rem;">${q.subject || 'General Inquiry'}</p>
+        <p style="font-size:0.8rem;color:var(--t2);line-height:1.6;">${q.message ? q.message.substring(0, 100) + '...' : 'No details available'}</p>
+        <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+          <span style="padding:0.25rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:600;${q.status === 'new' ? 'background:rgba(34,197,94,0.15);color:#22c55e;' : q.status === 'replied' ? 'background:rgba(249,115,22,0.15);color:#f97316;' : 'background:rgba(59,130,246,0.15);color:#60a5fa;'}">${q.status ? q.status.toUpperCase() : 'NEW'}</span>
+        </div>
+      </div>
+    `).join('');
+  } catch (err) {
+    listDiv.innerHTML = `
+      <div style="text-align:center;padding:2rem;color:#ef4444;">
+        <p>Failed to load inquiries</p>
+        <p style="font-size:0.8rem;margin-top:0.5rem;">${err.message}</p>
+      </div>
+    `;
+  }
+}
+
+function closeInquiriesModal() {
+  document.getElementById('inquiriesModal').style.display = 'none';
+}
+
+function showRegisterMessage() {
+  showNotification('Please use the contact form to request an account', 'info');
+}
+
+function showNotification(message, type = 'info') {
+  const notif = document.createElement('div');
+  notif.style.cssText = `
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: ${type === 'success' ? 'rgba(34,197,94,0.95)' : type === 'error' ? 'rgba(220,38,38,0.95)' : 'rgba(249,115,22,0.95)' };
+    color: ${type === 'success' || type === 'error' ? '#fff' : '#000'};
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    z-index: 9999;
+    animation: slide-in-right 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    max-width: 300px;
+    font-size: 0.9rem;
+  `;
+  notif.textContent = message;
+  document.body.appendChild(notif);
+  
+  setTimeout(() => {
+    notif.style.animation = 'slide-in-right 0.3s ease reverse';
+    setTimeout(() => notif.remove(), 300);
+  }, 3000);
+}
+
 async function submitForm() {
   const name = document.getElementById('formName').value.trim();
   const email = document.getElementById('formEmail').value.trim();
@@ -1655,10 +2057,12 @@ async function submitForm() {
   submitBtn.disabled = true;
   
   try {
+    const userId = currentUser ? currentUser.id : null;
+    
     const response = await fetch(WORKER_URL + '/api/query', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone, subject, message })
+      body: JSON.stringify({ name, email, phone, subject, message, userId })
     });
     
     const result = await response.json();
@@ -1666,6 +2070,7 @@ async function submitForm() {
     if(result.success) {
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
+      showNotification('Query submitted successfully! 📨', 'success');
     } else {
       alert('Error: ' + (result.error || 'Failed to send message'));
     }
