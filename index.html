@@ -1210,7 +1210,7 @@ section{padding:6rem 2rem;position:relative}
       </div>
       <div id="loginError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
       <!-- Google reCAPTCHA -->
-      <div id="recaptcha-login" class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" data-callback="onLoginCaptchaCompleted" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
+      <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" data-callback="onLoginCaptchaCompleted" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
       <div id="loginCaptchaStatus" style="display:none;color:#22c55e;font-size:0.8rem;margin-bottom:0.5rem;">✓ CAPTCHA completed</div>
       <!-- Login Submit Button -->
       <button type="submit" id="loginSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:1rem;">
@@ -1254,7 +1254,7 @@ section{padding:6rem 2rem;position:relative}
       <div id="signupError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
       <div id="signupSuccess" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
       <!-- Google reCAPTCHA -->
-      <div id="recaptcha-signup" class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" data-callback="onSignupCaptchaCompleted" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
+      <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" data-callback="onSignupCaptchaCompleted" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
       <div id="signupCaptchaStatus" style="display:none;color:#22c55e;font-size:0.8rem;margin-bottom:0.5rem;">✓ CAPTCHA completed</div>
       <button type="submit" id="signupSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;">
         ✚ Create Account
@@ -1854,7 +1854,7 @@ section{padding:6rem 2rem;position:relative}
             <p style="font-size:0.8rem;color:var(--t3);margin:0.25rem 0 0;">Send them via email to <a href="mailto:grahakfirst@gmail.com" style="color:var(--or);">grahakfirst@gmail.com</a> with your name</p>
           </div>
           <!-- Google reCAPTCHA -->
-          <div id="recaptcha-contact" class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" data-callback="onContactCaptchaCompleted" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
+          <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" data-callback="onContactCaptchaCompleted" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
           <div id="contactCaptchaStatus" style="display:none;color:#22c55e;font-size:0.8rem;margin-bottom:0.5rem;">✓ CAPTCHA completed</div>
           <p class="form-note">* Required fields. We respond within 24 hours. For urgent queries, please WhatsApp or call directly.</p>
           <button class="form-submit" onclick="submitForm()">Send Message →</button>
@@ -2125,7 +2125,7 @@ async function handleSignup(e) {
     return;
   }
   
-  const recaptchaToken = grecaptcha.getResponse('recaptcha-signup');
+  const recaptchaToken = grecaptcha.getResponse();
   if(!recaptchaToken) {
     errorDiv.textContent = 'Please complete the CAPTCHA challenge above.';
     errorDiv.style.display = 'block';
@@ -2163,16 +2163,16 @@ async function handleSignup(e) {
       
       successDiv.textContent = 'Verification code sent! Check your email.';
       successDiv.style.display = 'block';
-      grecaptcha.reset('recaptcha-signup');
+      grecaptcha.reset();
     } else {
       errorDiv.textContent = data.error || 'Failed to send verification code';
       errorDiv.style.display = 'block';
-      grecaptcha.reset('recaptcha-signup');
+      grecaptcha.reset();
     }
   } catch (err) {
     errorDiv.textContent = 'Connection error. Please try again.';
     errorDiv.style.display = 'block';
-    grecaptcha.reset('recaptcha-signup');
+    grecaptcha.reset();
   } finally {
     btn.disabled = false;
     btn.innerHTML = '✚ Create Account';
@@ -2360,7 +2360,7 @@ async function handleLogin(e) {
     return;
   }
   
-  const recaptchaToken = grecaptcha.getResponse('recaptcha-login');
+  const recaptchaToken = grecaptcha.getResponse();
   if(!recaptchaToken) {
     errorDiv.textContent = 'Please complete the CAPTCHA challenge above.';
     errorDiv.style.display = 'block';
@@ -2395,16 +2395,16 @@ async function handleLogin(e) {
       
       const welcomeMsg = data.user.isOwner ? 'Welcome back, Owner! 👋' : 'Welcome back, ' + data.user.name + '! 👋';
       showNotification(welcomeMsg, 'success');
-      grecaptcha.reset('recaptcha-login');
+      grecaptcha.reset();
     } else {
       errorDiv.textContent = data.error || 'Invalid email or password';
       errorDiv.style.display = 'block';
-      grecaptcha.reset('recaptcha-login');
+      grecaptcha.reset();
     }
   } catch (err) {
     errorDiv.textContent = 'Connection error. Please try again.';
     errorDiv.style.display = 'block';
-    grecaptcha.reset('recaptcha-login');
+    grecaptcha.reset();
   } finally {
     btn.disabled = false;
     btn.innerHTML = '🔐 Login to Account';
@@ -2424,8 +2424,8 @@ function logout() {
 function openOwnerDashboard() {
   const token = localStorage.getItem('ownerToken');
   if (token) {
-    // Open dashboard with token in URL hash for auth
-    window.open(WORKER_URL + '/owner/dashboard#token=' + encodeURIComponent(token), '_blank');
+    // Open dashboard with token in query param (NOT hash - hash is client-side only)
+    window.open(WORKER_URL + '/owner/dashboard?token=' + encodeURIComponent(token), '_blank');
   } else {
     showNotification('Please login as owner first', 'error');
     openLoginModal();
@@ -2556,7 +2556,7 @@ async function submitForm() {
     return;
   }
   
-  const recaptchaToken = grecaptcha.getResponse('recaptcha-contact');
+  const recaptchaToken = grecaptcha.getResponse();
   if(!recaptchaToken) { 
     alert('Please complete the CAPTCHA challenge above.'); 
     return; 
@@ -2583,15 +2583,15 @@ async function submitForm() {
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       showNotification('Query submitted successfully! 📨', 'success');
-      grecaptcha.reset('recaptcha-contact');
+      grecaptcha.reset();
     } else {
       alert('Error: ' + (result.error || 'Failed to send message'));
-      grecaptcha.reset('recaptcha-contact');
+      grecaptcha.reset();
     }
   } catch(error) {
     console.error('Error:', error);
     alert('Failed to send message. Please try again or contact directly via WhatsApp/Phone.');
-    grecaptcha.reset('recaptcha-contact');
+    grecaptcha.reset();
   } finally {
     submitBtn.innerHTML = originalText;
     submitBtn.disabled = false;
@@ -2857,7 +2857,10 @@ initParallax();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    // Skip if href is just '#' or empty
+    if (!href || href === '#' || href.length <= 1) return;
+    const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
