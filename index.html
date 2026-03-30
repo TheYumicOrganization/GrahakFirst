@@ -1209,7 +1209,8 @@ section{padding:6rem 2rem;position:relative}
         <input type="password" id="loginPassword" required style="width:100%;background:var(--bg4);border:1.5px solid var(--brd);border-radius:10px;padding:1rem;color:var(--t1);font-size:0.9rem;outline:none;transition:all 0.25s;" placeholder="Enter your password">
       </div>
       <div id="loginError" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);color:#ef4444;padding:0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;"></div>
-      
+      <!-- Google reCAPTCHA -->
+      <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
       <!-- Login Submit Button -->
       <button type="submit" id="loginSubmitBtn" style="width:100%;background:var(--or-grad);color:#000;border:none;padding:1rem;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:1rem;">
         🔐 Login to Account
@@ -1845,6 +1846,11 @@ section{padding:6rem 2rem;position:relative}
             <label>Message *</label>
             <textarea placeholder="How can we help you? Tell us more details..." id="formMessage"></textarea>
           </div>
+          <!-- Email Attachment Note -->
+          <div style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);border-radius:10px;padding:1rem;margin-bottom:1.2rem;">
+            <p style="font-size:0.85rem;color:var(--t2);margin:0;"><strong>📎 Need to share images or videos?</strong></p>
+            <p style="font-size:0.8rem;color:var(--t3);margin:0.25rem 0 0;">Send them via email to <a href="mailto:grahakfirst@gmail.com" style="color:var(--or);">grahakfirst@gmail.com</a> with your name</p>
+          </div>
           <!-- Google reCAPTCHA -->
           <div class="g-recaptcha" data-sitekey="6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU" style="margin-bottom:1rem;transform:scale(0.95);transform-origin:0 0;"></div>
           <p class="form-note">* Required fields. We respond within 24 hours. For urgent queries, please WhatsApp or call directly.</p>
@@ -2326,6 +2332,14 @@ async function handleLogin(e) {
   const btn = document.getElementById('loginSubmitBtn');
   const errorDiv = document.getElementById('loginError');
   
+  // Get reCAPTCHA token
+  const recaptchaToken = grecaptcha.getResponse();
+  if(!recaptchaToken) {
+    errorDiv.textContent = 'Please complete the CAPTCHA.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
   btn.disabled = true;
   btn.innerHTML = '⏳ Logging in...';
   errorDiv.style.display = 'none';
@@ -2334,7 +2348,7 @@ async function handleLogin(e) {
     const response = await fetch(WORKER_URL + '/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password, recaptchaToken })
     });
     
     const data = await response.json();
@@ -2354,13 +2368,16 @@ async function handleLogin(e) {
       
       const welcomeMsg = data.user.isOwner ? 'Welcome back, Owner! 👋' : 'Welcome back, ' + data.user.name + '! 👋';
       showNotification(welcomeMsg, 'success');
+      grecaptcha.reset();
     } else {
       errorDiv.textContent = data.error || 'Invalid email or password';
       errorDiv.style.display = 'block';
+      grecaptcha.reset();
     }
   } catch (err) {
     errorDiv.textContent = 'Connection error. Please try again.';
     errorDiv.style.display = 'block';
+    grecaptcha.reset();
   } finally {
     btn.disabled = false;
     btn.innerHTML = '🔐 Login to Account';
