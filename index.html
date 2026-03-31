@@ -2514,6 +2514,9 @@ function openOwnerDashboard() {
 async function showMyInquiries() {
   document.getElementById('userDropdown').style.display = 'none';
   
+  console.log('showMyInquiries called, currentUser:', currentUser);
+  console.log('userToken in localStorage:', localStorage.getItem('userToken')?.substring(0, 20) + '...');
+  
   if (!currentUser) {
     showNotification('Please login first', 'error');
     openLoginModal();
@@ -2525,12 +2528,18 @@ async function showMyInquiries() {
   listDiv.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--t3);"><p>Loading your inquiries...</p></div>';
   
   try {
+    const token = localStorage.getItem('userToken');
+    console.log('Fetching profile with token:', token?.substring(0, 30) + '...');
+    
     const response = await fetch(WORKER_URL + '/api/auth/profile', {
-      headers: { 'Authorization': 'Bearer ' + localStorage.getItem('userToken') }
+      headers: { 'Authorization': 'Bearer ' + token }
     });
+    
+    console.log('Profile response status:', response.status);
     
     if (!response.ok) {
       if (response.status === 401) {
+        console.error('401 error - logging out');
         logout();
         showNotification('Session expired. Please login again.', 'error');
         return;
@@ -2539,6 +2548,7 @@ async function showMyInquiries() {
     }
     
     const data = await response.json();
+    console.log('Profile data received:', data);
     const queries = data.user.queries || [];
     
     if (queries.length === 0) {
