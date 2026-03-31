@@ -2103,21 +2103,24 @@ function openSignupModal() {
     errorDiv.style.display = 'none';
   }
   
-  // Render signup reCAPTCHA if not already rendered and API is ready
+  // Render signup reCAPTCHA with retry mechanism
   if (!recaptchaWidgets.signup) {
-    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
-      try {
-        recaptchaWidgets.signup = grecaptcha.render('recaptcha-signup', {
-          'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
-          'callback': onSignupCaptchaCompleted
-        });
-      } catch (e) {
-        console.error('Failed to render signup reCAPTCHA:', e);
+    const tryRenderCaptcha = () => {
+      if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
+        try {
+          recaptchaWidgets.signup = grecaptcha.render('recaptcha-signup', {
+            'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
+            'callback': onSignupCaptchaCompleted
+          });
+        } catch (e) {
+          console.error('Failed to render signup reCAPTCHA:', e);
+        }
+      } else {
+        // Retry in 500ms if API not ready
+        setTimeout(tryRenderCaptcha, 500);
       }
-    } else {
-      // reCAPTCHA not ready yet, show message
-      console.log('reCAPTCHA not loaded yet, will retry on next open');
-    }
+    };
+    tryRenderCaptcha();
   }
 }
 
@@ -2357,21 +2360,24 @@ function openLoginModal() {
     errorDiv.style.display = 'none';
   }
   
-  // Render login reCAPTCHA if not already rendered and API is ready
+  // Render login reCAPTCHA with retry mechanism
   if (!recaptchaWidgets.login) {
-    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
-      try {
-        recaptchaWidgets.login = grecaptcha.render('recaptcha-login', {
-          'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
-          'callback': onLoginCaptchaCompleted
-        });
-      } catch (e) {
-        console.error('Failed to render login reCAPTCHA:', e);
+    const tryRenderCaptcha = () => {
+      if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
+        try {
+          recaptchaWidgets.login = grecaptcha.render('recaptcha-login', {
+            'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
+            'callback': onLoginCaptchaCompleted
+          });
+        } catch (e) {
+          console.error('Failed to render login reCAPTCHA:', e);
+        }
+      } else {
+        // Retry in 500ms if API not ready
+        setTimeout(tryRenderCaptcha, 500);
       }
-    } else {
-      // reCAPTCHA not ready yet, show message
-      console.log('reCAPTCHA not loaded yet, will retry on next open');
-    }
+    };
+    tryRenderCaptcha();
   }
 }
 
