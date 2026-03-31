@@ -2551,7 +2551,24 @@ async function showMyInquiries() {
     console.log('Profile data received:', data);
     const queries = data.user.queries || [];
     
-    if (queries.length === 0) {
+    // Fetch full query details with replies
+    const fullQueries = [];
+    for (const q of queries) {
+      try {
+        const queryId = typeof q === 'string' ? q : q.id;
+        const response = await fetch(WORKER_URL + '/api/query/' + queryId, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+        if (response.ok) {
+          const data = await response.json();
+          if (data.query) fullQueries.push(data.query);
+        }
+      } catch (e) {
+        console.error('Error fetching query:', e);
+      }
+    }
+    
+    if (fullQueries.length === 0) {
       listDiv.innerHTML = `
         <div style="text-align:center;padding:3rem;">
           <div style="font-size:3rem;margin-bottom:1rem;">📭</div>
@@ -2563,15 +2580,27 @@ async function showMyInquiries() {
       return;
     }
     
-    // Fetch query details (simplified - in production, create a bulk fetch endpoint)
-    listDiv.innerHTML = queries.map(q => `
+    listDiv.innerHTML = fullQueries.map(q => `
       <div style="background:var(--bg4);border:1px solid var(--brd);border-radius:12px;padding:1.25rem;transition:all 0.3s;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
           <span style="font-size:0.7rem;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:0.05em;">Inquiry #${q.id.slice(-6)}</span>
           <span style="font-size:0.75rem;color:var(--t3);">${new Date(q.createdAt || Date.now()).toLocaleDateString('en-IN')}</span>
         </div>
         <p style="font-size:0.9rem;color:var(--t1);margin-bottom:0.5rem;">${q.subject || 'General Inquiry'}</p>
-        <p style="font-size:0.8rem;color:var(--t2);line-height:1.6;">${q.message ? q.message.substring(0, 100) + '...' : 'No details available'}</p>
+        <p style="font-size:0.8rem;color:var(--t2);line-height:1.6;">${q.message || 'No details available'}</p>
+        
+        ${q.replies && q.replies.length > 0 ? `
+          <div style="margin-top:1rem;padding:1rem;background:rgba(249,115,22,0.1);border-radius:8px;border-left:3px solid #f97316;">
+            <p style="font-size:0.7rem;font-weight:600;color:#f97316;margin-bottom:0.5rem;">💬 Owner Reply:</p>
+            ${q.replies.map(r => `
+              <div style="margin-bottom:0.5rem;">
+                <p style="font-size:0.8rem;color:var(--t1);line-height:1.5;">${r.message}</p>
+                <p style="font-size:0.65rem;color:var(--t3);margin-top:0.25rem;">${new Date(r.timestamp).toLocaleString('en-IN')}</p>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+        
         <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
           <span style="padding:0.25rem 0.75rem;border-radius:20px;font-size:0.7rem;font-weight:600;${q.status === 'new' ? 'background:rgba(34,197,94,0.15);color:#22c55e;' : q.status === 'replied' ? 'background:rgba(249,115,22,0.15);color:#f97316;' : 'background:rgba(59,130,246,0.15);color:#60a5fa;'}">${q.status ? q.status.toUpperCase() : 'NEW'}</span>
         </div>
