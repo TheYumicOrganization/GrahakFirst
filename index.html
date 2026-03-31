@@ -2103,12 +2103,21 @@ function openSignupModal() {
     errorDiv.style.display = 'none';
   }
   
-  // Render signup reCAPTCHA if not already rendered
-  if (typeof grecaptcha !== 'undefined' && !recaptchaWidgets.signup) {
-    recaptchaWidgets.signup = grecaptcha.render('recaptcha-signup', {
-      'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
-      'callback': onSignupCaptchaCompleted
-    });
+  // Render signup reCAPTCHA if not already rendered and API is ready
+  if (!recaptchaWidgets.signup) {
+    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
+      try {
+        recaptchaWidgets.signup = grecaptcha.render('recaptcha-signup', {
+          'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
+          'callback': onSignupCaptchaCompleted
+        });
+      } catch (e) {
+        console.error('Failed to render signup reCAPTCHA:', e);
+      }
+    } else {
+      // reCAPTCHA not ready yet, show message
+      console.log('reCAPTCHA not loaded yet, will retry on next open');
+    }
   }
 }
 
@@ -2348,12 +2357,21 @@ function openLoginModal() {
     errorDiv.style.display = 'none';
   }
   
-  // Render login reCAPTCHA if not already rendered
-  if (typeof grecaptcha !== 'undefined' && !recaptchaWidgets.login) {
-    recaptchaWidgets.login = grecaptcha.render('recaptcha-login', {
-      'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
-      'callback': onLoginCaptchaCompleted
-    });
+  // Render login reCAPTCHA if not already rendered and API is ready
+  if (!recaptchaWidgets.login) {
+    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.render === 'function') {
+      try {
+        recaptchaWidgets.login = grecaptcha.render('recaptcha-login', {
+          'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
+          'callback': onLoginCaptchaCompleted
+        });
+      } catch (e) {
+        console.error('Failed to render login reCAPTCHA:', e);
+      }
+    } else {
+      // reCAPTCHA not ready yet, show message
+      console.log('reCAPTCHA not loaded yet, will retry on next open');
+    }
   }
 }
 
