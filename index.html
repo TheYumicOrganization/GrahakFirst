@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.recaptcha.net; connect-src 'self' https://workerdevgf.utkrishtahirwar5.workers.dev https://api.resend.com;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#0a0a0a"/>
 <meta name="description" content="GrahakFirst Retailers – Fashion & Imitation Jewellery on Amazon India. Owner: Brijesh Kumar Ahirwar, Phone: 9752403398. Nowgong, MP. Buy · Sell · Save"/>
@@ -2151,6 +2152,11 @@ async function handleSignup(e) {
   const errorDiv = document.getElementById('signupError');
   const successDiv = document.getElementById('signupSuccess');
   
+  // Debug info
+  console.log('Signup attempt:', { name, email, phone, password: '***' });
+  console.log('grecaptcha defined:', typeof grecaptcha !== 'undefined');
+  console.log('recaptchaWidgets.signup:', recaptchaWidgets.signup);
+  
   // Get reCAPTCHA token with better error handling
   if (typeof grecaptcha === 'undefined') {
     errorDiv.textContent = 'CAPTCHA not loaded yet. Please wait a moment and try again.';
@@ -2158,7 +2164,15 @@ async function handleSignup(e) {
     return;
   }
   
+  if (!recaptchaWidgets.signup) {
+    errorDiv.textContent = 'CAPTCHA widget not ready. Please wait and try again.';
+    errorDiv.style.display = 'block';
+    return;
+  }
+  
   const recaptchaToken = grecaptcha.getResponse(recaptchaWidgets.signup);
+  console.log('reCAPTCHA token:', recaptchaToken ? 'present' : 'missing');
+  
   if(!recaptchaToken) {
     errorDiv.textContent = 'Please complete the CAPTCHA challenge above.';
     errorDiv.style.display = 'block';
@@ -2172,13 +2186,16 @@ async function handleSignup(e) {
   
   try {
     // Step 1: Send OTP with reCAPTCHA
+    console.log('Sending OTP request...');
     const response = await fetch(WORKER_URL + '/api/auth/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, phone, password, recaptchaToken })
     });
     
+    console.log('Response status:', response.status);
     const data = await response.json();
+    console.log('Response data:', data);
     
     if (response.ok && data.success) {
       // Store registration data for later
