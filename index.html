@@ -2088,6 +2088,28 @@ function showLoggedOutUI() {
 function openSignupModal() {
   document.getElementById('signupModal').style.display = 'flex';
   document.getElementById('signupName').focus();
+  
+  // Hide CAPTCHA completed status
+  const captchaStatus = document.getElementById('signupCaptchaStatus');
+  if (captchaStatus) captchaStatus.style.display = 'none';
+  
+  // Check for expired session
+  const token = localStorage.getItem('userToken');
+  const errorDiv = document.getElementById('signupError');
+  if (token && !currentUser) {
+    errorDiv.textContent = 'Session expired. Please login or create a new account.';
+    errorDiv.style.display = 'block';
+  } else {
+    errorDiv.style.display = 'none';
+  }
+  
+  // Render signup reCAPTCHA if not already rendered
+  if (typeof grecaptcha !== 'undefined' && !recaptchaWidgets.signup) {
+    recaptchaWidgets.signup = grecaptcha.render('recaptcha-signup', {
+      'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
+      'callback': onSignupCaptchaCompleted
+    });
+  }
 }
 
 function closeSignupModal() {
@@ -2308,14 +2330,31 @@ function closeSignupModal() {
   pendingRegistration = null;
 }
 
-function openSignupModal() {
-  document.getElementById('signupModal').style.display = 'flex';
-  document.getElementById('signupName').focus();
-}
-
 function openLoginModal() {
   document.getElementById('loginModal').style.display = 'flex';
   document.getElementById('loginEmail').focus();
+  
+  // Hide CAPTCHA completed status
+  const captchaStatus = document.getElementById('loginCaptchaStatus');
+  if (captchaStatus) captchaStatus.style.display = 'none';
+  
+  // Check for expired session
+  const token = localStorage.getItem('userToken');
+  const errorDiv = document.getElementById('loginError');
+  if (token && !currentUser) {
+    errorDiv.textContent = 'Session expired. Please login again.';
+    errorDiv.style.display = 'block';
+  } else {
+    errorDiv.style.display = 'none';
+  }
+  
+  // Render login reCAPTCHA if not already rendered
+  if (typeof grecaptcha !== 'undefined' && !recaptchaWidgets.login) {
+    recaptchaWidgets.login = grecaptcha.render('recaptcha-login', {
+      'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
+      'callback': onLoginCaptchaCompleted
+    });
+  }
 }
 
 function closeLoginModal() {
@@ -2979,23 +3018,12 @@ let recaptchaWidgets = {};
 
 // Explicitly render reCAPTCHA widgets when API is ready
 function onloadCallback() {
-  // Render login reCAPTCHA
-  recaptchaWidgets.login = grecaptcha.render('recaptcha-login', {
-    'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
-    'callback': onLoginCaptchaCompleted
-  });
-  
-  // Render signup reCAPTCHA
-  recaptchaWidgets.signup = grecaptcha.render('recaptcha-signup', {
-    'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
-    'callback': onSignupCaptchaCompleted
-  });
-  
-  // Render contact reCAPTCHA
+  // Contact reCAPTCHA is visible on page - render immediately
   recaptchaWidgets.contact = grecaptcha.render('recaptcha-contact', {
     'sitekey': '6Lf6m54sAAAAAH3_YC1HMMk3UFmWSIpYOrEUkfmU',
     'callback': onContactCaptchaCompleted
   });
+  // Login and Signup reCAPTCHA will render when modals are opened
 }
 </script>
 
